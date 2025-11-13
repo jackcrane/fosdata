@@ -1,0 +1,27 @@
+---
+title: "Fosdata"
+---
+
+# fosdata
+
+This is a documentation site for the [speegled/fosdata](https://github.com/speegled/fosdata) package.
+
+This data is valid as of November 13, 2025.
+
+## Installation
+
+You can install the fosdata package in R using the following command:
+
+```r
+remotes::install_github("speegled/fosdata")
+```
+
+## License
+
+Most of the data sets in this package have a creative commons license. Providing the data in this convenient package is not meant to cancel or to modify the existing licenses in any way. Please refer to the references in the man pages for information on any individual data set.
+
+This *documentation* is licensed under MIT, but that does not mean the datasets or the speegled/fosdata package itself are licensed under MIT. This documentation is unaffiliated with the speegled/fosdata package and is not endorsed by it.
+
+## References
+
+Refer to [speegled/fosdata](https://github.com/speegled/fosdata) for more information.

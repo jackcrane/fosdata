@@ -1,0 +1,15 @@
+baseURL = 'https://fosdata.jackcrane.rocks/'
+languageCode = 'en-us'
+title = 'Fosdata'
+theme = "hugo-book"
+unsafe = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup]
+  [markup.highlight]
+    style = "catppuccin-latte"      # any Chroma theme name
+    lineNos = false
+  [params]
+    copyCodeButton = true

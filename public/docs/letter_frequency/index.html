@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Letter_frequency# Initialization# data &lt;- fosdata::letter_frequencyAccessing fields# data &lt;- fosdata::letter_frequency danish &lt;- data$danishLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::letter_frequency dataset containing the following fields: fields[15]{name,type,values}: letter,character,n/a english,numeric,n/a french,numeric,n/a german,numeric,n/a spanish,numeric,n/a portuguese,numeric,n/a esperanto,numeric,n/a italian,numeric,n/a turkish,numeric,n/a swedish,numeric,n/a polish,numeric,n/a dutch,numeric,n/a danish,numeric,n/a icelandic,numeric,n/a finnish,numeric,n/a Fields# Name Type Min Max Values letter character - - - english numeric - 0.127 - french numeric - 0.1472 - german numeric - 0.164 - spanish numeric - 0.1218 - portuguese numeric - 0.1463 - esperanto numeric - 0.1212 - italian numeric - 0.1179 - turkish numeric - 0.1192 - swedish numeric - 0.1015 - polish numeric - 0.0891 - dutch numeric - 0.1891 - danish numeric - 0.1545 - icelandic numeric - 0.1011 - finnish numeric - 0.1222 - ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/letter_frequency/">
+  <meta property="og:site_name" content="Fosdata">
+  <meta property="og:title" content="letter_frequency">
+  <meta property="og:description" content="Letter_frequency# Initialization# data &lt;- fosdata::letter_frequencyAccessing fields# data &lt;- fosdata::letter_frequency danish &lt;- data$danishLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::letter_frequency dataset containing the following fields: fields[15]{name,type,values}: letter,character,n/a english,numeric,n/a french,numeric,n/a german,numeric,n/a spanish,numeric,n/a portuguese,numeric,n/a esperanto,numeric,n/a italian,numeric,n/a turkish,numeric,n/a swedish,numeric,n/a polish,numeric,n/a dutch,numeric,n/a danish,numeric,n/a icelandic,numeric,n/a finnish,numeric,n/a Fields# Name Type Min Max Values letter character - - - english numeric - 0.127 - french numeric - 0.1472 - german numeric - 0.164 - spanish numeric - 0.1218 - portuguese numeric - 0.1463 - esperanto numeric - 0.1212 - italian numeric - 0.1179 - turkish numeric - 0.1192 - swedish numeric - 0.1015 - polish numeric - 0.0891 - dutch numeric - 0.1891 - danish numeric - 0.1545 - icelandic numeric - 0.1011 - finnish numeric - 0.1222 -">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="letter_frequency">
+  <meta itemprop="description" content="Letter_frequency# Initialization# data &lt;- fosdata::letter_frequencyAccessing fields# data &lt;- fosdata::letter_frequency danish &lt;- data$danishLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::letter_frequency dataset containing the following fields: fields[15]{name,type,values}: letter,character,n/a english,numeric,n/a french,numeric,n/a german,numeric,n/a spanish,numeric,n/a portuguese,numeric,n/a esperanto,numeric,n/a italian,numeric,n/a turkish,numeric,n/a swedish,numeric,n/a polish,numeric,n/a dutch,numeric,n/a danish,numeric,n/a icelandic,numeric,n/a finnish,numeric,n/a Fields# Name Type Min Max Values letter character - - - english numeric - 0.127 - french numeric - 0.1472 - german numeric - 0.164 - spanish numeric - 0.1218 - portuguese numeric - 0.1463 - esperanto numeric - 0.1212 - italian numeric - 0.1179 - turkish numeric - 0.1192 - swedish numeric - 0.1015 - polish numeric - 0.0891 - dutch numeric - 0.1891 - danish numeric - 0.1545 - icelandic numeric - 0.1011 - finnish numeric - 0.1222 -">
+  <meta itemprop="wordCount" content="146">
+
+<title>letter_frequency | Fosdata</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/letter_frequency/">
+<link rel="stylesheet" href="/book.min.cc2c524ed250aac81b23d1f4af87344917b325208841feca0968fe450f570575.css" integrity="sha256-zCxSTtJQqsgbI9H0r4c0SRezJSCIQf7KCWj&#43;RQ9XBXU=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Fosdata</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/accelerometer/" class="">
+      accelerometer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/acorns/" class="">
+      acorns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/adipose/" class="">
+      adipose</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/austen/" class="">
+      austen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/barnacles/" class="">
+      barnacles</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bechdel/" class="">
+      bechdel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/bicycle_signage/" class="">
+      bicycle_signage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/biomass/" class="">
+      biomass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/brake/" class="">
+      brake</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/cern/" class="">
+      cern</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/child_tasks/" class="">
+      child_tasks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/chimps/" class="">
+      chimps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/cigs/" class="">
+      cigs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/climate/" class="">
+      climate</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/conversation/" class="">
+      conversation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/covid/" class="">
+      covid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/cows/" class="">
+      cows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/cows_small/" class="">
+      cows_small</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/crit_period/" class="">
+      crit_period</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/dogs/" class="">
+      dogs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/draft/" class="">
+      draft</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/ecars/" class="">
+      ecars</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/fish/" class="">
+      fish</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/flint/" class="">
+      flint</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/frogs/" class="">
+      frogs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/gender/" class="">
+      gender</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hot_dogs/" class="">
+      hot_dogs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/houses/" class="">
+      houses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/humanization/" class="">
+      humanization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/leg_strength/" class="">
+      leg_strength</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/leg_strength_full/" class="">
+      leg_strength_full</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/letter_frequency/" class="active">
+      letter_frequency</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/malaria/" class="">
+      malaria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/masks/" class="">
+      masks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/mice_pot/" class="">
+      mice_pot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/movies/" class="">
+      movies</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/normtemp/" class="">
+      normtemp</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/plastics/" class="">
+      plastics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/powerball/" class="">
+      powerball</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/pres_election/" class="">
+      pres_election</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/rio_instagram/" class="">
+      rio_instagram</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/scotland_births/" class="">
+      scotland_births</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/scrabble/" class="">
+      scrabble</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/scrabble_ml/" class="">
+      scrabble_ml</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/seoulweather/" class="">
+      seoulweather</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/sharks/" class="">
+      sharks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/skull_geometry/" class="">
+      skull_geometry</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/snails/" class="">
+      snails</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/weight_estimate/" class="">
+      weight_estimate</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/world_cup/" class="">
+      world_cup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/wrist/" class="">
+      wrist</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>letter_frequency</h3>
+
+  <label for="toc-control">
+     <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" /> 
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialization">Initialization</a></li>
+    <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#llm-instructions">LLM instructions</a></li>
+    <li><a href="#fields">Fields</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="letter_frequency">Letter_frequency<a class="anchor" href="#letter_frequency">#</a></h1>
+<h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>letter_frequency</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>letter_frequency
+</span></span><span style="display:flex;"><span>danish <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>danish</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+<p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
+<details ><summary>LLM Instructions</summary><div class="markdown-inner">
+<pre tabindex="0"><code>The fosdata::letter_frequency dataset containing the following fields:
+
+fields[15]{name,type,values}:
+  letter,character,n/a
+  english,numeric,n/a
+  french,numeric,n/a
+  german,numeric,n/a
+  spanish,numeric,n/a
+  portuguese,numeric,n/a
+  esperanto,numeric,n/a
+  italian,numeric,n/a
+  turkish,numeric,n/a
+  swedish,numeric,n/a
+  polish,numeric,n/a
+  dutch,numeric,n/a
+  danish,numeric,n/a
+  icelandic,numeric,n/a
+  finnish,numeric,n/a</code></pre></div></details>
+<h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Values</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>letter</code></td>
+          <td><u style="text-decoration-style: dotted;">character</u></td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>english</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.127</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>french</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1472</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>german</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.164</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>spanish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1218</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>portuguese</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1463</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>esperanto</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1212</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>italian</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1179</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>turkish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1192</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>swedish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1015</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>polish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.0891</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>dutch</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1891</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>danish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1545</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>icelandic</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1011</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>finnish</code></td>
+          <td><u style="text-decoration-style: dotted;">numeric</u></td>
+          <td>-</td>
+          <td>0.1222</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/leg_strength_full/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>leg_strength_full</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/malaria/" class="flex align-center">
+        <span>malaria</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialization">Initialization</a></li>
+    <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#llm-instructions">LLM instructions</a></li>
+    <li><a href="#fields">Fields</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

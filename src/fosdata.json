@@ -1,0 +1,4613 @@
+{
+  "datasets": [
+    {
+      "name": "accelerometer",
+      "fields": [
+        {
+          "name": "participant",
+          "type": "numeric",
+          "min": 1,
+          "max": 22
+        },
+        {
+          "name": "machine",
+          "type": "character"
+        },
+        {
+          "name": "set",
+          "type": "numeric",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "contraction_mode",
+          "type": "character"
+        },
+        {
+          "name": "time_video_rater_cv_ms",
+          "type": "numeric",
+          "min": 460,
+          "max": 91900
+        },
+        {
+          "name": "time_video_rater_dg_ms",
+          "type": "numeric",
+          "min": 460,
+          "max": 91880
+        },
+        {
+          "name": "time_smartphone_1_ms",
+          "type": "numeric",
+          "min": 0,
+          "max": 90000
+        },
+        {
+          "name": "time_smartphone_2_ms",
+          "type": "numeric",
+          "min": 0,
+          "max": 90800
+        },
+        {
+          "name": "video_rater_mean_ms",
+          "type": "numeric",
+          "min": 460,
+          "max": 91890
+        },
+        {
+          "name": "smartphones_mean_ms",
+          "type": "numeric",
+          "min": 0,
+          "max": 90400
+        },
+        {
+          "name": "relative_difference",
+          "type": "numeric",
+          "min": 0,
+          "max": 22.56
+        },
+        {
+          "name": "difference_video_smartphone_ms",
+          "type": "numeric",
+          "min": -20810,
+          "max": 5845
+        },
+        {
+          "name": "mean_video_smartphone_ms",
+          "type": "numeric",
+          "min": 455,
+          "max": 91145
+        },
+        {
+          "name": "contraction_mode_levels",
+          "type": "character",
+          "values": ["Con", "Ecc", "Rep", "TuT"]
+        },
+        {
+          "name": "difference_video_raters_ms",
+          "type": "numeric",
+          "min": -360,
+          "max": 3520
+        },
+        {
+          "name": "difference_smartphones_ms",
+          "type": "numeric",
+          "min": -35750,
+          "max": 5750
+        },
+        {
+          "name": "video_smartphone_difference_outlier",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "rater_difference_outlier",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "smartphone_difference_outlier",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "normalized_error_smartphone",
+          "type": "numeric",
+          "min": 0,
+          "max": 313.85
+        },
+        {
+          "name": "participant_age_levels",
+          "type": "character",
+          "values": ["young", "old"]
+        },
+        {
+          "name": "participant_age_years",
+          "type": "numeric",
+          "min": 19,
+          "max": 70
+        },
+        {
+          "name": "participant_height_cm",
+          "type": "numeric",
+          "min": 160,
+          "max": 187
+        },
+        {
+          "name": "participant_weight_kg",
+          "type": "numeric",
+          "min": 46,
+          "max": 105
+        },
+        {
+          "name": "participant_gender",
+          "type": "character",
+          "values": ["m", "f"]
+        }
+      ]
+    },
+    {
+      "name": "acorns",
+      "fields": [
+        {
+          "name": "Species",
+          "type": "character"
+        },
+        {
+          "name": "Region",
+          "type": "factor",
+          "values": ["Atlantic", "California"]
+        },
+        {
+          "name": "Range",
+          "type": "integer",
+          "min": 13,
+          "max": 28389
+        },
+        {
+          "name": "Acorn_size",
+          "type": "numeric",
+          "min": 0.3,
+          "max": 17.1
+        },
+        {
+          "name": "Tree_height",
+          "type": "numeric",
+          "min": 0.3,
+          "max": 30
+        }
+      ]
+    },
+    {
+      "name": "adipose",
+      "fields": [
+        {
+          "name": "sex",
+          "type": "factor",
+          "values": ["Male", "Female"]
+        },
+        {
+          "name": "health",
+          "type": "character"
+        },
+        {
+          "name": "age",
+          "type": "numeric",
+          "min": 18,
+          "max": 83
+        },
+        {
+          "name": "ldl",
+          "type": "numeric",
+          "min": 0.61,
+          "max": 4.52
+        },
+        {
+          "name": "hdl",
+          "type": "numeric",
+          "min": 0.44,
+          "max": 2.56
+        },
+        {
+          "name": "trig",
+          "type": "numeric",
+          "min": 0.5,
+          "max": 4.14
+        },
+        {
+          "name": "glucose",
+          "type": "numeric",
+          "min": 3.98,
+          "max": 15.1
+        },
+        {
+          "name": "stature_cm",
+          "type": "numeric",
+          "min": 151,
+          "max": 186.8
+        },
+        {
+          "name": "waist_cm",
+          "type": "numeric",
+          "min": 56,
+          "max": 125
+        },
+        {
+          "name": "hips_cm",
+          "type": "numeric",
+          "min": 76.5,
+          "max": 125
+        },
+        {
+          "name": "vat",
+          "type": "numeric",
+          "min": 2,
+          "max": 3794
+        },
+        {
+          "name": "bmi",
+          "type": "numeric",
+          "min": 16.6406,
+          "max": 37.3247
+        }
+      ]
+    },
+    {
+      "name": "austen",
+      "fields": [
+        {
+          "name": "word",
+          "type": "character"
+        },
+        {
+          "name": "sentence",
+          "type": "integer",
+          "min": 1,
+          "max": 9340
+        },
+        {
+          "name": "chapter",
+          "type": "integer",
+          "min": 1,
+          "max": 61
+        },
+        {
+          "name": "word_length",
+          "type": "integer",
+          "min": 1,
+          "max": 19
+        },
+        {
+          "name": "stop_word",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "sentiment_score",
+          "type": "integer",
+          "min": -4,
+          "max": 4
+        },
+        {
+          "name": "novel",
+          "type": "character",
+          "values": ["Emma", "Pride and Prejudice"]
+        }
+      ]
+    },
+    {
+      "name": "barnacles",
+      "fields": [
+        {
+          "name": "location",
+          "type": "factor",
+          "values": ["FGB", "USVI"]
+        },
+        {
+          "name": "site",
+          "type": "factor"
+        },
+        {
+          "name": "coral_cover",
+          "type": "numeric",
+          "min": 0.3524,
+          "max": 67.4129
+        },
+        {
+          "name": "depth",
+          "type": "numeric",
+          "min": 7,
+          "max": 38.1
+        },
+        {
+          "name": "deep",
+          "type": "factor",
+          "values": ["shallow", "deep"]
+        },
+        {
+          "name": "count",
+          "type": "integer",
+          "min": 0,
+          "max": 1980
+        },
+        {
+          "name": "area",
+          "type": "numeric",
+          "min": 0.0014,
+          "max": 3.0437
+        },
+        {
+          "name": "barnacle_density",
+          "type": "numeric",
+          "min": 0,
+          "max": 2174.6065
+        }
+      ]
+    },
+    {
+      "name": "bechdel",
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "min": 1970,
+          "max": 2013
+        },
+        {
+          "name": "imdb",
+          "type": "character"
+        },
+        {
+          "name": "title",
+          "type": "character"
+        },
+        {
+          "name": "test",
+          "type": "factor"
+        },
+        {
+          "name": "clean_test",
+          "type": "factor",
+          "values": ["notalk", "ok", "men", "nowomen", "dubious"]
+        },
+        {
+          "name": "binary",
+          "type": "factor",
+          "values": ["FAIL", "PASS"]
+        },
+        {
+          "name": "budget",
+          "type": "numeric",
+          "min": 7000,
+          "max": 425000000
+        },
+        {
+          "name": "domgross",
+          "type": "numeric",
+          "min": 0,
+          "max": 760507625
+        },
+        {
+          "name": "intgross",
+          "type": "numeric",
+          "min": 828,
+          "max": 2783918982
+        },
+        {
+          "name": "code",
+          "type": "factor"
+        },
+        {
+          "name": "budget_2013",
+          "type": "numeric",
+          "min": 8632,
+          "max": 461435929
+        },
+        {
+          "name": "domgross_2013",
+          "type": "numeric",
+          "min": 899,
+          "max": 1771682790
+        },
+        {
+          "name": "intgross_2013",
+          "type": "numeric",
+          "min": 899,
+          "max": 3171930973
+        },
+        {
+          "name": "period_code",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "decade_code",
+          "type": "integer",
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "name": "bicycle_signage",
+      "fields": [
+        {
+          "name": "treatment",
+          "type": "character",
+          "values": ["1_None", "4_BMUFL", "2_STR", "3_SLM"]
+        },
+        {
+          "name": "bike_move_right2",
+          "type": "factor",
+          "values": ["1_Agree", "0_Disagree"]
+        },
+        {
+          "name": "mv_wait2",
+          "type": "factor",
+          "values": ["0_Disagree", "1_Agree"]
+        },
+        {
+          "name": "permitted2",
+          "type": "factor",
+          "values": ["1_Agree", "0_Disagree"]
+        },
+        {
+          "name": "safe2",
+          "type": "factor",
+          "values": ["1_Agree", "0_Disagree"]
+        },
+        {
+          "name": "cycle_distance",
+          "type": "factor",
+          "values": [
+            "More than 50 miles",
+            "11 - 50 miles",
+            "Less than 10 miles",
+            "None"
+          ]
+        },
+        {
+          "name": "mv_distance",
+          "type": "factor",
+          "values": [
+            "Less than 50 miles",
+            "None",
+            "51 - 200 Miles",
+            "More than 200 Miles"
+          ]
+        },
+        {
+          "name": "commute_type2",
+          "type": "factor",
+          "values": ["Other", "MotorVehicle"]
+        },
+        {
+          "name": "state",
+          "type": "character"
+        },
+        {
+          "name": "gender",
+          "type": "factor",
+          "values": ["Male", "Female"]
+        },
+        {
+          "name": "education",
+          "type": "factor",
+          "values": [
+            "4-Year College",
+            "Graduate Degree",
+            "Community College",
+            "High School",
+            "Did not graduate high school"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "biomass",
+      "fields": [
+        {
+          "name": "plot",
+          "type": "character"
+        },
+        {
+          "name": "year",
+          "type": "integer",
+          "min": 1989,
+          "max": 2016
+        },
+        {
+          "name": "from",
+          "type": "character"
+        },
+        {
+          "name": "to",
+          "type": "character"
+        },
+        {
+          "name": "biomass",
+          "type": "numeric",
+          "min": 0.1,
+          "max": 496.5
+        },
+        {
+          "name": "e",
+          "type": "numeric",
+          "min": 6.1316,
+          "max": 14.298
+        },
+        {
+          "name": "n",
+          "type": "numeric",
+          "min": 50.1706,
+          "max": 52.1982
+        },
+        {
+          "name": "location_type",
+          "type": "integer",
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "name": "brake",
+      "fields": [
+        {
+          "name": "subject_id",
+          "type": "integer",
+          "min": 1,
+          "max": 80
+        },
+        {
+          "name": "age_group",
+          "type": "character",
+          "values": ["Young", "Old"]
+        },
+        {
+          "name": "age",
+          "type": "integer",
+          "min": 18,
+          "max": 81
+        },
+        {
+          "name": "gender",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "latency_p1",
+          "type": "numeric",
+          "min": 315.6204,
+          "max": 1240.2232
+        },
+        {
+          "name": "latency_p2",
+          "type": "numeric",
+          "min": 485.8605,
+          "max": 1932.2926
+        },
+        {
+          "name": "latency_p3",
+          "type": "numeric",
+          "min": 190.038,
+          "max": 2410.4977
+        },
+        {
+          "name": "p1_p2",
+          "type": "numeric",
+          "min": 844.4527,
+          "max": 2537.9589
+        },
+        {
+          "name": "p1_p2_p3",
+          "type": "numeric",
+          "min": 1148.7133,
+          "max": 4948.4566
+        },
+        {
+          "name": "cfq",
+          "type": "numeric",
+          "min": 1.25,
+          "max": 3.35
+        },
+        {
+          "name": "dbq_error",
+          "type": "numeric",
+          "min": 1,
+          "max": 3
+        },
+        {
+          "name": "dbq_violation",
+          "type": "numeric",
+          "min": 1,
+          "max": 4.6667
+        },
+        {
+          "name": "dbq_laspe",
+          "type": "numeric",
+          "min": 1,
+          "max": 3.6667
+        },
+        {
+          "name": "difficulty",
+          "type": "integer",
+          "min": 7,
+          "max": 100
+        },
+        {
+          "name": "confidence",
+          "type": "integer",
+          "min": 14,
+          "max": 100
+        },
+        {
+          "name": "decline",
+          "type": "integer",
+          "min": 12,
+          "max": 89
+        },
+        {
+          "name": "anxiety",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "near_miss",
+          "type": "integer",
+          "min": 1,
+          "max": 3
+        },
+        {
+          "name": "mmse",
+          "type": "integer",
+          "min": 25,
+          "max": 30
+        },
+        {
+          "name": "education",
+          "type": "integer",
+          "min": 9,
+          "max": 20
+        }
+      ]
+    },
+    {
+      "name": "cern",
+      "fields": [
+        {
+          "name": "postdate",
+          "type": "character"
+        },
+        {
+          "name": "platform",
+          "type": "factor",
+          "values": ["Facebook", "Google+", "Twitter", "Instagra", "Tw Frenc"]
+        },
+        {
+          "name": "type",
+          "type": "factor",
+          "values": ["GWII", "News", "Wow", "TBT"]
+        },
+        {
+          "name": "subject",
+          "type": "character"
+        },
+        {
+          "name": "followers",
+          "type": "integer",
+          "min": 266,
+          "max": 1060000
+        },
+        {
+          "name": "likes",
+          "type": "numeric",
+          "min": 0,
+          "max": 4480
+        },
+        {
+          "name": "comments",
+          "type": "numeric",
+          "min": 0,
+          "max": 402
+        },
+        {
+          "name": "shares",
+          "type": "numeric",
+          "min": 0,
+          "max": 1255
+        },
+        {
+          "name": "click_throughs",
+          "type": "numeric",
+          "min": 1,
+          "max": 1158
+        },
+        {
+          "name": "avg_visit_duration",
+          "type": "numeric",
+          "min": 0,
+          "max": 147
+        },
+        {
+          "name": "post",
+          "type": "character"
+        }
+      ]
+    },
+    {
+      "name": "child_tasks",
+      "fields": [
+        {
+          "name": "gender",
+          "type": "factor",
+          "values": ["Male", "Female"]
+        },
+        {
+          "name": "age_in_months",
+          "type": "numeric",
+          "min": 72,
+          "max": 119
+        },
+        {
+          "name": "age_group",
+          "type": "factor",
+          "values": ["6 year olds", "7 year olds", "8 year olds", "9 year olds"]
+        },
+        {
+          "name": "day_night_completion_time_secs",
+          "type": "numeric",
+          "min": 17.5,
+          "max": 40.41
+        },
+        {
+          "name": "day_night_accuracy_score",
+          "type": "numeric",
+          "min": 11,
+          "max": 32
+        },
+        {
+          "name": "counting_span_score",
+          "type": "numeric",
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "backward_digit_span_score",
+          "type": "numeric",
+          "min": 2,
+          "max": 12
+        },
+        {
+          "name": "card_sort_preswitch_time_secs",
+          "type": "numeric",
+          "min": 3.96,
+          "max": 15.86
+        },
+        {
+          "name": "card_sort_postswitch_time_secs",
+          "type": "numeric",
+          "min": 3.3,
+          "max": 14.82
+        },
+        {
+          "name": "card_sort_preswitch_accuracy",
+          "type": "numeric",
+          "min": 8,
+          "max": 10
+        },
+        {
+          "name": "card_sort_postswitch_accuracy",
+          "type": "numeric",
+          "min": 4,
+          "max": 10
+        },
+        {
+          "name": "stt_cv_trail_a_secs",
+          "type": "numeric",
+          "min": 12.53,
+          "max": 53.61
+        },
+        {
+          "name": "stt_cv_trail_b_secs",
+          "type": "numeric",
+          "min": 20.04,
+          "max": 94.43
+        }
+      ]
+    },
+    {
+      "name": "chimps",
+      "fields": [
+        {
+          "name": "individual",
+          "type": "character"
+        },
+        {
+          "name": "year",
+          "type": "integer",
+          "min": 2000,
+          "max": 2013
+        },
+        {
+          "name": "sex",
+          "type": "character",
+          "values": ["M", "F"]
+        },
+        {
+          "name": "age",
+          "type": "integer",
+          "min": 1,
+          "max": 60
+        },
+        {
+          "name": "population",
+          "type": "character",
+          "values": ["NIRC", "NGOGO", "TAI"]
+        },
+        {
+          "name": "subspecies",
+          "type": "character",
+          "values": ["verus", "schweinfurthii"]
+        },
+        {
+          "name": "v7",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v8",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v9",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v10",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v11",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v12",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v13",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v14",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v15",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v16",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v17",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v18",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v19",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v20",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v21",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v22",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v23",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v24",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v25",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v26",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v27",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v28",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v29",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v30",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v31",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v32",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v33",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v34",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v35",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v36",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v37",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v38",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v39",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v40",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v41",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v42",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v43",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v44",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v45",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v46",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v47",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v48",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v49",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v50",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v51",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v52",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v53",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v54",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v55",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v56",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v57",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v58",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v59",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v60",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v61",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v62",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v63",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v64",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v65",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v66",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v67",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v68",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v69",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v70",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v71",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v72",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v73",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v74",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v75",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v76",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v77",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v78",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v79",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v80",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v81",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v82",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v83",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v84",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v85",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v86",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v87",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v88",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v89",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v90",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v91",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v93",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v94",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v95",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v96",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v97",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v99",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v100",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v101",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v102",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v103",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v104",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v105",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v106",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v107",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v108",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v109",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v110",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v111",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v112",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v113",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v114",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v115",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v116",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v117",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v118",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v119",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v120",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v121",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v122",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v123",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v124",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v126",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v127",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v128",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v129",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v130",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v131",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v132",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v133",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v135",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v136",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v137",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v138",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v139",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v140",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v141",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v142",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v143",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v144",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v146",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v147",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v148",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v149",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v150",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "v151",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v152",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v153",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v154",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v155",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v156",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v157",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v158",
+          "type": "integer",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "v159",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v160",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v161",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v162",
+          "type": "integer",
+          "min": 1,
+          "max": 6
+        },
+        {
+          "name": "v164",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "grey_score_avg",
+          "type": "numeric",
+          "min": 1.4671,
+          "max": 4.9211
+        }
+      ]
+    },
+    {
+      "name": "cigs",
+      "fields": [
+        {
+          "name": "brand_name",
+          "type": "factor"
+        },
+        {
+          "name": "flavor",
+          "type": "factor"
+        },
+        {
+          "name": "co",
+          "type": "numeric",
+          "min": 0.5,
+          "max": 22
+        },
+        {
+          "name": "nic",
+          "type": "numeric",
+          "min": 0.1,
+          "max": 2
+        },
+        {
+          "name": "tar",
+          "type": "numeric",
+          "min": 0.5,
+          "max": 27
+        },
+        {
+          "name": "size",
+          "type": "factor",
+          "values": ["Reg", "100", "King", "120", "80"]
+        },
+        {
+          "name": "filter",
+          "type": "factor",
+          "values": ["F", "NF"]
+        },
+        {
+          "name": "pack",
+          "type": "factor",
+          "values": ["HP", "SP"]
+        },
+        {
+          "name": "menthol",
+          "type": "factor",
+          "values": ["no", "yes"]
+        }
+      ]
+    },
+    {
+      "name": "climate",
+      "fields": [
+        {
+          "name": "appeal",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "conjunctions",
+          "type": "numeric",
+          "min": 0.25,
+          "max": 4.8333
+        },
+        {
+          "name": "connectivity",
+          "type": "numeric",
+          "min": 0.25,
+          "max": 7.1667
+        },
+        {
+          "name": "narrative_perspective",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "sensory",
+          "type": "numeric",
+          "min": 0,
+          "max": 3.25
+        },
+        {
+          "name": "setting",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "citations",
+          "type": "numeric",
+          "min": 0,
+          "max": 7.0942
+        },
+        {
+          "name": "year",
+          "type": "numeric",
+          "min": 2009,
+          "max": 2010
+        },
+        {
+          "name": "journal",
+          "type": "character"
+        },
+        {
+          "name": "number_of_authors",
+          "type": "numeric",
+          "min": 0,
+          "max": 5.1591
+        },
+        {
+          "name": "abstract_length",
+          "type": "integer",
+          "min": 53,
+          "max": 642
+        },
+        {
+          "name": "abstract_number",
+          "type": "integer",
+          "min": 886110198,
+          "max": 908379250
+        },
+        {
+          "name": "normalized_citations",
+          "type": "numeric",
+          "min": 0.1667,
+          "max": 200.8333
+        },
+        {
+          "name": "normalized_sensory",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.037
+        },
+        {
+          "name": "normalized_conjunctions",
+          "type": "numeric",
+          "min": 0.0016,
+          "max": 0.0377
+        },
+        {
+          "name": "normalized_connectivity",
+          "type": "numeric",
+          "min": 0.0011,
+          "max": 0.0528
+        },
+        {
+          "name": "binary_setting",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "binary_appeal",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "impact",
+          "type": "numeric",
+          "min": 1.436,
+          "max": 36.104
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "fields": [
+        {
+          "name": "gender",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "f1_psychopathy",
+          "type": "numeric",
+          "min": -1.89,
+          "max": 3.23
+        },
+        {
+          "name": "f2_psychopathy",
+          "type": "numeric",
+          "min": -2.12,
+          "max": 3.24
+        },
+        {
+          "name": "total_psychopathy",
+          "type": "numeric",
+          "min": -2.13,
+          "max": 2.91
+        },
+        {
+          "name": "attractiveness",
+          "type": "numeric",
+          "min": -1.78,
+          "max": 2.32
+        },
+        {
+          "name": "fighting_ability",
+          "type": "numeric",
+          "min": -2.29,
+          "max": 2.87
+        },
+        {
+          "name": "strength",
+          "type": "numeric",
+          "min": -1.97,
+          "max": 2.81
+        },
+        {
+          "name": "height",
+          "type": "numeric",
+          "min": -1.77,
+          "max": 2.27
+        },
+        {
+          "name": "median_income",
+          "type": "numeric",
+          "min": 26.9,
+          "max": 138.2
+        },
+        {
+          "name": "oldest",
+          "type": "character",
+          "values": ["no", "yes"]
+        },
+        {
+          "name": "highest_class_rank",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "major_presige",
+          "type": "numeric",
+          "min": 3,
+          "max": 38
+        },
+        {
+          "name": "dyad_status_difference",
+          "type": "numeric",
+          "min": -2,
+          "max": 2
+        },
+        {
+          "name": "proportion_words",
+          "type": "numeric",
+          "min": 0.06,
+          "max": 0.77
+        },
+        {
+          "name": "proportion_sequence_starts",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.8
+        },
+        {
+          "name": "interruptions_per_min",
+          "type": "numeric",
+          "min": 0.001,
+          "max": 3.982
+        },
+        {
+          "name": "sequence_starts_per_word_x100",
+          "type": "numeric",
+          "min": 0,
+          "max": 6.19
+        },
+        {
+          "name": "interruptions_per_word_x100",
+          "type": "numeric",
+          "min": 0.001,
+          "max": 5.74
+        },
+        {
+          "name": "affect_words",
+          "type": "numeric",
+          "min": 1.5,
+          "max": 14.18
+        },
+        {
+          "name": "indiv_1",
+          "type": "numeric",
+          "min": 13212001,
+          "max": 92197600
+        },
+        {
+          "name": "indiv_2",
+          "type": "numeric",
+          "min": 13212001,
+          "max": 92197600
+        },
+        {
+          "name": "camera",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "indiv_1_interrupts_indiv_2",
+          "type": "numeric",
+          "min": 0,
+          "max": 2.65
+        },
+        {
+          "name": "indiv_2_interrupts_indiv_1",
+          "type": "numeric",
+          "min": 0,
+          "max": 2.65
+        },
+        {
+          "name": "indiv_1_pd_indiv_2",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "indiv_2_pd_indiv_1",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "indiv_1_predicts_indiv_2",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "indiv_2_predicts_indiv_1",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "covid",
+      "fields": [
+        {
+          "name": "date",
+          "type": "character"
+        },
+        {
+          "name": "state",
+          "type": "character"
+        },
+        {
+          "name": "fips",
+          "type": "integer",
+          "min": 1,
+          "max": 78
+        },
+        {
+          "name": "cases",
+          "type": "integer",
+          "min": 1,
+          "max": 4599348
+        },
+        {
+          "name": "deaths",
+          "type": "integer",
+          "min": 0,
+          "max": 67312
+        }
+      ]
+    },
+    {
+      "name": "cows",
+      "fields": [
+        {
+          "name": "cow",
+          "type": "integer",
+          "min": 2212,
+          "max": 2307
+        },
+        {
+          "name": "date",
+          "type": "character"
+        },
+        {
+          "name": "nozzle",
+          "type": "character"
+        },
+        {
+          "name": "flow_rate",
+          "type": "numeric",
+          "min": 0,
+          "max": 4.7
+        },
+        {
+          "name": "body_part",
+          "type": "character",
+          "values": ["shoulder", "side"]
+        },
+        {
+          "name": "min_01",
+          "type": "numeric",
+          "min": 33.4,
+          "max": 41.5
+        },
+        {
+          "name": "min_02",
+          "type": "numeric",
+          "min": 31.8,
+          "max": 41
+        },
+        {
+          "name": "min_03",
+          "type": "numeric",
+          "min": 31.6,
+          "max": 40.5
+        },
+        {
+          "name": "min_04",
+          "type": "numeric",
+          "min": 31.4,
+          "max": 40.6
+        }
+      ]
+    },
+    {
+      "name": "cows_small",
+      "fields": [
+        {
+          "name": "cow",
+          "type": "integer",
+          "min": 2212,
+          "max": 2307
+        },
+        {
+          "name": "control",
+          "type": "numeric",
+          "min": -0.1,
+          "max": 0.3
+        },
+        {
+          "name": "tk_0_75",
+          "type": "numeric",
+          "min": -2.4,
+          "max": -1.0333
+        },
+        {
+          "name": "tk_12",
+          "type": "numeric",
+          "min": -2.5667,
+          "max": -1.3333
+        }
+      ]
+    },
+    {
+      "name": "crit_period",
+      "fields": [
+        {
+          "name": "aoa",
+          "type": "integer",
+          "min": 4,
+          "max": 71
+        },
+        {
+          "name": "gjt",
+          "type": "integer",
+          "min": 101,
+          "max": 198
+        },
+        {
+          "name": "locale",
+          "type": "factor",
+          "values": ["Israel", "North America"]
+        }
+      ]
+    },
+    {
+      "name": "dogs",
+      "fields": [
+        {
+          "name": "obs_number",
+          "type": "character"
+        },
+        {
+          "name": "obs_pref",
+          "type": "character",
+          "values": ["links", "rechts"]
+        },
+        {
+          "name": "obs_position",
+          "type": "character",
+          "values": ["links", "rechts"]
+        },
+        {
+          "name": "demo_pref",
+          "type": "character",
+          "values": ["rechts", "links", "keine"]
+        },
+        {
+          "name": "condition",
+          "type": "integer",
+          "min": 0,
+          "max": 3
+        },
+        {
+          "name": "dropout",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "trial",
+          "type": "integer",
+          "min": 1,
+          "max": 3
+        },
+        {
+          "name": "start_direction",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "conform",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "draft",
+      "fields": [
+        {
+          "name": "Day",
+          "type": "numeric",
+          "min": 1,
+          "max": 31
+        },
+        {
+          "name": "Month",
+          "type": "factor"
+        },
+        {
+          "name": "MonthNo",
+          "type": "numeric",
+          "min": 1,
+          "max": 12
+        },
+        {
+          "name": "DayofYear",
+          "type": "numeric",
+          "min": 1,
+          "max": 366
+        },
+        {
+          "name": "DraftNo",
+          "type": "numeric",
+          "min": 1,
+          "max": 366
+        }
+      ]
+    },
+    {
+      "name": "ecars",
+      "fields": [
+        {
+          "name": "sessionId",
+          "type": "integer",
+          "min": 1004821,
+          "max": 9998981
+        },
+        {
+          "name": "kwhTotal",
+          "type": "numeric",
+          "min": 0,
+          "max": 23.68
+        },
+        {
+          "name": "dollars",
+          "type": "numeric",
+          "min": 0,
+          "max": 7.5
+        },
+        {
+          "name": "created",
+          "type": "character"
+        },
+        {
+          "name": "ended",
+          "type": "character"
+        },
+        {
+          "name": "startTime",
+          "type": "integer",
+          "min": 0,
+          "max": 23
+        },
+        {
+          "name": "endTime",
+          "type": "integer",
+          "min": 0,
+          "max": 23
+        },
+        {
+          "name": "chargeTimeHrs",
+          "type": "numeric",
+          "min": 0.0125,
+          "max": 55.2381
+        },
+        {
+          "name": "weekday",
+          "type": "character"
+        },
+        {
+          "name": "platform",
+          "type": "character",
+          "values": ["android", "ios", "web"]
+        },
+        {
+          "name": "distance",
+          "type": "numeric",
+          "min": 0.8569,
+          "max": 43.0593
+        },
+        {
+          "name": "userId",
+          "type": "integer",
+          "min": 10427670,
+          "max": 98345808
+        },
+        {
+          "name": "stationId",
+          "type": "integer",
+          "min": 129465,
+          "max": 995505
+        },
+        {
+          "name": "locationId",
+          "type": "integer",
+          "min": 125372,
+          "max": 978130
+        },
+        {
+          "name": "managerVehicle",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "facilityType",
+          "type": "factor",
+          "values": ["R & D", "Other", "Office", "Manufacturing"]
+        },
+        {
+          "name": "reportedZip",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "fish",
+      "fields": [
+        {
+          "name": "obs",
+          "type": "integer",
+          "min": 1,
+          "max": 159
+        },
+        {
+          "name": "species",
+          "type": "integer",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "weight",
+          "type": "numeric",
+          "min": 0,
+          "max": 1650
+        },
+        {
+          "name": "length1",
+          "type": "numeric",
+          "min": 7.5,
+          "max": 59
+        },
+        {
+          "name": "length2",
+          "type": "numeric",
+          "min": 8.4,
+          "max": 63.4
+        },
+        {
+          "name": "length3",
+          "type": "numeric",
+          "min": 8.8,
+          "max": 68
+        },
+        {
+          "name": "height_percent",
+          "type": "numeric",
+          "min": 14.5,
+          "max": 44.5
+        },
+        {
+          "name": "width_percent",
+          "type": "numeric",
+          "min": 8.7,
+          "max": 20.9
+        },
+        {
+          "name": "sex",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "flint",
+      "fields": [
+        {
+          "name": "SampleID",
+          "type": "integer",
+          "min": 1,
+          "max": 300
+        },
+        {
+          "name": "Zip.Code",
+          "type": "factor"
+        },
+        {
+          "name": "Ward",
+          "type": "factor"
+        },
+        {
+          "name": "Pb1",
+          "type": "numeric",
+          "min": 0.344,
+          "max": 158
+        },
+        {
+          "name": "Pb2",
+          "type": "numeric",
+          "min": 0.032,
+          "max": 1051
+        },
+        {
+          "name": "Pb3",
+          "type": "numeric",
+          "min": 0.031,
+          "max": 94.52
+        },
+        {
+          "name": "Notes",
+          "type": "character",
+          "values": ["", "*house sampled twice"]
+        }
+      ]
+    },
+    {
+      "name": "frogs",
+      "fields": [
+        {
+          "name": "accession",
+          "type": "character"
+        },
+        {
+          "name": "svl",
+          "type": "numeric",
+          "min": 21.4,
+          "max": 52.3
+        },
+        {
+          "name": "hw",
+          "type": "numeric",
+          "min": 7.1,
+          "max": 17
+        },
+        {
+          "name": "hl",
+          "type": "numeric",
+          "min": 7.1,
+          "max": 17.3
+        },
+        {
+          "name": "slm",
+          "type": "numeric",
+          "min": 3,
+          "max": 7.4
+        },
+        {
+          "name": "be",
+          "type": "numeric",
+          "min": 1.8,
+          "max": 6.9
+        },
+        {
+          "name": "en",
+          "type": "numeric",
+          "min": 1.7,
+          "max": 3.7
+        },
+        {
+          "name": "ns",
+          "type": "numeric",
+          "min": 1.3,
+          "max": 3.7
+        },
+        {
+          "name": "el",
+          "type": "numeric",
+          "min": 2.4,
+          "max": 5.6
+        },
+        {
+          "name": "in",
+          "type": "numeric",
+          "min": 1.9,
+          "max": 3.8
+        },
+        {
+          "name": "iod",
+          "type": "numeric",
+          "min": 1.5,
+          "max": 2.9
+        },
+        {
+          "name": "fal",
+          "type": "numeric",
+          "min": 3.9,
+          "max": 10.5
+        },
+        {
+          "name": "hal",
+          "type": "numeric",
+          "min": 5,
+          "max": 16.9
+        },
+        {
+          "name": "fol",
+          "type": "numeric",
+          "min": 11,
+          "max": 26
+        },
+        {
+          "name": "tl",
+          "type": "numeric",
+          "min": 11.3,
+          "max": 27.3
+        },
+        {
+          "name": "species",
+          "type": "character"
+        }
+      ]
+    },
+    {
+      "name": "gender",
+      "fields": [
+        {
+          "name": "gender_male",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "gender_female",
+          "type": "logical",
+          "values": ["TRUE", "FALSE"]
+        },
+        {
+          "name": "gender_trans",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "gender_queer",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "gender_not_sure",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "gender_unclear",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "gender_na",
+          "type": "logical",
+          "values": ["FALSE", "TRUE"]
+        },
+        {
+          "name": "sex_at_birth",
+          "type": "factor",
+          "values": ["Female", "Male"]
+        },
+        {
+          "name": "hispanic",
+          "type": "factor",
+          "values": ["No", "Yes", "Don't know"]
+        },
+        {
+          "name": "race",
+          "type": "character"
+        }
+      ]
+    },
+    {
+      "name": "hot_dogs",
+      "fields": [
+        {
+          "name": "type",
+          "type": "factor",
+          "values": ["Beef", "Meat", "Poultry"]
+        },
+        {
+          "name": "calories",
+          "type": "integer",
+          "min": 86,
+          "max": 195
+        },
+        {
+          "name": "sodium",
+          "type": "integer",
+          "min": 144,
+          "max": 645
+        }
+      ]
+    },
+    {
+      "name": "houses",
+      "fields": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "min": 1000102,
+          "max": 9900000190
+        },
+        {
+          "name": "date",
+          "type": "character"
+        },
+        {
+          "name": "price",
+          "type": "numeric",
+          "min": 75000,
+          "max": 7700000
+        },
+        {
+          "name": "bedrooms",
+          "type": "integer",
+          "min": 0,
+          "max": 33
+        },
+        {
+          "name": "bathrooms",
+          "type": "numeric",
+          "min": 0,
+          "max": 8
+        },
+        {
+          "name": "sqft_living",
+          "type": "integer",
+          "min": 290,
+          "max": 13540
+        },
+        {
+          "name": "sqft_lot",
+          "type": "integer",
+          "min": 520,
+          "max": 1651359
+        },
+        {
+          "name": "floors",
+          "type": "numeric",
+          "min": 1,
+          "max": 3.5
+        },
+        {
+          "name": "waterfront",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "view",
+          "type": "integer",
+          "min": 0,
+          "max": 4
+        },
+        {
+          "name": "condition",
+          "type": "integer",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "grade",
+          "type": "integer",
+          "min": 1,
+          "max": 13
+        },
+        {
+          "name": "sqft_above",
+          "type": "integer",
+          "min": 290,
+          "max": 9410
+        },
+        {
+          "name": "sqft_basement",
+          "type": "integer",
+          "min": 0,
+          "max": 4820
+        },
+        {
+          "name": "yr_built",
+          "type": "integer",
+          "min": 1900,
+          "max": 2015
+        },
+        {
+          "name": "yr_renovated",
+          "type": "integer",
+          "min": 0,
+          "max": 2015
+        },
+        {
+          "name": "zipcode",
+          "type": "integer",
+          "min": 98001,
+          "max": 98199
+        },
+        {
+          "name": "lat",
+          "type": "numeric",
+          "min": 47.1559,
+          "max": 47.7776
+        },
+        {
+          "name": "long",
+          "type": "numeric",
+          "min": -122.519,
+          "max": -121.315
+        },
+        {
+          "name": "sqft_living15",
+          "type": "integer",
+          "min": 399,
+          "max": 6210
+        },
+        {
+          "name": "sqft_lot15",
+          "type": "integer",
+          "min": 651,
+          "max": 871200
+        }
+      ]
+    },
+    {
+      "name": "humanization",
+      "fields": [
+        {
+          "name": "age",
+          "type": "numeric",
+          "min": 17,
+          "max": 74
+        },
+        {
+          "name": "gender",
+          "type": "factor",
+          "values": ["Male", "Female", "Other"]
+        },
+        {
+          "name": "group",
+          "type": "factor"
+        },
+        {
+          "name": "pak_sec",
+          "type": "numeric",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "pak_prim",
+          "type": "numeric",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "us_sec",
+          "type": "numeric",
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "us_prim",
+          "type": "numeric",
+          "min": 1,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "name": "leg_strength",
+      "fields": [
+        {
+          "name": "ID",
+          "type": "numeric",
+          "min": 1,
+          "max": 30
+        },
+        {
+          "name": "mean_wii",
+          "type": "numeric",
+          "min": 78.229,
+          "max": 279.9052
+        },
+        {
+          "name": "mean_sid",
+          "type": "numeric",
+          "min": 123.1767,
+          "max": 357.4762
+        }
+      ]
+    },
+    {
+      "name": "leg_strength_full",
+      "fields": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "min": 1,
+          "max": 30
+        },
+        {
+          "name": "wii_m1",
+          "type": "numeric",
+          "min": 80.3667,
+          "max": 265.8226
+        },
+        {
+          "name": "wii_m2",
+          "type": "numeric",
+          "min": 75.2971,
+          "max": 282.2389
+        },
+        {
+          "name": "wii_m3",
+          "type": "numeric",
+          "min": 76.666,
+          "max": 300.1411
+        },
+        {
+          "name": "wii_max3",
+          "type": "numeric",
+          "min": 80.3667,
+          "max": 335.9456
+        },
+        {
+          "name": "day2_wii_m1",
+          "type": "numeric",
+          "min": 72.1974,
+          "max": 271.448
+        },
+        {
+          "name": "day2_wii_m2",
+          "type": "numeric",
+          "min": 79.1473,
+          "max": 276.1691
+        },
+        {
+          "name": "day2_wii_m3",
+          "type": "numeric",
+          "min": 85.6833,
+          "max": 283.6115
+        },
+        {
+          "name": "day2_wii_max3",
+          "type": "numeric",
+          "min": 91.1504,
+          "max": 298.4963
+        },
+        {
+          "name": "sid_m1",
+          "type": "numeric",
+          "min": 105.2067,
+          "max": 311.0307
+        },
+        {
+          "name": "sid_m2",
+          "type": "numeric",
+          "min": 115.216,
+          "max": 341.2837
+        },
+        {
+          "name": "sid_m3",
+          "type": "numeric",
+          "min": 124.2609,
+          "max": 359.654
+        },
+        {
+          "name": "sid_max3",
+          "type": "numeric",
+          "min": 135.3048,
+          "max": 396.3945
+        },
+        {
+          "name": "day2_sid_m1",
+          "type": "numeric",
+          "min": 104.7848,
+          "max": 372.5734
+        },
+        {
+          "name": "day_2_sid_m2",
+          "type": "numeric",
+          "min": 118.1669,
+          "max": 378.6874
+        },
+        {
+          "name": "day_2_sid_m3",
+          "type": "numeric",
+          "min": 124.9214,
+          "max": 385.3119
+        },
+        {
+          "name": "day_2_sid_max3",
+          "type": "numeric",
+          "min": 128.4795,
+          "max": 398.5608
+        }
+      ]
+    },
+    {
+      "name": "letter_frequency",
+      "fields": [
+        {
+          "name": "letter",
+          "type": "character"
+        },
+        {
+          "name": "english",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.127
+        },
+        {
+          "name": "french",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1472
+        },
+        {
+          "name": "german",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.164
+        },
+        {
+          "name": "spanish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1218
+        },
+        {
+          "name": "portuguese",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1463
+        },
+        {
+          "name": "esperanto",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1212
+        },
+        {
+          "name": "italian",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1179
+        },
+        {
+          "name": "turkish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1192
+        },
+        {
+          "name": "swedish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1015
+        },
+        {
+          "name": "polish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.0891
+        },
+        {
+          "name": "dutch",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1891
+        },
+        {
+          "name": "danish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1545
+        },
+        {
+          "name": "icelandic",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1011
+        },
+        {
+          "name": "finnish",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.1222
+        }
+      ]
+    },
+    {
+      "name": "malaria",
+      "fields": [
+        {
+          "name": "sporozoite",
+          "type": "integer",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "name": "malaria",
+          "type": "integer",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "antibody",
+          "type": "factor",
+          "values": ["no", "yes"]
+        }
+      ]
+    },
+    {
+      "name": "masks",
+      "fields": [
+        {
+          "name": "obs",
+          "type": "numeric",
+          "min": 1,
+          "max": 37
+        },
+        {
+          "name": "mask_fine",
+          "type": "numeric",
+          "min": 0,
+          "max": 24239
+        },
+        {
+          "name": "no_mask_fine",
+          "type": "numeric",
+          "min": 0,
+          "max": 126587
+        },
+        {
+          "name": "nasal_swab",
+          "type": "numeric",
+          "min": 1725,
+          "max": 33750000
+        },
+        {
+          "name": "mask_coarse",
+          "type": "numeric",
+          "min": 0,
+          "max": 77
+        },
+        {
+          "name": "no_mask_coarse",
+          "type": "numeric",
+          "min": 0,
+          "max": 29118
+        },
+        {
+          "name": "pcr_type",
+          "type": "factor",
+          "values": ["A", "B"]
+        }
+      ]
+    },
+    {
+      "name": "mice_pot",
+      "fields": [
+        {
+          "name": "group",
+          "type": "factor",
+          "values": ["0.3", "1", "3", "VEH"]
+        },
+        {
+          "name": "percent_of_act",
+          "type": "numeric",
+          "min": 41.3873,
+          "max": 148.917
+        }
+      ]
+    },
+    {
+      "name": "movies",
+      "fields": [
+        {
+          "name": "userId",
+          "type": "integer",
+          "min": 1,
+          "max": 610
+        },
+        {
+          "name": "movieId",
+          "type": "integer",
+          "min": 1,
+          "max": 193609
+        },
+        {
+          "name": "rating",
+          "type": "numeric",
+          "min": 0.5,
+          "max": 5
+        },
+        {
+          "name": "timestamp",
+          "type": "integer",
+          "min": 828124615,
+          "max": 1537799250
+        },
+        {
+          "name": "title",
+          "type": "character"
+        },
+        {
+          "name": "genres",
+          "type": "character"
+        }
+      ]
+    },
+    {
+      "name": "normtemp",
+      "fields": [
+        {
+          "name": "temp",
+          "type": "numeric",
+          "min": 96.3,
+          "max": 100.8
+        },
+        {
+          "name": "gender",
+          "type": "integer",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "bpm",
+          "type": "integer",
+          "min": 57,
+          "max": 89
+        }
+      ]
+    },
+    {
+      "name": "plastics",
+      "fields": [
+        {
+          "name": "colour",
+          "type": "character"
+        },
+        {
+          "name": "length",
+          "type": "numeric",
+          "min": 64.52,
+          "max": 14313.49
+        },
+        {
+          "name": "diameter",
+          "type": "numeric",
+          "min": 3.84,
+          "max": 48.02
+        },
+        {
+          "name": "region",
+          "type": "character",
+          "values": ["Europe", "Arctic"]
+        }
+      ]
+    },
+    {
+      "name": "powerball",
+      "fields": [
+        {
+          "name": "Draw.Date",
+          "type": "Date"
+        },
+        {
+          "name": "Ball1",
+          "type": "integer",
+          "min": 1,
+          "max": 50
+        },
+        {
+          "name": "Ball2",
+          "type": "integer",
+          "min": 2,
+          "max": 61
+        },
+        {
+          "name": "Ball3",
+          "type": "integer",
+          "min": 3,
+          "max": 64
+        },
+        {
+          "name": "Ball4",
+          "type": "integer",
+          "min": 7,
+          "max": 68
+        },
+        {
+          "name": "Ball5",
+          "type": "integer",
+          "min": 19,
+          "max": 69
+        },
+        {
+          "name": "Ball6",
+          "type": "integer",
+          "min": 1,
+          "max": 39
+        },
+        {
+          "name": "Multiplier",
+          "type": "integer",
+          "min": 2,
+          "max": 10
+        }
+      ]
+    },
+    {
+      "name": "pres_election",
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "min": 2000,
+          "max": 2016
+        },
+        {
+          "name": "state",
+          "type": "character"
+        },
+        {
+          "name": "state_po",
+          "type": "character"
+        },
+        {
+          "name": "county",
+          "type": "character"
+        },
+        {
+          "name": "FIPS",
+          "type": "integer",
+          "min": 1001,
+          "max": 56045
+        },
+        {
+          "name": "candidate",
+          "type": "character"
+        },
+        {
+          "name": "party",
+          "type": "character",
+          "values": ["democrat", "republican", "green"]
+        },
+        {
+          "name": "candidatevotes",
+          "type": "integer",
+          "min": 0,
+          "max": 2464364
+        },
+        {
+          "name": "totalvotes",
+          "type": "integer",
+          "min": 0,
+          "max": 3434308
+        }
+      ]
+    },
+    {
+      "name": "rio_instagram",
+      "fields": [
+        {
+          "name": "sport",
+          "type": "character"
+        },
+        {
+          "name": "country",
+          "type": "character"
+        },
+        {
+          "name": "name",
+          "type": "character"
+        },
+        {
+          "name": "gender",
+          "type": "factor",
+          "values": ["m", "f"]
+        },
+        {
+          "name": "id",
+          "type": "character"
+        },
+        {
+          "name": "n_post",
+          "type": "numeric",
+          "min": 11,
+          "max": 2155
+        },
+        {
+          "name": "n_follower",
+          "type": "numeric",
+          "min": 242,
+          "max": 9233024
+        },
+        {
+          "name": "n_following",
+          "type": "numeric",
+          "min": 1,
+          "max": 6004
+        },
+        {
+          "name": "max_like",
+          "type": "numeric",
+          "min": 28,
+          "max": 395660
+        },
+        {
+          "name": "max_comment_for_max_like",
+          "type": "numeric",
+          "min": 0,
+          "max": 17500
+        },
+        {
+          "name": "self_presenting",
+          "type": "numeric",
+          "min": 3,
+          "max": 10
+        },
+        {
+          "name": "pure_self_presenting",
+          "type": "numeric",
+          "min": 0,
+          "max": 10
+        },
+        {
+          "name": "age",
+          "type": "numeric",
+          "min": 21,
+          "max": 46
+        },
+        {
+          "name": "date",
+          "type": "POSIXct"
+        }
+      ]
+    },
+    {
+      "name": "scotland_births",
+      "fields": [
+        {
+          "name": "age",
+          "type": "integer",
+          "min": 12,
+          "max": 56
+        },
+        {
+          "name": "x1945",
+          "type": "integer",
+          "min": 0,
+          "max": 5716
+        },
+        {
+          "name": "x1946",
+          "type": "integer",
+          "min": 0,
+          "max": 6479
+        },
+        {
+          "name": "x1947",
+          "type": "integer",
+          "min": 0,
+          "max": 7337
+        },
+        {
+          "name": "x1948",
+          "type": "integer",
+          "min": 0,
+          "max": 6532
+        },
+        {
+          "name": "x1949",
+          "type": "integer",
+          "min": 0,
+          "max": 6192
+        },
+        {
+          "name": "x1950",
+          "type": "integer",
+          "min": 0,
+          "max": 6072
+        },
+        {
+          "name": "x1951",
+          "type": "integer",
+          "min": 0,
+          "max": 6058
+        },
+        {
+          "name": "x1952",
+          "type": "integer",
+          "min": 0,
+          "max": 6230
+        },
+        {
+          "name": "x1953",
+          "type": "integer",
+          "min": 0,
+          "max": 6018
+        },
+        {
+          "name": "x1954",
+          "type": "integer",
+          "min": 0,
+          "max": 6495
+        },
+        {
+          "name": "x1955",
+          "type": "integer",
+          "min": 0,
+          "max": 6702
+        },
+        {
+          "name": "x1956",
+          "type": "integer",
+          "min": 0,
+          "max": 6666
+        },
+        {
+          "name": "x1957",
+          "type": "integer",
+          "min": 0,
+          "max": 6964
+        },
+        {
+          "name": "x1958",
+          "type": "integer",
+          "min": 0,
+          "max": 7052
+        },
+        {
+          "name": "x1959",
+          "type": "integer",
+          "min": 0,
+          "max": 6945
+        },
+        {
+          "name": "x1960",
+          "type": "integer",
+          "min": 0,
+          "max": 7307
+        },
+        {
+          "name": "x1961",
+          "type": "integer",
+          "min": 0,
+          "max": 7318
+        },
+        {
+          "name": "x1962",
+          "type": "integer",
+          "min": 0,
+          "max": 7508
+        },
+        {
+          "name": "x1963",
+          "type": "integer",
+          "min": 0,
+          "max": 7563
+        },
+        {
+          "name": "x1964",
+          "type": "integer",
+          "min": 0,
+          "max": 7511
+        },
+        {
+          "name": "x1965",
+          "type": "integer",
+          "min": 0,
+          "max": 7023
+        },
+        {
+          "name": "x1966",
+          "type": "integer",
+          "min": 0,
+          "max": 7010
+        },
+        {
+          "name": "x1967",
+          "type": "integer",
+          "min": 0,
+          "max": 7008
+        },
+        {
+          "name": "x1968",
+          "type": "integer",
+          "min": 0,
+          "max": 7342
+        },
+        {
+          "name": "x1969",
+          "type": "integer",
+          "min": 0,
+          "max": 7179
+        },
+        {
+          "name": "x1970",
+          "type": "integer",
+          "min": 0,
+          "max": 7457
+        },
+        {
+          "name": "x1971",
+          "type": "integer",
+          "min": 0,
+          "max": 7527
+        },
+        {
+          "name": "x1972",
+          "type": "integer",
+          "min": 0,
+          "max": 6971
+        },
+        {
+          "name": "x1973",
+          "type": "integer",
+          "min": 0,
+          "max": 6339
+        },
+        {
+          "name": "x1974",
+          "type": "integer",
+          "min": 0,
+          "max": 5649
+        },
+        {
+          "name": "x1975",
+          "type": "integer",
+          "min": 0,
+          "max": 5339
+        },
+        {
+          "name": "x1976",
+          "type": "integer",
+          "min": 0,
+          "max": 5078
+        },
+        {
+          "name": "x1977",
+          "type": "integer",
+          "min": 0,
+          "max": 4707
+        },
+        {
+          "name": "x1978",
+          "type": "integer",
+          "min": 0,
+          "max": 4866
+        },
+        {
+          "name": "x1979",
+          "type": "integer",
+          "min": 0,
+          "max": 5283
+        },
+        {
+          "name": "x1980",
+          "type": "integer",
+          "min": 0,
+          "max": 5102
+        },
+        {
+          "name": "x1981",
+          "type": "integer",
+          "min": 0,
+          "max": 5322
+        },
+        {
+          "name": "x1982",
+          "type": "integer",
+          "min": 0,
+          "max": 4984
+        },
+        {
+          "name": "x1983",
+          "type": "integer",
+          "min": 0,
+          "max": 5011
+        },
+        {
+          "name": "x1984",
+          "type": "integer",
+          "min": 0,
+          "max": 5060
+        },
+        {
+          "name": "x1985",
+          "type": "integer",
+          "min": 0,
+          "max": 5209
+        },
+        {
+          "name": "x1986",
+          "type": "integer",
+          "min": 0,
+          "max": 5033
+        },
+        {
+          "name": "x1987",
+          "type": "integer",
+          "min": 0,
+          "max": 4975
+        },
+        {
+          "name": "x1988",
+          "type": "integer",
+          "min": 0,
+          "max": 5051
+        },
+        {
+          "name": "x1989",
+          "type": "integer",
+          "min": 0,
+          "max": 4759
+        },
+        {
+          "name": "x1990",
+          "type": "integer",
+          "min": 0,
+          "max": 5093
+        },
+        {
+          "name": "x1991",
+          "type": "integer",
+          "min": 0,
+          "max": 5070
+        },
+        {
+          "name": "x1992",
+          "type": "integer",
+          "min": 0,
+          "max": 4948
+        },
+        {
+          "name": "x1993",
+          "type": "integer",
+          "min": 0,
+          "max": 4771
+        },
+        {
+          "name": "x1994",
+          "type": "integer",
+          "min": 0,
+          "max": 4637
+        },
+        {
+          "name": "x1995",
+          "type": "integer",
+          "min": 0,
+          "max": 4331
+        },
+        {
+          "name": "x1996",
+          "type": "integer",
+          "min": 0,
+          "max": 4244
+        },
+        {
+          "name": "x1997",
+          "type": "integer",
+          "min": 0,
+          "max": 4296
+        },
+        {
+          "name": "x1998",
+          "type": "integer",
+          "min": 0,
+          "max": 4073
+        },
+        {
+          "name": "x1999",
+          "type": "integer",
+          "min": 0,
+          "max": 3879
+        },
+        {
+          "name": "x2000",
+          "type": "integer",
+          "min": 0,
+          "max": 3731
+        },
+        {
+          "name": "x2001",
+          "type": "integer",
+          "min": 0,
+          "max": 3637
+        },
+        {
+          "name": "x2002",
+          "type": "integer",
+          "min": 0,
+          "max": 3575
+        },
+        {
+          "name": "x2003",
+          "type": "integer",
+          "min": 0,
+          "max": 3558
+        },
+        {
+          "name": "x2004",
+          "type": "integer",
+          "min": 0,
+          "max": 3419
+        },
+        {
+          "name": "x2005",
+          "type": "integer",
+          "min": 0,
+          "max": 3278
+        },
+        {
+          "name": "x2006",
+          "type": "integer",
+          "min": 0,
+          "max": 3314
+        },
+        {
+          "name": "x2007",
+          "type": "integer",
+          "min": 0,
+          "max": 3300
+        },
+        {
+          "name": "x2008",
+          "type": "integer",
+          "min": 0,
+          "max": 3542
+        },
+        {
+          "name": "x2009",
+          "type": "integer",
+          "min": 0,
+          "max": 3495
+        },
+        {
+          "name": "x2010",
+          "type": "integer",
+          "min": 0,
+          "max": 3702
+        },
+        {
+          "name": "x2011",
+          "type": "integer",
+          "min": 0,
+          "max": 3842
+        },
+        {
+          "name": "x2012",
+          "type": "integer",
+          "min": 0,
+          "max": 3824
+        },
+        {
+          "name": "x2013",
+          "type": "integer",
+          "min": 0,
+          "max": 3738
+        },
+        {
+          "name": "x2014",
+          "type": "integer",
+          "min": 0,
+          "max": 3795
+        },
+        {
+          "name": "x2015",
+          "type": "integer",
+          "min": 0,
+          "max": 3754
+        },
+        {
+          "name": "x2016",
+          "type": "integer",
+          "min": 0,
+          "max": 3723
+        },
+        {
+          "name": "x2017",
+          "type": "integer",
+          "min": 0,
+          "max": 3520
+        },
+        {
+          "name": "x2018",
+          "type": "integer",
+          "min": 0,
+          "max": 3533
+        },
+        {
+          "name": "x2019",
+          "type": "integer",
+          "min": 0,
+          "max": 3513
+        }
+      ]
+    },
+    {
+      "name": "scrabble",
+      "fields": [
+        {
+          "name": "piece",
+          "type": "character"
+        },
+        {
+          "name": "points",
+          "type": "integer",
+          "min": 0,
+          "max": 10
+        }
+      ]
+    },
+    {
+      "name": "scrabble_ml",
+      "fields": [
+        {
+          "name": "lang",
+          "type": "character"
+        },
+        {
+          "name": "piece",
+          "type": "character"
+        },
+        {
+          "name": "points",
+          "type": "integer",
+          "min": 0,
+          "max": 10
+        }
+      ]
+    },
+    {
+      "name": "seoulweather",
+      "fields": [
+        {
+          "name": "station",
+          "type": "integer",
+          "min": 1,
+          "max": 25
+        },
+        {
+          "name": "date",
+          "type": "character"
+        },
+        {
+          "name": "present_tmax",
+          "type": "numeric",
+          "min": 20,
+          "max": 37.6
+        },
+        {
+          "name": "present_tmin",
+          "type": "numeric",
+          "min": 11.3,
+          "max": 29.9
+        },
+        {
+          "name": "ldaps_r_hmin",
+          "type": "numeric",
+          "min": 19.7947,
+          "max": 98.5247
+        },
+        {
+          "name": "ldaps_r_hmax",
+          "type": "numeric",
+          "min": 58.9363,
+          "max": 100.0002
+        },
+        {
+          "name": "ldaps_tmax_lapse",
+          "type": "numeric",
+          "min": 17.625,
+          "max": 38.5423
+        },
+        {
+          "name": "ldaps_tmin_lapse",
+          "type": "numeric",
+          "min": 14.2726,
+          "max": 29.6193
+        },
+        {
+          "name": "ldaps_ws",
+          "type": "numeric",
+          "min": 2.8826,
+          "max": 21.8576
+        },
+        {
+          "name": "ldaps_lh",
+          "type": "numeric",
+          "min": -13.6032,
+          "max": 213.414
+        },
+        {
+          "name": "ldaps_cc1",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.9673
+        },
+        {
+          "name": "ldaps_cc2",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.9684
+        },
+        {
+          "name": "ldaps_cc3",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.9838
+        },
+        {
+          "name": "ldaps_cc4",
+          "type": "numeric",
+          "min": 0,
+          "max": 0.9747
+        },
+        {
+          "name": "ldaps_ppt1",
+          "type": "numeric",
+          "min": 0,
+          "max": 23.7015
+        },
+        {
+          "name": "ldaps_ppt2",
+          "type": "numeric",
+          "min": 0,
+          "max": 21.6217
+        },
+        {
+          "name": "ldaps_ppt3",
+          "type": "numeric",
+          "min": 0,
+          "max": 15.8412
+        },
+        {
+          "name": "ldaps_ppt4",
+          "type": "numeric",
+          "min": 0,
+          "max": 16.6555
+        },
+        {
+          "name": "lat",
+          "type": "numeric",
+          "min": 37.4562,
+          "max": 37.645
+        },
+        {
+          "name": "lon",
+          "type": "numeric",
+          "min": 126.826,
+          "max": 127.135
+        },
+        {
+          "name": "dem",
+          "type": "numeric",
+          "min": 12.37,
+          "max": 212.335
+        },
+        {
+          "name": "slope",
+          "type": "numeric",
+          "min": 0.0985,
+          "max": 5.1782
+        },
+        {
+          "name": "solar_radiation",
+          "type": "numeric",
+          "min": 4329.5205,
+          "max": 5992.896
+        },
+        {
+          "name": "next_tmax",
+          "type": "numeric",
+          "min": 17.4,
+          "max": 38.9
+        },
+        {
+          "name": "next_tmin",
+          "type": "numeric",
+          "min": 11.3,
+          "max": 29.8
+        }
+      ]
+    },
+    {
+      "name": "sharks",
+      "fields": [
+        {
+          "name": "av",
+          "type": "factor",
+          "values": ["audio", "video"]
+        },
+        {
+          "name": "music",
+          "type": "factor",
+          "values": ["ominous", "uplifting", "silence"]
+        },
+        {
+          "name": "scary",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "dangerous",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "vicious",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "peaceful",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "beautiful",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "graceful",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "free_response",
+          "type": "character"
+        },
+        {
+          "name": "conserve",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "gender",
+          "type": "numeric",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "age",
+          "type": "numeric",
+          "min": 18,
+          "max": 65
+        },
+        {
+          "name": "race_ethnicity",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        },
+        {
+          "name": "annual_income",
+          "type": "numeric",
+          "min": 1,
+          "max": 9
+        },
+        {
+          "name": "political_views",
+          "type": "numeric",
+          "min": 1,
+          "max": 7
+        }
+      ]
+    },
+    {
+      "name": "skull_geometry",
+      "fields": [
+        {
+          "name": "age_mos",
+          "type": "numeric",
+          "min": 0.27,
+          "max": 39.6
+        },
+        {
+          "name": "circumference_cm",
+          "type": "numeric",
+          "min": 31.28,
+          "max": 51.64
+        }
+      ]
+    },
+    {
+      "name": "snails",
+      "fields": [
+        {
+          "name": "Location",
+          "type": "character"
+        },
+        {
+          "name": "Habitat",
+          "type": "factor"
+        },
+        {
+          "name": "Color",
+          "type": "factor",
+          "values": ["Yellow", "Pink", "Brown"]
+        },
+        {
+          "name": "Banding",
+          "type": "factor",
+          "values": ["X00000", "X00300", "X12345", "Others"]
+        },
+        {
+          "name": "Count",
+          "type": "integer",
+          "min": 0,
+          "max": 185
+        }
+      ]
+    },
+    {
+      "name": "weight_estimate",
+      "fields": [
+        {
+          "name": "id",
+          "type": "character"
+        },
+        {
+          "name": "height",
+          "type": "integer",
+          "min": 110,
+          "max": 185
+        },
+        {
+          "name": "mean100",
+          "type": "numeric",
+          "min": 68.75,
+          "max": 370
+        },
+        {
+          "name": "mean200",
+          "type": "numeric",
+          "min": 60,
+          "max": 380
+        },
+        {
+          "name": "mean300",
+          "type": "numeric",
+          "min": 100,
+          "max": 410
+        },
+        {
+          "name": "mean400",
+          "type": "numeric",
+          "min": 210,
+          "max": 450
+        },
+        {
+          "name": "age",
+          "type": "factor",
+          "values": ["6", "8", "10", "adult"]
+        }
+      ]
+    },
+    {
+      "name": "world_cup",
+      "fields": [
+        {
+          "name": "team_1",
+          "type": "character"
+        },
+        {
+          "name": "score_1",
+          "type": "integer",
+          "min": 0,
+          "max": 10
+        },
+        {
+          "name": "team_2",
+          "type": "character"
+        },
+        {
+          "name": "score_2",
+          "type": "numeric",
+          "min": 0,
+          "max": 3
+        },
+        {
+          "name": "game",
+          "type": "character"
+        },
+        {
+          "name": "date",
+          "type": "character"
+        },
+        {
+          "name": "notes",
+          "type": "character"
+        },
+        {
+          "name": "competition",
+          "type": "character",
+          "values": ["2014 FIFA Men's World Cup", "2015 FIFA Women's World Cup"]
+        }
+      ]
+    },
+    {
+      "name": "wrist",
+      "fields": [
+        {
+          "name": "id",
+          "type": "character"
+        },
+        {
+          "name": "age",
+          "type": "numeric",
+          "min": 65,
+          "max": 94
+        },
+        {
+          "name": "sex",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "handed_side",
+          "type": "numeric",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "centre",
+          "type": "numeric",
+          "min": 1,
+          "max": 3
+        },
+        {
+          "name": "fracture_side",
+          "type": "numeric",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "cast_position",
+          "type": "numeric",
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "pcs_start",
+          "type": "numeric",
+          "min": 0,
+          "max": 47
+        },
+        {
+          "name": "operativetreatment",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "pain03m",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "stiffness03m",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "grip_strength_fractured_site",
+          "type": "numeric",
+          "min": 2,
+          "max": 32
+        },
+        {
+          "name": "grip_strength_controlled_site",
+          "type": "numeric",
+          "min": 6,
+          "max": 54
+        },
+        {
+          "name": "grip_strength_proportion",
+          "type": "numeric",
+          "min": 0.0667,
+          "max": 1
+        },
+        {
+          "name": "times_outside_from_home",
+          "type": "numeric",
+          "min": 0,
+          "max": 14
+        },
+        {
+          "name": "distance_per_week",
+          "type": "numeric",
+          "min": 0,
+          "max": 17.5
+        },
+        {
+          "name": "ancillary_inside",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "ancillary_outside",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "guided_physiotherapy",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "guided_physiotherapy_times",
+          "type": "numeric",
+          "min": 0,
+          "max": 15
+        },
+        {
+          "name": "cast_changes",
+          "type": "numeric",
+          "min": 0,
+          "max": 3
+        },
+        {
+          "name": "x15d3m",
+          "type": "numeric",
+          "min": 0.4428,
+          "max": 1
+        },
+        {
+          "name": "x15d12m",
+          "type": "numeric",
+          "min": 0.5441,
+          "max": 1
+        },
+        {
+          "name": "uv_3m",
+          "type": "numeric",
+          "min": -2.2,
+          "max": 12.1
+        },
+        {
+          "name": "inclination_3m",
+          "type": "numeric",
+          "min": 7,
+          "max": 25
+        },
+        {
+          "name": "angulation_3m",
+          "type": "numeric",
+          "min": -10,
+          "max": 35
+        },
+        {
+          "name": "uv_cast",
+          "type": "numeric",
+          "min": -3.6,
+          "max": 9
+        },
+        {
+          "name": "inclination_cast",
+          "type": "numeric",
+          "min": 9,
+          "max": 26
+        },
+        {
+          "name": "angluation_cast",
+          "type": "numeric",
+          "min": -10,
+          "max": 32
+        },
+        {
+          "name": "wrist_flexion_in_cast",
+          "type": "numeric",
+          "min": -38,
+          "max": 23
+        },
+        {
+          "name": "x3mcpra_dulnardeviationdg",
+          "type": "numeric",
+          "min": -6,
+          "max": 24.5
+        },
+        {
+          "name": "uv_pre",
+          "type": "numeric",
+          "min": -2.5,
+          "max": 17.1
+        },
+        {
+          "name": "inclination_pre",
+          "type": "numeric",
+          "min": 4,
+          "max": 26
+        },
+        {
+          "name": "angulation_pre",
+          "type": "numeric",
+          "min": 0.5,
+          "max": 50
+        },
+        {
+          "name": "articulariness",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "psu_fracture",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "qd3m",
+          "type": "numeric",
+          "min": 0,
+          "max": 89
+        },
+        {
+          "name": "qd12m",
+          "type": "numeric",
+          "min": 0,
+          "max": 75
+        },
+        {
+          "name": "vas3m",
+          "type": "numeric",
+          "min": 0,
+          "max": 76
+        },
+        {
+          "name": "vas12m",
+          "type": "numeric",
+          "min": 0,
+          "max": 73
+        },
+        {
+          "name": "pcs3m",
+          "type": "numeric",
+          "min": 0,
+          "max": 42
+        },
+        {
+          "name": "pcs12m",
+          "type": "numeric",
+          "min": 0,
+          "max": 47
+        },
+        {
+          "name": "cast_change_category",
+          "type": "numeric",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "prwe12m",
+          "type": "numeric",
+          "min": 0,
+          "max": 81.5
+        },
+        {
+          "name": "prwe3m",
+          "type": "numeric",
+          "min": 0,
+          "max": 90
+        },
+        {
+          "name": "d_pcs1",
+          "type": "numeric",
+          "min": -27,
+          "max": 36
+        },
+        {
+          "name": "d_pcs2",
+          "type": "numeric",
+          "min": -21,
+          "max": 39
+        }
+      ]
+    }
+  ]
+}
