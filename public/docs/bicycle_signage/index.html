@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bicycle_signage# Initialization# data &lt;- fosdata::bicycle_signageAccessing fields# data &lt;- fosdata::bicycle_signage education &lt;- data$educationLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::bicycle_signage dataset containing the following fields: fields[11]{name,type,values}: treatment,character,[1_None,4_BMUFL,2_STR,3_SLM] bike_move_right2,factor,[1_Agree,0_Disagree] mv_wait2,factor,[0_Disagree,1_Agree] permitted2,factor,[1_Agree,0_Disagree] safe2,factor,[1_Agree,0_Disagree] cycle_distance,factor,[More than 50 miles,11 - 50 miles,Less than 10 miles,None] mv_distance,factor,[Less than 50 miles,None,51 - 200 Miles,More than 200 Miles] commute_type2,factor,[Other,MotorVehicle] state,character,n/a gender,factor,[Male,Female] education,factor,[4-Year College,Graduate Degree,Community College,High School,Did not graduate high school] Fields# Name Type Min Max Values treatment character - - 1_None, 4_BMUFL, 2_STR, 3_SLM bike_move_right2 factor - - 1_Agree, 0_Disagree mv_wait2 factor - - 0_Disagree, 1_Agree permitted2 factor - - 1_Agree, 0_Disagree safe2 factor - - 1_Agree, 0_Disagree cycle_distance factor - - More than 50 miles, 11 - 50 miles, Less than 10 miles, None mv_distance factor - - Less than 50 miles, None, 51 - 200 Miles, More than 200 Miles commute_type2 factor - - Other, MotorVehicle state character - - - gender factor - - Male, Female education factor - - 4-Year College, Graduate Degree, Community College, High School, Did not graduate high school ">
+<meta name="description" content="Bicycle_signage# Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.
+From the authors: “Many global challenges, including obesity, health care costs, and climate change, could be addressed in part by increasing the use of bicycles for transportation. Concern about the safety of bicycling on roadways is frequently cited as a deterrent to increasing bicycle use in the USA. The use of effective signage along roadways might help alleviate these concerns by increasing knowledge about the rights and duties of bicyclists and motorists, ideally reducing crashes.”
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/bicycle_signage/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="bicycle_signage">
-  <meta property="og:description" content="Bicycle_signage# Initialization# data &lt;- fosdata::bicycle_signageAccessing fields# data &lt;- fosdata::bicycle_signage education &lt;- data$educationLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::bicycle_signage dataset containing the following fields: fields[11]{name,type,values}: treatment,character,[1_None,4_BMUFL,2_STR,3_SLM] bike_move_right2,factor,[1_Agree,0_Disagree] mv_wait2,factor,[0_Disagree,1_Agree] permitted2,factor,[1_Agree,0_Disagree] safe2,factor,[1_Agree,0_Disagree] cycle_distance,factor,[More than 50 miles,11 - 50 miles,Less than 10 miles,None] mv_distance,factor,[Less than 50 miles,None,51 - 200 Miles,More than 200 Miles] commute_type2,factor,[Other,MotorVehicle] state,character,n/a gender,factor,[Male,Female] education,factor,[4-Year College,Graduate Degree,Community College,High School,Did not graduate high school] Fields# Name Type Min Max Values treatment character - - 1_None, 4_BMUFL, 2_STR, 3_SLM bike_move_right2 factor - - 1_Agree, 0_Disagree mv_wait2 factor - - 0_Disagree, 1_Agree permitted2 factor - - 1_Agree, 0_Disagree safe2 factor - - 1_Agree, 0_Disagree cycle_distance factor - - More than 50 miles, 11 - 50 miles, Less than 10 miles, None mv_distance factor - - Less than 50 miles, None, 51 - 200 Miles, More than 200 Miles commute_type2 factor - - Other, MotorVehicle state character - - - gender factor - - Male, Female education factor - - 4-Year College, Graduate Degree, Community College, High School, Did not graduate high school">
+  <meta property="og:description" content="Bicycle_signage# Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.
+From the authors: “Many global challenges, including obesity, health care costs, and climate change, could be addressed in part by increasing the use of bicycles for transportation. Concern about the safety of bicycling on roadways is frequently cited as a deterrent to increasing bicycle use in the USA. The use of effective signage along roadways might help alleviate these concerns by increasing knowledge about the rights and duties of bicyclists and motorists, ideally reducing crashes.”">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="bicycle_signage">
-  <meta itemprop="description" content="Bicycle_signage# Initialization# data &lt;- fosdata::bicycle_signageAccessing fields# data &lt;- fosdata::bicycle_signage education &lt;- data$educationLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::bicycle_signage dataset containing the following fields: fields[11]{name,type,values}: treatment,character,[1_None,4_BMUFL,2_STR,3_SLM] bike_move_right2,factor,[1_Agree,0_Disagree] mv_wait2,factor,[0_Disagree,1_Agree] permitted2,factor,[1_Agree,0_Disagree] safe2,factor,[1_Agree,0_Disagree] cycle_distance,factor,[More than 50 miles,11 - 50 miles,Less than 10 miles,None] mv_distance,factor,[Less than 50 miles,None,51 - 200 Miles,More than 200 Miles] commute_type2,factor,[Other,MotorVehicle] state,character,n/a gender,factor,[Male,Female] education,factor,[4-Year College,Graduate Degree,Community College,High School,Did not graduate high school] Fields# Name Type Min Max Values treatment character - - 1_None, 4_BMUFL, 2_STR, 3_SLM bike_move_right2 factor - - 1_Agree, 0_Disagree mv_wait2 factor - - 0_Disagree, 1_Agree permitted2 factor - - 1_Agree, 0_Disagree safe2 factor - - 1_Agree, 0_Disagree cycle_distance factor - - More than 50 miles, 11 - 50 miles, Less than 10 miles, None mv_distance factor - - Less than 50 miles, None, 51 - 200 Miles, More than 200 Miles commute_type2 factor - - Other, MotorVehicle state character - - - gender factor - - Male, Female education factor - - 4-Year College, Graduate Degree, Community College, High School, Did not graduate high school">
-  <meta itemprop="wordCount" content="193">
+  <meta itemprop="description" content="Bicycle_signage# Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.
+From the authors: “Many global challenges, including obesity, health care costs, and climate change, could be addressed in part by increasing the use of bicycles for transportation. Concern about the safety of bicycling on roadways is frequently cited as a deterrent to increasing bicycle use in the USA. The use of effective signage along roadways might help alleviate these concerns by increasing knowledge about the rights and duties of bicyclists and motorists, ideally reducing crashes.”">
+  <meta itemprop="wordCount" content="462">
 
 <title>bicycle_signage | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::bicycle_signage dataset containing the following f
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::bicycle_signage dataset containing the following f
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +863,13 @@ LLM Instructions The fosdata::bicycle_signage dataset containing the following f
       
       
   <article class="markdown book-article"><h1 id="bicycle_signage">Bicycle_signage<a class="anchor" href="#bicycle_signage">#</a></h1>
+<p>Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.</p>
+<p>From the authors: &ldquo;Many global challenges, including obesity, health care costs, and climate change, could be addressed in part by increasing the use of bicycles for transportation. Concern about the safety of bicycling on roadways is frequently cited as a deterrent to increasing bicycle use in the USA. The use of effective signage along roadways might help alleviate these concerns by increasing knowledge about the rights and duties of bicyclists and motorists, ideally reducing crashes.&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>bicycle_signage</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>bicycle_signage</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>bicycle_signage
-</span></span><span style="display:flex;"><span>education <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>education</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>mv_distance <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>mv_distance</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::bicycle_signage dataset containing the following fields:
@@ -886,6 +891,7 @@ fields[11]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -895,6 +901,7 @@ fields[11]{name,type,values}:
   <tbody>
       <tr>
           <td><code>treatment</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">The traffic control device the respondent viewed. 1_None (no signage); 2_STR (Share the Road signage); 3_SLM (Shared Lane Markings); 4_BMUFL (Bicycles May Use Full Lane signage)</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -902,6 +909,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>bike_move_right2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Response to the bicyclist should move to the right and allow the following motorist to pass within the lane.</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -909,6 +917,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>mv_wait2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Response to the motorist behind the bicyclist should slow and wait for a break in incoming traffic before passing in the adjacent lane. 0_Disagree; 1_Agree</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -916,6 +925,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>permitted2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Response to the bicyclist is permitted to ride in the center of the lane.</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -923,6 +933,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>safe2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Response to it is safe for the bicyclists to ride in the center of the lane.</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -930,6 +941,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>cycle_distance</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many miles do you bicycle during a typical week</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -937,6 +949,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>mv_distance</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many miles do you drive a motor vehicle during a typical week</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -944,6 +957,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>commute_type2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">CommuteType recoded to motor vehicle or something else</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -951,6 +965,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>state</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">State of residence</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -958,6 +973,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>gender</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Male or female</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -965,6 +981,7 @@ fields[11]{name,type,values}:
       </tr>
       <tr>
           <td><code>education</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Level of education</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -972,6 +989,8 @@ fields[11]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>Hess G, Peterson MN (2015) “Bicycles May Use Full Lane” Signage Communicates U.S. Roadway Rules and Increases Perception of Safety. PLoS ONE 10(8): e0136973. <a href="https://doi.org/10.1371/journal.pone.0136973">https://doi.org/10.1371/journal.pone.0136973</a></p>
 </article>
  
       
@@ -1053,6 +1072,7 @@ fields[11]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

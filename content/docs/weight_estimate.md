@@ -4,9 +4,14 @@ title: "weight_estimate"
 
 # Weight_estimate
 
+Humans are able to estimate the weight of an object by watching how another person interacts with the object. Eighty subjects of various ages were asked to estimate the weight of objects of various weights after watching a video of an actor interacting with the weights.
+
+From the authors: "Humans are excellent at perceiving different features of the actions performed by others. For instance, by viewing someone else manipulating an unknown object, one can infer its weight–an intrinsic feature otherwise not directly accessible through vision. How such perceptual skill develops during childhood remains unclear."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::weight_estimate
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::weight_estimate
 
 ```r
 data <- fosdata::weight_estimate
-mean100 <- data$mean100
+height <- data$height
 ```
 
 ## LLM instructions
@@ -38,12 +43,17 @@ fields[7]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `id` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `height` | <u style="text-decoration-style: dotted;">integer</u> | 110 | 185 | - |
-| `mean100` | <u style="text-decoration-style: dotted;">numeric</u> | 68.75 | 370 | - |
-| `mean200` | <u style="text-decoration-style: dotted;">numeric</u> | 60 | 380 | - |
-| `mean300` | <u style="text-decoration-style: dotted;">numeric</u> | 100 | 410 | - |
-| `mean400` | <u style="text-decoration-style: dotted;">numeric</u> | 210 | 450 | - |
-| `age` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `6`, `8`, `10`, `adult` |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `id` | <span style="font-size: 0.7em; display: inline-block;">ID</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `height` | <span style="font-size: 0.7em; display: inline-block;">Height of subject in cm.</span> | <u style="text-decoration-style: dotted;">integer</u> | 110 | 185 | - |
+| `mean100` | <span style="font-size: 0.7em; display: inline-block;">Mean of estimated weight for objects that weighed 100 g.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 68.75 | 370 | - |
+| `mean200` | <span style="font-size: 0.7em; display: inline-block;">Mean of estimated weight for objects that weighed 200 g.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 60 | 380 | - |
+| `mean300` | <span style="font-size: 0.7em; display: inline-block;">Mean of estimated weight for objects that weighed 300 g.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 100 | 410 | - |
+| `mean400` | <span style="font-size: 0.7em; display: inline-block;">Mean of estimated weight for objects that weighed 400 g.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 210 | 450 | - |
+| `age` | <span style="font-size: 0.7em; display: inline-block;">Age group that the subject is in. Factor with levels 6, 8, 10 and adult.</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `6`, `8`, `10`, `adult` |
+
+## Source
+
+Sciutti A, Patanè L, Sandini G (2019) Development of visual perception of others’ actions: Children’s judgment of lifted weight. PLoS ONE 14(11): e0224979 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0224979 Sciutti Alessandra, Patane' Laura, & Sandini Giulio. (2019). Dataset - weight lifting judgment in children [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3524881
+

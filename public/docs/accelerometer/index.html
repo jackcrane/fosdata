@@ -8,24 +8,22 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Accelerometer# Initialization# data &lt;- fosdata::accelerometerAccessing fields# data &lt;- fosdata::accelerometer participant_gender &lt;- data$participant_genderLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::accelerometer dataset containing the following fields: fields[25]{name,type,values}: participant,numeric,n/a machine,character,n/a set,numeric,n/a contraction_mode,character,n/a time_video_rater_cv_ms,numeric,n/a time_video_rater_dg_ms,numeric,n/a time_smartphone_1_ms,numeric,n/a time_smartphone_2_ms,numeric,n/a video_rater_mean_ms,numeric,n/a smartphones_mean_ms,numeric,n/a relative_difference,numeric,n/a difference_video_smartphone_ms,numeric,n/a mean_video_smartphone_ms,numeric,n/a contraction_mode_levels,character,[Con,Ecc,Rep,TuT] difference_video_raters_ms,numeric,n/a difference_smartphones_ms,numeric,n/a video_smartphone_difference_outlier,logical,[FALSE,TRUE] rater_difference_outlier,logical,[FALSE,TRUE] smartphone_difference_outlier,logical,[FALSE,TRUE] normalized_error_smartphone,numeric,n/a participant_age_levels,character,[young,old] participant_age_years,numeric,n/a participant_height_cm,numeric,n/a participant_weight_kg,numeric,n/a participant_gender,character,[m,f] Fields# Name Type Min Max Values participant numeric 1 22 - machine character - - - set numeric 1 2 - contraction_mode character - - - time_video_rater_cv_ms numeric 460 91900 - time_video_rater_dg_ms numeric 460 91880 - time_smartphone_1_ms numeric - 90000 - time_smartphone_2_ms numeric - 90800 - video_rater_mean_ms numeric 460 91890 - smartphones_mean_ms numeric - 90400 - relative_difference numeric - 22.56 - difference_video_smartphone_ms numeric -20810 5845 - mean_video_smartphone_ms numeric 455 91145 - contraction_mode_levels character - - Con, Ecc, Rep, TuT difference_video_raters_ms numeric -360 3520 - difference_smartphones_ms numeric -35750 5750 - video_smartphone_difference_outlier logical - - FALSE, TRUE rater_difference_outlier logical - - FALSE, TRUE smartphone_difference_outlier logical - - FALSE, TRUE normalized_error_smartphone numeric - 313.85 - participant_age_levels character - - young, old participant_age_years numeric 19 70 - participant_height_cm numeric 160 187 - participant_weight_kg numeric 46 105 - participant_gender character - - m, f ">
+<meta name="description" content="Accelerometer# One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/accelerometer/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="accelerometer">
-  <meta property="og:description" content="Accelerometer# Initialization# data &lt;- fosdata::accelerometerAccessing fields# data &lt;- fosdata::accelerometer participant_gender &lt;- data$participant_genderLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::accelerometer dataset containing the following fields: fields[25]{name,type,values}: participant,numeric,n/a machine,character,n/a set,numeric,n/a contraction_mode,character,n/a time_video_rater_cv_ms,numeric,n/a time_video_rater_dg_ms,numeric,n/a time_smartphone_1_ms,numeric,n/a time_smartphone_2_ms,numeric,n/a video_rater_mean_ms,numeric,n/a smartphones_mean_ms,numeric,n/a relative_difference,numeric,n/a difference_video_smartphone_ms,numeric,n/a mean_video_smartphone_ms,numeric,n/a contraction_mode_levels,character,[Con,Ecc,Rep,TuT] difference_video_raters_ms,numeric,n/a difference_smartphones_ms,numeric,n/a video_smartphone_difference_outlier,logical,[FALSE,TRUE] rater_difference_outlier,logical,[FALSE,TRUE] smartphone_difference_outlier,logical,[FALSE,TRUE] normalized_error_smartphone,numeric,n/a participant_age_levels,character,[young,old] participant_age_years,numeric,n/a participant_height_cm,numeric,n/a participant_weight_kg,numeric,n/a participant_gender,character,[m,f] Fields# Name Type Min Max Values participant numeric 1 22 - machine character - - - set numeric 1 2 - contraction_mode character - - - time_video_rater_cv_ms numeric 460 91900 - time_video_rater_dg_ms numeric 460 91880 - time_smartphone_1_ms numeric - 90000 - time_smartphone_2_ms numeric - 90800 - video_rater_mean_ms numeric 460 91890 - smartphones_mean_ms numeric - 90400 - relative_difference numeric - 22.56 - difference_video_smartphone_ms numeric -20810 5845 - mean_video_smartphone_ms numeric 455 91145 - contraction_mode_levels character - - Con, Ecc, Rep, TuT difference_video_raters_ms numeric -360 3520 - difference_smartphones_ms numeric -35750 5750 - video_smartphone_difference_outlier logical - - FALSE, TRUE rater_difference_outlier logical - - FALSE, TRUE smartphone_difference_outlier logical - - FALSE, TRUE normalized_error_smartphone numeric - 313.85 - participant_age_levels character - - young, old participant_age_years numeric 19 70 - participant_height_cm numeric 160 187 - participant_weight_kg numeric 46 105 - participant_gender character - - m, f">
+  <meta property="og:description" content="Accelerometer# One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="accelerometer">
-  <meta itemprop="description" content="Accelerometer# Initialization# data &lt;- fosdata::accelerometerAccessing fields# data &lt;- fosdata::accelerometer participant_gender &lt;- data$participant_genderLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::accelerometer dataset containing the following fields: fields[25]{name,type,values}: participant,numeric,n/a machine,character,n/a set,numeric,n/a contraction_mode,character,n/a time_video_rater_cv_ms,numeric,n/a time_video_rater_dg_ms,numeric,n/a time_smartphone_1_ms,numeric,n/a time_smartphone_2_ms,numeric,n/a video_rater_mean_ms,numeric,n/a smartphones_mean_ms,numeric,n/a relative_difference,numeric,n/a difference_video_smartphone_ms,numeric,n/a mean_video_smartphone_ms,numeric,n/a contraction_mode_levels,character,[Con,Ecc,Rep,TuT] difference_video_raters_ms,numeric,n/a difference_smartphones_ms,numeric,n/a video_smartphone_difference_outlier,logical,[FALSE,TRUE] rater_difference_outlier,logical,[FALSE,TRUE] smartphone_difference_outlier,logical,[FALSE,TRUE] normalized_error_smartphone,numeric,n/a participant_age_levels,character,[young,old] participant_age_years,numeric,n/a participant_height_cm,numeric,n/a participant_weight_kg,numeric,n/a participant_gender,character,[m,f] Fields# Name Type Min Max Values participant numeric 1 22 - machine character - - - set numeric 1 2 - contraction_mode character - - - time_video_rater_cv_ms numeric 460 91900 - time_video_rater_dg_ms numeric 460 91880 - time_smartphone_1_ms numeric - 90000 - time_smartphone_2_ms numeric - 90800 - video_rater_mean_ms numeric 460 91890 - smartphones_mean_ms numeric - 90400 - relative_difference numeric - 22.56 - difference_video_smartphone_ms numeric -20810 5845 - mean_video_smartphone_ms numeric 455 91145 - contraction_mode_levels character - - Con, Ecc, Rep, TuT difference_video_raters_ms numeric -360 3520 - difference_smartphones_ms numeric -35750 5750 - video_smartphone_difference_outlier logical - - FALSE, TRUE rater_difference_outlier logical - - FALSE, TRUE smartphone_difference_outlier logical - - FALSE, TRUE normalized_error_smartphone numeric - 313.85 - participant_age_levels character - - young, old participant_age_years numeric 19 70 - participant_height_cm numeric 160 187 - participant_weight_kg numeric 46 105 - participant_gender character - - m, f">
-  <meta itemprop="wordCount" content="214">
+  <meta itemprop="description" content="Accelerometer# One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.">
+  <meta itemprop="wordCount" content="472">
 
 <title>accelerometer | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +33,7 @@ LLM Instructions The fosdata::accelerometer dataset containing the following fie
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +846,7 @@ LLM Instructions The fosdata::accelerometer dataset containing the following fie
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +860,13 @@ LLM Instructions The fosdata::accelerometer dataset containing the following fie
       
       
   <article class="markdown book-article"><h1 id="accelerometer">Accelerometer<a class="anchor" href="#accelerometer">#</a></h1>
+<p>One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.</p>
+<p>From the authors: &ldquo;Single repetition, contraction-phase specific and total time-under-tension (TUT) are crucial mechano-biological descriptors associated with distinct morphological, molecular and metabolic muscular adaptations in response to exercise, rehabilitation and/or fighting sarcopenia. However, to date, no simple, reliable and valid method has been developed to measure these descriptors.&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>accelerometer</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>accelerometer</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>accelerometer
-</span></span><span style="display:flex;"><span>participant_gender <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>participant_gender</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>participant_weight_kg <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>participant_weight_kg</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::accelerometer dataset containing the following fields:
@@ -900,6 +902,7 @@ fields[25]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -909,6 +912,7 @@ fields[25]{name,type,values}:
   <tbody>
       <tr>
           <td><code>participant</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">ID of participant, from 1-22.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>22</td>
@@ -916,6 +920,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>machine</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Name of the machine that the participant was using. Levels are &ldquo;LEG PRESS&rdquo; &ldquo;LEG EXTENSION&rdquo; &ldquo;LEG CURL&rdquo; &ldquo;ABDUCTOR&rdquo; ADDUCTOR&quot; &ldquo;LOWER BACK&rdquo; &ldquo;TOTAL ABDOMINAL&rdquo; &ldquo;VERTICAL TRACTION&rdquo; and &ldquo;CHEST PRESS&rdquo;</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -923,6 +928,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>set</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Participants did two sets of each machine. This is numeric 1-2.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>2</td>
@@ -930,6 +936,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>contraction_mode</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Participants repeated each exercise 10 times in a set. This variable describes whether the observation is related to concentric contraction, eccocentric contraction, contraction for a single rep, and total time-under-tension</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -937,6 +944,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>time_video_rater_cv_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>460</td>
           <td>91900</td>
@@ -944,6 +952,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>time_video_rater_dg_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>460</td>
           <td>91880</td>
@@ -951,6 +960,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>time_smartphone_1_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>90000</td>
@@ -958,6 +968,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>time_smartphone_2_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>90800</td>
@@ -965,6 +976,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>video_rater_mean_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Mean of two video timings.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>460</td>
           <td>91890</td>
@@ -972,6 +984,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>smartphones_mean_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Mean of two smartphone timings.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>90400</td>
@@ -979,6 +992,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>relative_difference</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">abs(smartphones_mean - video_rater_mean)/video_rater_mean</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>22.56</td>
@@ -986,6 +1000,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>difference_video_smartphone_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Difference between video an smartphone estimate.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-20810</td>
           <td>5845</td>
@@ -993,6 +1008,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>mean_video_smartphone_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Mean of video and smartphone means.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>455</td>
           <td>91145</td>
@@ -1000,6 +1016,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>contraction_mode_levels</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">One of Con, Ecc, Rep or TuT. Redundant given contraction_mode</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -1007,6 +1024,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>difference_video_raters_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-360</td>
           <td>3520</td>
@@ -1014,6 +1032,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>difference_smartphones_ms</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-35750</td>
           <td>5750</td>
@@ -1021,6 +1040,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>video_smartphone_difference_outlier</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">logical</u></td>
           <td>-</td>
           <td>-</td>
@@ -1028,6 +1048,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>rater_difference_outlier</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">logical</u></td>
           <td>-</td>
           <td>-</td>
@@ -1035,6 +1056,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>smartphone_difference_outlier</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">logical</u></td>
           <td>-</td>
           <td>-</td>
@@ -1042,6 +1064,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>normalized_error_smartphone</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>313.85</td>
@@ -1049,6 +1072,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>participant_age_levels</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -1056,6 +1080,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>participant_age_years</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>19</td>
           <td>70</td>
@@ -1063,6 +1088,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>participant_height_cm</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>160</td>
           <td>187</td>
@@ -1070,6 +1096,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>participant_weight_kg</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>46</td>
           <td>105</td>
@@ -1077,6 +1104,7 @@ fields[25]{name,type,values}:
       </tr>
       <tr>
           <td><code>participant_gender</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -1084,6 +1112,8 @@ fields[25]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0235156">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0235156</a> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/R3ZKYH">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/R3ZKYH</a></p>
 </article>
  
       
@@ -1160,6 +1190,7 @@ fields[25]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

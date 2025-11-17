@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dogs# Initialization# data &lt;- fosdata::dogsAccessing fields# data &lt;- fosdata::dogs start_direction &lt;- data$start_directionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::dogs dataset containing the following fields: fields[9]{name,type,values}: obs_number,character,n/a obs_pref,character,[links,rechts] obs_position,character,[links,rechts] demo_pref,character,[rechts,links,keine] condition,integer,n/a dropout,integer,n/a trial,integer,n/a start_direction,integer,n/a conform,integer,n/a Fields# Name Type Min Max Values obs_number character - - - obs_pref character - - links, rechts obs_position character - - links, rechts demo_pref character - - rechts, links, keine condition integer - 3 - dropout integer - 1 - trial integer 1 3 - start_direction integer - 1 - conform integer - 1 - ">
+<meta name="description" content="Dogs# If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?
+The control group condition == 0 did not see any dogs doing anything. When condition == 1, the dog saw the same dog go around the wall in the “wrong” direction three times. When condition == 3, the dog saw three different dogs go around the wall in the “wrong” direction one time. In the experimental setup, each dog repeated the experiment three times. Dogs were led to the spot where they would have to decide which way to go around the wall according to start_direction. If start_direction == 1, then the dog was led to the spot in such a way that the dog was already facing the direction it had been trained to go. When start_direction == 0, the dog was led to the spot facing the direction it was not trained to go. Some dogs did not complete the trial because of stress or some other reason, They are indicated by dropout == 1. From the authors: “In recent years, an increasing number of studies has investigated majority influence in nonhuman animals. However, due to both terminological and methodological issues, evidence for conformity in nonhuman animals is scarce and controversial. Preliminary evidence suggests that wild birds, wild monkeys, and fish show conformity, that is, forgoing personal information in order to copy the majority. By contrast, chimpanzees seem to lack this tendency. The present study is the first to examine whether dogs (Canis familiaris) show conformity.”
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/dogs/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="dogs">
-  <meta property="og:description" content="Dogs# Initialization# data &lt;- fosdata::dogsAccessing fields# data &lt;- fosdata::dogs start_direction &lt;- data$start_directionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::dogs dataset containing the following fields: fields[9]{name,type,values}: obs_number,character,n/a obs_pref,character,[links,rechts] obs_position,character,[links,rechts] demo_pref,character,[rechts,links,keine] condition,integer,n/a dropout,integer,n/a trial,integer,n/a start_direction,integer,n/a conform,integer,n/a Fields# Name Type Min Max Values obs_number character - - - obs_pref character - - links, rechts obs_position character - - links, rechts demo_pref character - - rechts, links, keine condition integer - 3 - dropout integer - 1 - trial integer 1 3 - start_direction integer - 1 - conform integer - 1 -">
+  <meta property="og:description" content="Dogs# If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?
+The control group condition == 0 did not see any dogs doing anything. When condition == 1, the dog saw the same dog go around the wall in the “wrong” direction three times. When condition == 3, the dog saw three different dogs go around the wall in the “wrong” direction one time. In the experimental setup, each dog repeated the experiment three times. Dogs were led to the spot where they would have to decide which way to go around the wall according to start_direction. If start_direction == 1, then the dog was led to the spot in such a way that the dog was already facing the direction it had been trained to go. When start_direction == 0, the dog was led to the spot facing the direction it was not trained to go. Some dogs did not complete the trial because of stress or some other reason, They are indicated by dropout == 1. From the authors: “In recent years, an increasing number of studies has investigated majority influence in nonhuman animals. However, due to both terminological and methodological issues, evidence for conformity in nonhuman animals is scarce and controversial. Preliminary evidence suggests that wild birds, wild monkeys, and fish show conformity, that is, forgoing personal information in order to copy the majority. By contrast, chimpanzees seem to lack this tendency. The present study is the first to examine whether dogs (Canis familiaris) show conformity.”">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="dogs">
-  <meta itemprop="description" content="Dogs# Initialization# data &lt;- fosdata::dogsAccessing fields# data &lt;- fosdata::dogs start_direction &lt;- data$start_directionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::dogs dataset containing the following fields: fields[9]{name,type,values}: obs_number,character,n/a obs_pref,character,[links,rechts] obs_position,character,[links,rechts] demo_pref,character,[rechts,links,keine] condition,integer,n/a dropout,integer,n/a trial,integer,n/a start_direction,integer,n/a conform,integer,n/a Fields# Name Type Min Max Values obs_number character - - - obs_pref character - - links, rechts obs_position character - - links, rechts demo_pref character - - rechts, links, keine condition integer - 3 - dropout integer - 1 - trial integer 1 3 - start_direction integer - 1 - conform integer - 1 -">
-  <meta itemprop="wordCount" content="114">
+  <meta itemprop="description" content="Dogs# If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?
+The control group condition == 0 did not see any dogs doing anything. When condition == 1, the dog saw the same dog go around the wall in the “wrong” direction three times. When condition == 3, the dog saw three different dogs go around the wall in the “wrong” direction one time. In the experimental setup, each dog repeated the experiment three times. Dogs were led to the spot where they would have to decide which way to go around the wall according to start_direction. If start_direction == 1, then the dog was led to the spot in such a way that the dog was already facing the direction it had been trained to go. When start_direction == 0, the dog was led to the spot facing the direction it was not trained to go. Some dogs did not complete the trial because of stress or some other reason, They are indicated by dropout == 1. From the authors: “In recent years, an increasing number of studies has investigated majority influence in nonhuman animals. However, due to both terminological and methodological issues, evidence for conformity in nonhuman animals is scarce and controversial. Preliminary evidence suggests that wild birds, wild monkeys, and fish show conformity, that is, forgoing personal information in order to copy the majority. By contrast, chimpanzees seem to lack this tendency. The present study is the first to examine whether dogs (Canis familiaris) show conformity.”">
+  <meta itemprop="wordCount" content="612">
 
 <title>dogs | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::dogs dataset containing the following fields: fiel
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::dogs dataset containing the following fields: fiel
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +863,13 @@ LLM Instructions The fosdata::dogs dataset containing the following fields: fiel
       
       
   <article class="markdown book-article"><h1 id="dogs">Dogs<a class="anchor" href="#dogs">#</a></h1>
+<p>If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?</p>
+<p>The control group <code>condition == 0</code> did not see any dogs doing anything. When <code>condition == 1</code>, the dog saw <strong>the same dog</strong> go around the wall in the &ldquo;wrong&rdquo; direction three times. When <code>condition == 3</code>, the dog saw <strong>three different dogs</strong> go around the wall in the &ldquo;wrong&rdquo; direction one time. In the experimental setup, each dog repeated the experiment three times. Dogs were led to the spot where they would have to decide which way to go around the wall according to <code>start_direction</code>. If <code>start_direction == 1</code>, then the dog was led to the spot in such a way that the dog was already facing the direction it had been trained to go. When <code>start_direction == 0</code>, the dog was led to the spot facing the direction it was not trained to go. Some dogs did not complete the trial because of stress or some other reason, They are indicated by <code>dropout == 1</code>. From the authors: &ldquo;In recent years, an increasing number of studies has investigated majority influence in nonhuman animals. However, due to both terminological and methodological issues, evidence for conformity in nonhuman animals is scarce and controversial. Preliminary evidence suggests that wild birds, wild monkeys, and fish show conformity, that is, forgoing personal information in order to copy the majority. By contrast, chimpanzees seem to lack this tendency. The present study is the first to examine whether dogs (Canis familiaris) show conformity.&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>dogs</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>dogs</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>dogs
-</span></span><span style="display:flex;"><span>start_direction <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>start_direction</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>trial <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>trial</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::dogs dataset containing the following fields:
@@ -884,6 +889,7 @@ fields[9]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -893,6 +899,7 @@ fields[9]{name,type,values}:
   <tbody>
       <tr>
           <td><code>obs_number</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">ID of each subject</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -900,6 +907,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>obs_pref</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">preference of observer in german (&ldquo;links&rdquo; = bypass wall on the left side; &ldquo;rechts&rdquo; = bypass wall on the right side)</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -907,6 +915,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>obs_position</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">observing position of observer in german (&ldquo;links&rdquo; = left ; &ldquo;rechts&rdquo; = right)</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -914,6 +923,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>demo_pref</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">preference of demonstrator(s)in german (&ldquo;links&rdquo; = bypass wall on the left side; &ldquo;rechts&rdquo; = bypass wall on the right side)</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -921,6 +931,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>condition</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">&ldquo;0&rdquo; = no demonstrator (control condition); &ldquo;1&rdquo; = one demonstrator, &ldquo;3&rdquo; = three demonstrator</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3</td>
@@ -928,6 +939,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>dropout</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">&ldquo;0&rdquo; = remains in final sample, &ldquo;1&rdquo; = excluded from final sample</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>1</td>
@@ -935,6 +947,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>trial</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">number of trial (1,2,3)</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>1</td>
           <td>3</td>
@@ -942,6 +955,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>start_direction</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">direction the observer was led from observing position to start position (see article for details; &ldquo;0&rdquo; = directed towards a stay response, &ldquo;1&rdquo; directed towards a switch response) )</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>1</td>
@@ -949,6 +963,7 @@ fields[9]{name,type,values}:
       </tr>
       <tr>
           <td><code>conform</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">behavior of observer (&ldquo;0&rdquo; = stay response, &ldquo;1&rdquo; = switch response), as variable value but without misses (which were code NA for analyses)</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>1</td>
@@ -956,6 +971,8 @@ fields[9]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>&ldquo;Germar M, Sultan A, Kaminski J, Mojzisch A (2018) Dogs (Canis familiaris) stick to what they have learned rather than conform to their conspecifics’ behavior. PLoS ONE 13(3): e0194808.&rdquo; <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194808">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194808</a> &ldquo;Germar, Markus, and Andreas Mojzisch. 2018. “Dogs (Canis Familiaris) Stick to What They Have Learned rather than Conform to Their Conspecifics’ Behavior.” OSF. April 4. osf.io/dgtxt.&rdquo;</p>
 </article>
  
       
@@ -1037,6 +1054,7 @@ fields[9]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Frogs# Initialization# data &lt;- fosdata::frogsAccessing fields# data &lt;- fosdata::frogs accession &lt;- data$accessionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::frogs dataset containing the following fields: fields[16]{name,type,values}: accession,character,n/a svl,numeric,n/a hw,numeric,n/a hl,numeric,n/a slm,numeric,n/a be,numeric,n/a en,numeric,n/a ns,numeric,n/a el,numeric,n/a in,numeric,n/a iod,numeric,n/a fal,numeric,n/a hal,numeric,n/a fol,numeric,n/a tl,numeric,n/a species,character,n/a Fields# Name Type Min Max Values accession character - - - svl numeric 21.4 52.3 - hw numeric 7.1 17 - hl numeric 7.1 17.3 - slm numeric 3 7.4 - be numeric 1.8 6.9 - en numeric 1.7 3.7 - ns numeric 1.3 3.7 - el numeric 2.4 5.6 - in numeric 1.9 3.8 - iod numeric 1.5 2.9 - fal numeric 3.9 10.5 - hal numeric 5 16.9 - fol numeric 11 26 - tl numeric 11.3 27.3 - species character - - - ">
+<meta name="description" content="Frogs# Measurements of frogs from several different species with the Zakerana genus.
+From the authors: “We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA).”
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/frogs/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="frogs">
-  <meta property="og:description" content="Frogs# Initialization# data &lt;- fosdata::frogsAccessing fields# data &lt;- fosdata::frogs accession &lt;- data$accessionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::frogs dataset containing the following fields: fields[16]{name,type,values}: accession,character,n/a svl,numeric,n/a hw,numeric,n/a hl,numeric,n/a slm,numeric,n/a be,numeric,n/a en,numeric,n/a ns,numeric,n/a el,numeric,n/a in,numeric,n/a iod,numeric,n/a fal,numeric,n/a hal,numeric,n/a fol,numeric,n/a tl,numeric,n/a species,character,n/a Fields# Name Type Min Max Values accession character - - - svl numeric 21.4 52.3 - hw numeric 7.1 17 - hl numeric 7.1 17.3 - slm numeric 3 7.4 - be numeric 1.8 6.9 - en numeric 1.7 3.7 - ns numeric 1.3 3.7 - el numeric 2.4 5.6 - in numeric 1.9 3.8 - iod numeric 1.5 2.9 - fal numeric 3.9 10.5 - hal numeric 5 16.9 - fol numeric 11 26 - tl numeric 11.3 27.3 - species character - - -">
+  <meta property="og:description" content="Frogs# Measurements of frogs from several different species with the Zakerana genus.
+From the authors: “We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA).”">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="frogs">
-  <meta itemprop="description" content="Frogs# Initialization# data &lt;- fosdata::frogsAccessing fields# data &lt;- fosdata::frogs accession &lt;- data$accessionLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::frogs dataset containing the following fields: fields[16]{name,type,values}: accession,character,n/a svl,numeric,n/a hw,numeric,n/a hl,numeric,n/a slm,numeric,n/a be,numeric,n/a en,numeric,n/a ns,numeric,n/a el,numeric,n/a in,numeric,n/a iod,numeric,n/a fal,numeric,n/a hal,numeric,n/a fol,numeric,n/a tl,numeric,n/a species,character,n/a Fields# Name Type Min Max Values accession character - - - svl numeric 21.4 52.3 - hw numeric 7.1 17 - hl numeric 7.1 17.3 - slm numeric 3 7.4 - be numeric 1.8 6.9 - en numeric 1.7 3.7 - ns numeric 1.3 3.7 - el numeric 2.4 5.6 - in numeric 1.9 3.8 - iod numeric 1.5 2.9 - fal numeric 3.9 10.5 - hal numeric 5 16.9 - fol numeric 11 26 - tl numeric 11.3 27.3 - species character - - -">
-  <meta itemprop="wordCount" content="152">
+  <meta itemprop="description" content="Frogs# Measurements of frogs from several different species with the Zakerana genus.
+From the authors: “We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA).”">
+  <meta itemprop="wordCount" content="371">
 
 <title>frogs | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::frogs dataset containing the following fields: fie
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::frogs dataset containing the following fields: fie
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +863,13 @@ LLM Instructions The fosdata::frogs dataset containing the following fields: fie
       
       
   <article class="markdown book-article"><h1 id="frogs">Frogs<a class="anchor" href="#frogs">#</a></h1>
+<p>Measurements of frogs from several different species with the Zakerana genus.</p>
+<p>From the authors: &ldquo;We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA).&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>frogs</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>frogs</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>frogs
-</span></span><span style="display:flex;"><span>accession <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>accession</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>hw <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>hw</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::frogs dataset containing the following fields:
@@ -891,6 +896,7 @@ fields[16]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -900,6 +906,7 @@ fields[16]{name,type,values}:
   <tbody>
       <tr>
           <td><code>accession</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -907,6 +914,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>svl</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>21.4</td>
           <td>52.3</td>
@@ -914,6 +922,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>hw</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">head width maximum width of the head at the posterior margin of mandible</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>7.1</td>
           <td>17</td>
@@ -921,6 +930,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>hl</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">head length distance from tip of snout to the back of mandible</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>7.1</td>
           <td>17.3</td>
@@ -928,6 +938,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>slm</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>3</td>
           <td>7.4</td>
@@ -935,6 +946,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>be</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1.8</td>
           <td>6.9</td>
@@ -942,6 +954,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>en</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">distance from front of eyes to the nostril</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1.7</td>
           <td>3.7</td>
@@ -949,6 +962,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>ns</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">nostril—snout length</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1.3</td>
           <td>3.7</td>
@@ -956,6 +970,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>el</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">eye width</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>2.4</td>
           <td>5.6</td>
@@ -963,6 +978,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>in</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">internarial distance</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1.9</td>
           <td>3.8</td>
@@ -970,6 +986,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>iod</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">interorbital distance</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1.5</td>
           <td>2.9</td>
@@ -977,6 +994,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>fal</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">forearm length distance from corner of elbow to proximal end of outer palmar metacarpal tubercle</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>3.9</td>
           <td>10.5</td>
@@ -984,6 +1002,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>hal</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">hand length distance from proximal end of outer palmar metacarpal tubercle to tip of third finger</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>5</td>
           <td>16.9</td>
@@ -991,6 +1010,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>fol</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">foot length distance from proximal end of inner metatarsal tubercle to tip of fourth finger</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>11</td>
           <td>26</td>
@@ -998,6 +1018,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>tl</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">tibia length distance from knee to heel</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>11.3</td>
           <td>27.3</td>
@@ -1005,6 +1026,7 @@ fields[16]{name,type,values}:
       </tr>
       <tr>
           <td><code>species</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -1012,6 +1034,8 @@ fields[16]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>Howlader MSA, Nair A, Merilä J (2016) A New Species of Frog (Anura: Dicroglossidae) Discovered from the Mega City of Dhaka. PLoS ONE 11(3): e0149597 <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0149597">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0149597</a></p>
 </article>
  
       
@@ -1093,6 +1117,7 @@ fields[16]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

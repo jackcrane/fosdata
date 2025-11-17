@@ -8,24 +8,31 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Scotland_births# Initialization# data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x1979 &lt;- data$x1979LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Type Min Max Values age integer 12 56 - x1945 integer - 5716 - x1946 integer - 6479 - x1947 integer - 7337 - x1948 integer - 6532 - x1949 integer - 6192 - x1950 integer - 6072 - x1951 integer - 6058 - x1952 integer - 6230 - x1953 integer - 6018 - x1954 integer - 6495 - x1955 integer - 6702 - x1956 integer - 6666 - x1957 integer - 6964 - x1958 integer - 7052 - x1959 integer - 6945 - x1960 integer - 7307 - x1961 integer - 7318 - x1962 integer - 7508 - x1963 integer - 7563 - x1964 integer - 7511 - x1965 integer - 7023 - x1966 integer - 7010 - x1967 integer - 7008 - x1968 integer - 7342 - x1969 integer - 7179 - x1970 integer - 7457 - x1971 integer - 7527 - x1972 integer - 6971 - x1973 integer - 6339 - x1974 integer - 5649 - x1975 integer - 5339 - x1976 integer - 5078 - x1977 integer - 4707 - x1978 integer - 4866 - x1979 integer - 5283 - x1980 integer - 5102 - x1981 integer - 5322 - x1982 integer - 4984 - x1983 integer - 5011 - x1984 integer - 5060 - x1985 integer - 5209 - x1986 integer - 5033 - x1987 integer - 4975 - x1988 integer - 5051 - x1989 integer - 4759 - x1990 integer - 5093 - x1991 integer - 5070 - x1992 integer - 4948 - x1993 integer - 4771 - x1994 integer - 4637 - x1995 integer - 4331 - x1996 integer - 4244 - x1997 integer - 4296 - x1998 integer - 4073 - x1999 integer - 3879 - x2000 integer - 3731 - x2001 integer - 3637 - x2002 integer - 3575 - x2003 integer - 3558 - x2004 integer - 3419 - x2005 integer - 3278 - x2006 integer - 3314 - x2007 integer - 3300 - x2008 integer - 3542 - x2009 integer - 3495 - x2010 integer - 3702 - x2011 integer - 3842 - x2012 integer - 3824 - x2013 integer - 3738 - x2014 integer - 3795 - x2015 integer - 3754 - x2016 integer - 3723 - x2017 integer - 3520 - x2018 integer - 3533 - x2019 integer - 3513 - ">
+<meta name="description" content="Scotland_births# The number of babies born in Scotland from 1945-2019, by age of the mother.
+undefined
+Initialization# library(fosdata) data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x2005 &lt;- data$x2005LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Description Type Min Max Values age Age of the mother, in years integer 12 56 - x1945 undefined integer - 5716 - x1946 undefined integer - 6479 - x1947 undefined integer - 7337 - x1948 undefined integer - 6532 - x1949 undefined integer - 6192 - x1950 undefined integer - 6072 - x1951 undefined integer - 6058 - x1952 undefined integer - 6230 - x1953 undefined integer - 6018 - x1954 undefined integer - 6495 - x1955 undefined integer - 6702 - x1956 undefined integer - 6666 - x1957 undefined integer - 6964 - x1958 undefined integer - 7052 - x1959 undefined integer - 6945 - x1960 undefined integer - 7307 - x1961 undefined integer - 7318 - x1962 undefined integer - 7508 - x1963 undefined integer - 7563 - x1964 undefined integer - 7511 - x1965 undefined integer - 7023 - x1966 undefined integer - 7010 - x1967 undefined integer - 7008 - x1968 undefined integer - 7342 - x1969 undefined integer - 7179 - x1970 undefined integer - 7457 - x1971 undefined integer - 7527 - x1972 undefined integer - 6971 - x1973 undefined integer - 6339 - x1974 undefined integer - 5649 - x1975 undefined integer - 5339 - x1976 undefined integer - 5078 - x1977 undefined integer - 4707 - x1978 undefined integer - 4866 - x1979 undefined integer - 5283 - x1980 undefined integer - 5102 - x1981 undefined integer - 5322 - x1982 undefined integer - 4984 - x1983 undefined integer - 5011 - x1984 undefined integer - 5060 - x1985 undefined integer - 5209 - x1986 undefined integer - 5033 - x1987 undefined integer - 4975 - x1988 undefined integer - 5051 - x1989 undefined integer - 4759 - x1990 undefined integer - 5093 - x1991 undefined integer - 5070 - x1992 undefined integer - 4948 - x1993 undefined integer - 4771 - x1994 undefined integer - 4637 - x1995 undefined integer - 4331 - x1996 undefined integer - 4244 - x1997 undefined integer - 4296 - x1998 undefined integer - 4073 - x1999 undefined integer - 3879 - x2000 undefined integer - 3731 - x2001 undefined integer - 3637 - x2002 undefined integer - 3575 - x2003 undefined integer - 3558 - x2004 undefined integer - 3419 - x2005 undefined integer - 3278 - x2006 undefined integer - 3314 - x2007 undefined integer - 3300 - x2008 undefined integer - 3542 - x2009 undefined integer - 3495 - x2010 undefined integer - 3702 - x2011 undefined integer - 3842 - x2012 undefined integer - 3824 - x2013 undefined integer - 3738 - x2014 undefined integer - 3795 - x2015 undefined integer - 3754 - x2016 undefined integer - 3723 - x2017 undefined integer - 3520 - x2018 undefined integer - 3533 - x2019 undefined integer - 3513 - Source# National Records of Scotland, https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/scotland_births/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="scotland_births">
-  <meta property="og:description" content="Scotland_births# Initialization# data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x1979 &lt;- data$x1979LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Type Min Max Values age integer 12 56 - x1945 integer - 5716 - x1946 integer - 6479 - x1947 integer - 7337 - x1948 integer - 6532 - x1949 integer - 6192 - x1950 integer - 6072 - x1951 integer - 6058 - x1952 integer - 6230 - x1953 integer - 6018 - x1954 integer - 6495 - x1955 integer - 6702 - x1956 integer - 6666 - x1957 integer - 6964 - x1958 integer - 7052 - x1959 integer - 6945 - x1960 integer - 7307 - x1961 integer - 7318 - x1962 integer - 7508 - x1963 integer - 7563 - x1964 integer - 7511 - x1965 integer - 7023 - x1966 integer - 7010 - x1967 integer - 7008 - x1968 integer - 7342 - x1969 integer - 7179 - x1970 integer - 7457 - x1971 integer - 7527 - x1972 integer - 6971 - x1973 integer - 6339 - x1974 integer - 5649 - x1975 integer - 5339 - x1976 integer - 5078 - x1977 integer - 4707 - x1978 integer - 4866 - x1979 integer - 5283 - x1980 integer - 5102 - x1981 integer - 5322 - x1982 integer - 4984 - x1983 integer - 5011 - x1984 integer - 5060 - x1985 integer - 5209 - x1986 integer - 5033 - x1987 integer - 4975 - x1988 integer - 5051 - x1989 integer - 4759 - x1990 integer - 5093 - x1991 integer - 5070 - x1992 integer - 4948 - x1993 integer - 4771 - x1994 integer - 4637 - x1995 integer - 4331 - x1996 integer - 4244 - x1997 integer - 4296 - x1998 integer - 4073 - x1999 integer - 3879 - x2000 integer - 3731 - x2001 integer - 3637 - x2002 integer - 3575 - x2003 integer - 3558 - x2004 integer - 3419 - x2005 integer - 3278 - x2006 integer - 3314 - x2007 integer - 3300 - x2008 integer - 3542 - x2009 integer - 3495 - x2010 integer - 3702 - x2011 integer - 3842 - x2012 integer - 3824 - x2013 integer - 3738 - x2014 integer - 3795 - x2015 integer - 3754 - x2016 integer - 3723 - x2017 integer - 3520 - x2018 integer - 3533 - x2019 integer - 3513 -">
+  <meta property="og:description" content="Scotland_births# The number of babies born in Scotland from 1945-2019, by age of the mother.
+undefined
+Initialization# library(fosdata) data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x2005 &lt;- data$x2005LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Description Type Min Max Values age Age of the mother, in years integer 12 56 - x1945 undefined integer - 5716 - x1946 undefined integer - 6479 - x1947 undefined integer - 7337 - x1948 undefined integer - 6532 - x1949 undefined integer - 6192 - x1950 undefined integer - 6072 - x1951 undefined integer - 6058 - x1952 undefined integer - 6230 - x1953 undefined integer - 6018 - x1954 undefined integer - 6495 - x1955 undefined integer - 6702 - x1956 undefined integer - 6666 - x1957 undefined integer - 6964 - x1958 undefined integer - 7052 - x1959 undefined integer - 6945 - x1960 undefined integer - 7307 - x1961 undefined integer - 7318 - x1962 undefined integer - 7508 - x1963 undefined integer - 7563 - x1964 undefined integer - 7511 - x1965 undefined integer - 7023 - x1966 undefined integer - 7010 - x1967 undefined integer - 7008 - x1968 undefined integer - 7342 - x1969 undefined integer - 7179 - x1970 undefined integer - 7457 - x1971 undefined integer - 7527 - x1972 undefined integer - 6971 - x1973 undefined integer - 6339 - x1974 undefined integer - 5649 - x1975 undefined integer - 5339 - x1976 undefined integer - 5078 - x1977 undefined integer - 4707 - x1978 undefined integer - 4866 - x1979 undefined integer - 5283 - x1980 undefined integer - 5102 - x1981 undefined integer - 5322 - x1982 undefined integer - 4984 - x1983 undefined integer - 5011 - x1984 undefined integer - 5060 - x1985 undefined integer - 5209 - x1986 undefined integer - 5033 - x1987 undefined integer - 4975 - x1988 undefined integer - 5051 - x1989 undefined integer - 4759 - x1990 undefined integer - 5093 - x1991 undefined integer - 5070 - x1992 undefined integer - 4948 - x1993 undefined integer - 4771 - x1994 undefined integer - 4637 - x1995 undefined integer - 4331 - x1996 undefined integer - 4244 - x1997 undefined integer - 4296 - x1998 undefined integer - 4073 - x1999 undefined integer - 3879 - x2000 undefined integer - 3731 - x2001 undefined integer - 3637 - x2002 undefined integer - 3575 - x2003 undefined integer - 3558 - x2004 undefined integer - 3419 - x2005 undefined integer - 3278 - x2006 undefined integer - 3314 - x2007 undefined integer - 3300 - x2008 undefined integer - 3542 - x2009 undefined integer - 3495 - x2010 undefined integer - 3702 - x2011 undefined integer - 3842 - x2012 undefined integer - 3824 - x2013 undefined integer - 3738 - x2014 undefined integer - 3795 - x2015 undefined integer - 3754 - x2016 undefined integer - 3723 - x2017 undefined integer - 3520 - x2018 undefined integer - 3533 - x2019 undefined integer - 3513 - Source# National Records of Scotland, https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="scotland_births">
-  <meta itemprop="description" content="Scotland_births# Initialization# data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x1979 &lt;- data$x1979LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Type Min Max Values age integer 12 56 - x1945 integer - 5716 - x1946 integer - 6479 - x1947 integer - 7337 - x1948 integer - 6532 - x1949 integer - 6192 - x1950 integer - 6072 - x1951 integer - 6058 - x1952 integer - 6230 - x1953 integer - 6018 - x1954 integer - 6495 - x1955 integer - 6702 - x1956 integer - 6666 - x1957 integer - 6964 - x1958 integer - 7052 - x1959 integer - 6945 - x1960 integer - 7307 - x1961 integer - 7318 - x1962 integer - 7508 - x1963 integer - 7563 - x1964 integer - 7511 - x1965 integer - 7023 - x1966 integer - 7010 - x1967 integer - 7008 - x1968 integer - 7342 - x1969 integer - 7179 - x1970 integer - 7457 - x1971 integer - 7527 - x1972 integer - 6971 - x1973 integer - 6339 - x1974 integer - 5649 - x1975 integer - 5339 - x1976 integer - 5078 - x1977 integer - 4707 - x1978 integer - 4866 - x1979 integer - 5283 - x1980 integer - 5102 - x1981 integer - 5322 - x1982 integer - 4984 - x1983 integer - 5011 - x1984 integer - 5060 - x1985 integer - 5209 - x1986 integer - 5033 - x1987 integer - 4975 - x1988 integer - 5051 - x1989 integer - 4759 - x1990 integer - 5093 - x1991 integer - 5070 - x1992 integer - 4948 - x1993 integer - 4771 - x1994 integer - 4637 - x1995 integer - 4331 - x1996 integer - 4244 - x1997 integer - 4296 - x1998 integer - 4073 - x1999 integer - 3879 - x2000 integer - 3731 - x2001 integer - 3637 - x2002 integer - 3575 - x2003 integer - 3558 - x2004 integer - 3419 - x2005 integer - 3278 - x2006 integer - 3314 - x2007 integer - 3300 - x2008 integer - 3542 - x2009 integer - 3495 - x2010 integer - 3702 - x2011 integer - 3842 - x2012 integer - 3824 - x2013 integer - 3738 - x2014 integer - 3795 - x2015 integer - 3754 - x2016 integer - 3723 - x2017 integer - 3520 - x2018 integer - 3533 - x2019 integer - 3513 -">
-  <meta itemprop="wordCount" content="512">
+  <meta itemprop="description" content="Scotland_births# The number of babies born in Scotland from 1945-2019, by age of the mother.
+undefined
+Initialization# library(fosdata) data &lt;- fosdata::scotland_birthsAccessing fields# data &lt;- fosdata::scotland_births x2005 &lt;- data$x2005LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+LLM Instructions The fosdata::scotland_births dataset containing the following fields: fields[76]{name,type,values}: age,integer,n/a x1945,integer,n/a x1946,integer,n/a x1947,integer,n/a x1948,integer,n/a x1949,integer,n/a x1950,integer,n/a x1951,integer,n/a x1952,integer,n/a x1953,integer,n/a x1954,integer,n/a x1955,integer,n/a x1956,integer,n/a x1957,integer,n/a x1958,integer,n/a x1959,integer,n/a x1960,integer,n/a x1961,integer,n/a x1962,integer,n/a x1963,integer,n/a x1964,integer,n/a x1965,integer,n/a x1966,integer,n/a x1967,integer,n/a x1968,integer,n/a x1969,integer,n/a x1970,integer,n/a x1971,integer,n/a x1972,integer,n/a x1973,integer,n/a x1974,integer,n/a x1975,integer,n/a x1976,integer,n/a x1977,integer,n/a x1978,integer,n/a x1979,integer,n/a x1980,integer,n/a x1981,integer,n/a x1982,integer,n/a x1983,integer,n/a x1984,integer,n/a x1985,integer,n/a x1986,integer,n/a x1987,integer,n/a x1988,integer,n/a x1989,integer,n/a x1990,integer,n/a x1991,integer,n/a x1992,integer,n/a x1993,integer,n/a x1994,integer,n/a x1995,integer,n/a x1996,integer,n/a x1997,integer,n/a x1998,integer,n/a x1999,integer,n/a x2000,integer,n/a x2001,integer,n/a x2002,integer,n/a x2003,integer,n/a x2004,integer,n/a x2005,integer,n/a x2006,integer,n/a x2007,integer,n/a x2008,integer,n/a x2009,integer,n/a x2010,integer,n/a x2011,integer,n/a x2012,integer,n/a x2013,integer,n/a x2014,integer,n/a x2015,integer,n/a x2016,integer,n/a x2017,integer,n/a x2018,integer,n/a x2019,integer,n/a Fields# Name Description Type Min Max Values age Age of the mother, in years integer 12 56 - x1945 undefined integer - 5716 - x1946 undefined integer - 6479 - x1947 undefined integer - 7337 - x1948 undefined integer - 6532 - x1949 undefined integer - 6192 - x1950 undefined integer - 6072 - x1951 undefined integer - 6058 - x1952 undefined integer - 6230 - x1953 undefined integer - 6018 - x1954 undefined integer - 6495 - x1955 undefined integer - 6702 - x1956 undefined integer - 6666 - x1957 undefined integer - 6964 - x1958 undefined integer - 7052 - x1959 undefined integer - 6945 - x1960 undefined integer - 7307 - x1961 undefined integer - 7318 - x1962 undefined integer - 7508 - x1963 undefined integer - 7563 - x1964 undefined integer - 7511 - x1965 undefined integer - 7023 - x1966 undefined integer - 7010 - x1967 undefined integer - 7008 - x1968 undefined integer - 7342 - x1969 undefined integer - 7179 - x1970 undefined integer - 7457 - x1971 undefined integer - 7527 - x1972 undefined integer - 6971 - x1973 undefined integer - 6339 - x1974 undefined integer - 5649 - x1975 undefined integer - 5339 - x1976 undefined integer - 5078 - x1977 undefined integer - 4707 - x1978 undefined integer - 4866 - x1979 undefined integer - 5283 - x1980 undefined integer - 5102 - x1981 undefined integer - 5322 - x1982 undefined integer - 4984 - x1983 undefined integer - 5011 - x1984 undefined integer - 5060 - x1985 undefined integer - 5209 - x1986 undefined integer - 5033 - x1987 undefined integer - 4975 - x1988 undefined integer - 5051 - x1989 undefined integer - 4759 - x1990 undefined integer - 5093 - x1991 undefined integer - 5070 - x1992 undefined integer - 4948 - x1993 undefined integer - 4771 - x1994 undefined integer - 4637 - x1995 undefined integer - 4331 - x1996 undefined integer - 4244 - x1997 undefined integer - 4296 - x1998 undefined integer - 4073 - x1999 undefined integer - 3879 - x2000 undefined integer - 3731 - x2001 undefined integer - 3637 - x2002 undefined integer - 3575 - x2003 undefined integer - 3558 - x2004 undefined integer - 3419 - x2005 undefined integer - 3278 - x2006 undefined integer - 3314 - x2007 undefined integer - 3300 - x2008 undefined integer - 3542 - x2009 undefined integer - 3495 - x2010 undefined integer - 3702 - x2011 undefined integer - 3842 - x2012 undefined integer - 3824 - x2013 undefined integer - 3738 - x2014 undefined integer - 3795 - x2015 undefined integer - 3754 - x2016 undefined integer - 3723 - x2017 undefined integer - 3520 - x2018 undefined integer - 3533 - x2019 undefined integer - 3513 - Source# National Records of Scotland, https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data">
+  <meta itemprop="wordCount" content="616">
 
 <title>scotland_births | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +42,7 @@ LLM Instructions The fosdata::scotland_births dataset containing the following f
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +855,7 @@ LLM Instructions The fosdata::scotland_births dataset containing the following f
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +869,13 @@ LLM Instructions The fosdata::scotland_births dataset containing the following f
       
       
   <article class="markdown book-article"><h1 id="scotland_births">Scotland_births<a class="anchor" href="#scotland_births">#</a></h1>
+<p>The number of babies born in Scotland from 1945-2019, by age of the mother.</p>
+<p>undefined</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>scotland_births</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>scotland_births</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>scotland_births
-</span></span><span style="display:flex;"><span>x1979 <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>x1979</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>x2005 <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>x2005</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::scotland_births dataset containing the following fields:
@@ -951,6 +962,7 @@ fields[76]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -960,6 +972,7 @@ fields[76]{name,type,values}:
   <tbody>
       <tr>
           <td><code>age</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Age of the mother, in years</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>12</td>
           <td>56</td>
@@ -967,6 +980,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1945</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5716</td>
@@ -974,6 +988,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1946</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6479</td>
@@ -981,6 +996,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1947</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7337</td>
@@ -988,6 +1004,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1948</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6532</td>
@@ -995,6 +1012,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1949</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6192</td>
@@ -1002,6 +1020,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1950</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6072</td>
@@ -1009,6 +1028,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1951</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6058</td>
@@ -1016,6 +1036,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1952</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6230</td>
@@ -1023,6 +1044,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1953</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6018</td>
@@ -1030,6 +1052,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1954</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6495</td>
@@ -1037,6 +1060,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1955</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6702</td>
@@ -1044,6 +1068,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1956</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6666</td>
@@ -1051,6 +1076,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1957</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6964</td>
@@ -1058,6 +1084,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1958</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7052</td>
@@ -1065,6 +1092,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1959</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6945</td>
@@ -1072,6 +1100,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1960</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7307</td>
@@ -1079,6 +1108,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1961</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7318</td>
@@ -1086,6 +1116,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1962</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7508</td>
@@ -1093,6 +1124,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1963</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7563</td>
@@ -1100,6 +1132,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1964</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7511</td>
@@ -1107,6 +1140,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1965</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7023</td>
@@ -1114,6 +1148,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1966</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7010</td>
@@ -1121,6 +1156,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1967</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7008</td>
@@ -1128,6 +1164,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1968</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7342</td>
@@ -1135,6 +1172,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1969</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7179</td>
@@ -1142,6 +1180,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1970</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7457</td>
@@ -1149,6 +1188,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1971</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>7527</td>
@@ -1156,6 +1196,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1972</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6971</td>
@@ -1163,6 +1204,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1973</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>6339</td>
@@ -1170,6 +1212,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1974</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5649</td>
@@ -1177,6 +1220,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1975</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5339</td>
@@ -1184,6 +1228,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1976</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5078</td>
@@ -1191,6 +1236,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1977</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4707</td>
@@ -1198,6 +1244,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1978</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4866</td>
@@ -1205,6 +1252,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1979</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5283</td>
@@ -1212,6 +1260,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1980</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5102</td>
@@ -1219,6 +1268,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1981</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5322</td>
@@ -1226,6 +1276,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1982</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4984</td>
@@ -1233,6 +1284,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1983</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5011</td>
@@ -1240,6 +1292,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1984</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5060</td>
@@ -1247,6 +1300,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1985</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5209</td>
@@ -1254,6 +1308,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1986</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5033</td>
@@ -1261,6 +1316,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1987</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4975</td>
@@ -1268,6 +1324,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1988</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5051</td>
@@ -1275,6 +1332,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1989</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4759</td>
@@ -1282,6 +1340,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1990</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5093</td>
@@ -1289,6 +1348,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1991</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>5070</td>
@@ -1296,6 +1356,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1992</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4948</td>
@@ -1303,6 +1364,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1993</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4771</td>
@@ -1310,6 +1372,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1994</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4637</td>
@@ -1317,6 +1380,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1995</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4331</td>
@@ -1324,6 +1388,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1996</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4244</td>
@@ -1331,6 +1396,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1997</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4296</td>
@@ -1338,6 +1404,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1998</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>4073</td>
@@ -1345,6 +1412,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x1999</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3879</td>
@@ -1352,6 +1420,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2000</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3731</td>
@@ -1359,6 +1428,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2001</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3637</td>
@@ -1366,6 +1436,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2002</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3575</td>
@@ -1373,6 +1444,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2003</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3558</td>
@@ -1380,6 +1452,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2004</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3419</td>
@@ -1387,6 +1460,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2005</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3278</td>
@@ -1394,6 +1468,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2006</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3314</td>
@@ -1401,6 +1476,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2007</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3300</td>
@@ -1408,6 +1484,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2008</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3542</td>
@@ -1415,6 +1492,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2009</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3495</td>
@@ -1422,6 +1500,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2010</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3702</td>
@@ -1429,6 +1508,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2011</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3842</td>
@@ -1436,6 +1516,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2012</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3824</td>
@@ -1443,6 +1524,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2013</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3738</td>
@@ -1450,6 +1532,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2014</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3795</td>
@@ -1457,6 +1540,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2015</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3754</td>
@@ -1464,6 +1548,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2016</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3723</td>
@@ -1471,6 +1556,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2017</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3520</td>
@@ -1478,6 +1564,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2018</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3533</td>
@@ -1485,6 +1572,7 @@ fields[76]{name,type,values}:
       </tr>
       <tr>
           <td><code>x2019</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">integer</u></td>
           <td>-</td>
           <td>3513</td>
@@ -1492,6 +1580,8 @@ fields[76]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>National Records of Scotland, <a href="https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data">https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data</a></p>
 </article>
  
       
@@ -1573,6 +1663,7 @@ fields[76]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

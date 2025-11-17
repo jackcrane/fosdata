@@ -4,9 +4,14 @@ title: "letter_frequency"
 
 # Letter_frequency
 
+The frequency of occurrences of letters in texts in various languages. This data taken from Wikipedia is considered inaccurate and should not be used for scientific purposes.
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::letter_frequency
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::letter_frequency
 
 ```r
 data <- fosdata::letter_frequency
-danish <- data$danish
+swedish <- data$swedish
 ```
 
 ## LLM instructions
@@ -46,20 +51,25 @@ fields[15]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `letter` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `english` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.127 | - |
-| `french` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1472 | - |
-| `german` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.164 | - |
-| `spanish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1218 | - |
-| `portuguese` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1463 | - |
-| `esperanto` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1212 | - |
-| `italian` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1179 | - |
-| `turkish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1192 | - |
-| `swedish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1015 | - |
-| `polish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.0891 | - |
-| `dutch` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1891 | - |
-| `danish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1545 | - |
-| `icelandic` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1011 | - |
-| `finnish` | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1222 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `letter` | <span style="font-size: 0.7em; display: inline-block;">Letter, possibly with diacritics</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `english` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in english</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.127 | - |
+| `french` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in french</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1472 | - |
+| `german` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in german</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.164 | - |
+| `spanish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in spanish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1218 | - |
+| `portuguese` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in portuguese</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1463 | - |
+| `esperanto` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in esperanto</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1212 | - |
+| `italian` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in italian</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1179 | - |
+| `turkish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in turkish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1192 | - |
+| `swedish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in swedish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1015 | - |
+| `polish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in polish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.0891 | - |
+| `dutch` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in dutch</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1891 | - |
+| `danish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in danish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1545 | - |
+| `icelandic` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in icelandic</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1011 | - |
+| `finnish` | <span style="font-size: 0.7em; display: inline-block;">Percentage of occurrences in finnish</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 0.1222 | - |
+
+## Source
+
+https://en.wikipedia.org/wiki/Letter_frequency on January 9, 2020
+

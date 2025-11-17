@@ -4,9 +4,14 @@ title: "cigs"
 
 # Cigs
 
+In 2000, the Federal Trade Commission tested cigarettes to determine the amount of nicotine, tar and carbom monoxide in them. This data set also contains the other information that the FTC collected at that time.
+
+From the authors: "This report contains data on the "tar," nicotine, and carbon monoxide yields of 1294 varieties of cigarettes manufactured and sold in the United States in 1998."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::cigs
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::cigs
 
 ```r
 data <- fosdata::cigs
-pack <- data$pack
+brand_name <- data$brand_name
 ```
 
 ## LLM instructions
@@ -40,14 +45,19 @@ fields[9]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `brand_name` | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
-| `flavor` | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
-| `co` | <u style="text-decoration-style: dotted;">numeric</u> | 0.5 | 22 | - |
-| `nic` | <u style="text-decoration-style: dotted;">numeric</u> | 0.1 | 2 | - |
-| `tar` | <u style="text-decoration-style: dotted;">numeric</u> | 0.5 | 27 | - |
-| `size` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `Reg`, `100`, `King`, `120`, `80` |
-| `filter` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `F`, `NF` |
-| `pack` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `HP`, `SP` |
-| `menthol` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `no`, `yes` |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `brand_name` | <span style="font-size: 0.7em; display: inline-block;">Brand name of the cigarette</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
+| `flavor` | <span style="font-size: 0.7em; display: inline-block;">Information about the cigarette that came after the brand name, such as Ultra or Select</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
+| `co` | <span style="font-size: 0.7em; display: inline-block;">Carbon monoxide content, in mg, rounded to nearest mg</span> | <u style="text-decoration-style: dotted;">numeric</u> | 0.5 | 22 | - |
+| `nic` | <span style="font-size: 0.7em; display: inline-block;">Nicotine content, in mg, rounded to nearest .1</span> | <u style="text-decoration-style: dotted;">numeric</u> | 0.1 | 2 | - |
+| `tar` | <span style="font-size: 0.7em; display: inline-block;">Amount of tar, in mg, rounded to nearest mg</span> | <u style="text-decoration-style: dotted;">numeric</u> | 0.5 | 27 | - |
+| `size` | <span style="font-size: 0.7em; display: inline-block;">Factor with levels 100, 120, 80, King and Reg</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `Reg`, `100`, `King`, `120`, `80` |
+| `filter` | <span style="font-size: 0.7em; display: inline-block;">Factor with levels F = filtered, NF = no filter</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `F`, `NF` |
+| `pack` | <span style="font-size: 0.7em; display: inline-block;">Factor with levels HP = hard pack, SP = soft pack</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `HP`, `SP` |
+| `menthol` | <span style="font-size: 0.7em; display: inline-block;">Factor with levels no = not menthol, and yes = menthol.</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `no`, `yes` |
+
+## Source
+
+'"Tar," nicotine, and carbon monoxide of the smoke of 1294 varieties of domestic cigarettes for the year 1998. Federal Trade Commission report, 2000.' https://www.ftc.gov/sites/default/files/documents/reports/2000-report-tar-nicotine-and-carbon-monoxide-covering-1998/1998tarnicotinereport_0.pdf
+

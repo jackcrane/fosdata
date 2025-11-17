@@ -14,9 +14,14 @@ title: "${dataset.name}"
 
 # ${dataset.name.charAt(0).toUpperCase() + dataset.name.slice(1)}
 
+${dataset.description}
+
+${dataset.details}
+
 ## Initialization
 
 \`\`\`r
+library(fosdata)
 data <- fosdata::${dataset.name}
 \`\`\`
 
@@ -45,12 +50,16 @@ ${dataset.fields
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
 `;
     const fields = dataset.fields.map(
       (field) =>
-        `| \`${field.name}\` | <u style="text-decoration-style: dotted;">${
+        `| \`${
+          field.name
+        }\` | <span style="font-size: 0.7em; display: inline-block;">${
+          field.description
+        }</span> | <u style="text-decoration-style: dotted;">${
           field.type
         }</u> | ${field.min ? field.min : "-"} | ${
           field.max ? field.max : "-"
@@ -59,6 +68,11 @@ ${dataset.fields
         } |`
     );
     const footer = `
+
+## Source
+
+${dataset.source}
+
 `;
     const content = `${header}${fields.join("\n")}${footer}`;
     // console.log(content);

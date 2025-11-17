@@ -4,9 +4,14 @@ title: "powerball"
 
 # Powerball
 
+The results of all Powerball lottery draws from February 3, 2010 to July 29, 2020.
+
+Powerball is an American lottery game offered in most U.S. states. Drawings happen twice weekly, and consist of five white balls drawn without replacement and one red ball, called the Powerball. The format of ball drawings changed on January 15, 2012 and again on October 4, 2015.
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::powerball
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::powerball
 
 ```r
 data <- fosdata::powerball
-Ball5 <- data$Ball5
+Ball3 <- data$Ball3
 ```
 
 ## LLM instructions
@@ -39,13 +44,18 @@ fields[8]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `Draw.Date` | <u style="text-decoration-style: dotted;">Date</u> | - | - | - |
-| `Ball1` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 50 | - |
-| `Ball2` | <u style="text-decoration-style: dotted;">integer</u> | 2 | 61 | - |
-| `Ball3` | <u style="text-decoration-style: dotted;">integer</u> | 3 | 64 | - |
-| `Ball4` | <u style="text-decoration-style: dotted;">integer</u> | 7 | 68 | - |
-| `Ball5` | <u style="text-decoration-style: dotted;">integer</u> | 19 | 69 | - |
-| `Ball6` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 39 | - |
-| `Multiplier` | <u style="text-decoration-style: dotted;">integer</u> | 2 | 10 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `Draw.Date` | <span style="font-size: 0.7em; display: inline-block;">Date of the drawing.</span> | <u style="text-decoration-style: dotted;">Date</u> | - | - | - |
+| `Ball1` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 50 | - |
+| `Ball2` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 2 | 61 | - |
+| `Ball3` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 3 | 64 | - |
+| `Ball4` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 7 | 68 | - |
+| `Ball5` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 19 | 69 | - |
+| `Ball6` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 39 | - |
+| `Multiplier` | <span style="font-size: 0.7em; display: inline-block;">A randomly drawn value that will multiply a player's winnings, should they pay extra for a power play ticket.</span> | <u style="text-decoration-style: dotted;">integer</u> | 2 | 10 | - |
+
+## Source
+
+data.gov, https://catalog.data.gov/dataset/lottery-powerball-winning-numbers-beginning-2010
+

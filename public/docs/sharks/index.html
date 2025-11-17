@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sharks# Initialization# data &lt;- fosdata::sharksAccessing fields# data &lt;- fosdata::sharks vicious &lt;- data$viciousLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::sharks dataset containing the following fields: fields[15]{name,type,values}: av,factor,[audio,video] music,factor,[ominous,uplifting,silence] scary,numeric,n/a dangerous,numeric,n/a vicious,numeric,n/a peaceful,numeric,n/a beautiful,numeric,n/a graceful,numeric,n/a free_response,character,n/a conserve,numeric,n/a gender,numeric,n/a age,numeric,n/a race_ethnicity,numeric,n/a annual_income,numeric,n/a political_views,numeric,n/a Fields# Name Type Min Max Values av factor - - audio, video music factor - - ominous, uplifting, silence scary numeric 1 7 - dangerous numeric 1 7 - vicious numeric 1 7 - peaceful numeric 1 7 - beautiful numeric 1 7 - graceful numeric 1 7 - free_response character - - - conserve numeric 1 7 - gender numeric 1 2 - age numeric 18 65 - race_ethnicity numeric 1 7 - annual_income numeric 1 9 - political_views numeric 1 7 - ">
+<meta name="description" content="Sharks# Studies the effect of different kinds of background music on people watching shark documentaries.
+From the authors: “Despite the ongoing need for shark conservation and management, prevailing negative sentiments marginalize these animals and legitimize permissive exploitation. These negative attitudes arise from an instinctive, yet exaggerated fear, which is validated and reinforced by disproportionate and sensationalistic news coverage of shark ‘attacks’ and by highlighting shark-on-human violence in popular movies and documentaries. In this study, we investigate another subtler, yet powerful factor that contributes to this fear: the ominous background music that often accompanies shark footage in documentaries.” The music in this experiment comes from https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ. Ominous music is Track 9 1:45-2:45, while uplifting music is Track 1, 1:41-2:41.
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/sharks/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="sharks">
-  <meta property="og:description" content="Sharks# Initialization# data &lt;- fosdata::sharksAccessing fields# data &lt;- fosdata::sharks vicious &lt;- data$viciousLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::sharks dataset containing the following fields: fields[15]{name,type,values}: av,factor,[audio,video] music,factor,[ominous,uplifting,silence] scary,numeric,n/a dangerous,numeric,n/a vicious,numeric,n/a peaceful,numeric,n/a beautiful,numeric,n/a graceful,numeric,n/a free_response,character,n/a conserve,numeric,n/a gender,numeric,n/a age,numeric,n/a race_ethnicity,numeric,n/a annual_income,numeric,n/a political_views,numeric,n/a Fields# Name Type Min Max Values av factor - - audio, video music factor - - ominous, uplifting, silence scary numeric 1 7 - dangerous numeric 1 7 - vicious numeric 1 7 - peaceful numeric 1 7 - beautiful numeric 1 7 - graceful numeric 1 7 - free_response character - - - conserve numeric 1 7 - gender numeric 1 2 - age numeric 18 65 - race_ethnicity numeric 1 7 - annual_income numeric 1 9 - political_views numeric 1 7 -">
+  <meta property="og:description" content="Sharks# Studies the effect of different kinds of background music on people watching shark documentaries.
+From the authors: “Despite the ongoing need for shark conservation and management, prevailing negative sentiments marginalize these animals and legitimize permissive exploitation. These negative attitudes arise from an instinctive, yet exaggerated fear, which is validated and reinforced by disproportionate and sensationalistic news coverage of shark ‘attacks’ and by highlighting shark-on-human violence in popular movies and documentaries. In this study, we investigate another subtler, yet powerful factor that contributes to this fear: the ominous background music that often accompanies shark footage in documentaries.” The music in this experiment comes from https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ. Ominous music is Track 9 1:45-2:45, while uplifting music is Track 1, 1:41-2:41.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="sharks">
-  <meta itemprop="description" content="Sharks# Initialization# data &lt;- fosdata::sharksAccessing fields# data &lt;- fosdata::sharks vicious &lt;- data$viciousLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::sharks dataset containing the following fields: fields[15]{name,type,values}: av,factor,[audio,video] music,factor,[ominous,uplifting,silence] scary,numeric,n/a dangerous,numeric,n/a vicious,numeric,n/a peaceful,numeric,n/a beautiful,numeric,n/a graceful,numeric,n/a free_response,character,n/a conserve,numeric,n/a gender,numeric,n/a age,numeric,n/a race_ethnicity,numeric,n/a annual_income,numeric,n/a political_views,numeric,n/a Fields# Name Type Min Max Values av factor - - audio, video music factor - - ominous, uplifting, silence scary numeric 1 7 - dangerous numeric 1 7 - vicious numeric 1 7 - peaceful numeric 1 7 - beautiful numeric 1 7 - graceful numeric 1 7 - free_response character - - - conserve numeric 1 7 - gender numeric 1 2 - age numeric 18 65 - race_ethnicity numeric 1 7 - annual_income numeric 1 9 - political_views numeric 1 7 -">
-  <meta itemprop="wordCount" content="149">
+  <meta itemprop="description" content="Sharks# Studies the effect of different kinds of background music on people watching shark documentaries.
+From the authors: “Despite the ongoing need for shark conservation and management, prevailing negative sentiments marginalize these animals and legitimize permissive exploitation. These negative attitudes arise from an instinctive, yet exaggerated fear, which is validated and reinforced by disproportionate and sensationalistic news coverage of shark ‘attacks’ and by highlighting shark-on-human violence in popular movies and documentaries. In this study, we investigate another subtler, yet powerful factor that contributes to this fear: the ominous background music that often accompanies shark footage in documentaries.” The music in this experiment comes from https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ. Ominous music is Track 9 1:45-2:45, while uplifting music is Track 1, 1:41-2:41.">
+  <meta itemprop="wordCount" content="418">
 
 <title>sharks | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::sharks dataset containing the following fields: fi
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::sharks dataset containing the following fields: fi
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,8 +863,11 @@ LLM Instructions The fosdata::sharks dataset containing the following fields: fi
       
       
   <article class="markdown book-article"><h1 id="sharks">Sharks<a class="anchor" href="#sharks">#</a></h1>
+<p>Studies the effect of different kinds of background music on people watching shark documentaries.</p>
+<p>From the authors: &ldquo;Despite the ongoing need for shark conservation and management, prevailing negative sentiments marginalize these animals and legitimize permissive exploitation. These negative attitudes arise from an instinctive, yet exaggerated fear, which is validated and reinforced by disproportionate and sensationalistic news coverage of shark ‘attacks’ and by highlighting shark-on-human violence in popular movies and documentaries. In this study, we investigate another subtler, yet powerful factor that contributes to this fear: the ominous background music that often accompanies shark footage in documentaries.&rdquo; The music in this experiment comes from <a href="https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ">https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ</a>. Ominous music is Track 9 1:45-2:45, while uplifting music is Track 1, 1:41-2:41.</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>sharks</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>sharks</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>sharks
 </span></span><span style="display:flex;"><span>vicious <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>vicious</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
@@ -890,6 +895,7 @@ fields[15]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -899,6 +905,7 @@ fields[15]{name,type,values}:
   <tbody>
       <tr>
           <td><code>av</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">did the subject see video or listen to audio</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -906,6 +913,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>music</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">was the music played to subject uplifting, ominous or silence</span></td>
           <td><u style="text-decoration-style: dotted;">factor</u></td>
           <td>-</td>
           <td>-</td>
@@ -913,6 +921,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>scary</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does scary describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -920,6 +929,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>dangerous</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does dangerous describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -927,6 +937,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>vicious</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does vicious describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -934,6 +945,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>peaceful</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does peaceful describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -941,6 +953,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>beautiful</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does beautiful describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -948,6 +961,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>graceful</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">how well does graceful describe sharks 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -955,6 +969,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>free_response</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">an adjective (or more) that describes sharks</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -962,6 +977,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>conserve</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">willingness to conserve from 1-7</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -969,6 +985,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>gender</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1 male, 2 female</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>2</td>
@@ -976,6 +993,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>age</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">age in years</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>18</td>
           <td>65</td>
@@ -983,6 +1001,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>race_ethnicity</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1 white_or_caucasian, 2 black_or_african_american, 3 hispanic_or_latino, 4 asian, 5 american_indian_or_alaskan_native, 6 native_hawaiian_or_pacific_islander, 7 other</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -990,6 +1009,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>annual_income</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1-9 by increments of 25K, so 1 = 0-25K, 2 = 25-50K, &hellip;, 9 = 200K+</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>9</td>
@@ -997,6 +1017,7 @@ fields[15]{name,type,values}:
       </tr>
       <tr>
           <td><code>political_views</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">levels 1-7 with 1 extremely liberal, 4 moderate and 7 extremely conservative</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>7</td>
@@ -1004,6 +1025,8 @@ fields[15]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>Nosal AP, Keenan EA, Hastings PA, Gneezy A (2016) The Effect of Background Music in Shark Documentaries on Viewers&rsquo; Perceptions of Sharks. PLoS ONE 11(8): e0159279. <a href="https://doi.org/10.1371/journal.pone.0159279">https://doi.org/10.1371/journal.pone.0159279</a></p>
 </article>
  
       
@@ -1085,6 +1108,7 @@ fields[15]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

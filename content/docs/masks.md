@@ -4,9 +4,14 @@ title: "masks"
 
 # Masks
 
+Fine and coarse influenza droplets that escape a surgical mask in laboratory setting.
+
+Participants wore masks for 30 minutes while a machine gathered their exhalations. Participants were told to cough thirty times during the 30 minutes. One patient coughed naturally more than 30 times. From the authors: "The CDC recommends that healthcare settings provide influenza patients with facemasks as a means of reducing transmission to staff and other patients, and a recent report suggested that surgical masks can capture influenza virus in large droplet spray. However, there is minimal data on influenza virus aerosol shedding, the infectiousness of exhaled aerosols, and none on the impact of facemasks on viral aerosol shedding from patients with seasonal influenza."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::masks
 ```
 
@@ -38,12 +43,17 @@ fields[7]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `obs` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 37 | - |
-| `mask_fine` | <u style="text-decoration-style: dotted;">numeric</u> | - | 24239 | - |
-| `no_mask_fine` | <u style="text-decoration-style: dotted;">numeric</u> | - | 126587 | - |
-| `nasal_swab` | <u style="text-decoration-style: dotted;">numeric</u> | 1725 | 33750000 | - |
-| `mask_coarse` | <u style="text-decoration-style: dotted;">numeric</u> | - | 77 | - |
-| `no_mask_coarse` | <u style="text-decoration-style: dotted;">numeric</u> | - | 29118 | - |
-| `pcr_type` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `A`, `B` |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `obs` | <span style="font-size: 0.7em; display: inline-block;">Observation number</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 37 | - |
+| `mask_fine` | <span style="font-size: 0.7em; display: inline-block;">viral copy number of fine particles (< 5 microns) for those wearing a mask, measured using quantitative RT-PCR</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 24239 | - |
+| `no_mask_fine` | <span style="font-size: 0.7em; display: inline-block;">viral copy number of fine particules for those not wearing a mask</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 126587 | - |
+| `nasal_swab` | <span style="font-size: 0.7em; display: inline-block;">viral load in the nasopharyngeal swab specimen</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1725 | 33750000 | - |
+| `mask_coarse` | <span style="font-size: 0.7em; display: inline-block;">viral copy number of coarse particles (> 5 microns) for those wearing a mask</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 77 | - |
+| `no_mask_coarse` | <span style="font-size: 0.7em; display: inline-block;">viral copy number of coarse particules for those not wearing a mask</span> | <u style="text-decoration-style: dotted;">numeric</u> | - | 29118 | - |
+| `pcr_type` | <span style="font-size: 0.7em; display: inline-block;">A factor indicating which of two strains of influenza patient had</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `A`, `B` |
+
+## Source
+
+Milton DK, Fabian MP, Cowling BJ, Grantham ML, McDevitt JJ (2013) Influenza Virus Aerosols in Human Exhaled Breath: Particle Size, Culturability, and Effect of Surgical Masks. PLoS Pathog 9(3): e1003205. https://doi.org/10.1371/journal.ppat.1003205
+

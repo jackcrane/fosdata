@@ -4,9 +4,14 @@ title: "chimps"
 
 # Chimps
 
+It is known that humans' hair generally turns gray as they age. Is the same true for chimpanzees? This data set contains demographic information on chimpanzees, together with human ratings of how gray their hair is. The authors' original intent was to determine whether middle-aged chimpanzees got gray with age.
+
+From the authors: "The greying of human head hair is arguably the most salient marker of human aging. In wild mammal populations, greying can change with life history or environmental factors (e.g., sexual maturity in silverback gorillas). Yet, whether humans are unique in our pattern of age-related hair depigmentation is unclear."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::chimps
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::chimps
 
 ```r
 data <- fosdata::chimps
-v127 <- data$v127
+v150 <- data$v150
 ```
 
 ## LLM instructions
@@ -190,164 +195,169 @@ fields[159]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `individual` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `year` | <u style="text-decoration-style: dotted;">integer</u> | 2000 | 2013 | - |
-| `sex` | <u style="text-decoration-style: dotted;">character</u> | - | - | `M`, `F` |
-| `age` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 60 | - |
-| `population` | <u style="text-decoration-style: dotted;">character</u> | - | - | `NIRC`, `NGOGO`, `TAI` |
-| `subspecies` | <u style="text-decoration-style: dotted;">character</u> | - | - | `verus`, `schweinfurthii` |
-| `v7` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v8` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v9` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v10` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v11` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v12` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v13` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v14` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v15` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v16` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v17` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v18` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v19` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v20` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v21` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v22` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v23` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v24` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v25` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v26` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v27` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v28` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v29` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v30` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v31` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v32` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v33` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v34` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v35` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v36` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v37` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v38` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v39` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v40` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v41` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v42` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v43` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v44` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v45` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v46` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v47` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v48` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v49` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v50` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v51` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v52` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v53` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v54` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v55` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v56` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v57` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v58` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v59` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v60` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v61` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v62` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v63` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v64` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v65` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v66` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v67` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v68` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v69` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v70` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v71` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v72` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v73` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v74` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v75` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v76` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v77` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v78` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v79` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v80` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v81` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v82` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v83` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v84` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v85` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v86` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v87` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v88` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v89` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v90` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v91` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v93` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v94` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v95` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v96` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v97` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v99` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v100` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v101` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v102` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v103` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v104` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v105` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v106` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v107` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v108` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v109` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v110` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v111` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v112` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v113` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v114` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v115` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v116` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v117` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v118` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v119` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v120` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v121` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v122` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v123` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v124` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v126` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v127` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v128` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v129` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v130` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v131` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v132` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v133` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v135` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v136` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v137` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v138` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v139` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v140` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v141` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v142` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v143` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v144` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v146` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v147` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v148` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v149` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v150` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `v151` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v152` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v153` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v154` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v155` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v156` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v157` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v158` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 7 | - |
-| `v159` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v160` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v161` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v162` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
-| `v164` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `grey_score_avg` | <u style="text-decoration-style: dotted;">numeric</u> | 1.4671 | 4.9211 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `individual` | <span style="font-size: 0.7em; display: inline-block;">Name of the chimpanzee.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `year` | <span style="font-size: 0.7em; display: inline-block;">Year that photograph was taken.</span> | <u style="text-decoration-style: dotted;">integer</u> | 2000 | 2013 | - |
+| `sex` | <span style="font-size: 0.7em; display: inline-block;">Factor with two levels, M and F.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | `M`, `F` |
+| `age` | <span style="font-size: 0.7em; display: inline-block;">Age in years of chimpanzee at time of photo.</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 60 | - |
+| `population` | <span style="font-size: 0.7em; display: inline-block;">Factor with three levels. NIRC corresponds to New Iberia Research Center, TAI corresponds to Taï National Park, Ivory Coast, and NGOGO corresponds to Ngogo, Kibale National Park, Uganda.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | `NIRC`, `NGOGO`, `TAI` |
+| `subspecies` | <span style="font-size: 0.7em; display: inline-block;">Factor with levels versus and schweinfurthii.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | `verus`, `schweinfurthii` |
+| `v7` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v8` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v9` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v10` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v11` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v12` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v13` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v14` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v15` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v16` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v17` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v18` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v19` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v20` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v21` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v22` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v23` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v24` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v25` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v26` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v27` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v28` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v29` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v30` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v31` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v32` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v33` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v34` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v35` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v36` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v37` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v38` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v39` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v40` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v41` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v42` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v43` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v44` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v45` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v46` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v47` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v48` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v49` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v50` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v51` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v52` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v53` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v54` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v55` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v56` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v57` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v58` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v59` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v60` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v61` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v62` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v63` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v64` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v65` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v66` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v67` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v68` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v69` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v70` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v71` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v72` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v73` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v74` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v75` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v76` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v77` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v78` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v79` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v80` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v81` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v82` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v83` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v84` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v85` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v86` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v87` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v88` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v89` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v90` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v91` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v93` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v94` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v95` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v96` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v97` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v99` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v100` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v101` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v102` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v103` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v104` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v105` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v106` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v107` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v108` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v109` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v110` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v111` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v112` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v113` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v114` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v115` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v116` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v117` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v118` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v119` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v120` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v121` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v122` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v123` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v124` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v126` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v127` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v128` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v129` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v130` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v131` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v132` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v133` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v135` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v136` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v137` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v138` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v139` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v140` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v141` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v142` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v143` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v144` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v146` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v147` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v148` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v149` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v150` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `v151` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v152` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v153` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v154` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v155` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v156` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v157` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v158` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 7 | - |
+| `v159` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v160` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v161` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v162` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 6 | - |
+| `v164` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `grey_score_avg` | <span style="font-size: 0.7em; display: inline-block;">Mean value of the gray score rankings given by human judges.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.4671 | 4.9211 | - |
+
+## Source
+
+Tapanes E, Anestis S, Kamilar JM, Bradley BJ (2020) Does facial hair greying in chimpanzees provide a salient progressive cue of aging? PLoS ONE 15(7): e0235610. https://doi.org/10.1371/journal.pone.0235610 https://datadryad.org/stash/dataset/doi:10.5061/dryad.f7m0cfxs7
+

@@ -6,22 +6,26 @@
         {
           "name": "participant",
           "type": "numeric",
+          "description": "ID of participant, from 1-22.",
           "min": 1,
           "max": 22
         },
         {
           "name": "machine",
-          "type": "character"
+          "type": "character",
+          "description": "Name of the machine that the participant was using. Levels are \"LEG PRESS\" \"LEG EXTENSION\" \"LEG CURL\" \"ABDUCTOR\" ADDUCTOR\" \"LOWER BACK\" \"TOTAL ABDOMINAL\" \"VERTICAL TRACTION\" and \"CHEST PRESS\""
         },
         {
           "name": "set",
           "type": "numeric",
+          "description": "Participants did two sets of each machine. This is numeric 1-2.",
           "min": 1,
           "max": 2
         },
         {
           "name": "contraction_mode",
-          "type": "character"
+          "type": "character",
+          "description": "Participants repeated each exercise 10 times in a set. This variable describes whether the observation is related to concentric contraction, eccocentric contraction, contraction for a single rep, and total time-under-tension"
         },
         {
           "name": "time_video_rater_cv_ms",
@@ -50,36 +54,42 @@
         {
           "name": "video_rater_mean_ms",
           "type": "numeric",
+          "description": "Mean of two video timings.",
           "min": 460,
           "max": 91890
         },
         {
           "name": "smartphones_mean_ms",
           "type": "numeric",
+          "description": "Mean of two smartphone timings.",
           "min": 0,
           "max": 90400
         },
         {
           "name": "relative_difference",
           "type": "numeric",
+          "description": "abs(smartphones_mean - video_rater_mean)/video_rater_mean",
           "min": 0,
           "max": 22.56
         },
         {
           "name": "difference_video_smartphone_ms",
           "type": "numeric",
+          "description": "Difference between video an smartphone estimate.",
           "min": -20810,
           "max": 5845
         },
         {
           "name": "mean_video_smartphone_ms",
           "type": "numeric",
+          "description": "Mean of video and smartphone means.",
           "min": 455,
           "max": 91145
         },
         {
           "name": "contraction_mode_levels",
           "type": "character",
+          "description": "One of Con, Ecc, Rep or TuT. Redundant given contraction_mode",
           "values": ["Con", "Ecc", "Rep", "TuT"]
         },
         {
@@ -143,39 +153,50 @@
           "type": "character",
           "values": ["m", "f"]
         }
-      ]
+      ],
+      "description": "One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.",
+      "details": "From the authors: \"Single repetition, contraction-phase specific and total time-under-tension (TUT) are crucial mechano-biological descriptors associated with distinct morphological, molecular and metabolic muscular adaptations in response to exercise, rehabilitation and/or fighting sarcopenia. However, to date, no simple, reliable and valid method has been developed to measure these descriptors.\"",
+      "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0235156 https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/R3ZKYH"
     },
     {
       "name": "acorns",
       "fields": [
         {
           "name": "Species",
-          "type": "character"
+          "type": "character",
+          "description": "Oak species."
         },
         {
           "name": "Region",
           "type": "factor",
+          "description": "Area of prevalence. Atlantic or California.",
           "values": ["Atlantic", "California"]
         },
         {
           "name": "Range",
           "type": "integer",
+          "description": "Geographic range area, km^2 x 100.",
           "min": 13,
           "max": 28389
         },
         {
           "name": "Acorn_size",
           "type": "numeric",
+          "description": "In cm^3. Estimated from Sargent (1961) except trees 4, 15, 16, 33.",
           "min": 0.3,
           "max": 17.1
         },
         {
           "name": "Tree_height",
           "type": "numeric",
+          "description": "In meters. Estimated from Sargent (1961) except trees 16, 38.",
           "min": 0.3,
           "max": 30
         }
-      ]
+      ],
+      "description": "Acorn size, tree height and geographic range for 39 species of oak (Quercus L.) native to North America.",
+      "details": "From the authors: \"Seed size can be an important factor influencing the extent of the range of a plant species that has recently expanded or shifted the area it occupies as a consequence of climatic changes. A positive correlation exists between acorn size and geographical range of the North American oaks (Quercus L.) of eastern North America. An independent analysis of oaks native to the California region suggests that this is a continental pattern.\" Oak 39, Quercus tomentella Engelm , is only found on islands off the western coast.",
+      "source": "Aizen, Marcelo & Patterson III, William. (1990). Acorn Size and Geographical Range in the North American Oaks (Quercus L.). Journal of Biogeography. 17. 327. 10.2307/2845128. https://www.jstor.org/stable/2845128"
     },
     {
       "name": "adipose",
@@ -183,116 +204,140 @@
         {
           "name": "sex",
           "type": "factor",
+          "description": "Male or Female",
           "values": ["Male", "Female"]
         },
         {
           "name": "health",
-          "type": "character"
+          "type": "character",
+          "description": "Description of general health of participant"
         },
         {
           "name": "age",
           "type": "numeric",
+          "description": "age in years",
           "min": 18,
           "max": 83
         },
         {
           "name": "ldl",
           "type": "numeric",
+          "description": "LDL cholesterol in mmol/L",
           "min": 0.61,
           "max": 4.52
         },
         {
           "name": "hdl",
           "type": "numeric",
+          "description": "HDL cholesterol in mmol/L",
           "min": 0.44,
           "max": 2.56
         },
         {
           "name": "trig",
           "type": "numeric",
+          "description": "Triglycerides in mmol/L",
           "min": 0.5,
           "max": 4.14
         },
         {
           "name": "glucose",
           "type": "numeric",
+          "description": "Blood glucose in mmol/L",
           "min": 3.98,
           "max": 15.1
         },
         {
           "name": "stature_cm",
           "type": "numeric",
+          "description": "height in centimeters",
           "min": 151,
           "max": 186.8
         },
         {
           "name": "waist_cm",
           "type": "numeric",
+          "description": "waist measurement in cm",
           "min": 56,
           "max": 125
         },
         {
           "name": "hips_cm",
           "type": "numeric",
+          "description": "hips measurement in cm",
           "min": 76.5,
           "max": 125
         },
         {
           "name": "vat",
           "type": "numeric",
+          "description": "visceral adipose tissue fat mass in grams",
           "min": 2,
           "max": 3794
         },
         {
           "name": "bmi",
           "type": "numeric",
+          "description": "body mass index kg/m^2",
           "min": 16.6406,
           "max": 37.3247
         }
-      ]
+      ],
+      "description": "Measurements of BMI and adipose tissue for adults.",
+      "details": "The response variables of interest in this study were BMI and VAT. According to the authors of the study, the VAT measurements of 5 or lower are suspect and may need to be excluded. From the authors: \"The aims of this study were (a) to compare five anthropometric predictors of precent FM and VAT mass, and (b) to explore new cut-points for the best of these predictors to improve the characterisation of obesity.\"",
+      "source": "Swainson MG, Batterham AM, Tsakirides C, Rutherford ZH, Hind K (2017) Prediction of whole-body fat percentage and visceral adipose tissue mass from five anthropometric variables. PLoS ONE 12(5): e0177175. https://doi.org/10.1371/journal.pone.0177175"
     },
     {
       "name": "austen",
       "fields": [
         {
           "name": "word",
-          "type": "character"
+          "type": "character",
+          "description": "A word in either Emma or Pride and Prejudice"
         },
         {
           "name": "sentence",
           "type": "integer",
+          "description": "The sentence number of the book that the word appears in.",
           "min": 1,
           "max": 9340
         },
         {
           "name": "chapter",
           "type": "integer",
+          "description": "The chapter of the book that the word appears in.",
           "min": 1,
           "max": 61
         },
         {
           "name": "word_length",
           "type": "integer",
+          "description": "The length of the word.",
           "min": 1,
           "max": 19
         },
         {
           "name": "stop_word",
           "type": "logical",
+          "description": "Is the word a stop word? Stop word are words such as \"the\" \"and\" or \"of,\" which are common and don't carry sentiment.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "sentiment_score",
           "type": "integer",
+          "description": "Sentiment score of the word. Larger numbers correspond to more positive sentiment.",
           "min": -4,
           "max": 4
         },
         {
           "name": "novel",
           "type": "character",
+          "description": "One of Emma or Pride and Prejudice.",
           "values": ["Emma", "Pride and Prejudice"]
         }
-      ]
+      ],
+      "description": "Downloaded from Project Gutenberg. Emma and Pride and Prejudice are free from copyright in the US and in most countries, according to Project Gutenberg. Please check laws in your country before use.",
+      "source": "https://www.gutenberg.org/files/158/158-0.txt and https://www.gutenberg.org/files/1342/1342-0.txt"
     },
     {
       "name": "barnacles",
@@ -300,48 +345,59 @@
         {
           "name": "location",
           "type": "factor",
+          "description": "Either FGB (Flower Garden Banks) or USVI (U.S. Virgin Islands).",
           "values": ["FGB", "USVI"]
         },
         {
           "name": "site",
-          "type": "factor"
+          "type": "factor",
+          "description": "Specific site within location."
         },
         {
           "name": "coral_cover",
           "type": "numeric",
+          "description": "Percentage of reef covered in coral.",
           "min": 0.3524,
           "max": 67.4129
         },
         {
           "name": "depth",
           "type": "numeric",
+          "description": "Depth of reef (meters).",
           "min": 7,
           "max": 38.1
         },
         {
           "name": "deep",
           "type": "factor",
+          "description": "Factor with two values, deep or shallow.",
           "values": ["shallow", "deep"]
         },
         {
           "name": "count",
           "type": "integer",
+          "description": "Number of barnacles.",
           "min": 0,
           "max": 1980
         },
         {
           "name": "area",
           "type": "numeric",
+          "description": "Area where barnacles were counted in square meters.",
           "min": 0.0014,
           "max": 3.0437
         },
         {
           "name": "barnacle_density",
           "type": "numeric",
+          "description": "Barnacles per square meter.",
           "min": 0,
           "max": 2174.6065
         }
-      ]
+      ],
+      "description": "Counts and density of barnacles on coral reefs in the Flower Garden Banks (Gulf of Mexico) and in the U.S. Virgin Islands.",
+      "details": "From the authors: \"Bioerosion, the removal of calcium carbonate from coral frameworks by living organisms, influences a variety of reef features, from their topographic complexity to the net balance of carbonate budgets. Little is known, however, about how macroborers, which bore into reef substrates leaving traces greater than 0.1 mm diameter, are distributed across coral reefs, particularly reef systems with high (>50%) stony coral cover or at mesophotic depths (≥30 m).\"",
+      "source": "Maher RL, Johnston MA, Brandt ME, Smith TB, Correa AMS (2018) Depth and coral cover drive the distribution of a coral macroborer across two reef systems. PLoS ONE 13(6): e0199462. https://doi.org/10.1371/journal.pone.0199462"
     },
     {
       "name": "bechdel",
@@ -349,84 +405,102 @@
         {
           "name": "year",
           "type": "integer",
+          "description": "Movie release year.",
           "min": 1970,
           "max": 2013
         },
         {
           "name": "imdb",
-          "type": "character"
+          "type": "character",
+          "description": "Movie ID number at imdb.com."
         },
         {
           "name": "title",
-          "type": "character"
+          "type": "character",
+          "description": "Movie title."
         },
         {
           "name": "test",
-          "type": "factor"
+          "type": "factor",
+          "description": "The full Bechdel test status of the film, as rated by BechdelTest.com."
         },
         {
           "name": "clean_test",
           "type": "factor",
+          "description": "A simplified Bechdel test status. Contains levels dubious, men, notalk, nowmen, and ok.",
           "values": ["notalk", "ok", "men", "nowomen", "dubious"]
         },
         {
           "name": "binary",
           "type": "factor",
+          "description": "The Bechdel test stautus simplified to PASS/FAIL.",
           "values": ["FAIL", "PASS"]
         },
         {
           "name": "budget",
           "type": "numeric",
+          "description": "The film's budget, in US dollars, when made.",
           "min": 7000,
           "max": 425000000
         },
         {
           "name": "domgross",
           "type": "numeric",
+          "description": "Domestic earnings (US, Canada, PR, Guam).",
           "min": 0,
           "max": 760507625
         },
         {
           "name": "intgross",
           "type": "numeric",
+          "description": "International earnings.",
           "min": 828,
           "max": 2783918982
         },
         {
           "name": "code",
-          "type": "factor"
+          "type": "factor",
+          "description": "Combination of year and binary variables."
         },
         {
           "name": "budget_2013",
           "type": "numeric",
+          "description": "The film's budget, in 2013 US dollars.",
           "min": 8632,
           "max": 461435929
         },
         {
           "name": "domgross_2013",
           "type": "numeric",
+          "description": "Domestic earnings in 2013 US dollars.",
           "min": 899,
           "max": 1771682790
         },
         {
           "name": "intgross_2013",
           "type": "numeric",
+          "description": "International earnings in 2013 US dollars.",
           "min": 899,
           "max": 3171930973
         },
         {
           "name": "period_code",
           "type": "integer",
+          "description": "Movie release year segmented into five periods, 1=2010-2014, 2=2005-2009, etc.",
           "min": 1,
           "max": 5
         },
         {
           "name": "decade_code",
           "type": "integer",
+          "description": "Movie release year segmented into three decades, 1=2010s, 2=2000s, 3=1990s.",
           "min": 1,
           "max": 3
         }
-      ]
+      ],
+      "description": "A simple tool for detecting gender bias in Hollywood movies is the Bechdel test, which originated in Alison Bechdel's comic strip \"Dykes To Watch Out For\". A movie passes the test if it has: at least two women in it who talk to each other about something besides a man This data set contains information about movies, whether they pass or fail the Bechdel test, and financial information for those movies.",
+      "details": "From the authors: \"Audiences and creators know that on one level or another, there’s an inherent gender bias in the movie business — whether it’s the disproportionately low number of films with female leads, the process of pigeonholing actresses into predefined roles (action chick, romantic interest, middle-aged mother, etc.), or the lack of serious character development for women on screen compared to their male counterparts. What’s challenging is quantifying this dysfunction, putting numbers to a trend that is — at least anecdotally — a pretty clear reality.\"",
+      "source": "\"The Dollar-And-Cents Case Against Hollywood's Exclusion of Women\", Walt Hickey, FiveThirtyEight, April 1, 2014. https://github.com/fivethirtyeight/data/tree/master/bechdel"
     },
     {
       "name": "bicycle_signage",
@@ -434,31 +508,37 @@
         {
           "name": "treatment",
           "type": "character",
+          "description": "The traffic control device the respondent viewed. 1_None (no signage); 2_STR (Share the Road signage); 3_SLM (Shared Lane Markings); 4_BMUFL (Bicycles May Use Full Lane signage)",
           "values": ["1_None", "4_BMUFL", "2_STR", "3_SLM"]
         },
         {
           "name": "bike_move_right2",
           "type": "factor",
+          "description": "Response to the bicyclist should move to the right and allow the following motorist to pass within the lane.",
           "values": ["1_Agree", "0_Disagree"]
         },
         {
           "name": "mv_wait2",
           "type": "factor",
+          "description": "Response to the motorist behind the bicyclist should slow and wait for a break in incoming traffic before passing in the adjacent lane. 0_Disagree; 1_Agree",
           "values": ["0_Disagree", "1_Agree"]
         },
         {
           "name": "permitted2",
           "type": "factor",
+          "description": "Response to the bicyclist is permitted to ride in the center of the lane.",
           "values": ["1_Agree", "0_Disagree"]
         },
         {
           "name": "safe2",
           "type": "factor",
+          "description": "Response to it is safe for the bicyclists to ride in the center of the lane.",
           "values": ["1_Agree", "0_Disagree"]
         },
         {
           "name": "cycle_distance",
           "type": "factor",
+          "description": "How many miles do you bicycle during a typical week",
           "values": [
             "More than 50 miles",
             "11 - 50 miles",
@@ -469,6 +549,7 @@
         {
           "name": "mv_distance",
           "type": "factor",
+          "description": "How many miles do you drive a motor vehicle during a typical week",
           "values": [
             "Less than 50 miles",
             "None",
@@ -479,20 +560,24 @@
         {
           "name": "commute_type2",
           "type": "factor",
+          "description": "CommuteType recoded to motor vehicle or something else",
           "values": ["Other", "MotorVehicle"]
         },
         {
           "name": "state",
-          "type": "character"
+          "type": "character",
+          "description": "State of residence"
         },
         {
           "name": "gender",
           "type": "factor",
+          "description": "Male or female",
           "values": ["Male", "Female"]
         },
         {
           "name": "education",
           "type": "factor",
+          "description": "Level of education",
           "values": [
             "4-Year College",
             "Graduate Degree",
@@ -501,54 +586,68 @@
             "Did not graduate high school"
           ]
         }
-      ]
+      ],
+      "description": "Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.",
+      "details": "From the authors: \"Many global challenges, including obesity, health care costs, and climate change, could be addressed in part by increasing the use of bicycles for transportation. Concern about the safety of bicycling on roadways is frequently cited as a deterrent to increasing bicycle use in the USA. The use of effective signage along roadways might help alleviate these concerns by increasing knowledge about the rights and duties of bicyclists and motorists, ideally reducing crashes.\"",
+      "source": "Hess G, Peterson MN (2015) “Bicycles May Use Full Lane” Signage Communicates U.S. Roadway Rules and Increases Perception of Safety. PLoS ONE 10(8): e0136973. https://doi.org/10.1371/journal.pone.0136973"
     },
     {
       "name": "biomass",
       "fields": [
         {
           "name": "plot",
-          "type": "character"
+          "type": "character",
+          "description": "Which location the sample was taken from."
         },
         {
           "name": "year",
           "type": "integer",
+          "description": "Year of sample.",
           "min": 1989,
           "max": 2016
         },
         {
           "name": "from",
-          "type": "character"
+          "type": "character",
+          "description": "Start date of the sample taking."
         },
         {
           "name": "to",
-          "type": "character"
+          "type": "character",
+          "description": "End date of the sample taking."
         },
         {
           "name": "biomass",
           "type": "numeric",
+          "description": "Biomass caught in the trap, in g",
           "min": 0.1,
           "max": 496.5
         },
         {
           "name": "e",
           "type": "numeric",
+          "description": "Degrees longitude",
           "min": 6.1316,
           "max": 14.298
         },
         {
           "name": "n",
           "type": "numeric",
+          "description": "Degrees latitude",
           "min": 50.1706,
           "max": 52.1982
         },
         {
           "name": "location_type",
           "type": "integer",
+          "description": "1 = nutrient-poor heathlands, sandy grassland, and dunes; 2 = nutrient-rich grasslands, margins and wasteland; 3 = pioneer and shrub communities",
           "min": 1,
           "max": 3
         }
-      ]
+      ],
+      "description": "Biomass of insects caught in malaise traps over 96 unique location-year pairs, together with date and general description of type of nature area.",
+      "details": "From the authors: \"Current data suggest an overall pattern of decline in insect diversity and abundance. Loss of insects is certain to have adverse effects on ecosystem functioning, as insects play a central role in a variety of processes, including pollination, herbivory and detrivory, nutrient cycling and providing a food source for higher trophic levels such as birds, mammals and amphibians. For example, 80 percent of wild plants are estimated to depend on insects for pollination, while 60 percent of birds rely on insects as a food source.\"",
+      "source": "Hallmann CA, Sorg M, Jongejans E, Siepel H, Hofland N, Schwan H, et al. (2017) More than 75 percent decline over 27 years in total flying insect biomass in protected areas. PLoS ONE 12(10): e0185809 https://doi.org/10.1371/journal.pone.0185809"
     },
     {
       "name": "brake",
@@ -556,186 +655,222 @@
         {
           "name": "subject_id",
           "type": "integer",
+          "description": "unique identifier of subject",
           "min": 1,
           "max": 80
         },
         {
           "name": "age_group",
           "type": "character",
+          "description": "Young or Old",
           "values": ["Young", "Old"]
         },
         {
           "name": "age",
           "type": "integer",
+          "description": "age in years",
           "min": 18,
           "max": 81
         },
         {
           "name": "gender",
           "type": "integer",
+          "description": "1 = male, 0 = female",
           "min": 0,
           "max": 1
         },
         {
           "name": "latency_p1",
           "type": "numeric",
+          "description": "time to press brake after seeing red light (ms)",
           "min": 315.6204,
           "max": 1240.2232
         },
         {
           "name": "latency_p2",
           "type": "numeric",
+          "description": "time to release brake after pressing on it (ms)",
           "min": 485.8605,
           "max": 1932.2926
         },
         {
           "name": "latency_p3",
           "type": "numeric",
+          "description": "time to press pedal to left of what participant thought was brake (ms)",
           "min": 190.038,
           "max": 2410.4977
         },
         {
           "name": "p1_p2",
           "type": "numeric",
+          "description": "Sum of latency_p1 and latency_p2",
           "min": 844.4527,
           "max": 2537.9589
         },
         {
           "name": "p1_p2_p3",
           "type": "numeric",
+          "description": "Sum of latency_p1, latency_p2, and latency_p3",
           "min": 1148.7133,
           "max": 4948.4566
         },
         {
           "name": "cfq",
           "type": "numeric",
+          "description": "Score on cognitive failure questionairre",
           "min": 1.25,
           "max": 3.35
         },
         {
           "name": "dbq_error",
           "type": "numeric",
+          "description": "Score on dribing behavior questionnaire error questions",
           "min": 1,
           "max": 3
         },
         {
           "name": "dbq_violation",
           "type": "numeric",
+          "description": "Score on dbq violation questions",
           "min": 1,
           "max": 4.6667
         },
         {
           "name": "dbq_laspe",
           "type": "numeric",
+          "description": "Score on dbq lapse questions",
           "min": 1,
           "max": 3.6667
         },
         {
           "name": "difficulty",
           "type": "integer",
+          "description": "response to \"was the current task difficult for you\" on a 1-100 visual scale",
           "min": 7,
           "max": 100
         },
         {
           "name": "confidence",
           "type": "integer",
+          "description": "response to \"do you have much confidence in your ability to perform the current task\" 1-100",
           "min": 14,
           "max": 100
         },
         {
           "name": "decline",
           "type": "integer",
+          "description": "asked of older adults. \"how well do you think you can perform task relative to younger adults\" scale from 1-150",
           "min": 12,
           "max": 89
         },
         {
           "name": "anxiety",
           "type": "integer",
+          "description": "In daily life, how much are you afraid you will press the wrong pedal? 1-5",
           "min": 1,
           "max": 5
         },
         {
           "name": "near_miss",
           "type": "integer",
+          "description": "In daily life, how often do you nearly miss the pedal? 1-5",
           "min": 1,
           "max": 3
         },
         {
           "name": "mmse",
           "type": "integer",
+          "description": "Score on mini mental stat examination (24 necessary to participate)",
           "min": 25,
           "max": 30
         },
         {
           "name": "education",
           "type": "integer",
+          "description": "numeric 12-20",
           "min": 9,
           "max": 20
         }
-      ]
+      ],
+      "description": "From the authors: \"Although unintended acceleration caused by pedal misapplication is a cause of traffic accidents, fatal accidents may be avoided if drivers realize their error immediately and quickly correct how they are stepping on the pedal. This correction behavior may decline with age because the rate of fatal accidents is fairly higher for older adults than for younger adults.\"",
+      "source": "Hasegawa K, Kimura M, Takeda Y (2020) Age-related differences in correction behavior for unintended acceleration. PLoS ONE 15(7): e0236053. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0236053 https://osf.io/mre6y/?view_only=5af130ecc3234435b7a7ffc1ba6c391f"
     },
     {
       "name": "cern",
       "fields": [
         {
           "name": "postdate",
-          "type": "character"
+          "type": "character",
+          "description": "DD-MMM-YYYY character variable, where MMM is three letter abbreviation for English month"
         },
         {
           "name": "platform",
           "type": "factor",
+          "description": "Social media platform of post, factor with 5 levels. Facebook, Google+, Instagra, Tw Frenc, Twitter",
           "values": ["Facebook", "Google+", "Twitter", "Instagra", "Tw Frenc"]
         },
         {
           "name": "type",
           "type": "factor",
+          "description": "type of post, factor with 4 levels. GWII = \"Guess what that is\", News = \"News\", TBT = \"Throw back Thursday\", or Wow = \"Awe-inspiring images\"",
           "values": ["GWII", "News", "Wow", "TBT"]
         },
         {
           "name": "subject",
-          "type": "character"
+          "type": "character",
+          "description": "subject of post"
         },
         {
           "name": "followers",
           "type": "integer",
+          "description": "number of followers on platform at time of post",
           "min": 266,
           "max": 1060000
         },
         {
           "name": "likes",
           "type": "numeric",
+          "description": "number of times post was \"liked\"",
           "min": 0,
           "max": 4480
         },
         {
           "name": "comments",
           "type": "numeric",
+          "description": "number of comments",
           "min": 0,
           "max": 402
         },
         {
           "name": "shares",
           "type": "numeric",
+          "description": "number of times media was shared",
           "min": 0,
           "max": 1255
         },
         {
           "name": "click_throughs",
           "type": "numeric",
+          "description": "number of click throughs",
           "min": 1,
           "max": 1158
         },
         {
           "name": "avg_visit_duration",
           "type": "numeric",
+          "description": "mean length of time people stayed on CERN cite after click through, in seconds",
           "min": 0,
           "max": 147
         },
         {
           "name": "post",
-          "type": "character"
+          "type": "character",
+          "description": "link to actual post on social media"
         }
-      ]
+      ],
+      "description": "Social media engagements of 4 different types of posts on 4 different platforms by The European Organization for Nuclear Research, better known as CERN.",
+      "details": "From the authors: \"Although the scientific community increasingly recognizes that its communication with the public may shape civic engagement with science, few studies have characterized how this communication occurs online. This study sets out to explore how users engage with science communication items on different platforms of social media, and what are the characteristics of the items that tend to attract large numbers of user interactions.\"",
+      "source": "Kahle K, Sharon AJ, Baram-Tsabari A (2016) Footprints of Fascination: Digital Traces of Public Engagement with Particle Physics on CERN's Social Media Platforms. PLoS ONE 11(5): e0156409. https://doi.org/10.1371/journal.pone.0156409"
     },
     {
       "name": "child_tasks",
@@ -743,113 +878,135 @@
         {
           "name": "gender",
           "type": "factor",
+          "description": "Factor with levels Male/Female",
           "values": ["Male", "Female"]
         },
         {
           "name": "age_in_months",
           "type": "numeric",
+          "description": "Age in months",
           "min": 72,
           "max": 119
         },
         {
           "name": "age_group",
           "type": "factor",
+          "description": "Factor with levels \"6 year olds\", \"7 year olds\", \"8 year olds\", \"9 year olds\"",
           "values": ["6 year olds", "7 year olds", "8 year olds", "9 year olds"]
         },
         {
           "name": "day_night_completion_time_secs",
           "type": "numeric",
+          "description": "Time to complete day-night test in seconds",
           "min": 17.5,
           "max": 40.41
         },
         {
           "name": "day_night_accuracy_score",
           "type": "numeric",
+          "description": "Accuract score in day-night test",
           "min": 11,
           "max": 32
         },
         {
           "name": "counting_span_score",
           "type": "numeric",
+          "description": "Score on counting span test",
           "min": 4,
           "max": 14
         },
         {
           "name": "backward_digit_span_score",
           "type": "numeric",
+          "description": "Score on backward digit test",
           "min": 2,
           "max": 12
         },
         {
           "name": "card_sort_preswitch_time_secs",
           "type": "numeric",
+          "description": "Time to sort cards into boxes with animal labels.",
           "min": 3.96,
           "max": 15.86
         },
         {
           "name": "card_sort_postswitch_time_secs",
           "type": "numeric",
+          "description": "Time to sort cards into boxes with colors",
           "min": 3.3,
           "max": 14.82
         },
         {
           "name": "card_sort_preswitch_accuracy",
           "type": "numeric",
+          "description": "Accuracy in sorting cards into boxes with animals",
           "min": 8,
           "max": 10
         },
         {
           "name": "card_sort_postswitch_accuracy",
           "type": "numeric",
+          "description": "Accuracy in sorting cards into boxes with colors",
           "min": 4,
           "max": 10
         },
         {
           "name": "stt_cv_trail_a_secs",
           "type": "numeric",
+          "description": "Time to connect dots from 1-15",
           "min": 12.53,
           "max": 53.61
         },
         {
           "name": "stt_cv_trail_b_secs",
           "type": "numeric",
+          "description": "Time to connect dots 1-8 and 1-7 alternating circles and squares",
           "min": 20.04,
           "max": 94.43
         }
-      ]
+      ],
+      "description": "Time that it takes children to complete various activities.",
+      "details": "More information on the activities of the children. The day-night test. Children are told to say \"day\" when shown a picture of the moon and stars, and to say \"night\" when shown a picture of the sun. Time to complete test and number correct (0 incorrect, 1 point for self-corrected, 2 points for correct) are measured. Counting-span test. Children were required to count the number of red dots on cards, and recall the number of dots without looking at them. Given in sets of 1 through 5. Max score of 15. Digit Span Backward. Children were read from 2-8 numbers and asked to recite them backwards. Two numbers repeated 4 times, and the rest repeated twice. Max score of 16. Card-sort task. Children sorted cards that were blue/red with either bunnies/boats on them into boxes that had either pictures of boats and bunnies or were blue and red. Time to sort and a correctness score were measured. Shape Trail Test. In trial A the children were to connect the dots in order from 1-15. In trial B the children were to connect the dots (1-8 circles and 1-7 squares) in order, alternating between circles and squares. Time to completion was measured. From the authors: \"In this paper we report an initial validation of the Shape Trail Test–Child Version (STT-CV) with a non-clinical sample of children aged 6 to 9 years. The STT-CV has been developed as an age-appropriate and culturally fair direct downward extension of the Trail Making Test (TMT) for the assessment of cognitive flexibility.\"",
+      "source": "Chan AYC, Morgan S-J (2018) Assessing children's cognitive flexibility with the Shape Trail Test. PLoS ONE 13(5): e0198254. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0198254"
     },
     {
       "name": "chimps",
       "fields": [
         {
           "name": "individual",
-          "type": "character"
+          "type": "character",
+          "description": "Name of the chimpanzee."
         },
         {
           "name": "year",
           "type": "integer",
+          "description": "Year that photograph was taken.",
           "min": 2000,
           "max": 2013
         },
         {
           "name": "sex",
           "type": "character",
+          "description": "Factor with two levels, M and F.",
           "values": ["M", "F"]
         },
         {
           "name": "age",
           "type": "integer",
+          "description": "Age in years of chimpanzee at time of photo.",
           "min": 1,
           "max": 60
         },
         {
           "name": "population",
           "type": "character",
+          "description": "Factor with three levels. NIRC corresponds to New Iberia Research Center, TAI corresponds to Taï National Park, Ivory Coast, and NGOGO corresponds to Ngogo, Kibale National Park, Uganda.",
           "values": ["NIRC", "NGOGO", "TAI"]
         },
         {
           "name": "subspecies",
           "type": "character",
+          "description": "Factor with levels versus and schweinfurthii.",
           "values": ["verus", "schweinfurthii"]
         },
         {
@@ -1767,61 +1924,77 @@
         {
           "name": "grey_score_avg",
           "type": "numeric",
+          "description": "Mean value of the gray score rankings given by human judges.",
           "min": 1.4671,
           "max": 4.9211
         }
-      ]
+      ],
+      "description": "It is known that humans' hair generally turns gray as they age. Is the same true for chimpanzees? This data set contains demographic information on chimpanzees, together with human ratings of how gray their hair is. The authors' original intent was to determine whether middle-aged chimpanzees got gray with age.",
+      "details": "From the authors: \"The greying of human head hair is arguably the most salient marker of human aging. In wild mammal populations, greying can change with life history or environmental factors (e.g., sexual maturity in silverback gorillas). Yet, whether humans are unique in our pattern of age-related hair depigmentation is unclear.\"",
+      "source": "Tapanes E, Anestis S, Kamilar JM, Bradley BJ (2020) Does facial hair greying in chimpanzees provide a salient progressive cue of aging? PLoS ONE 15(7): e0235610. https://doi.org/10.1371/journal.pone.0235610 https://datadryad.org/stash/dataset/doi:10.5061/dryad.f7m0cfxs7"
     },
     {
       "name": "cigs",
       "fields": [
         {
           "name": "brand_name",
-          "type": "factor"
+          "type": "factor",
+          "description": "Brand name of the cigarette"
         },
         {
           "name": "flavor",
-          "type": "factor"
+          "type": "factor",
+          "description": "Information about the cigarette that came after the brand name, such as Ultra or Select"
         },
         {
           "name": "co",
           "type": "numeric",
+          "description": "Carbon monoxide content, in mg, rounded to nearest mg",
           "min": 0.5,
           "max": 22
         },
         {
           "name": "nic",
           "type": "numeric",
+          "description": "Nicotine content, in mg, rounded to nearest .1",
           "min": 0.1,
           "max": 2
         },
         {
           "name": "tar",
           "type": "numeric",
+          "description": "Amount of tar, in mg, rounded to nearest mg",
           "min": 0.5,
           "max": 27
         },
         {
           "name": "size",
           "type": "factor",
+          "description": "Factor with levels 100, 120, 80, King and Reg",
           "values": ["Reg", "100", "King", "120", "80"]
         },
         {
           "name": "filter",
           "type": "factor",
+          "description": "Factor with levels F = filtered, NF = no filter",
           "values": ["F", "NF"]
         },
         {
           "name": "pack",
           "type": "factor",
+          "description": "Factor with levels HP = hard pack, SP = soft pack",
           "values": ["HP", "SP"]
         },
         {
           "name": "menthol",
           "type": "factor",
+          "description": "Factor with levels no = not menthol, and yes = menthol.",
           "values": ["no", "yes"]
         }
-      ]
+      ],
+      "description": "In 2000, the Federal Trade Commission tested cigarettes to determine the amount of nicotine, tar and carbom monoxide in them. This data set also contains the other information that the FTC collected at that time.",
+      "details": "From the authors: \"This report contains data on the \"tar,\" nicotine, and carbon monoxide yields of 1294 varieties of cigarettes manufactured and sold in the United States in 1998.\"",
+      "source": "'\"Tar,\" nicotine, and carbon monoxide of the smoke of 1294 varieties of domestic cigarettes for the year 1998. Federal Trade Commission report, 2000.' https://www.ftc.gov/sites/default/files/documents/reports/2000-report-tar-nicotine-and-carbon-monoxide-covering-1998/1998tarnicotinereport_0.pdf"
     },
     {
       "name": "climate",
@@ -1829,116 +2002,138 @@
         {
           "name": "appeal",
           "type": "numeric",
+          "description": "the moral or evaluative orientation of a narrative. Does the text makes an explicit appeal to the reader or a clear recommendation for action",
           "min": 0,
           "max": 1
         },
         {
           "name": "conjunctions",
           "type": "numeric",
+          "description": "the number of times that conjunctions signifying cause and effect, contrast, or temporal ordering appeared in the text.",
           "min": 0.25,
           "max": 4.8333
         },
         {
           "name": "connectivity",
           "type": "numeric",
+          "description": "he number of times that words or phrases from one sentence were used to create an explicit link to the sentence immediately preceding it",
           "min": 0.25,
           "max": 7.1667
         },
         {
           "name": "narrative_perspective",
           "type": "numeric",
+          "description": "whether or not the narrator referred to themselves in the text (e.g., through use of pronouns such as I, we, and our)",
           "min": 0,
           "max": 1
         },
         {
           "name": "sensory",
           "type": "numeric",
+          "description": "the number of times that sensory or emotional language appeared in the abstract",
           "min": 0,
           "max": 3.25
         },
         {
           "name": "setting",
           "type": "numeric",
+          "description": "whether there is a specific mention of place or time in the abstract",
           "min": 0,
           "max": 1
         },
         {
           "name": "citations",
           "type": "numeric",
+          "description": "The log of Web of Science number of citations for the articles associated with each abstract in our dataset.",
           "min": 0,
           "max": 7.0942
         },
         {
           "name": "year",
           "type": "numeric",
+          "description": "year of publication",
           "min": 2009,
           "max": 2010
         },
         {
           "name": "journal",
-          "type": "character"
+          "type": "character",
+          "description": "One of \"PNAS\" \"Proc Roy Soc B\" or \"Phil Trans Roy Soc B\""
         },
         {
           "name": "number_of_authors",
           "type": "numeric",
+          "description": "number of authors",
           "min": 0,
           "max": 5.1591
         },
         {
           "name": "abstract_length",
           "type": "integer",
+          "description": "in words",
           "min": 53,
           "max": 642
         },
         {
           "name": "abstract_number",
           "type": "integer",
+          "description": "unique identifier",
           "min": 886110198,
           "max": 908379250
         },
         {
           "name": "normalized_citations",
           "type": "numeric",
+          "description": "adjusted for length of time paper has been published. Citations per year. Not in log scale.",
           "min": 0.1667,
           "max": 200.8333
         },
         {
           "name": "normalized_sensory",
           "type": "numeric",
+          "description": "Sensory words per word in abstract",
           "min": 0,
           "max": 0.037
         },
         {
           "name": "normalized_conjunctions",
           "type": "numeric",
+          "description": "conjunctions per word in abstract",
           "min": 0.0016,
           "max": 0.0377
         },
         {
           "name": "normalized_connectivity",
           "type": "numeric",
+          "description": "connectivity words per word in abstract",
           "min": 0.0011,
           "max": 0.0528
         },
         {
           "name": "binary_setting",
           "type": "numeric",
+          "description": "1 = yes, 0 = no decision on whether setting is used",
           "min": 0,
           "max": 1
         },
         {
           "name": "binary_appeal",
           "type": "numeric",
+          "description": "1 = yes, 0 = no decision on whether appeal is made",
           "min": 0,
           "max": 1
         },
         {
           "name": "impact",
           "type": "numeric",
+          "description": "impact factor",
           "min": 1.436,
           "max": 36.104
         }
-      ]
+      ],
+      "description": "Does the style of writing impact the number of citations that a climate change paper receives?",
+      "details": "See the paper for details on how the data was collected. This data set was created using the raw data from the article together with the R script provided by the authors. From the authors: \"Peer-reviewed publications focusing on climate change are growing exponentially with the consequence that the uptake and influence of individual papers varies greatly. Here, we derive metrics of narrativity from psychology and literary theory, and use these metrics to test the hypothesis that more narrative climate change writing is more likely to be influential, using citation frequency as a proxy for influence.\"",
+      "source": "Hillier A, Kelly RP, Klinger T (2016) Narrative Style Influences Citation Frequency in Climate Change Science. PLoS ONE 11(12): e0167983. https://doi.org/10.1371/journal.pone.0167983"
     },
     {
       "name": "conversation",
@@ -1946,95 +2141,111 @@
         {
           "name": "gender",
           "type": "numeric",
+          "description": "1 = female; 0 = male",
           "min": 0,
           "max": 1
         },
         {
           "name": "f1_psychopathy",
           "type": "numeric",
+          "description": "individual 1's standardized score on factor 1 of LSRP",
           "min": -1.89,
           "max": 3.23
         },
         {
           "name": "f2_psychopathy",
           "type": "numeric",
+          "description": "individual 1's standardized score on factor 2 of LSRP",
           "min": -2.12,
           "max": 3.24
         },
         {
           "name": "total_psychopathy",
           "type": "numeric",
+          "description": "individual 1's standardized score on full LSRP",
           "min": -2.13,
           "max": 2.91
         },
         {
           "name": "attractiveness",
           "type": "numeric",
+          "description": "individual 1's facial attractiveness, standardized (M = 0, SD = 1) separately for males and females",
           "min": -1.78,
           "max": 2.32
         },
         {
           "name": "fighting_ability",
           "type": "numeric",
+          "description": "student rating of fighting ability from pictures",
           "min": -2.29,
           "max": 2.87
         },
         {
           "name": "strength",
           "type": "numeric",
+          "description": "student rating of strength from pictures",
           "min": -1.97,
           "max": 2.81
         },
         {
           "name": "height",
           "type": "numeric",
+          "description": "standardized height score - standardization separate for each gender",
           "min": -1.77,
           "max": 2.27
         },
         {
           "name": "median_income",
           "type": "numeric",
+          "description": "in childhood zip code, in 1000s USD (individual 1)",
           "min": 26.9,
           "max": 138.2
         },
         {
           "name": "oldest",
           "type": "character",
+          "description": "Not described in paper",
           "values": ["no", "yes"]
         },
         {
           "name": "highest_class_rank",
           "type": "numeric",
+          "description": "Not described in paper",
           "min": 0,
           "max": 1
         },
         {
           "name": "major_presige",
           "type": "numeric",
+          "description": "perceived prestige of self-reported academic major",
           "min": 3,
           "max": 38
         },
         {
           "name": "dyad_status_difference",
           "type": "numeric",
+          "description": "Not described in paper",
           "min": -2,
           "max": 2
         },
         {
           "name": "proportion_words",
           "type": "numeric",
+          "description": "an individual’s proportion of the triad’s words uttered",
           "min": 0.06,
           "max": 0.77
         },
         {
           "name": "proportion_sequence_starts",
           "type": "numeric",
+          "description": "proportion of the triad’s sequence starts performed, hereafter proportion of sequence starts (sequential dominance)",
           "min": 0,
           "max": 0.8
         },
         {
           "name": "interruptions_per_min",
           "type": "numeric",
+          "description": "interruptions performed per transcribed minute (participatory dominance)",
           "min": 0.001,
           "max": 3.982
         },
@@ -2053,95 +2264,115 @@
         {
           "name": "affect_words",
           "type": "numeric",
+          "description": "frequency of affect words as described by the Linguistic Inquiry and Word Count (LIWC) 2007 program dictionary",
           "min": 1.5,
           "max": 14.18
         },
         {
           "name": "indiv_1",
           "type": "numeric",
+          "description": "id of individual 1",
           "min": 13212001,
           "max": 92197600
         },
         {
           "name": "indiv_2",
           "type": "numeric",
+          "description": "id of individual 2",
           "min": 13212001,
           "max": 92197600
         },
         {
           "name": "camera",
           "type": "integer",
+          "description": "1 = facing the camera; 0 = not facing the camera (individual 1) during prisoner's dilemma",
           "min": 0,
           "max": 1
         },
         {
           "name": "indiv_1_interrupts_indiv_2",
           "type": "numeric",
+          "description": "interruptions by individual 1 of individual 2 per minute of transcribed conversation",
           "min": 0,
           "max": 2.65
         },
         {
           "name": "indiv_2_interrupts_indiv_1",
           "type": "numeric",
+          "description": "interruptions by individual 2 of individual 1 per minute of transcribed conversation",
           "min": 0,
           "max": 2.65
         },
         {
           "name": "indiv_1_pd_indiv_2",
           "type": "integer",
+          "description": "Individual 1 decision toward individual 2 in PDG; 1 = individual 1 cooperates toward individual 2 in Prisoner's Dilemma; 0 = individual 1 defects toward individual 2",
           "min": 0,
           "max": 1
         },
         {
           "name": "indiv_2_pd_indiv_1",
           "type": "integer",
+          "description": "Individual 2 decision toward individual 1 in PDG; 1 = individual 2 cooperates toward individual 1 in Prisoner's Dilemma: 0 = individual 2 defects toward individual 1",
           "min": 0,
           "max": 1
         },
         {
           "name": "indiv_1_predicts_indiv_2",
           "type": "integer",
+          "description": "1 = individual 1 predicts that individual 2 cooperates toward individual 1; 0 = individual 1 predicts that individual 2 defects toward individual 1",
           "min": 0,
           "max": 1
         },
         {
           "name": "indiv_2_predicts_indiv_1",
           "type": "integer",
+          "description": "1 = individual 2 predicts that individual 1 cooperates toward individual 2; 0 = individual 2 predicts that individual 1 defects toward individual 2",
           "min": 0,
           "max": 1
         }
-      ]
+      ],
+      "description": "Data from an experiment performed on American college students. Students were observed conversing for 10 minutes and summary data was recorded of the conversational dynamics. Pictures of the students were then rated by observers for personality characteristics. The Levenson Self-Report Psychopathy Scale is used to assess subclinical psychopathy of the students, and the students were also subjected to a prisoners' dilemma.",
+      "details": "This data is the combination of the data sets from two papers. For ease of use in classroom setting, median_income was imputed for students with missing data. This imputation is strictly for pedagogy. From the authors: \"The determinants of conversational dominance are not well understood. We used videotaped triadic interactions among unacquainted same-sex American college students to test predictions drawn from the theoretical distinction between dominance and prestige as modes of human status competition.\" From the authors' second paper: \"Recent evidence suggests that psychopathy is a trait continuum. To test this, we focus on a ubiquitous real-life source of conditional behaviour: the expected relational value of social partners, both in terms of their quality and the likely quantity of future interactions with them.\"",
+      "source": "Manson JH, Gervais MM, Fessler DMT, Kline MA (2014) Subclinical Primary Psychopathy, but Not Physical Formidability or Attractiveness, Predicts Conversational Dominance in a Zero-Acquaintance Situation. PLoS ONE 9(11): e113135. Gervais Matthew M., Kline Michelle, Ludmer Mara, George Rachel and Manson Joseph H. 2013The strategy of psychopathy: primary psychopathic traits predict defection on low-value relationshipsProc. R. Soc. B.28020122773 https://escholarship.org/uc/item/2bx584t4 https://datadryad.org/stash/dataset/doi:10.5061/dryad.848cc"
     },
     {
       "name": "covid",
       "fields": [
         {
           "name": "date",
-          "type": "character"
+          "type": "character",
+          "description": "YYYY-MM-DD"
         },
         {
           "name": "state",
-          "type": "character"
+          "type": "character",
+          "description": "State where cases were recoreded"
         },
         {
           "name": "fips",
           "type": "integer",
+          "description": "FIPS code; useful if making maps",
           "min": 1,
           "max": 78
         },
         {
           "name": "cases",
           "type": "integer",
+          "description": "Cumulative number of cases",
           "min": 1,
           "max": 4599348
         },
         {
           "name": "deaths",
           "type": "integer",
+          "description": "Cumulative number of deaths",
           "min": 0,
           "max": 67312
         }
-      ]
+      ],
+      "description": "Cases and deaths due to COVID-19 by US state and date, due to The New York Times. Downloaded on May 28, 2021",
+      "source": "https://github.com/nytimes/covid-19-data"
     },
     {
       "name": "cows",
@@ -2149,26 +2380,31 @@
         {
           "name": "cow",
           "type": "integer",
+          "description": "ID of the cow that was measured.",
           "min": 2212,
           "max": 2307
         },
         {
           "name": "date",
-          "type": "character"
+          "type": "character",
+          "description": "Date that the cow was treated."
         },
         {
           "name": "nozzle",
-          "type": "character"
+          "type": "character",
+          "description": "Model number of the 6 nozzles tested; control indicates treatment with no spray; each cow received each treatment 3 times"
         },
         {
           "name": "flow_rate",
           "type": "numeric",
+          "description": "Rate at which water was sprayed on cows, in liters per minute.",
           "min": 0,
           "max": 4.7
         },
         {
           "name": "body_part",
           "type": "character",
+          "description": "The body part of the cow where the temperature (degrees Celsius) was taken.",
           "values": ["shoulder", "side"]
         },
         {
@@ -2195,7 +2431,10 @@
           "min": 31.4,
           "max": 40.6
         }
-      ]
+      ],
+      "description": "Cows in California were sprayed down with water using various nozzles. The temperature of the cows was measured at various body parts and time intervals. Descriptions of the variables are due to the authors of the study.",
+      "details": "From the authors: \"Dairies in the United States commonly cool cattle with sprinklers mounted over the feed bunk that intermittently spray the cows' backs. These systems use potable water—an increasingly scarce resource—but there is little experimental evidence about how much is needed to cool cows or about droplet size, which is thought to affect hair coat penetration. \"",
+      "source": "Tucker, Cassandra B., Schütz, Karin E., & Van Os (Chen), Jennifer M. (2020). Data from: Cooling cows efficiently with sprinklers: physiological responses to water spray [Data set]. https://zenodo.org/record/3862181#.XwTRNpNKjEa"
     },
     {
       "name": "cows_small",
@@ -2203,28 +2442,35 @@
         {
           "name": "cow",
           "type": "integer",
+          "description": "ID of the cow that was measured.",
           "min": 2212,
           "max": 2307
         },
         {
           "name": "control",
           "type": "numeric",
+          "description": "Shoulder temperature change (degrees Celsius) after 3 minutes when no water was sprayed.",
           "min": -0.1,
           "max": 0.3
         },
         {
           "name": "tk_0_75",
           "type": "numeric",
+          "description": "Shoulder temperature change (degrees Celsius) after 3 minutes using nozzle TK-0.75",
           "min": -2.4,
           "max": -1.0333
         },
         {
           "name": "tk_12",
           "type": "numeric",
+          "description": "Shoulder temperature change (degrees Celsius) after 3 minutes using nozzle TK-12",
           "min": -2.5667,
           "max": -1.3333
         }
-      ]
+      ],
+      "description": "Cows in California were sprayed down with water using nozzle type TK-0.75. The temperature of the cows' shoulders were measured after 3 minutes.",
+      "details": "From the authors: \"Dairies in the United States commonly cool cattle with sprinklers mounted over the feed bunk that intermittently spray the cows' backs. These systems use potable water—an increasingly scarce resource—but there is little experimental evidence about how much is needed to cool cows or about droplet size, which is thought to affect hair coat penetration. \"",
+      "source": "Tucker, Cassandra B., Schütz, Karin E., & Van Os (Chen), Jennifer M. (2020). Data from: Cooling cows efficiently with sprinklers: physiological responses to water spray [Data set]. https://zenodo.org/record/3862181#.XwTRNpNKjEa"
     },
     {
       "name": "crit_period",
@@ -2232,75 +2478,93 @@
         {
           "name": "aoa",
           "type": "integer",
+          "description": "age of onset of acquisition of second language. In years.",
           "min": 4,
           "max": 71
         },
         {
           "name": "gjt",
           "type": "integer",
+          "description": "grammaticality judgement test. A measure of second language proficiency.",
           "min": 101,
           "max": 198
         },
         {
           "name": "locale",
           "type": "factor",
+          "description": "Factor with two levels. \"North America\" and \"Israel\"",
           "values": ["Israel", "North America"]
         }
-      ]
+      ],
+      "description": "The age of onset of acquisition and ultimate level of attainment of second language learners in North America and Israel.",
+      "details": "From the author: \"In second language acquisition research, the critical period hypothesis (cph) holds that the function between learners' age and their susceptibility to second language input is non-linear. This paper revisits the indistinctness found in the literature with regard to this hypothesis's scope and predictions.\"",
+      "source": "Vanhove J (2013) The Critical Period Hypothesis in Second Language Acquisition: A Statistical Critique and a Reanalysis. PLoS ONE 8(7): e69172. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069172"
     },
     {
       "name": "dogs",
       "fields": [
         {
           "name": "obs_number",
-          "type": "character"
+          "type": "character",
+          "description": "ID of each subject"
         },
         {
           "name": "obs_pref",
           "type": "character",
+          "description": "preference of observer in german (\"links\" = bypass wall on the left side; \"rechts\" = bypass wall on the right side)",
           "values": ["links", "rechts"]
         },
         {
           "name": "obs_position",
           "type": "character",
+          "description": "observing position of observer in german (\"links\" = left ; \"rechts\" = right)",
           "values": ["links", "rechts"]
         },
         {
           "name": "demo_pref",
           "type": "character",
+          "description": "preference of demonstrator(s)in german (\"links\" = bypass wall on the left side; \"rechts\" = bypass wall on the right side)",
           "values": ["rechts", "links", "keine"]
         },
         {
           "name": "condition",
           "type": "integer",
+          "description": "\"0\" = no demonstrator (control condition); \"1\" = one demonstrator, \"3\" = three demonstrator",
           "min": 0,
           "max": 3
         },
         {
           "name": "dropout",
           "type": "integer",
+          "description": "\"0\" = remains in final sample, \"1\" = excluded from final sample",
           "min": 0,
           "max": 1
         },
         {
           "name": "trial",
           "type": "integer",
+          "description": "number of trial (1,2,3)",
           "min": 1,
           "max": 3
         },
         {
           "name": "start_direction",
           "type": "integer",
+          "description": "direction the observer was led from observing position to start position (see article for details; \"0\" = directed towards a stay response, \"1\" directed towards a switch response) )",
           "min": 0,
           "max": 1
         },
         {
           "name": "conform",
           "type": "integer",
+          "description": "behavior of observer (\"0\" = stay response, \"1\" = switch response), as variable value but without misses (which were code NA for analyses)",
           "min": 0,
           "max": 1
         }
-      ]
+      ],
+      "description": "If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?",
+      "details": "The control group `condition == 0` did not see any dogs doing anything. When `condition == 1`, the dog saw **the same dog** go around the wall in the \"wrong\" direction three times. When `condition == 3`, the dog saw **three different dogs** go around the wall in the \"wrong\" direction one time. In the experimental setup, each dog repeated the experiment three times. Dogs were led to the spot where they would have to decide which way to go around the wall according to `start_direction`. If `start_direction == 1`, then the dog was led to the spot in such a way that the dog was already facing the direction it had been trained to go. When `start_direction == 0`, the dog was led to the spot facing the direction it was not trained to go. Some dogs did not complete the trial because of stress or some other reason, They are indicated by `dropout == 1`. From the authors: \"In recent years, an increasing number of studies has investigated majority influence in nonhuman animals. However, due to both terminological and methodological issues, evidence for conformity in nonhuman animals is scarce and controversial. Preliminary evidence suggests that wild birds, wild monkeys, and fish show conformity, that is, forgoing personal information in order to copy the majority. By contrast, chimpanzees seem to lack this tendency. The present study is the first to examine whether dogs (Canis familiaris) show conformity.\"",
+      "source": "\"Germar M, Sultan A, Kaminski J, Mojzisch A (2018) Dogs (Canis familiaris) stick to what they have learned rather than conform to their conspecifics’ behavior. PLoS ONE 13(3): e0194808.\" https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194808 \"Germar, Markus, and Andreas Mojzisch. 2018. “Dogs (Canis Familiaris) Stick to What They Have Learned rather than Conform to Their Conspecifics’ Behavior.” OSF. April 4. osf.io/dgtxt.\""
     },
     {
       "name": "draft",
@@ -2308,32 +2572,39 @@
         {
           "name": "Day",
           "type": "numeric",
+          "description": "Day of the month.",
           "min": 1,
           "max": 31
         },
         {
           "name": "Month",
-          "type": "factor"
+          "type": "factor",
+          "description": "Month abbreviation."
         },
         {
           "name": "MonthNo",
           "type": "numeric",
+          "description": "Month number 1-12.",
           "min": 1,
           "max": 12
         },
         {
           "name": "DayofYear",
           "type": "numeric",
+          "description": "Day of year from 1-366.",
           "min": 1,
           "max": 366
         },
         {
           "name": "DraftNo",
           "type": "numeric",
+          "description": "Draft number from 1-366. Lowest numbers were drafted first.",
           "min": 1,
           "max": 366
         }
-      ]
+      ],
+      "description": "Results of the draft lottery held December 1, 1969 to determine the order in which young men would be drafted in 1970 for service in the Vietnam war.",
+      "source": "United States Government Selective Service System. https://www.sss.gov/history-and-records/vietnam-lotteries/"
     },
     {
       "name": "ecars",
@@ -2341,38 +2612,45 @@
         {
           "name": "sessionId",
           "type": "integer",
+          "description": "a random number used to identify a specific electric vehcile (EV) charging session",
           "min": 1004821,
           "max": 9998981
         },
         {
           "name": "kwhTotal",
           "type": "numeric",
+          "description": "the total energy use of a given EV charging session, measured in kWh",
           "min": 0,
           "max": 23.68
         },
         {
           "name": "dollars",
           "type": "numeric",
+          "description": "the amount paid by the user for a given charging session, measured in U.S. dollars",
           "min": 0,
           "max": 7.5
         },
         {
           "name": "created",
-          "type": "character"
+          "type": "character",
+          "description": "the date and time a given session was initiated, expressed in the form \"YYYY-MM-DD HOUR:MIN:SEC\""
         },
         {
           "name": "ended",
-          "type": "character"
+          "type": "character",
+          "description": "the date and time a given session was terminated"
         },
         {
           "name": "startTime",
           "type": "integer",
+          "description": "the hour of day, from 1 to 24, during which the session was initiated",
           "min": 0,
           "max": 23
         },
         {
           "name": "endTime",
           "type": "integer",
+          "description": "the hour of day, from 1 to 24, during which the session was terminated",
           "min": 0,
           "max": 23
         },
@@ -2384,55 +2662,66 @@
         },
         {
           "name": "weekday",
-          "type": "character"
+          "type": "character",
+          "description": "three letter abbreviation of the day of the week on which the charging session took place"
         },
         {
           "name": "platform",
           "type": "character",
+          "description": "the digital platform used by the EV driver to log the session. one of android, ios, or web.",
           "values": ["android", "ios", "web"]
         },
         {
           "name": "distance",
           "type": "numeric",
+          "description": "the distance from a user's home to the charging location, expressed in miles except where user did not report address",
           "min": 0.8569,
           "max": 43.0593
         },
         {
           "name": "userId",
           "type": "integer",
+          "description": "a random number used to uniquely identify a given user and his or her transactions",
           "min": 10427670,
           "max": 98345808
         },
         {
           "name": "stationId",
           "type": "integer",
+          "description": "a random number unique to each specific charging station",
           "min": 129465,
           "max": 995505
         },
         {
           "name": "locationId",
           "type": "integer",
+          "description": "a random number unique to a specific location owned by the firm, where chargers were installed",
           "min": 125372,
           "max": 978130
         },
         {
           "name": "managerVehicle",
           "type": "integer",
+          "description": "a binary variable; 1 if the vehicle logging the transcation is of the type largely used by firm managers, 0 otherwise",
           "min": 0,
           "max": 1
         },
         {
           "name": "facilityType",
           "type": "factor",
+          "description": "a categorical variable indicating the type of facility a station is installed at; manufacturing = 1, office = 2, research and development = 3, other = 4",
           "values": ["R & D", "Other", "Office", "Manufacturing"]
         },
         {
           "name": "reportedZip",
           "type": "integer",
+          "description": "binary variable for if a user reported his or her zip code; 1 if zip code was reported, 0 otherwise'",
           "min": 0,
           "max": 1
         }
-      ]
+      ],
+      "description": "This dataset contains information from 3,395 high resolution electric vehicle charging sessions The data contains sessions from 85 EV drivers with repeat usage at 105 stations across 25 sites at a workplace charging program. The workplace locations include facilities such as research and innovation centers, manufacturing, testing facilities and office headquarters for a firm participating in the U.S. Department of Energy (DOE) workplace charging challenge.",
+      "source": "Asensio, Omar Isaac; Apablaza, Camila Z; Lawson, M. Cade; Walsh, Sarah Elizabeth, 2020, \"Replication Data for: A Field Experiment on Workplace Norms and Electric Vehicle Charging Etiquette\" https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NFPQLW"
     },
     {
       "name": "fish",
@@ -2440,58 +2729,70 @@
         {
           "name": "obs",
           "type": "integer",
+          "description": "Observation number",
           "min": 1,
           "max": 159
         },
         {
           "name": "species",
           "type": "integer",
+          "description": "One of 1 = Bream, 2 = Whitefish, 3 = Roach, 4 = Parkki, 5 = Smelt, 6 = Pike or 7 = Perch",
           "min": 1,
           "max": 7
         },
         {
           "name": "weight",
           "type": "numeric",
+          "description": "Weight of fish (g)",
           "min": 0,
           "max": 1650
         },
         {
           "name": "length1",
           "type": "numeric",
+          "description": "Length from nose to the beginning of the tail (cm)",
           "min": 7.5,
           "max": 59
         },
         {
           "name": "length2",
           "type": "numeric",
+          "description": "Length from nose to the notch of the tail (cm)",
           "min": 8.4,
           "max": 63.4
         },
         {
           "name": "length3",
           "type": "numeric",
+          "description": "Length from nose to end of tail (cm)",
           "min": 8.8,
           "max": 68
         },
         {
           "name": "height_percent",
           "type": "numeric",
+          "description": "Maximal height as percentage of length3",
           "min": 14.5,
           "max": 44.5
         },
         {
           "name": "width_percent",
           "type": "numeric",
+          "description": "Maximal width as percentage of length3",
           "min": 8.7,
           "max": 20.9
         },
         {
           "name": "sex",
           "type": "integer",
+          "description": "1 = male, 0 = female",
           "min": 0,
           "max": 1
         }
-      ]
+      ],
+      "description": "Data set for modeling weight on the other variables. Data was first presented in a publication from 1917.",
+      "details": "Apparently, observation 143 had 6 roach in its stomach and may be an outlier.",
+      "source": "\"Brofeldt, Pekka: Bidrag till kaennedom on fiskbestondet i vaara sjoear. Laengelmaevesi. T.H.Jaervi: Finlands Fiskeriet Band 4 Meddelanden utgivna av fiskerifoereningen i Finland. Helsingfors 1917 http://jse.amstat.org/datasets/fishcatch.txt"
     },
     {
       "name": "flint",
@@ -2499,41 +2800,51 @@
         {
           "name": "SampleID",
           "type": "integer",
+          "description": "Test kit number.",
           "min": 1,
           "max": 300
         },
         {
           "name": "Zip.Code",
-          "type": "factor"
+          "type": "factor",
+          "description": "Zip code (location) of sample within Flint."
         },
         {
           "name": "Ward",
-          "type": "factor"
+          "type": "factor",
+          "description": "Flint is divided into 9 geographical subdivisions called wards."
         },
         {
           "name": "Pb1",
           "type": "numeric",
+          "description": "Lead level in first draw sample (parts per billion).",
           "min": 0.344,
           "max": 158
         },
         {
           "name": "Pb2",
           "type": "numeric",
+          "description": "Lead level in second sample, 45 seconds later (parts per billion).",
           "min": 0.032,
           "max": 1051
         },
         {
           "name": "Pb3",
           "type": "numeric",
+          "description": "Lead level in third sample, 2 minutes later (parts per billion).",
           "min": 0.031,
           "max": 94.52
         },
         {
           "name": "Notes",
           "type": "character",
+          "description": "About the sample.",
           "values": ["", "*house sampled twice"]
         }
-      ]
+      ],
+      "description": "Results of tap water lead testing conducted in Flint, MI in 2015.",
+      "details": "In 2014, the city of Flint, Michigan switched its drinking water supply from Detroit's system to the Flint River to reduce costs. In 2015, students and scientists at Virginia Tech assembled and shipped 300 test kits to randomly selected Flint homes. The residents sampled their water and returned it to the lab for testing. The kits comprised of three bottles (1L, 500 mL and 250 mL) and an instruction sheet for sampling tap water. Each home was instructed to sample water at first draw (after the tap was unused for 6 hours), after running for another 45 seconds, and after another 2 minutes.",
+      "source": "FlintWaterStudy.org (2015) \"Lead Results from Tap Water Sampling in Flint, MI during the Flint Water Crisis\" http://flintwaterstudy.org/2015/12/complete-dataset-lead-results-in-tap-water-for-271-flint-samples/"
     },
     {
       "name": "frogs",
@@ -2551,12 +2862,14 @@
         {
           "name": "hw",
           "type": "numeric",
+          "description": "head width maximum width of the head at the posterior margin of mandible",
           "min": 7.1,
           "max": 17
         },
         {
           "name": "hl",
           "type": "numeric",
+          "description": "head length distance from tip of snout to the back of mandible",
           "min": 7.1,
           "max": 17.3
         },
@@ -2575,54 +2888,63 @@
         {
           "name": "en",
           "type": "numeric",
+          "description": "distance from front of eyes to the nostril",
           "min": 1.7,
           "max": 3.7
         },
         {
           "name": "ns",
           "type": "numeric",
+          "description": "nostril—snout length",
           "min": 1.3,
           "max": 3.7
         },
         {
           "name": "el",
           "type": "numeric",
+          "description": "eye width",
           "min": 2.4,
           "max": 5.6
         },
         {
           "name": "in",
           "type": "numeric",
+          "description": "internarial distance",
           "min": 1.9,
           "max": 3.8
         },
         {
           "name": "iod",
           "type": "numeric",
+          "description": "interorbital distance",
           "min": 1.5,
           "max": 2.9
         },
         {
           "name": "fal",
           "type": "numeric",
+          "description": "forearm length distance from corner of elbow to proximal end of outer palmar metacarpal tubercle",
           "min": 3.9,
           "max": 10.5
         },
         {
           "name": "hal",
           "type": "numeric",
+          "description": "hand length distance from proximal end of outer palmar metacarpal tubercle to tip of third finger",
           "min": 5,
           "max": 16.9
         },
         {
           "name": "fol",
           "type": "numeric",
+          "description": "foot length distance from proximal end of inner metatarsal tubercle to tip of fourth finger",
           "min": 11,
           "max": 26
         },
         {
           "name": "tl",
           "type": "numeric",
+          "description": "tibia length distance from knee to heel",
           "min": 11.3,
           "max": 27.3
         },
@@ -2630,7 +2952,10 @@
           "name": "species",
           "type": "character"
         }
-      ]
+      ],
+      "description": "Measurements of frogs from several different species with the Zakerana genus.",
+      "details": "From the authors: \"We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA).\"",
+      "source": "Howlader MSA, Nair A, Merilä J (2016) A New Species of Frog (Anura: Dicroglossidae) Discovered from the Mega City of Dhaka. PLoS ONE 11(3): e0149597 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0149597"
     },
     {
       "name": "gender",
@@ -2638,53 +2963,66 @@
         {
           "name": "gender_male",
           "type": "logical",
+          "description": "Male.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "gender_female",
           "type": "logical",
+          "description": "Female.",
           "values": ["TRUE", "FALSE"]
         },
         {
           "name": "gender_trans",
           "type": "logical",
+          "description": "Transgender.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "gender_queer",
           "type": "logical",
+          "description": "Genderqueer/Gender non-conforming.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "gender_not_sure",
           "type": "logical",
+          "description": "I am not sure of my gender identity.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "gender_unclear",
           "type": "logical",
+          "description": "I do not know what this question is asking.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "gender_na",
           "type": "logical",
+          "description": "None of the above.",
           "values": ["FALSE", "TRUE"]
         },
         {
           "name": "sex_at_birth",
           "type": "factor",
+          "description": "\"Sex—What sex were you assigned at birth, on your original birth certificate?\" Male, Female.",
           "values": ["Female", "Male"]
         },
         {
           "name": "hispanic",
           "type": "factor",
+          "description": "\"Do you consider yourself to be Hispanic or Latino?\" Yes, No, Don't know.",
           "values": ["No", "Yes", "Don't know"]
         },
         {
           "name": "race",
-          "type": "character"
+          "type": "character",
+          "description": "\"What race or races do you consider yourself to be?\". Multiple categories may be selected and are comma separated."
         }
-      ]
+      ],
+      "description": "From Sell, Goldberg, Conron: Gaps in data collection systems, as well as challenges associated with gathering data from rare and dispersed populations, render current health surveillance systems inadequate to identify and monitor efforts to reduce health disparities. Using sexual and gender minorities we investigated the utility of using a large nonprobability online panel to conduct rapid population assessments of such populations using brief surveys.",
+      "details": "This data consists of responses from users of the Google Android Panel. These are users of the Google Opinion Rewards application who have Smart phones operated by Google’s Android operating system and receive small payments of up to one dollar per 10-item survey. Users of Google Opinion Rewards tend to represent earlier-adopters and heavier technology users than on average. For each survey an individual panel member is sent, Google informs the panel member of how data will be used and asks for their consent. Gender identity information was collected with the question \"Gender Identity—What is your current gender identity? (Select all that apply)\".",
+      "source": "Sell R, Goldberg S, Conron K (2015) The Utility of an Online Convenience Panel for Reaching Rare and Dispersed Populations. PLOS ONE 10(12): e0144011. https://doi.org/10.1371/journal.pone.0144011"
     },
     {
       "name": "hot_dogs",
@@ -2692,21 +3030,27 @@
         {
           "name": "type",
           "type": "factor",
+          "description": "Factor with levels Beef, Meat or Poultry",
           "values": ["Beef", "Meat", "Poultry"]
         },
         {
           "name": "calories",
           "type": "integer",
+          "description": "Number of calories in the hot dog (kC)",
           "min": 86,
           "max": 195
         },
         {
           "name": "sodium",
           "type": "integer",
+          "description": "Sodium content of the hot dog (mg)",
           "min": 144,
           "max": 645
         }
-      ]
+      ],
+      "description": "Calorie and sodium content of hot dogs of various types of meats.",
+      "details": "From the web page: \"Results of a laboratory analysis of calories and sodium content of major hot dog brands. Researchers for Consumer Reports analyzed three types of hot dog: beef, poultry, and meat (mostly pork and beef, but up to 15 % poultry meat).\"",
+      "source": "Moore, David S., and George P. McCabe (1989). Introduction to the Practice of Statistics. Original source: Consumer Reports, June 1986, pp. 366-367. http://wiki.stat.ucla.edu/socr/index.php/SOCR_012708_ID_Data_HotDogs"
     },
     {
       "name": "houses",
@@ -2714,128 +3058,151 @@
         {
           "name": "id",
           "type": "numeric",
+          "description": "unique id of each home",
           "min": 1000102,
           "max": 9900000190
         },
         {
           "name": "date",
-          "type": "character"
+          "type": "character",
+          "description": "date of sale"
         },
         {
           "name": "price",
           "type": "numeric",
+          "description": "price of sale",
           "min": 75000,
           "max": 7700000
         },
         {
           "name": "bedrooms",
           "type": "integer",
+          "description": "number of bedrooms",
           "min": 0,
           "max": 33
         },
         {
           "name": "bathrooms",
           "type": "numeric",
+          "description": "number of bathrooms",
           "min": 0,
           "max": 8
         },
         {
           "name": "sqft_living",
           "type": "integer",
+          "description": "Square footage of living space",
           "min": 290,
           "max": 13540
         },
         {
           "name": "sqft_lot",
           "type": "integer",
+          "description": "square foot of the lot",
           "min": 520,
           "max": 1651359
         },
         {
           "name": "floors",
           "type": "numeric",
+          "description": "number of floors",
           "min": 1,
           "max": 3.5
         },
         {
           "name": "waterfront",
           "type": "integer",
+          "description": "Is the home on the waterfront?",
           "min": 0,
           "max": 1
         },
         {
           "name": "view",
           "type": "integer",
+          "description": "Rating from 0 to 4 of how good the view is",
           "min": 0,
           "max": 4
         },
         {
           "name": "condition",
           "type": "integer",
+          "description": "Rating from 1-5 on the condition of the home",
           "min": 1,
           "max": 5
         },
         {
           "name": "grade",
           "type": "integer",
+          "description": "Rating of 1-13 on the quality of materials used. 1-3 is substandard, 7 is average and 11-13 is excellent.",
           "min": 1,
           "max": 13
         },
         {
           "name": "sqft_above",
           "type": "integer",
+          "description": "square footage above ground level",
           "min": 290,
           "max": 9410
         },
         {
           "name": "sqft_basement",
           "type": "integer",
+          "description": "square footage of basement",
           "min": 0,
           "max": 4820
         },
         {
           "name": "yr_built",
           "type": "integer",
+          "description": "year built",
           "min": 1900,
           "max": 2015
         },
         {
           "name": "yr_renovated",
           "type": "integer",
+          "description": "year renovated",
           "min": 0,
           "max": 2015
         },
         {
           "name": "zipcode",
           "type": "integer",
+          "description": "zip code of house",
           "min": 98001,
           "max": 98199
         },
         {
           "name": "lat",
           "type": "numeric",
+          "description": "lattitude",
           "min": 47.1559,
           "max": 47.7776
         },
         {
           "name": "long",
           "type": "numeric",
+          "description": "longitude",
           "min": -122.519,
           "max": -121.315
         },
         {
           "name": "sqft_living15",
           "type": "integer",
+          "description": "square footage of the 15 nearest neighbors",
           "min": 399,
           "max": 6210
         },
         {
           "name": "sqft_lot15",
           "type": "integer",
+          "description": "lot sizes of 15 nearest neighbors",
           "min": 651,
           "max": 871200
         }
-      ]
+      ],
+      "description": "House prices and characteristics for houses sold in King County (home of Seattle) from May, 2014 through May, 2015.",
+      "source": "https://www.kaggle.com/harlfoxem/housesalesprediction"
     },
     {
       "name": "humanization",
@@ -2843,43 +3210,53 @@
         {
           "name": "age",
           "type": "numeric",
+          "description": "Age in years of participant.",
           "min": 17,
           "max": 74
         },
         {
           "name": "gender",
           "type": "factor",
+          "description": "Factor with three levels; Female, Male and Other.",
           "values": ["Male", "Female", "Other"]
         },
         {
           "name": "group",
-          "type": "factor"
+          "type": "factor",
+          "description": "Factor with 6 levels; Katrina control/low/high and Pakistan control/low/high"
         },
         {
           "name": "pak_sec",
           "type": "numeric",
+          "description": "Mean of response to 7 secondary emotional questions about Pakistanis. Secondary emotions are grief, sorrow, mourning, anguish, guilt, remorse and resentment.",
           "min": 1,
           "max": 5
         },
         {
           "name": "pak_prim",
           "type": "numeric",
+          "description": "Mean of response to 7 primary emotional questions about Pakistanis. Primary emotions are confusion, pain, distress, fear, panic, anger, and rage.",
           "min": 1,
           "max": 5
         },
         {
           "name": "us_sec",
           "type": "numeric",
+          "description": "Unsure of the meaning of this variable.",
           "min": 1,
           "max": 5
         },
         {
           "name": "us_prim",
           "type": "numeric",
+          "description": "Unsure of the meaning of this variable.",
           "min": 1,
           "max": 5
         }
-      ]
+      ],
+      "description": "Particpants were read a news item about either Hurricane Katrina (New Orleans, USA) or or the 2010 Pakistan flooding. The control group got no further information. The rest of the participants were given further information. Those who read about Katrina were told about how Pakistan sent aid in either a low or high amount. Those who read about the 2010 Pakistan flooding were told about how the US sent aid in either a low or a high amount. Participants were asked how strongly they believed Pakistanis would have felt both secondary and primary emotions following the disaster.",
+      "details": "From the authors: \"Dehumanization and infrahumanization involve decreasing the humanity attributed to others. Despite the existence of a large body of work on these topics, little is known about how to increase outgroup humanization. Across two experiments, we examined the effects of intergroup and intragroup helping on dehumanization and infrahumanization.\"",
+      "source": "Davies T, Yogeeswaran K, Verkuyten M, Loughnan S (2018) From humanitarian aid to humanization: When outgroup, but not ingroup, helping increases humanization. PLoS ONE 13(11): e0207343 Davies, Thomas J. “Humanitarian Helping.” OSF, 25 Oct. 2018. Web. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207343"
     },
     {
       "name": "leg_strength",
@@ -2887,22 +3264,28 @@
         {
           "name": "ID",
           "type": "numeric",
+          "description": "ID of participant. Can be used to match with `leg_strength_full` data set.",
           "min": 1,
           "max": 30
         },
         {
           "name": "mean_wii",
           "type": "numeric",
+          "description": "mean of 6 measurements of leg strength in kg on the wii balance board.",
           "min": 78.229,
           "max": 279.9052
         },
         {
           "name": "mean_sid",
           "type": "numeric",
+          "description": "mean of the 6 measurements of leg strength in kg on the stationary isometric dynamometer.",
           "min": 123.1767,
           "max": 357.4762
         }
-      ]
+      ],
+      "description": "Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.",
+      "details": "The full, unmodified data set is available as `leg_strength_full`. From the authors: \"Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.\"",
+      "source": "Gronbech Jorgensen M, Andersen S, Ryg J, Masud T (2015) Novel Use of the Nintendo Wii Board for Measuring Isometric Lower Limb Strength: A Reproducible and Valid Method in Older Adults. PLoS ONE 10(10): e0138660. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138660"
     },
     {
       "name": "leg_strength_full",
@@ -2910,199 +3293,236 @@
         {
           "name": "id",
           "type": "numeric",
+          "description": "ID of participant. Can be used to match with `leg_strength` data set",
           "min": 1,
           "max": 30
         },
         {
           "name": "wii_m1",
           "type": "numeric",
+          "description": "wii measurement 1",
           "min": 80.3667,
           "max": 265.8226
         },
         {
           "name": "wii_m2",
           "type": "numeric",
+          "description": "wii measurement 2",
           "min": 75.2971,
           "max": 282.2389
         },
         {
           "name": "wii_m3",
           "type": "numeric",
+          "description": "wii measurement 3",
           "min": 76.666,
           "max": 300.1411
         },
         {
           "name": "wii_max3",
           "type": "numeric",
+          "description": "max wii measurement (day 1)",
           "min": 80.3667,
           "max": 335.9456
         },
         {
           "name": "day2_wii_m1",
           "type": "numeric",
+          "description": "wii measurement 1 (Day 2)",
           "min": 72.1974,
           "max": 271.448
         },
         {
           "name": "day2_wii_m2",
           "type": "numeric",
+          "description": "wii measurement 2 (day 2)",
           "min": 79.1473,
           "max": 276.1691
         },
         {
           "name": "day2_wii_m3",
           "type": "numeric",
+          "description": "wii measurement 3 (day 3)",
           "min": 85.6833,
           "max": 283.6115
         },
         {
           "name": "day2_wii_max3",
           "type": "numeric",
+          "description": "max wii measurement (Day 2)",
           "min": 91.1504,
           "max": 298.4963
         },
         {
           "name": "sid_m1",
           "type": "numeric",
+          "description": "sid measurement 1 day 1",
           "min": 105.2067,
           "max": 311.0307
         },
         {
           "name": "sid_m2",
           "type": "numeric",
+          "description": "sid measurement 2 day 1",
           "min": 115.216,
           "max": 341.2837
         },
         {
           "name": "sid_m3",
           "type": "numeric",
+          "description": "sid measurement 3 day 1",
           "min": 124.2609,
           "max": 359.654
         },
         {
           "name": "sid_max3",
           "type": "numeric",
+          "description": "max sid measurement day 1",
           "min": 135.3048,
           "max": 396.3945
         },
         {
           "name": "day2_sid_m1",
           "type": "numeric",
+          "description": "sid measurement 1 day 2",
           "min": 104.7848,
           "max": 372.5734
         },
         {
           "name": "day_2_sid_m2",
           "type": "numeric",
+          "description": "sid measurement 2 day 2",
           "min": 118.1669,
           "max": 378.6874
         },
         {
           "name": "day_2_sid_m3",
           "type": "numeric",
+          "description": "sid measurement 3 day 2",
           "min": 124.9214,
           "max": 385.3119
         },
         {
           "name": "day_2_sid_max3",
           "type": "numeric",
+          "description": "max sid measurement day 2",
           "min": 128.4795,
           "max": 398.5608
         }
-      ]
+      ],
+      "description": "Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.",
+      "details": "The smaller data set consisting of means only is available as `leg_strength`. From the authors: \"Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.\"",
+      "source": "Gronbech Jorgensen M, Andersen S, Ryg J, Masud T (2015) Novel Use of the Nintendo Wii Board for Measuring Isometric Lower Limb Strength: A Reproducible and Valid Method in Older Adults. PLoS ONE 10(10): e0138660. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138660"
     },
     {
       "name": "letter_frequency",
       "fields": [
         {
           "name": "letter",
-          "type": "character"
+          "type": "character",
+          "description": "Letter, possibly with diacritics"
         },
         {
           "name": "english",
           "type": "numeric",
+          "description": "Percentage of occurrences in english",
           "min": 0,
           "max": 0.127
         },
         {
           "name": "french",
           "type": "numeric",
+          "description": "Percentage of occurrences in french",
           "min": 0,
           "max": 0.1472
         },
         {
           "name": "german",
           "type": "numeric",
+          "description": "Percentage of occurrences in german",
           "min": 0,
           "max": 0.164
         },
         {
           "name": "spanish",
           "type": "numeric",
+          "description": "Percentage of occurrences in spanish",
           "min": 0,
           "max": 0.1218
         },
         {
           "name": "portuguese",
           "type": "numeric",
+          "description": "Percentage of occurrences in portuguese",
           "min": 0,
           "max": 0.1463
         },
         {
           "name": "esperanto",
           "type": "numeric",
+          "description": "Percentage of occurrences in esperanto",
           "min": 0,
           "max": 0.1212
         },
         {
           "name": "italian",
           "type": "numeric",
+          "description": "Percentage of occurrences in italian",
           "min": 0,
           "max": 0.1179
         },
         {
           "name": "turkish",
           "type": "numeric",
+          "description": "Percentage of occurrences in turkish",
           "min": 0,
           "max": 0.1192
         },
         {
           "name": "swedish",
           "type": "numeric",
+          "description": "Percentage of occurrences in swedish",
           "min": 0,
           "max": 0.1015
         },
         {
           "name": "polish",
           "type": "numeric",
+          "description": "Percentage of occurrences in polish",
           "min": 0,
           "max": 0.0891
         },
         {
           "name": "dutch",
           "type": "numeric",
+          "description": "Percentage of occurrences in dutch",
           "min": 0,
           "max": 0.1891
         },
         {
           "name": "danish",
           "type": "numeric",
+          "description": "Percentage of occurrences in danish",
           "min": 0,
           "max": 0.1545
         },
         {
           "name": "icelandic",
           "type": "numeric",
+          "description": "Percentage of occurrences in icelandic",
           "min": 0,
           "max": 0.1011
         },
         {
           "name": "finnish",
           "type": "numeric",
+          "description": "Percentage of occurrences in finnish",
           "min": 0,
           "max": 0.1222
         }
-      ]
+      ],
+      "description": "The frequency of occurrences of letters in texts in various languages. This data taken from Wikipedia is considered inaccurate and should not be used for scientific purposes.",
+      "source": "https://en.wikipedia.org/wiki/Letter_frequency on January 9, 2020"
     },
     {
       "name": "malaria",
@@ -3110,21 +3530,27 @@
         {
           "name": "sporozoite",
           "type": "integer",
+          "description": "The total number of sporozoites detected from the 10 bites.",
           "min": 0,
           "max": 32
         },
         {
           "name": "malaria",
           "type": "integer",
+          "description": "1 = yes malaria detected, 0 = no malaria detected",
           "min": 0,
           "max": 1
         },
         {
           "name": "antibody",
           "type": "factor",
+          "description": "yes/no did the mouse receive an antibody treatment pre-mosquito bites",
           "values": ["no", "yes"]
         }
-      ]
+      ],
+      "description": "Mice were bit 10 times by mosquitoes, and the number of salivary gland sporozoites detected in the mosquitoes was measured. The mice were then observed to determine whether they got malaria. Some of the mice were given a malarial antibody pre-mosquito bite.",
+      "details": "From the authors: \"Over a century since Ronald Ross discovered that malaria is caused by the bite of an infectious mosquito it is still unclear how the number of parasites injected influences disease transmission. Currently it is assumed that all mosquitoes with salivary gland sporozoites are equally infectious irrespective of the number of parasites they harbour, though this has never been rigorously tested.\"",
+      "source": "Churcher TS, Sinden RE, Edwards NJ, Poulton ID, Rampling TW, Brock PM, et al. (2017) Probability of Transmission of Malaria from Mosquito to Human Is Regulated by Mosquito Parasite Density in Naïve and Vaccinated Hosts. PLoS Pathog 13(1): e1006108. https://doi.org/10.1371/journal.ppat.1006108"
     },
     {
       "name": "masks",
@@ -3132,45 +3558,55 @@
         {
           "name": "obs",
           "type": "numeric",
+          "description": "Observation number",
           "min": 1,
           "max": 37
         },
         {
           "name": "mask_fine",
           "type": "numeric",
+          "description": "viral copy number of fine particles (< 5 microns) for those wearing a mask, measured using quantitative RT-PCR",
           "min": 0,
           "max": 24239
         },
         {
           "name": "no_mask_fine",
           "type": "numeric",
+          "description": "viral copy number of fine particules for those not wearing a mask",
           "min": 0,
           "max": 126587
         },
         {
           "name": "nasal_swab",
           "type": "numeric",
+          "description": "viral load in the nasopharyngeal swab specimen",
           "min": 1725,
           "max": 33750000
         },
         {
           "name": "mask_coarse",
           "type": "numeric",
+          "description": "viral copy number of coarse particles (> 5 microns) for those wearing a mask",
           "min": 0,
           "max": 77
         },
         {
           "name": "no_mask_coarse",
           "type": "numeric",
+          "description": "viral copy number of coarse particules for those not wearing a mask",
           "min": 0,
           "max": 29118
         },
         {
           "name": "pcr_type",
           "type": "factor",
+          "description": "A factor indicating which of two strains of influenza patient had",
           "values": ["A", "B"]
         }
-      ]
+      ],
+      "description": "Fine and coarse influenza droplets that escape a surgical mask in laboratory setting.",
+      "details": "Participants wore masks for 30 minutes while a machine gathered their exhalations. Participants were told to cough thirty times during the 30 minutes. One patient coughed naturally more than 30 times. From the authors: \"The CDC recommends that healthcare settings provide influenza patients with facemasks as a means of reducing transmission to staff and other patients, and a recent report suggested that surgical masks can capture influenza virus in large droplet spray. However, there is minimal data on influenza virus aerosol shedding, the infectiousness of exhaled aerosols, and none on the impact of facemasks on viral aerosol shedding from patients with seasonal influenza.\"",
+      "source": "Milton DK, Fabian MP, Cowling BJ, Grantham ML, McDevitt JJ (2013) Influenza Virus Aerosols in Human Exhaled Breath: Particle Size, Culturability, and Effect of Surgical Masks. PLoS Pathog 9(3): e1003205. https://doi.org/10.1371/journal.ppat.1003205"
     },
     {
       "name": "mice_pot",
@@ -3178,15 +3614,20 @@
         {
           "name": "group",
           "type": "factor",
+          "description": "One of four levels, VEH (control) or the amount of THC in mg/kg the mouse was injected with.",
           "values": ["0.3", "1", "3", "VEH"]
         },
         {
           "name": "percent_of_act",
           "type": "numeric",
+          "description": "Percent of baseline locomotion activity",
           "min": 41.3873,
           "max": 148.917
         }
-      ]
+      ],
+      "description": "Wild type mice were injected with THC at various doses based on the weight of the mouse. The percent of baseline locomotion was observed for each mouse.",
+      "details": "There is much more data of this type available in the paper. The authors tested the mice in numerous ways, and they also compared wild type mice with serotonin 2A receptors knockout mice. From the authors: \"Activation of cannabinoid CB1 receptors (CB1R) by delta9-tetrahydrocannabinol (THC) produces a variety of negative effects with major consequences in cannabis users that constitute important drawbacks for the use of cannabinoids as therapeutic agents. For this reason, there is a tremendous medical interest in harnessing the beneficial effects of THC. Behavioral studies carried out in mice lacking 5-HT2A receptors (5-HT2AR) revealed a remarkable 5-HT2AR-dependent dissociation in the beneficial antinociceptive effects of THC and its detrimental amnesic properties.\"",
+      "source": "Viñals X, Moreno E, Lanfumey L, Cordomí A, Pastor A, de La Torre R, et al. (2015) Cognitive Impairment Induced by Delta9-tetrahydrocannabinol Occurs through Heteromers between Cannabinoid CB1 and Serotonin 5-HT2A Receptors. PLoS Biol 13(7): e1002194. https://doi.org/10.1371/journal.pbio.1002194"
     },
     {
       "name": "movies",
@@ -3194,36 +3635,45 @@
         {
           "name": "userId",
           "type": "integer",
+          "description": "Unique int Id of the rater of the movie",
           "min": 1,
           "max": 610
         },
         {
           "name": "movieId",
           "type": "integer",
+          "description": "Unique int ID of the movie",
           "min": 1,
           "max": 193609
         },
         {
           "name": "rating",
           "type": "numeric",
+          "description": "Number of stars given to the movie. Half stars were added as a possibility after collecting some of the data.",
           "min": 0.5,
           "max": 5
         },
         {
           "name": "timestamp",
           "type": "integer",
+          "description": "Seconds since UTC January 1, 1970",
           "min": 828124615,
           "max": 1537799250
         },
         {
           "name": "title",
-          "type": "character"
+          "type": "character",
+          "description": "Title of movie with year in parentheses"
         },
         {
           "name": "genres",
-          "type": "character"
+          "type": "character",
+          "description": "pipe separated list of genres from Action, Adventure, Animation, Children's, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western, (no genres listed)"
         }
-      ]
+      ],
+      "description": "Randomly selected ratings of movies from MovieLens.",
+      "details": "From the creators of the data: This dataset (ml-latest-small) describes 5-star rating and free-text tagging activity from [MovieLens](http://movielens.org), a movie recommendation service. It contains 100836 ratings and 3683 tag applications across 9742 movies. These data were created by 610 users between March 29, 1996 and September 24, 2018. This dataset was generated on September 26, 2018. Users were selected at random for inclusion. All selected users had rated at least 20 movies. No demographic information is included. Each user is represented by an id, and no other information is provided. The data are contained in the files `links.csv`, `movies.csv`, `ratings.csv` and `tags.csv`. More details about the contents and use of all these files follows. This is a *development* dataset. As such, it may change over time and is not an appropriate dataset for shared research results. See available *benchmark* datasets if that is your intent. This and other GroupLens data sets are publicly available for download at <http://grouplens.org/datasets/>. **Usage License** Neither the University of Minnesota nor any of the researchers involved can guarantee the correctness of the data, its suitability for any particular purpose, or the validity of results based on the use of the data set. The data set may be used for any research purposes under the following conditions: The user may not state or imply any endorsement from the University of Minnesota or the GroupLens Research Group. The user must acknowledge the use of the data set in publications resulting from the use of the data set (see below for citation information). The user may redistribute the data set, including transformations, so long as it is distributed under these same license conditions. The user may not use this information for any commercial or revenue-bearing purposes without first obtaining permission from a faculty member of the GroupLens Research Project at the University of Minnesota. The executable software scripts are provided \"as is\" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of them is with you. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction. In no event shall the University of Minnesota, its affiliates or employees be liable to you for any damages arising out of the use or inability to use these programs (including but not limited to loss of data or data being rendered inaccurate). If you have any further questions or comments, please email <grouplens-info@umn.edu>",
+      "source": "F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4: 19:1–19:19. <https://doi.org/10.1145/2827872>"
     },
     {
       "name": "normtemp",
@@ -3231,55 +3681,69 @@
         {
           "name": "temp",
           "type": "numeric",
+          "description": "temperature of patient in degrees Fahrenheit",
           "min": 96.3,
           "max": 100.8
         },
         {
           "name": "gender",
           "type": "integer",
+          "description": "gender of patient 1 = male, 2 = female",
           "min": 1,
           "max": 2
         },
         {
           "name": "bpm",
           "type": "integer",
+          "description": "heart rate in beats per minute",
           "min": 57,
           "max": 89
         }
-      ]
+      ],
+      "description": "Temperature, gender and hear rate data reconstructed to match summary data from a paper.",
+      "details": "From the author: \"This article takes data from a paper in the Journal of the American Medical Association that examined whether the true mean body temperature is 98.6 degrees Fahrenheit. Because the dataset suggests that the true mean is approximately 98.2, it helps students to grasp concepts about true means, confidence intervals, and t-statistics. Students can use a t-test to test for sex differences in body temperature and regression to investigate the relationship between temperature and heart rate.\"",
+      "source": "\"Datasets and Stories\" article \"What’s Normal? – Temperature, Gender, and Heart Rate\" in the Journal of Statistics Education (Shoemaker 1996). http://jse.amstat.org/datasets/normtemp.dat.txt http://jse.amstat.org/v4n2/datasets.shoemaker.html Mackowiak, Wasserman, and Levine, \"A Critical Appraisal of 98.6 Degrees F, the Upper Limit of the Normal Body Temperature, and Other Legacies of Carl Reinhold August Wunderlich\", JAMA 1992."
     },
     {
       "name": "plastics",
       "fields": [
         {
           "name": "colour",
-          "type": "character"
+          "type": "character",
+          "description": "Color of microfiber - inconsistently reported."
         },
         {
           "name": "length",
           "type": "numeric",
+          "description": "Length of plastic microfiber, in micrometers.",
           "min": 64.52,
           "max": 14313.49
         },
         {
           "name": "diameter",
           "type": "numeric",
+          "description": "Diameter of plastic microfiber, in micrometers.",
           "min": 3.84,
           "max": 48.02
         },
         {
           "name": "region",
           "type": "character",
+          "description": "Arctic or Europe",
           "values": ["Europe", "Arctic"]
         }
-      ]
+      ],
+      "description": "Measurements of lengths and diameters of plastic microfibers found in the snow in the Arctic and Europe.",
+      "details": "From the authors: \"Microplastics (MPs) are ubiquitous, and considerable quantities prevail even in the Arctic; however, there are large knowledge gaps regarding pathways to the North. To assess whether atmospheric transport plays a role, we analyzed snow samples from ice floes in Fram Strait.\"",
+      "source": "Bergmann M, Mützel S, Primpke S, Tekman MB, Trachsel J, Gerdts G. White and wonderful? Microplastics prevail in snow from the Alps to the Arctic. Sci Adv. 2019 Aug 14;5(8).doi: 10.1126/sciadv.aax1157. PMID: 31453336; PMCID: PMC6693909. https://advances.sciencemag.org/content/5/8/eaax1157"
     },
     {
       "name": "powerball",
       "fields": [
         {
           "name": "Draw.Date",
-          "type": "Date"
+          "type": "Date",
+          "description": "Date of the drawing."
         },
         {
           "name": "Ball1",
@@ -3320,10 +3784,14 @@
         {
           "name": "Multiplier",
           "type": "integer",
+          "description": "A randomly drawn value that will multiply a player's winnings, should they pay extra for a power play ticket.",
           "min": 2,
           "max": 10
         }
-      ]
+      ],
+      "description": "The results of all Powerball lottery draws from February 3, 2010 to July 29, 2020.",
+      "details": "Powerball is an American lottery game offered in most U.S. states. Drawings happen twice weekly, and consist of five white balls drawn without replacement and one red ball, called the Powerball. The format of ball drawings changed on January 15, 2012 and again on October 4, 2015.",
+      "source": "data.gov, https://catalog.data.gov/dataset/lottery-powerball-winning-numbers-beginning-2010"
     },
     {
       "name": "pres_election",
@@ -3331,127 +3799,154 @@
         {
           "name": "year",
           "type": "integer",
+          "description": "Year of election.",
           "min": 2000,
           "max": 2016
         },
         {
           "name": "state",
-          "type": "character"
+          "type": "character",
+          "description": "State of results."
         },
         {
           "name": "state_po",
-          "type": "character"
+          "type": "character",
+          "description": "State postal abbreviation."
         },
         {
           "name": "county",
-          "type": "character"
+          "type": "character",
+          "description": "County within state."
         },
         {
           "name": "FIPS",
           "type": "integer",
+          "description": "FIPS code for the county. Useful due to non-standard abbreviations of counties.",
           "min": 1001,
           "max": 56045
         },
         {
           "name": "candidate",
-          "type": "character"
+          "type": "character",
+          "description": "Name of candidate."
         },
         {
           "name": "party",
           "type": "character",
+          "description": "Political party of the candidate.",
           "values": ["democrat", "republican", "green"]
         },
         {
           "name": "candidatevotes",
           "type": "integer",
+          "description": "Votes that candidate received in the county.",
           "min": 0,
           "max": 2464364
         },
         {
           "name": "totalvotes",
           "type": "integer",
+          "description": "Total votes cast in the county.",
           "min": 0,
           "max": 3434308
         }
-      ]
+      ],
+      "description": "County level results for presidential elections in the USA from 2000-2016.",
+      "source": "MIT Election Data and Science Lab, 2018, \"County Presidential Election Returns 2000-2016\", https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF]"
     },
     {
       "name": "rio_instagram",
       "fields": [
         {
           "name": "sport",
-          "type": "character"
+          "type": "character",
+          "description": "Name of the individual event"
         },
         {
           "name": "country",
-          "type": "character"
+          "type": "character",
+          "description": "Country"
         },
         {
           "name": "name",
-          "type": "character"
+          "type": "character",
+          "description": "Name"
         },
         {
           "name": "gender",
           "type": "factor",
+          "description": "Gender",
           "values": ["m", "f"]
         },
         {
           "name": "id",
-          "type": "character"
+          "type": "character",
+          "description": "Instagram ID"
         },
         {
           "name": "n_post",
           "type": "numeric",
+          "description": "Number of Posts",
           "min": 11,
           "max": 2155
         },
         {
           "name": "n_follower",
           "type": "numeric",
+          "description": "Number of followers",
           "min": 242,
           "max": 9233024
         },
         {
           "name": "n_following",
           "type": "numeric",
+          "description": "Number of followings",
           "min": 1,
           "max": 6004
         },
         {
           "name": "max_like",
           "type": "numeric",
+          "description": "Maximum Number of likes (in the last 10 photo posts)",
           "min": 28,
           "max": 395660
         },
         {
           "name": "max_comment_for_max_like",
           "type": "numeric",
+          "description": "Number of comments for the post with Maximum Number of likes (in the last 10 photo posts)",
           "min": 0,
           "max": 17500
         },
         {
           "name": "self_presenting",
           "type": "numeric",
+          "description": "Number of self-presenting posts in the last 10 photo posts (those posts in which the athlete is present)",
           "min": 3,
           "max": 10
         },
         {
           "name": "pure_self_presenting",
           "type": "numeric",
+          "description": "Number of pure self-presenting posts in the last 10 photo posts (those posts in which the athlete is the only person who is present)",
           "min": 0,
           "max": 10
         },
         {
           "name": "age",
           "type": "numeric",
+          "description": "Age",
           "min": 21,
           "max": 46
         },
         {
           "name": "date",
-          "type": "POSIXct"
+          "type": "POSIXct",
+          "description": "Date of data crawling"
         }
-      ]
+      ],
+      "description": "From the data creator: \"This dataset includes Instagram user characteristics of those Olympic athletes who won gold medals in the individual events of Rio2016. The name of all these gold medalists of individual events are in the dataset (226 athletes), however only 149 athletes (85 men and 64 women) had their Instagram publicly available at the time of data crawling (the whole dataset was crawled from 9-Aug-2019 to 12-Aug-2019). Thus, for some athletes we could not present data in the dataset.\"",
+      "source": "Amirhosein Bodaghi. (2019). Instagram Characteristics of Olympic gold medalists (Rio2016) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3469514"
     },
     {
       "name": "scotland_births",
@@ -3459,6 +3954,7 @@
         {
           "name": "age",
           "type": "integer",
+          "description": "Age of the mother, in years",
           "min": 12,
           "max": 56
         },
@@ -3912,41 +4408,52 @@
           "min": 0,
           "max": 3513
         }
-      ]
+      ],
+      "description": "The number of babies born in Scotland from 1945-2019, by age of the mother.",
+      "source": "National Records of Scotland, https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/births/births-time-series-data"
     },
     {
       "name": "scrabble",
       "fields": [
         {
           "name": "piece",
-          "type": "character"
+          "type": "character",
+          "description": "the letter A-Z shown on the tile or \"blank\""
         },
         {
           "name": "points",
           "type": "integer",
+          "description": "the points shown on the tile",
           "min": 0,
           "max": 10
         }
-      ]
+      ],
+      "description": "This dataset contains 100 records corresponding to the 100 tiles in English language editions of the board game Scrabble.",
+      "source": "https://en.wikipedia.org/wiki/Scrabble_letter_distributions"
     },
     {
       "name": "scrabble_ml",
       "fields": [
         {
           "name": "lang",
-          "type": "character"
+          "type": "character",
+          "description": "language of the scrabble tiles; one of dutch, english, french, l33t, malagasy, or tswana"
         },
         {
           "name": "piece",
-          "type": "character"
+          "type": "character",
+          "description": "the letter A-Z (or number in the case of l33t) shown on the tile or \"blank.\" Diacritics are ignored."
         },
         {
           "name": "points",
           "type": "integer",
+          "description": "the points shown on the tile",
           "min": 0,
           "max": 10
         }
-      ]
+      ],
+      "description": "This dataset contains 613 observations corresponding to the tiles in editions of the board game Scrabble for 6 languages.",
+      "source": "https://en.wikipedia.org/wiki/Scrabble_letter_distributions"
     },
     {
       "name": "seoulweather",
@@ -3954,152 +4461,180 @@
         {
           "name": "station",
           "type": "integer",
+          "description": "used weather station number: 1 to 25",
           "min": 1,
           "max": 25
         },
         {
           "name": "date",
-          "type": "character"
+          "type": "character",
+          "description": "Present day: yyyy-mm-dd (2013-06-30 to 2017-08-30)"
         },
         {
           "name": "present_tmax",
           "type": "numeric",
+          "description": "Maximum air temperature between 0 and 21 h on the present day: 20 to 37.6",
           "min": 20,
           "max": 37.6
         },
         {
           "name": "present_tmin",
           "type": "numeric",
+          "description": "Minimum air temperature between 0 and 21 h on the present day: 11.3 to 29.9",
           "min": 11.3,
           "max": 29.9
         },
         {
           "name": "ldaps_r_hmin",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day minimum relative humidity (percent): 19.8 to 98.5",
           "min": 19.7947,
           "max": 98.5247
         },
         {
           "name": "ldaps_r_hmax",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day maximum relative humidity (percent): 58.9 to 100",
           "min": 58.9363,
           "max": 100.0002
         },
         {
           "name": "ldaps_tmax_lapse",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day maximum air temperature applied lapse rate: 17.6 to 38.5",
           "min": 17.625,
           "max": 38.5423
         },
         {
           "name": "ldaps_tmin_lapse",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day minimum air temperature applied lapse rate: 14.3 to 29.6",
           "min": 14.2726,
           "max": 29.6193
         },
         {
           "name": "ldaps_ws",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day average wind speed (m/s): 2.9 to 21.9",
           "min": 2.8826,
           "max": 21.8576
         },
         {
           "name": "ldaps_lh",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day average latent heat flux (W/m2): -13.6 to 213.4",
           "min": -13.6032,
           "max": 213.414
         },
         {
           "name": "ldaps_cc1",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 1st 6-hour split average cloud cover (0-5 h) (percent): 0 to 0.97",
           "min": 0,
           "max": 0.9673
         },
         {
           "name": "ldaps_cc2",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 2nd 6-hour split average cloud cover (6-11 h) (percent): 0 to 0.97",
           "min": 0,
           "max": 0.9684
         },
         {
           "name": "ldaps_cc3",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 3rd 6-hour split average cloud cover (12-17 h) (percent): 0 to 0.98",
           "min": 0,
           "max": 0.9838
         },
         {
           "name": "ldaps_cc4",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 4th 6-hour split average cloud cover (18-23 h) (percent): 0 to 0.97",
           "min": 0,
           "max": 0.9747
         },
         {
           "name": "ldaps_ppt1",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 1st 6-hour split average precipitation (0-5 h) (percent): 0 to 23.7",
           "min": 0,
           "max": 23.7015
         },
         {
           "name": "ldaps_ppt2",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 2nd 6-hour split average precipitation (6-11 h) (percent): 0 to 21.6",
           "min": 0,
           "max": 21.6217
         },
         {
           "name": "ldaps_ppt3",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 3rd 6-hour split average precipitation (12-17 h) (percent): 0 to 15.8",
           "min": 0,
           "max": 15.8412
         },
         {
           "name": "ldaps_ppt4",
           "type": "numeric",
+          "description": "LDAPS model forecast of next-day 4th 6-hour split average precipitation (18-23 h) (percent): 0 to 16.7",
           "min": 0,
           "max": 16.6555
         },
         {
           "name": "lat",
           "type": "numeric",
+          "description": "Latitude: 37.456 to 37.645",
           "min": 37.4562,
           "max": 37.645
         },
         {
           "name": "lon",
           "type": "numeric",
+          "description": "Longitude: 126.826 to 127.135",
           "min": 126.826,
           "max": 127.135
         },
         {
           "name": "dem",
           "type": "numeric",
+          "description": "Elevation (m): 12.4 to 212.3",
           "min": 12.37,
           "max": 212.335
         },
         {
           "name": "slope",
           "type": "numeric",
+          "description": "Slope: 0.1 to 5.2",
           "min": 0.0985,
           "max": 5.1782
         },
         {
           "name": "solar_radiation",
           "type": "numeric",
+          "description": "Daily incoming solar radiation (wh/m2): 4329.5 to 5992.9",
           "min": 4329.5205,
           "max": 5992.896
         },
         {
           "name": "next_tmax",
           "type": "numeric",
+          "description": "The next-day maximum air temperature: 17.4 to 38.9",
           "min": 17.4,
           "max": 38.9
         },
         {
           "name": "next_tmin",
           "type": "numeric",
+          "description": "The next-day minimum air temperature: 11.3 to 29.8",
           "min": 11.3,
           "max": 29.8
         }
-      ]
+      ],
+      "description": "The forecast for the next day and current day weather conditions in and near Seoul from 2013-06-30 to 2017-08-30.",
+      "details": "From the source: \"This data is for the purpose of bias correction of next-day maximum and minimum air temperatures forecast of the LDAPS model operated by the Korea Meteorological Administration over Seoul, South Korea. This data consists of summer data from 2013 to 2017. The input data is largely composed of the LDAPS model's next-day forecast data, in-situ maximum and minimum temperatures of present-day, and geographic auxiliary variables. There are two outputs (i.e. next-day maximum and minimum air temperatures) in this data.\"",
+      "source": "'Cho, D., Yoo, C., Im, J., & Cha, D. (2020). Comparative assessment of various machine learning-based bias correction methods for numerical weather prediction model forecasts of extreme air temperatures in urban areas. Earth and Space Science.' https://archive.ics.uci.edu/ml/datasets/Bias+correction+of+numerical+prediction+model+temperature+forecast"
     },
     {
       "name": "sharks",
@@ -4107,90 +4642,108 @@
         {
           "name": "av",
           "type": "factor",
+          "description": "did the subject see video or listen to audio",
           "values": ["audio", "video"]
         },
         {
           "name": "music",
           "type": "factor",
+          "description": "was the music played to subject uplifting, ominous or silence",
           "values": ["ominous", "uplifting", "silence"]
         },
         {
           "name": "scary",
           "type": "numeric",
+          "description": "how well does scary describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "dangerous",
           "type": "numeric",
+          "description": "how well does dangerous describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "vicious",
           "type": "numeric",
+          "description": "how well does vicious describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "peaceful",
           "type": "numeric",
+          "description": "how well does peaceful describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "beautiful",
           "type": "numeric",
+          "description": "how well does beautiful describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "graceful",
           "type": "numeric",
+          "description": "how well does graceful describe sharks 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "free_response",
-          "type": "character"
+          "type": "character",
+          "description": "an adjective (or more) that describes sharks"
         },
         {
           "name": "conserve",
           "type": "numeric",
+          "description": "willingness to conserve from 1-7",
           "min": 1,
           "max": 7
         },
         {
           "name": "gender",
           "type": "numeric",
+          "description": "1 male, 2 female",
           "min": 1,
           "max": 2
         },
         {
           "name": "age",
           "type": "numeric",
+          "description": "age in years",
           "min": 18,
           "max": 65
         },
         {
           "name": "race_ethnicity",
           "type": "numeric",
+          "description": "1 white_or_caucasian, 2 black_or_african_american, 3 hispanic_or_latino, 4 asian, 5 american_indian_or_alaskan_native, 6 native_hawaiian_or_pacific_islander, 7 other",
           "min": 1,
           "max": 7
         },
         {
           "name": "annual_income",
           "type": "numeric",
+          "description": "1-9 by increments of 25K, so 1 = 0-25K, 2 = 25-50K, ..., 9 = 200K+",
           "min": 1,
           "max": 9
         },
         {
           "name": "political_views",
           "type": "numeric",
+          "description": "levels 1-7 with 1 extremely liberal, 4 moderate and 7 extremely conservative",
           "min": 1,
           "max": 7
         }
-      ]
+      ],
+      "description": "Studies the effect of different kinds of background music on people watching shark documentaries.",
+      "details": "From the authors: \"Despite the ongoing need for shark conservation and management, prevailing negative sentiments marginalize these animals and legitimize permissive exploitation. These negative attitudes arise from an instinctive, yet exaggerated fear, which is validated and reinforced by disproportionate and sensationalistic news coverage of shark ‘attacks’ and by highlighting shark-on-human violence in popular movies and documentaries. In this study, we investigate another subtler, yet powerful factor that contributes to this fear: the ominous background music that often accompanies shark footage in documentaries.\" The music in this experiment comes from https://open.spotify.com/album/7AQ9M23tA6AlBSsl7DocBJ. Ominous music is Track 9 1:45-2:45, while uplifting music is Track 1, 1:41-2:41.",
+      "source": "Nosal AP, Keenan EA, Hastings PA, Gneezy A (2016) The Effect of Background Music in Shark Documentaries on Viewers' Perceptions of Sharks. PLoS ONE 11(8): e0159279. https://doi.org/10.1371/journal.pone.0159279"
     },
     {
       "name": "skull_geometry",
@@ -4198,196 +4751,240 @@
         {
           "name": "age_mos",
           "type": "numeric",
+          "description": "age of child in months",
           "min": 0.27,
           "max": 39.6
         },
         {
           "name": "circumference_cm",
           "type": "numeric",
+          "description": "circumference of skull in centimeters",
           "min": 31.28,
           "max": 51.64
         }
-      ]
+      ],
+      "description": "Measurements of circumference of skulls of children at various ages.",
+      "details": "From the authors: \"Head injury is the leading cause of fatality and long-term disability for children. Pediatric heads change rapidly in both size and shape during growth, especially for children under 3 years old.\"",
+      "source": "Li, Zhigang et al. (2016), Data from: A statistical skull geometry model for children 0-3 years old, Dryad, Dataset, https://doi.org/10.5061/dryad.p4p62 https://datadryad.org/stash/dataset/doi:10.5061/dryad.p4p62 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127322"
     },
     {
       "name": "snails",
       "fields": [
         {
           "name": "Location",
-          "type": "character"
+          "type": "character",
+          "description": "Collection site."
         },
         {
           "name": "Habitat",
-          "type": "factor"
+          "type": "factor",
+          "description": "Ecological features of collection site."
         },
         {
           "name": "Color",
           "type": "factor",
+          "description": "Snail shell color.",
           "values": ["Yellow", "Pink", "Brown"]
         },
         {
           "name": "Banding",
           "type": "factor",
+          "description": "Type of shell banding. X00000 is unbanded. X00300 has one wide band. X12345 has five bands.",
           "values": ["X00000", "X00300", "X12345", "Others"]
         },
         {
           "name": "Count",
           "type": "integer",
+          "description": "Count of snails in this category.",
           "min": 0,
           "max": 185
         }
-      ]
+      ],
+      "description": "Features of the grove snail cepaea nemoralis collected by Cain and Sheppard near Oxford, England in 1949.",
+      "details": "From the authors: \"The purpose of this paper is to describe an investigation into this problem of the relative importance of selection and drift in determining the distribution of different colour and banding patterns in C. nemorali\"",
+      "source": "Cain, A., Sheppard, P. Selection in the polymorphic land snail Cepæa nemoralis. Heredity 4, 275–294 (1950). Data is from Table 6. https://doi.org/10.1038/hdy.1950.22"
     },
     {
       "name": "weight_estimate",
       "fields": [
         {
           "name": "id",
-          "type": "character"
+          "type": "character",
+          "description": "ID"
         },
         {
           "name": "height",
           "type": "integer",
+          "description": "Height of subject in cm.",
           "min": 110,
           "max": 185
         },
         {
           "name": "mean100",
           "type": "numeric",
+          "description": "Mean of estimated weight for objects that weighed 100 g.",
           "min": 68.75,
           "max": 370
         },
         {
           "name": "mean200",
           "type": "numeric",
+          "description": "Mean of estimated weight for objects that weighed 200 g.",
           "min": 60,
           "max": 380
         },
         {
           "name": "mean300",
           "type": "numeric",
+          "description": "Mean of estimated weight for objects that weighed 300 g.",
           "min": 100,
           "max": 410
         },
         {
           "name": "mean400",
           "type": "numeric",
+          "description": "Mean of estimated weight for objects that weighed 400 g.",
           "min": 210,
           "max": 450
         },
         {
           "name": "age",
           "type": "factor",
+          "description": "Age group that the subject is in. Factor with levels 6, 8, 10 and adult.",
           "values": ["6", "8", "10", "adult"]
         }
-      ]
+      ],
+      "description": "Humans are able to estimate the weight of an object by watching how another person interacts with the object. Eighty subjects of various ages were asked to estimate the weight of objects of various weights after watching a video of an actor interacting with the weights.",
+      "details": "From the authors: \"Humans are excellent at perceiving different features of the actions performed by others. For instance, by viewing someone else manipulating an unknown object, one can infer its weight–an intrinsic feature otherwise not directly accessible through vision. How such perceptual skill develops during childhood remains unclear.\"",
+      "source": "Sciutti A, Patanè L, Sandini G (2019) Development of visual perception of others’ actions: Children’s judgment of lifted weight. PLoS ONE 14(11): e0224979 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0224979 Sciutti Alessandra, Patane' Laura, & Sandini Giulio. (2019). Dataset - weight lifting judgment in children [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3524881"
     },
     {
       "name": "world_cup",
       "fields": [
         {
           "name": "team_1",
-          "type": "character"
+          "type": "character",
+          "description": "Winning team"
         },
         {
           "name": "score_1",
           "type": "integer",
+          "description": "Number of goals for winning team",
           "min": 0,
           "max": 10
         },
         {
           "name": "team_2",
-          "type": "character"
+          "type": "character",
+          "description": "Losing team"
         },
         {
           "name": "score_2",
           "type": "numeric",
+          "description": "Number of goals for losing team",
           "min": 0,
           "max": 3
         },
         {
           "name": "game",
-          "type": "character"
+          "type": "character",
+          "description": "Description of when the game took place. Group Stage and Group [A-F] are equivalent level games"
         },
         {
           "name": "date",
-          "type": "character"
+          "type": "character",
+          "description": "Date of game"
         },
         {
           "name": "notes",
-          "type": "character"
+          "type": "character",
+          "description": "Notes on game, such as overtime or penalties"
         },
         {
           "name": "competition",
           "type": "character",
+          "description": "One of 2014 FIFA Men's World Cup or 2015 FIFA Women's World Cup",
           "values": ["2014 FIFA Men's World Cup", "2015 FIFA Women's World Cup"]
         }
-      ]
+      ],
+      "description": "Results from the FIFA 2014 Men's World Cup and the FIFA 2015 Women's World Cup finals.",
+      "source": "https://abcnews.go.com/Sports/2014-fifa-world-cup-tv-schedule-results/story?id=23748377 and https://abcnews.go.com/Sports/2015-fifa-womens-world-cup-complete-tournament-results/story?id=31204768"
     },
     {
       "name": "wrist",
       "fields": [
         {
           "name": "id",
-          "type": "character"
+          "type": "character",
+          "description": "ID number"
         },
         {
           "name": "age",
           "type": "numeric",
+          "description": "Age in years",
           "min": 65,
           "max": 94
         },
         {
           "name": "sex",
           "type": "numeric",
+          "description": "0 = man and 1 = female",
           "min": 0,
           "max": 1
         },
         {
           "name": "handed_side",
           "type": "numeric",
+          "description": "1 = right and 2 = left",
           "min": 1,
           "max": 2
         },
         {
           "name": "centre",
           "type": "numeric",
+          "description": "Centres are anonymised in this excel file",
           "min": 1,
           "max": 3
         },
         {
           "name": "fracture_side",
           "type": "numeric",
+          "description": "1 = right and 2 = left",
           "min": 1,
           "max": 2
         },
         {
           "name": "cast_position",
           "type": "numeric",
+          "description": "1 = functional cast position and 2 = volar-flexion and ulnar deviation cast position",
           "min": 1,
           "max": 2
         },
         {
           "name": "pcs_start",
           "type": "numeric",
+          "description": "PCS score at baseline of follow-up",
           "min": 0,
           "max": 47
         },
         {
           "name": "operativetreatment",
           "type": "numeric",
+          "description": "No-operative treatment during follow-up = 0 and operative treatment during follow-up",
           "min": 0,
           "max": 1
         },
         {
           "name": "pain03m",
           "type": "numeric",
+          "description": "Reported pain of the fractured wrist at the outpatient visit at 3 months: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "stiffness03m",
           "type": "numeric",
+          "description": "Reported stiffness of the fractured wrist at the outpatient visit at 3 months: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
@@ -4406,66 +5003,77 @@
         {
           "name": "grip_strength_proportion",
           "type": "numeric",
+          "description": "Grip strength of fractured side to controlled side, proportion",
           "min": 0.0667,
           "max": 1
         },
         {
           "name": "times_outside_from_home",
           "type": "numeric",
+          "description": "How many times the patient leave from home per week in average",
           "min": 0,
           "max": 14
         },
         {
           "name": "distance_per_week",
           "type": "numeric",
+          "description": "How many kilometers does the patient walk when leaving from home in average",
           "min": 0,
           "max": 17.5
         },
         {
           "name": "ancillary_inside",
           "type": "numeric",
+          "description": "Does the patient use walking aids inside of home: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "ancillary_outside",
           "type": "numeric",
+          "description": "Does the patient use walking aids outside of home: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "guided_physiotherapy",
           "type": "numeric",
+          "description": "Did the patient use guided physiotherapy for fractured hand during follow-up: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "guided_physiotherapy_times",
           "type": "numeric",
+          "description": "How many physiotherapist visits patient underwent if guided physiotherapy was used?",
           "min": 0,
           "max": 15
         },
         {
           "name": "cast_changes",
           "type": "numeric",
+          "description": "How many cast changes patient underwent, if any?",
           "min": 0,
           "max": 3
         },
         {
           "name": "x15d3m",
           "type": "numeric",
+          "description": "Health-related quality of life measured with 15D at 3 months of follow-up",
           "min": 0.4428,
           "max": 1
         },
         {
           "name": "x15d12m",
           "type": "numeric",
+          "description": "Health-related quality of life measured with 15D at 12 months of follow-up",
           "min": 0.5441,
           "max": 1
         },
         {
           "name": "uv_3m",
           "type": "numeric",
+          "description": "Ulnar variance at 3 months in millimeters: + = ulnar bone is more lengthy than radial bone",
           "min": -2.2,
           "max": 12.1
         },
@@ -4484,130 +5092,154 @@
         {
           "name": "uv_cast",
           "type": "numeric",
+          "description": "Ulnar variance after closed reduction in millimeters: + = ulnar bone is more lengthy than radial bone",
           "min": -3.6,
           "max": 9
         },
         {
           "name": "inclination_cast",
           "type": "numeric",
+          "description": "Inclination after closed reduction",
           "min": 9,
           "max": 26
         },
         {
           "name": "angluation_cast",
           "type": "numeric",
+          "description": "Angulation after closed reduction: + dorsal angulation and - volar angulation",
           "min": -10,
           "max": 32
         },
         {
           "name": "wrist_flexion_in_cast",
           "type": "numeric",
+          "description": "Angulation between 2nd metacarpal and radial bone after closed reduction and casting: + = dorsal flexion and - = volar flexion. In degrees",
           "min": -38,
           "max": 23
         },
         {
           "name": "x3mcpra_dulnardeviationdg",
           "type": "numeric",
+          "description": "Angulation between 3rd metacarpal and radial bone after closed reduction and casting: + = ulnar-deviation and - = volar-deviation In degrees",
           "min": -6,
           "max": 24.5
         },
         {
           "name": "uv_pre",
           "type": "numeric",
+          "description": "Ulnar variance before closed reduction in millimeters: + = ulnar bone is more lengthy than radial bone",
           "min": -2.5,
           "max": 17.1
         },
         {
           "name": "inclination_pre",
           "type": "numeric",
+          "description": "Inclination before closed reduction",
           "min": 4,
           "max": 26
         },
         {
           "name": "angulation_pre",
           "type": "numeric",
+          "description": "Angulation before closed reduction: + dorsal angulation and - volar angulation",
           "min": 0.5,
           "max": 50
         },
         {
           "name": "articulariness",
           "type": "numeric",
+          "description": "Articular line of fracture: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "psu_fracture",
           "type": "numeric",
+          "description": "Processus styloideus ulna fracture: 0 = no and 1 = yes",
           "min": 0,
           "max": 1
         },
         {
           "name": "qd3m",
           "type": "numeric",
+          "description": "Quick-DASH at 3 months",
           "min": 0,
           "max": 89
         },
         {
           "name": "qd12m",
           "type": "numeric",
+          "description": "Quick-DASH at 12 months",
           "min": 0,
           "max": 75
         },
         {
           "name": "vas3m",
           "type": "numeric",
+          "description": "VAS for pain at 3 months",
           "min": 0,
           "max": 76
         },
         {
           "name": "vas12m",
           "type": "numeric",
+          "description": "VAS for pain at 12 months",
           "min": 0,
           "max": 73
         },
         {
           "name": "pcs3m",
           "type": "numeric",
+          "description": "PCS at 3 months",
           "min": 0,
           "max": 42
         },
         {
           "name": "pcs12m",
           "type": "numeric",
+          "description": "PCS at 3 months",
           "min": 0,
           "max": 47
         },
         {
           "name": "cast_change_category",
           "type": "numeric",
+          "description": "Underwent cast change during follow-up: 0 = no and 1 = one or more changes",
           "min": 0,
           "max": 1
         },
         {
           "name": "prwe12m",
           "type": "numeric",
+          "description": "PRWE at 12 months",
           "min": 0,
           "max": 81.5
         },
         {
           "name": "prwe3m",
           "type": "numeric",
+          "description": "PRWE at 3 months",
           "min": 0,
           "max": 90
         },
         {
           "name": "d_pcs1",
           "type": "numeric",
+          "description": "PCS score at 3 months minus (-) PCS score at baseline",
           "min": -27,
           "max": 36
         },
         {
           "name": "d_pcs2",
           "type": "numeric",
+          "description": "PCS score at 12 months minus (-) PCS score at baseline",
           "min": -21,
           "max": 39
         }
-      ]
+      ],
+      "description": "Two types of casts are evaluated for treatment on elderly patients with a common type of wrist fracture.",
+      "details": "From the authors: \"Distal radius fractures are common fractures and the cornerstone of treatment remains immobilization of the wrist in a cast. At present, there is a scarcity of studies that compare different cast immobilization methods. The objective of the study was therefore to compare volar-flexion and ulnar deviation cast to functional cast position in the treatment of dorsally displaced distal radius fracture among elderly patients.\"",
+      "source": "Raittio L, Launonen AP, Hevonkorpi T, Luokkala T, Kukkonen J, Reito A, et al. (2020) Two casting methods compared in patients with Colles' fracture: A pragmatic, randomized controlled trial. PLoS ONE 15(5): e0232153. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232153"
     }
   ]
 }

@@ -4,9 +4,14 @@ title: "brake"
 
 # Brake
 
+From the authors: "Although unintended acceleration caused by pedal misapplication is a cause of traffic accidents, fatal accidents may be avoided if drivers realize their error immediately and quickly correct how they are stepping on the pedal. This correction behavior may decline with age because the rate of fatal accidents is fairly higher for older adults than for younger adults."
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::brake
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::brake
 
 ```r
 data <- fosdata::brake
-latency_p3 <- data$latency_p3
+p1_p2 <- data$p1_p2
 ```
 
 ## LLM instructions
@@ -51,25 +56,30 @@ fields[20]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `subject_id` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 80 | - |
-| `age_group` | <u style="text-decoration-style: dotted;">character</u> | - | - | `Young`, `Old` |
-| `age` | <u style="text-decoration-style: dotted;">integer</u> | 18 | 81 | - |
-| `gender` | <u style="text-decoration-style: dotted;">integer</u> | - | 1 | - |
-| `latency_p1` | <u style="text-decoration-style: dotted;">numeric</u> | 315.6204 | 1240.2232 | - |
-| `latency_p2` | <u style="text-decoration-style: dotted;">numeric</u> | 485.8605 | 1932.2926 | - |
-| `latency_p3` | <u style="text-decoration-style: dotted;">numeric</u> | 190.038 | 2410.4977 | - |
-| `p1_p2` | <u style="text-decoration-style: dotted;">numeric</u> | 844.4527 | 2537.9589 | - |
-| `p1_p2_p3` | <u style="text-decoration-style: dotted;">numeric</u> | 1148.7133 | 4948.4566 | - |
-| `cfq` | <u style="text-decoration-style: dotted;">numeric</u> | 1.25 | 3.35 | - |
-| `dbq_error` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 3 | - |
-| `dbq_violation` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 4.6667 | - |
-| `dbq_laspe` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 3.6667 | - |
-| `difficulty` | <u style="text-decoration-style: dotted;">integer</u> | 7 | 100 | - |
-| `confidence` | <u style="text-decoration-style: dotted;">integer</u> | 14 | 100 | - |
-| `decline` | <u style="text-decoration-style: dotted;">integer</u> | 12 | 89 | - |
-| `anxiety` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
-| `near_miss` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 3 | - |
-| `mmse` | <u style="text-decoration-style: dotted;">integer</u> | 25 | 30 | - |
-| `education` | <u style="text-decoration-style: dotted;">integer</u> | 9 | 20 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `subject_id` | <span style="font-size: 0.7em; display: inline-block;">unique identifier of subject</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 80 | - |
+| `age_group` | <span style="font-size: 0.7em; display: inline-block;">Young or Old</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | `Young`, `Old` |
+| `age` | <span style="font-size: 0.7em; display: inline-block;">age in years</span> | <u style="text-decoration-style: dotted;">integer</u> | 18 | 81 | - |
+| `gender` | <span style="font-size: 0.7em; display: inline-block;">1 = male, 0 = female</span> | <u style="text-decoration-style: dotted;">integer</u> | - | 1 | - |
+| `latency_p1` | <span style="font-size: 0.7em; display: inline-block;">time to press brake after seeing red light (ms)</span> | <u style="text-decoration-style: dotted;">numeric</u> | 315.6204 | 1240.2232 | - |
+| `latency_p2` | <span style="font-size: 0.7em; display: inline-block;">time to release brake after pressing on it (ms)</span> | <u style="text-decoration-style: dotted;">numeric</u> | 485.8605 | 1932.2926 | - |
+| `latency_p3` | <span style="font-size: 0.7em; display: inline-block;">time to press pedal to left of what participant thought was brake (ms)</span> | <u style="text-decoration-style: dotted;">numeric</u> | 190.038 | 2410.4977 | - |
+| `p1_p2` | <span style="font-size: 0.7em; display: inline-block;">Sum of latency_p1 and latency_p2</span> | <u style="text-decoration-style: dotted;">numeric</u> | 844.4527 | 2537.9589 | - |
+| `p1_p2_p3` | <span style="font-size: 0.7em; display: inline-block;">Sum of latency_p1, latency_p2, and latency_p3</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1148.7133 | 4948.4566 | - |
+| `cfq` | <span style="font-size: 0.7em; display: inline-block;">Score on cognitive failure questionairre</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.25 | 3.35 | - |
+| `dbq_error` | <span style="font-size: 0.7em; display: inline-block;">Score on dribing behavior questionnaire error questions</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 3 | - |
+| `dbq_violation` | <span style="font-size: 0.7em; display: inline-block;">Score on dbq violation questions</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 4.6667 | - |
+| `dbq_laspe` | <span style="font-size: 0.7em; display: inline-block;">Score on dbq lapse questions</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 3.6667 | - |
+| `difficulty` | <span style="font-size: 0.7em; display: inline-block;">response to "was the current task difficult for you" on a 1-100 visual scale</span> | <u style="text-decoration-style: dotted;">integer</u> | 7 | 100 | - |
+| `confidence` | <span style="font-size: 0.7em; display: inline-block;">response to "do you have much confidence in your ability to perform the current task" 1-100</span> | <u style="text-decoration-style: dotted;">integer</u> | 14 | 100 | - |
+| `decline` | <span style="font-size: 0.7em; display: inline-block;">asked of older adults. "how well do you think you can perform task relative to younger adults" scale from 1-150</span> | <u style="text-decoration-style: dotted;">integer</u> | 12 | 89 | - |
+| `anxiety` | <span style="font-size: 0.7em; display: inline-block;">In daily life, how much are you afraid you will press the wrong pedal? 1-5</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 5 | - |
+| `near_miss` | <span style="font-size: 0.7em; display: inline-block;">In daily life, how often do you nearly miss the pedal? 1-5</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 3 | - |
+| `mmse` | <span style="font-size: 0.7em; display: inline-block;">Score on mini mental stat examination (24 necessary to participate)</span> | <u style="text-decoration-style: dotted;">integer</u> | 25 | 30 | - |
+| `education` | <span style="font-size: 0.7em; display: inline-block;">numeric 12-20</span> | <u style="text-decoration-style: dotted;">integer</u> | 9 | 20 | - |
+
+## Source
+
+Hasegawa K, Kimura M, Takeda Y (2020) Age-related differences in correction behavior for unintended acceleration. PLoS ONE 15(7): e0236053. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0236053 https://osf.io/mre6y/?view_only=5af130ecc3234435b7a7ffc1ba6c391f
+

@@ -4,9 +4,14 @@ title: "frogs"
 
 # Frogs
 
+Measurements of frogs from several different species with the Zakerana genus.
+
+From the authors: "We describe a new species of frog of the genus Zakerana discovered from the urban core of Dhaka, Bangladesh, one of the most densely populated cities in the world. Although the new species is morphologically similar to the geographically proximate congeners in the Bangladeshi cricket frog group, we show that it can be distinguished from all congeners on the basis of morphological characters, advertisement calls and variation in two mitochondrial DNA genes (12S rRNA and 16S rRNA)."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::frogs
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::frogs
 
 ```r
 data <- fosdata::frogs
-accession <- data$accession
+hw <- data$hw
 ```
 
 ## LLM instructions
@@ -47,21 +52,26 @@ fields[16]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `accession` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `svl` | <u style="text-decoration-style: dotted;">numeric</u> | 21.4 | 52.3 | - |
-| `hw` | <u style="text-decoration-style: dotted;">numeric</u> | 7.1 | 17 | - |
-| `hl` | <u style="text-decoration-style: dotted;">numeric</u> | 7.1 | 17.3 | - |
-| `slm` | <u style="text-decoration-style: dotted;">numeric</u> | 3 | 7.4 | - |
-| `be` | <u style="text-decoration-style: dotted;">numeric</u> | 1.8 | 6.9 | - |
-| `en` | <u style="text-decoration-style: dotted;">numeric</u> | 1.7 | 3.7 | - |
-| `ns` | <u style="text-decoration-style: dotted;">numeric</u> | 1.3 | 3.7 | - |
-| `el` | <u style="text-decoration-style: dotted;">numeric</u> | 2.4 | 5.6 | - |
-| `in` | <u style="text-decoration-style: dotted;">numeric</u> | 1.9 | 3.8 | - |
-| `iod` | <u style="text-decoration-style: dotted;">numeric</u> | 1.5 | 2.9 | - |
-| `fal` | <u style="text-decoration-style: dotted;">numeric</u> | 3.9 | 10.5 | - |
-| `hal` | <u style="text-decoration-style: dotted;">numeric</u> | 5 | 16.9 | - |
-| `fol` | <u style="text-decoration-style: dotted;">numeric</u> | 11 | 26 | - |
-| `tl` | <u style="text-decoration-style: dotted;">numeric</u> | 11.3 | 27.3 | - |
-| `species` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `accession` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `svl` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">numeric</u> | 21.4 | 52.3 | - |
+| `hw` | <span style="font-size: 0.7em; display: inline-block;">head width maximum width of the head at the posterior margin of mandible</span> | <u style="text-decoration-style: dotted;">numeric</u> | 7.1 | 17 | - |
+| `hl` | <span style="font-size: 0.7em; display: inline-block;">head length distance from tip of snout to the back of mandible</span> | <u style="text-decoration-style: dotted;">numeric</u> | 7.1 | 17.3 | - |
+| `slm` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">numeric</u> | 3 | 7.4 | - |
+| `be` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.8 | 6.9 | - |
+| `en` | <span style="font-size: 0.7em; display: inline-block;">distance from front of eyes to the nostril</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.7 | 3.7 | - |
+| `ns` | <span style="font-size: 0.7em; display: inline-block;">nostril—snout length</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.3 | 3.7 | - |
+| `el` | <span style="font-size: 0.7em; display: inline-block;">eye width</span> | <u style="text-decoration-style: dotted;">numeric</u> | 2.4 | 5.6 | - |
+| `in` | <span style="font-size: 0.7em; display: inline-block;">internarial distance</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.9 | 3.8 | - |
+| `iod` | <span style="font-size: 0.7em; display: inline-block;">interorbital distance</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1.5 | 2.9 | - |
+| `fal` | <span style="font-size: 0.7em; display: inline-block;">forearm length distance from corner of elbow to proximal end of outer palmar metacarpal tubercle</span> | <u style="text-decoration-style: dotted;">numeric</u> | 3.9 | 10.5 | - |
+| `hal` | <span style="font-size: 0.7em; display: inline-block;">hand length distance from proximal end of outer palmar metacarpal tubercle to tip of third finger</span> | <u style="text-decoration-style: dotted;">numeric</u> | 5 | 16.9 | - |
+| `fol` | <span style="font-size: 0.7em; display: inline-block;">foot length distance from proximal end of inner metatarsal tubercle to tip of fourth finger</span> | <u style="text-decoration-style: dotted;">numeric</u> | 11 | 26 | - |
+| `tl` | <span style="font-size: 0.7em; display: inline-block;">tibia length distance from knee to heel</span> | <u style="text-decoration-style: dotted;">numeric</u> | 11.3 | 27.3 | - |
+| `species` | <span style="font-size: 0.7em; display: inline-block;">undefined</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+
+## Source
+
+Howlader MSA, Nair A, Merilä J (2016) A New Species of Frog (Anura: Dicroglossidae) Discovered from the Mega City of Dhaka. PLoS ONE 11(3): e0149597 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0149597
+

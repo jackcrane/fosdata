@@ -4,9 +4,14 @@ title: "draft"
 
 # Draft
 
+Results of the draft lottery held December 1, 1969 to determine the order in which young men would be drafted in 1970 for service in the Vietnam war.
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::draft
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::draft
 
 ```r
 data <- fosdata::draft
-DraftNo <- data$DraftNo
+DayofYear <- data$DayofYear
 ```
 
 ## LLM instructions
@@ -36,10 +41,15 @@ fields[5]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `Day` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 31 | - |
-| `Month` | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
-| `MonthNo` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 12 | - |
-| `DayofYear` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 366 | - |
-| `DraftNo` | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 366 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `Day` | <span style="font-size: 0.7em; display: inline-block;">Day of the month.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 31 | - |
+| `Month` | <span style="font-size: 0.7em; display: inline-block;">Month abbreviation.</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | - |
+| `MonthNo` | <span style="font-size: 0.7em; display: inline-block;">Month number 1-12.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 12 | - |
+| `DayofYear` | <span style="font-size: 0.7em; display: inline-block;">Day of year from 1-366.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 366 | - |
+| `DraftNo` | <span style="font-size: 0.7em; display: inline-block;">Draft number from 1-366. Lowest numbers were drafted first.</span> | <u style="text-decoration-style: dotted;">numeric</u> | 1 | 366 | - |
+
+## Source
+
+United States Government Selective Service System. https://www.sss.gov/history-and-records/vietnam-lotteries/
+

@@ -4,9 +4,14 @@ title: "austen"
 
 # Austen
 
+Downloaded from Project Gutenberg. Emma and Pride and Prejudice are free from copyright in the US and in most countries, according to Project Gutenberg. Please check laws in your country before use.
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::austen
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::austen
 
 ```r
 data <- fosdata::austen
-word <- data$word
+sentiment_score <- data$sentiment_score
 ```
 
 ## LLM instructions
@@ -38,12 +43,17 @@ fields[7]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `word` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `sentence` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 9340 | - |
-| `chapter` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 61 | - |
-| `word_length` | <u style="text-decoration-style: dotted;">integer</u> | 1 | 19 | - |
-| `stop_word` | <u style="text-decoration-style: dotted;">logical</u> | - | - | `FALSE`, `TRUE` |
-| `sentiment_score` | <u style="text-decoration-style: dotted;">integer</u> | -4 | 4 | - |
-| `novel` | <u style="text-decoration-style: dotted;">character</u> | - | - | `Emma`, `Pride and Prejudice` |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `word` | <span style="font-size: 0.7em; display: inline-block;">A word in either Emma or Pride and Prejudice</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `sentence` | <span style="font-size: 0.7em; display: inline-block;">The sentence number of the book that the word appears in.</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 9340 | - |
+| `chapter` | <span style="font-size: 0.7em; display: inline-block;">The chapter of the book that the word appears in.</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 61 | - |
+| `word_length` | <span style="font-size: 0.7em; display: inline-block;">The length of the word.</span> | <u style="text-decoration-style: dotted;">integer</u> | 1 | 19 | - |
+| `stop_word` | <span style="font-size: 0.7em; display: inline-block;">Is the word a stop word? Stop word are words such as "the" "and" or "of," which are common and don't carry sentiment.</span> | <u style="text-decoration-style: dotted;">logical</u> | - | - | `FALSE`, `TRUE` |
+| `sentiment_score` | <span style="font-size: 0.7em; display: inline-block;">Sentiment score of the word. Larger numbers correspond to more positive sentiment.</span> | <u style="text-decoration-style: dotted;">integer</u> | -4 | 4 | - |
+| `novel` | <span style="font-size: 0.7em; display: inline-block;">One of Emma or Pride and Prejudice.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | `Emma`, `Pride and Prejudice` |
+
+## Source
+
+https://www.gutenberg.org/files/158/158-0.txt and https://www.gutenberg.org/files/1342/1342-0.txt
+

@@ -4,9 +4,14 @@ title: "mice_pot"
 
 # Mice_pot
 
+Wild type mice were injected with THC at various doses based on the weight of the mouse. The percent of baseline locomotion was observed for each mouse.
+
+There is much more data of this type available in the paper. The authors tested the mice in numerous ways, and they also compared wild type mice with serotonin 2A receptors knockout mice. From the authors: "Activation of cannabinoid CB1 receptors (CB1R) by delta9-tetrahydrocannabinol (THC) produces a variety of negative effects with major consequences in cannabis users that constitute important drawbacks for the use of cannabinoids as therapeutic agents. For this reason, there is a tremendous medical interest in harnessing the beneficial effects of THC. Behavioral studies carried out in mice lacking 5-HT2A receptors (5-HT2AR) revealed a remarkable 5-HT2AR-dependent dissociation in the beneficial antinociceptive effects of THC and its detrimental amnesic properties."
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::mice_pot
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::mice_pot
 
 ```r
 data <- fosdata::mice_pot
-percent_of_act <- data$percent_of_act
+group <- data$group
 ```
 
 ## LLM instructions
@@ -33,7 +38,12 @@ fields[2]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `group` | <u style="text-decoration-style: dotted;">factor</u> | - | - | `0.3`, `1`, `3`, `VEH` |
-| `percent_of_act` | <u style="text-decoration-style: dotted;">numeric</u> | 41.3873 | 148.917 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `group` | <span style="font-size: 0.7em; display: inline-block;">One of four levels, VEH (control) or the amount of THC in mg/kg the mouse was injected with.</span> | <u style="text-decoration-style: dotted;">factor</u> | - | - | `0.3`, `1`, `3`, `VEH` |
+| `percent_of_act` | <span style="font-size: 0.7em; display: inline-block;">Percent of baseline locomotion activity</span> | <u style="text-decoration-style: dotted;">numeric</u> | 41.3873 | 148.917 | - |
+
+## Source
+
+Viñals X, Moreno E, Lanfumey L, Cordomí A, Pastor A, de La Torre R, et al. (2015) Cognitive Impairment Induced by Delta9-tetrahydrocannabinol Occurs through Heteromers between Cannabinoid CB1 and Serotonin 5-HT2A Receptors. PLoS Biol 13(7): e1002194. https://doi.org/10.1371/journal.pbio.1002194
+

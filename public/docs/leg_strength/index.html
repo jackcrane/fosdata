@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Leg_strength# Initialization# data &lt;- fosdata::leg_strengthAccessing fields# data &lt;- fosdata::leg_strength mean_wii &lt;- data$mean_wiiLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::leg_strength dataset containing the following fields: fields[3]{name,type,values}: ID,numeric,n/a mean_wii,numeric,n/a mean_sid,numeric,n/a Fields# Name Type Min Max Values ID numeric 1 30 - mean_wii numeric 78.229 279.9052 - mean_sid numeric 123.1767 357.4762 - ">
+<meta name="description" content="Leg_strength# Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.
+The full, unmodified data set is available as leg_strength_full. From the authors: “Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.”
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/leg_strength/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="leg_strength">
-  <meta property="og:description" content="Leg_strength# Initialization# data &lt;- fosdata::leg_strengthAccessing fields# data &lt;- fosdata::leg_strength mean_wii &lt;- data$mean_wiiLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::leg_strength dataset containing the following fields: fields[3]{name,type,values}: ID,numeric,n/a mean_wii,numeric,n/a mean_sid,numeric,n/a Fields# Name Type Min Max Values ID numeric 1 30 - mean_wii numeric 78.229 279.9052 - mean_sid numeric 123.1767 357.4762 -">
+  <meta property="og:description" content="Leg_strength# Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.
+The full, unmodified data set is available as leg_strength_full. From the authors: “Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.”">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="leg_strength">
-  <meta itemprop="description" content="Leg_strength# Initialization# data &lt;- fosdata::leg_strengthAccessing fields# data &lt;- fosdata::leg_strength mean_wii &lt;- data$mean_wiiLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::leg_strength dataset containing the following fields: fields[3]{name,type,values}: ID,numeric,n/a mean_wii,numeric,n/a mean_sid,numeric,n/a Fields# Name Type Min Max Values ID numeric 1 30 - mean_wii numeric 78.229 279.9052 - mean_sid numeric 123.1767 357.4762 -">
-  <meta itemprop="wordCount" content="74">
+  <meta itemprop="description" content="Leg_strength# Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.
+The full, unmodified data set is available as leg_strength_full. From the authors: “Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.”">
+  <meta itemprop="wordCount" content="234">
 
 <title>leg_strength | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::leg_strength dataset containing the following fiel
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::leg_strength dataset containing the following fiel
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +863,13 @@ LLM Instructions The fosdata::leg_strength dataset containing the following fiel
       
       
   <article class="markdown book-article"><h1 id="leg_strength">Leg_strength<a class="anchor" href="#leg_strength">#</a></h1>
+<p>Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.</p>
+<p>The full, unmodified data set is available as <code>leg_strength_full</code>. From the authors: &ldquo;Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>leg_strength</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>leg_strength</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>leg_strength
-</span></span><span style="display:flex;"><span>mean_wii <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>mean_wii</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>ID <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>ID</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::leg_strength dataset containing the following fields:
@@ -878,6 +883,7 @@ fields[3]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -887,6 +893,7 @@ fields[3]{name,type,values}:
   <tbody>
       <tr>
           <td><code>ID</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">ID of participant. Can be used to match with <code>leg_strength_full</code> data set.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>30</td>
@@ -894,6 +901,7 @@ fields[3]{name,type,values}:
       </tr>
       <tr>
           <td><code>mean_wii</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">mean of 6 measurements of leg strength in kg on the wii balance board.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>78.229</td>
           <td>279.9052</td>
@@ -901,6 +909,7 @@ fields[3]{name,type,values}:
       </tr>
       <tr>
           <td><code>mean_sid</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">mean of the 6 measurements of leg strength in kg on the stationary isometric dynamometer.</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>123.1767</td>
           <td>357.4762</td>
@@ -908,6 +917,8 @@ fields[3]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>Gronbech Jorgensen M, Andersen S, Ryg J, Masud T (2015) Novel Use of the Nintendo Wii Board for Measuring Isometric Lower Limb Strength: A Reproducible and Valid Method in Older Adults. PLoS ONE 10(10): e0138660. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138660">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138660</a></p>
 </article>
  
       
@@ -989,6 +1000,7 @@ fields[3]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

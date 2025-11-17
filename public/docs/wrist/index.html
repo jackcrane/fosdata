@@ -8,24 +8,25 @@ https://github.com/alex-shpak/hugo-book
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wrist# Initialization# data &lt;- fosdata::wristAccessing fields# data &lt;- fosdata::wrist distance_per_week &lt;- data$distance_per_weekLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::wrist dataset containing the following fields: fields[47]{name,type,values}: id,character,n/a age,numeric,n/a sex,numeric,n/a handed_side,numeric,n/a centre,numeric,n/a fracture_side,numeric,n/a cast_position,numeric,n/a pcs_start,numeric,n/a operativetreatment,numeric,n/a pain03m,numeric,n/a stiffness03m,numeric,n/a grip_strength_fractured_site,numeric,n/a grip_strength_controlled_site,numeric,n/a grip_strength_proportion,numeric,n/a times_outside_from_home,numeric,n/a distance_per_week,numeric,n/a ancillary_inside,numeric,n/a ancillary_outside,numeric,n/a guided_physiotherapy,numeric,n/a guided_physiotherapy_times,numeric,n/a cast_changes,numeric,n/a x15d3m,numeric,n/a x15d12m,numeric,n/a uv_3m,numeric,n/a inclination_3m,numeric,n/a angulation_3m,numeric,n/a uv_cast,numeric,n/a inclination_cast,numeric,n/a angluation_cast,numeric,n/a wrist_flexion_in_cast,numeric,n/a x3mcpra_dulnardeviationdg,numeric,n/a uv_pre,numeric,n/a inclination_pre,numeric,n/a angulation_pre,numeric,n/a articulariness,numeric,n/a psu_fracture,numeric,n/a qd3m,numeric,n/a qd12m,numeric,n/a vas3m,numeric,n/a vas12m,numeric,n/a pcs3m,numeric,n/a pcs12m,numeric,n/a cast_change_category,numeric,n/a prwe12m,numeric,n/a prwe3m,numeric,n/a d_pcs1,numeric,n/a d_pcs2,numeric,n/a Fields# Name Type Min Max Values id character - - - age numeric 65 94 - sex numeric - 1 - handed_side numeric 1 2 - centre numeric 1 3 - fracture_side numeric 1 2 - cast_position numeric 1 2 - pcs_start numeric - 47 - operativetreatment numeric - 1 - pain03m numeric - 1 - stiffness03m numeric - 1 - grip_strength_fractured_site numeric 2 32 - grip_strength_controlled_site numeric 6 54 - grip_strength_proportion numeric 0.0667 1 - times_outside_from_home numeric - 14 - distance_per_week numeric - 17.5 - ancillary_inside numeric - 1 - ancillary_outside numeric - 1 - guided_physiotherapy numeric - 1 - guided_physiotherapy_times numeric - 15 - cast_changes numeric - 3 - x15d3m numeric 0.4428 1 - x15d12m numeric 0.5441 1 - uv_3m numeric -2.2 12.1 - inclination_3m numeric 7 25 - angulation_3m numeric -10 35 - uv_cast numeric -3.6 9 - inclination_cast numeric 9 26 - angluation_cast numeric -10 32 - wrist_flexion_in_cast numeric -38 23 - x3mcpra_dulnardeviationdg numeric -6 24.5 - uv_pre numeric -2.5 17.1 - inclination_pre numeric 4 26 - angulation_pre numeric 0.5 50 - articulariness numeric - 1 - psu_fracture numeric - 1 - qd3m numeric - 89 - qd12m numeric - 75 - vas3m numeric - 76 - vas12m numeric - 73 - pcs3m numeric - 42 - pcs12m numeric - 47 - cast_change_category numeric - 1 - prwe12m numeric - 81.5 - prwe3m numeric - 90 - d_pcs1 numeric -27 36 - d_pcs2 numeric -21 39 - ">
+<meta name="description" content="Wrist# Two types of casts are evaluated for treatment on elderly patients with a common type of wrist fracture.
+From the authors: “Distal radius fractures are common fractures and the cornerstone of treatment remains immobilization of the wrist in a cast. At present, there is a scarcity of studies that compare different cast immobilization methods. The objective of the study was therefore to compare volar-flexion and ulnar deviation cast to functional cast position in the treatment of dorsally displaced distal radius fracture among elderly patients.”
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/wrist/">
   <meta property="og:site_name" content="Fosdata">
   <meta property="og:title" content="wrist">
-  <meta property="og:description" content="Wrist# Initialization# data &lt;- fosdata::wristAccessing fields# data &lt;- fosdata::wrist distance_per_week &lt;- data$distance_per_weekLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::wrist dataset containing the following fields: fields[47]{name,type,values}: id,character,n/a age,numeric,n/a sex,numeric,n/a handed_side,numeric,n/a centre,numeric,n/a fracture_side,numeric,n/a cast_position,numeric,n/a pcs_start,numeric,n/a operativetreatment,numeric,n/a pain03m,numeric,n/a stiffness03m,numeric,n/a grip_strength_fractured_site,numeric,n/a grip_strength_controlled_site,numeric,n/a grip_strength_proportion,numeric,n/a times_outside_from_home,numeric,n/a distance_per_week,numeric,n/a ancillary_inside,numeric,n/a ancillary_outside,numeric,n/a guided_physiotherapy,numeric,n/a guided_physiotherapy_times,numeric,n/a cast_changes,numeric,n/a x15d3m,numeric,n/a x15d12m,numeric,n/a uv_3m,numeric,n/a inclination_3m,numeric,n/a angulation_3m,numeric,n/a uv_cast,numeric,n/a inclination_cast,numeric,n/a angluation_cast,numeric,n/a wrist_flexion_in_cast,numeric,n/a x3mcpra_dulnardeviationdg,numeric,n/a uv_pre,numeric,n/a inclination_pre,numeric,n/a angulation_pre,numeric,n/a articulariness,numeric,n/a psu_fracture,numeric,n/a qd3m,numeric,n/a qd12m,numeric,n/a vas3m,numeric,n/a vas12m,numeric,n/a pcs3m,numeric,n/a pcs12m,numeric,n/a cast_change_category,numeric,n/a prwe12m,numeric,n/a prwe3m,numeric,n/a d_pcs1,numeric,n/a d_pcs2,numeric,n/a Fields# Name Type Min Max Values id character - - - age numeric 65 94 - sex numeric - 1 - handed_side numeric 1 2 - centre numeric 1 3 - fracture_side numeric 1 2 - cast_position numeric 1 2 - pcs_start numeric - 47 - operativetreatment numeric - 1 - pain03m numeric - 1 - stiffness03m numeric - 1 - grip_strength_fractured_site numeric 2 32 - grip_strength_controlled_site numeric 6 54 - grip_strength_proportion numeric 0.0667 1 - times_outside_from_home numeric - 14 - distance_per_week numeric - 17.5 - ancillary_inside numeric - 1 - ancillary_outside numeric - 1 - guided_physiotherapy numeric - 1 - guided_physiotherapy_times numeric - 15 - cast_changes numeric - 3 - x15d3m numeric 0.4428 1 - x15d12m numeric 0.5441 1 - uv_3m numeric -2.2 12.1 - inclination_3m numeric 7 25 - angulation_3m numeric -10 35 - uv_cast numeric -3.6 9 - inclination_cast numeric 9 26 - angluation_cast numeric -10 32 - wrist_flexion_in_cast numeric -38 23 - x3mcpra_dulnardeviationdg numeric -6 24.5 - uv_pre numeric -2.5 17.1 - inclination_pre numeric 4 26 - angulation_pre numeric 0.5 50 - articulariness numeric - 1 - psu_fracture numeric - 1 - qd3m numeric - 89 - qd12m numeric - 75 - vas3m numeric - 76 - vas12m numeric - 73 - pcs3m numeric - 42 - pcs12m numeric - 47 - cast_change_category numeric - 1 - prwe12m numeric - 81.5 - prwe3m numeric - 90 - d_pcs1 numeric -27 36 - d_pcs2 numeric -21 39 -">
+  <meta property="og:description" content="Wrist# Two types of casts are evaluated for treatment on elderly patients with a common type of wrist fracture.
+From the authors: “Distal radius fractures are common fractures and the cornerstone of treatment remains immobilization of the wrist in a cast. At present, there is a scarcity of studies that compare different cast immobilization methods. The objective of the study was therefore to compare volar-flexion and ulnar deviation cast to functional cast position in the treatment of dorsally displaced distal radius fracture among elderly patients.”">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
 
 
   <meta itemprop="name" content="wrist">
-  <meta itemprop="description" content="Wrist# Initialization# data &lt;- fosdata::wristAccessing fields# data &lt;- fosdata::wrist distance_per_week &lt;- data$distance_per_weekLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::wrist dataset containing the following fields: fields[47]{name,type,values}: id,character,n/a age,numeric,n/a sex,numeric,n/a handed_side,numeric,n/a centre,numeric,n/a fracture_side,numeric,n/a cast_position,numeric,n/a pcs_start,numeric,n/a operativetreatment,numeric,n/a pain03m,numeric,n/a stiffness03m,numeric,n/a grip_strength_fractured_site,numeric,n/a grip_strength_controlled_site,numeric,n/a grip_strength_proportion,numeric,n/a times_outside_from_home,numeric,n/a distance_per_week,numeric,n/a ancillary_inside,numeric,n/a ancillary_outside,numeric,n/a guided_physiotherapy,numeric,n/a guided_physiotherapy_times,numeric,n/a cast_changes,numeric,n/a x15d3m,numeric,n/a x15d12m,numeric,n/a uv_3m,numeric,n/a inclination_3m,numeric,n/a angulation_3m,numeric,n/a uv_cast,numeric,n/a inclination_cast,numeric,n/a angluation_cast,numeric,n/a wrist_flexion_in_cast,numeric,n/a x3mcpra_dulnardeviationdg,numeric,n/a uv_pre,numeric,n/a inclination_pre,numeric,n/a angulation_pre,numeric,n/a articulariness,numeric,n/a psu_fracture,numeric,n/a qd3m,numeric,n/a qd12m,numeric,n/a vas3m,numeric,n/a vas12m,numeric,n/a pcs3m,numeric,n/a pcs12m,numeric,n/a cast_change_category,numeric,n/a prwe12m,numeric,n/a prwe3m,numeric,n/a d_pcs1,numeric,n/a d_pcs2,numeric,n/a Fields# Name Type Min Max Values id character - - - age numeric 65 94 - sex numeric - 1 - handed_side numeric 1 2 - centre numeric 1 3 - fracture_side numeric 1 2 - cast_position numeric 1 2 - pcs_start numeric - 47 - operativetreatment numeric - 1 - pain03m numeric - 1 - stiffness03m numeric - 1 - grip_strength_fractured_site numeric 2 32 - grip_strength_controlled_site numeric 6 54 - grip_strength_proportion numeric 0.0667 1 - times_outside_from_home numeric - 14 - distance_per_week numeric - 17.5 - ancillary_inside numeric - 1 - ancillary_outside numeric - 1 - guided_physiotherapy numeric - 1 - guided_physiotherapy_times numeric - 15 - cast_changes numeric - 3 - x15d3m numeric 0.4428 1 - x15d12m numeric 0.5441 1 - uv_3m numeric -2.2 12.1 - inclination_3m numeric 7 25 - angulation_3m numeric -10 35 - uv_cast numeric -3.6 9 - inclination_cast numeric 9 26 - angluation_cast numeric -10 32 - wrist_flexion_in_cast numeric -38 23 - x3mcpra_dulnardeviationdg numeric -6 24.5 - uv_pre numeric -2.5 17.1 - inclination_pre numeric 4 26 - angulation_pre numeric 0.5 50 - articulariness numeric - 1 - psu_fracture numeric - 1 - qd3m numeric - 89 - qd12m numeric - 75 - vas3m numeric - 76 - vas12m numeric - 73 - pcs3m numeric - 42 - pcs12m numeric - 47 - cast_change_category numeric - 1 - prwe12m numeric - 81.5 - prwe3m numeric - 90 - d_pcs1 numeric -27 36 - d_pcs2 numeric -21 39 -">
-  <meta itemprop="wordCount" content="338">
+  <meta itemprop="description" content="Wrist# Two types of casts are evaluated for treatment on elderly patients with a common type of wrist fracture.
+From the authors: “Distal radius fractures are common fractures and the cornerstone of treatment remains immobilization of the wrist in a cast. At present, there is a scarcity of studies that compare different cast immobilization methods. The objective of the study was therefore to compare volar-flexion and ulnar deviation cast to functional cast position in the treatment of dorsally displaced distal radius fracture among elderly patients.”">
+  <meta itemprop="wordCount" content="914">
 
 <title>wrist | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -35,7 +36,7 @@ LLM Instructions The fosdata::wrist dataset containing the following fields: fie
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.40ff42ceceac6890997fdca0fc55d6a4fb5c06b8fa1b4d79ae89f080548f7f01.js" integrity="sha256-QP9Czs6saJCZf9yg/FXWpPtcBrj6G015ronwgFSPfwE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
 
 
 
@@ -848,6 +849,7 @@ LLM Instructions The fosdata::wrist dataset containing the following fields: fie
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 
@@ -861,10 +863,13 @@ LLM Instructions The fosdata::wrist dataset containing the following fields: fie
       
       
   <article class="markdown book-article"><h1 id="wrist">Wrist<a class="anchor" href="#wrist">#</a></h1>
+<p>Two types of casts are evaluated for treatment on elderly patients with a common type of wrist fracture.</p>
+<p>From the authors: &ldquo;Distal radius fractures are common fractures and the cornerstone of treatment remains immobilization of the wrist in a cast. At present, there is a scarcity of studies that compare different cast immobilization methods. The objective of the study was therefore to compare volar-flexion and ulnar deviation cast to functional cast position in the treatment of dorsally displaced distal radius fracture among elderly patients.&rdquo;</p>
 <h2 id="initialization">Initialization<a class="anchor" href="#initialization">#</a></h2>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>wrist</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
+</span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>wrist</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>wrist
-</span></span><span style="display:flex;"><span>distance_per_week <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>distance_per_week</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>guided_physiotherapy_times <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>guided_physiotherapy_times</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::wrist dataset containing the following fields:
@@ -922,6 +927,7 @@ fields[47]{name,type,values}:
   <thead>
       <tr>
           <th>Name</th>
+          <th>Description</th>
           <th>Type</th>
           <th>Min</th>
           <th>Max</th>
@@ -931,6 +937,7 @@ fields[47]{name,type,values}:
   <tbody>
       <tr>
           <td><code>id</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">ID number</span></td>
           <td><u style="text-decoration-style: dotted;">character</u></td>
           <td>-</td>
           <td>-</td>
@@ -938,6 +945,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>age</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Age in years</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>65</td>
           <td>94</td>
@@ -945,6 +953,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>sex</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">0 = man and 1 = female</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -952,6 +961,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>handed_side</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1 = right and 2 = left</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>2</td>
@@ -959,6 +969,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>centre</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Centres are anonymised in this excel file</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>3</td>
@@ -966,6 +977,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>fracture_side</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1 = right and 2 = left</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>2</td>
@@ -973,6 +985,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>cast_position</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">1 = functional cast position and 2 = volar-flexion and ulnar deviation cast position</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>1</td>
           <td>2</td>
@@ -980,6 +993,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>pcs_start</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PCS score at baseline of follow-up</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>47</td>
@@ -987,6 +1001,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>operativetreatment</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">No-operative treatment during follow-up = 0 and operative treatment during follow-up</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -994,6 +1009,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>pain03m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Reported pain of the fractured wrist at the outpatient visit at 3 months: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1001,6 +1017,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>stiffness03m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Reported stiffness of the fractured wrist at the outpatient visit at 3 months: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1008,6 +1025,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>grip_strength_fractured_site</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>2</td>
           <td>32</td>
@@ -1015,6 +1033,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>grip_strength_controlled_site</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>6</td>
           <td>54</td>
@@ -1022,6 +1041,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>grip_strength_proportion</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Grip strength of fractured side to controlled side, proportion</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>0.0667</td>
           <td>1</td>
@@ -1029,6 +1049,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>times_outside_from_home</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many times the patient leave from home per week in average</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>14</td>
@@ -1036,6 +1057,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>distance_per_week</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many kilometers does the patient walk when leaving from home in average</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>17.5</td>
@@ -1043,6 +1065,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>ancillary_inside</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Does the patient use walking aids inside of home: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1050,6 +1073,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>ancillary_outside</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Does the patient use walking aids outside of home: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1057,6 +1081,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>guided_physiotherapy</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Did the patient use guided physiotherapy for fractured hand during follow-up: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1064,6 +1089,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>guided_physiotherapy_times</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many physiotherapist visits patient underwent if guided physiotherapy was used?</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>15</td>
@@ -1071,6 +1097,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>cast_changes</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">How many cast changes patient underwent, if any?</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>3</td>
@@ -1078,6 +1105,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>x15d3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Health-related quality of life measured with 15D at 3 months of follow-up</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>0.4428</td>
           <td>1</td>
@@ -1085,6 +1113,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>x15d12m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Health-related quality of life measured with 15D at 12 months of follow-up</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>0.5441</td>
           <td>1</td>
@@ -1092,6 +1121,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>uv_3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Ulnar variance at 3 months in millimeters: + = ulnar bone is more lengthy than radial bone</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-2.2</td>
           <td>12.1</td>
@@ -1099,6 +1129,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>inclination_3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>7</td>
           <td>25</td>
@@ -1106,6 +1137,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>angulation_3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">undefined</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-10</td>
           <td>35</td>
@@ -1113,6 +1145,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>uv_cast</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Ulnar variance after closed reduction in millimeters: + = ulnar bone is more lengthy than radial bone</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-3.6</td>
           <td>9</td>
@@ -1120,6 +1153,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>inclination_cast</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Inclination after closed reduction</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>9</td>
           <td>26</td>
@@ -1127,6 +1161,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>angluation_cast</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Angulation after closed reduction: + dorsal angulation and - volar angulation</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-10</td>
           <td>32</td>
@@ -1134,6 +1169,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>wrist_flexion_in_cast</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Angulation between 2nd metacarpal and radial bone after closed reduction and casting: + = dorsal flexion and - = volar flexion. In degrees</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-38</td>
           <td>23</td>
@@ -1141,6 +1177,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>x3mcpra_dulnardeviationdg</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Angulation between 3rd metacarpal and radial bone after closed reduction and casting: + = ulnar-deviation and - = volar-deviation In degrees</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-6</td>
           <td>24.5</td>
@@ -1148,6 +1185,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>uv_pre</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Ulnar variance before closed reduction in millimeters: + = ulnar bone is more lengthy than radial bone</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-2.5</td>
           <td>17.1</td>
@@ -1155,6 +1193,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>inclination_pre</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Inclination before closed reduction</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>4</td>
           <td>26</td>
@@ -1162,6 +1201,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>angulation_pre</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Angulation before closed reduction: + dorsal angulation and - volar angulation</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>0.5</td>
           <td>50</td>
@@ -1169,6 +1209,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>articulariness</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Articular line of fracture: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1176,6 +1217,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>psu_fracture</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Processus styloideus ulna fracture: 0 = no and 1 = yes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1183,6 +1225,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>qd3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Quick-DASH at 3 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>89</td>
@@ -1190,6 +1233,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>qd12m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Quick-DASH at 12 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>75</td>
@@ -1197,6 +1241,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>vas3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">VAS for pain at 3 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>76</td>
@@ -1204,6 +1249,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>vas12m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">VAS for pain at 12 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>73</td>
@@ -1211,6 +1257,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>pcs3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PCS at 3 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>42</td>
@@ -1218,6 +1265,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>pcs12m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PCS at 3 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>47</td>
@@ -1225,6 +1273,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>cast_change_category</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">Underwent cast change during follow-up: 0 = no and 1 = one or more changes</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>1</td>
@@ -1232,6 +1281,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>prwe12m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PRWE at 12 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>81.5</td>
@@ -1239,6 +1289,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>prwe3m</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PRWE at 3 months</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-</td>
           <td>90</td>
@@ -1246,6 +1297,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>d_pcs1</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PCS score at 3 months minus (-) PCS score at baseline</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-27</td>
           <td>36</td>
@@ -1253,6 +1305,7 @@ fields[47]{name,type,values}:
       </tr>
       <tr>
           <td><code>d_pcs2</code></td>
+          <td><span style="font-size: 0.7em; display: inline-block;">PCS score at 12 months minus (-) PCS score at baseline</span></td>
           <td><u style="text-decoration-style: dotted;">numeric</u></td>
           <td>-21</td>
           <td>39</td>
@@ -1260,6 +1313,8 @@ fields[47]{name,type,values}:
       </tr>
   </tbody>
 </table>
+<h2 id="source">Source<a class="anchor" href="#source">#</a></h2>
+<p>Raittio L, Launonen AP, Hevonkorpi T, Luokkala T, Kukkonen J, Reito A, et al. (2020) Two casting methods compared in patients with Colles&rsquo; fracture: A pragmatic, randomized controlled trial. PLoS ONE 15(5): e0232153. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232153">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232153</a></p>
 </article>
  
       
@@ -1336,6 +1391,7 @@ fields[47]{name,type,values}:
     <li><a href="#accessing-fields">Accessing fields</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
+    <li><a href="#source">Source</a></li>
   </ul>
 </nav>
 

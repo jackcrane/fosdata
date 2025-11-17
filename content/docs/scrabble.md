@@ -4,9 +4,14 @@ title: "scrabble"
 
 # Scrabble
 
+This dataset contains 100 records corresponding to the 100 tiles in English language editions of the board game Scrabble.
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::scrabble
 ```
 
@@ -33,7 +38,12 @@ fields[2]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `piece` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `points` | <u style="text-decoration-style: dotted;">integer</u> | - | 10 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `piece` | <span style="font-size: 0.7em; display: inline-block;">the letter A-Z shown on the tile or "blank"</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `points` | <span style="font-size: 0.7em; display: inline-block;">the points shown on the tile</span> | <u style="text-decoration-style: dotted;">integer</u> | - | 10 | - |
+
+## Source
+
+https://en.wikipedia.org/wiki/Scrabble_letter_distributions
+

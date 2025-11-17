@@ -4,9 +4,14 @@ title: "scrabble_ml"
 
 # Scrabble_ml
 
+This dataset contains 613 observations corresponding to the tiles in editions of the board game Scrabble for 6 languages.
+
+undefined
+
 ## Initialization
 
 ```r
+library(fosdata)
 data <- fosdata::scrabble_ml
 ```
 
@@ -14,7 +19,7 @@ data <- fosdata::scrabble_ml
 
 ```r
 data <- fosdata::scrabble_ml
-piece <- data$piece
+lang <- data$lang
 ```
 
 ## LLM instructions
@@ -34,8 +39,13 @@ fields[3]{name,type,values}:
 
 ## Fields
 
-| Name | Type | Min | Max | Values |
-| --- | --- | --- | --- | --- |
-| `lang` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `piece` | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
-| `points` | <u style="text-decoration-style: dotted;">integer</u> | - | 10 | - |
+| Name | Description | Type | Min | Max | Values |
+| --- | --- | --- | --- | --- | --- |
+| `lang` | <span style="font-size: 0.7em; display: inline-block;">language of the scrabble tiles; one of dutch, english, french, l33t, malagasy, or tswana</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `piece` | <span style="font-size: 0.7em; display: inline-block;">the letter A-Z (or number in the case of l33t) shown on the tile or "blank." Diacritics are ignored.</span> | <u style="text-decoration-style: dotted;">character</u> | - | - | - |
+| `points` | <span style="font-size: 0.7em; display: inline-block;">the points shown on the tile</span> | <u style="text-decoration-style: dotted;">integer</u> | - | 10 | - |
+
+## Source
+
+https://en.wikipedia.org/wiki/Scrabble_letter_distributions
+
