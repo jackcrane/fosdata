@@ -19,7 +19,7 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-safe2 <- data$safe2
+mv_wait2 <- data$mv_wait2
 ```
 
 ## LLM instructions
@@ -45,7 +45,20 @@ fields[11]{name,type,values}:
 ```
 {{% /details %}}
 
-{{< include src="r.html" >}}
+{{< rexec >}}
+
+library(ggplot2)
+
+ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
+  geom_point(alpha = 0.6) +
+  scale_y_log10() +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Gender"
+  )
+
+{{< /rexec >}}
 
 ## Fields
 

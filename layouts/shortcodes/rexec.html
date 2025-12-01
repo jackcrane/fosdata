@@ -1,0 +1,3 @@
+{{- $rCode := .Inner | safeHTML -}} {{- $html := readFile "snippets/r.html" -}}
+{{- $html = replace $html "__R_DEFAULT_CODE__" $rCode -}} {{- $html | safeHTML
+-}}

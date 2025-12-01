@@ -19,7 +19,7 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-participant_age_years <- data$participant_age_years
+time_smartphone_1_ms <- data$time_smartphone_1_ms
 ```
 
 ## LLM instructions
@@ -59,7 +59,20 @@ fields[25]{name,type,values}:
 ```
 {{% /details %}}
 
-{{< include src="r.html" >}}
+{{< rexec >}}
+
+library(ggplot2)
+
+ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
+  geom_point(alpha = 0.6) +
+  scale_y_log10() +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Gender"
+  )
+
+{{< /rexec >}}
 
 ## Fields
 

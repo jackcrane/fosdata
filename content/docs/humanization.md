@@ -19,7 +19,7 @@ data <- fosdata::humanization
 
 ```r
 data <- fosdata::humanization
-us_sec <- data$us_sec
+pak_sec <- data$pak_sec
 ```
 
 ## LLM instructions
@@ -41,7 +41,20 @@ fields[7]{name,type,values}:
 ```
 {{% /details %}}
 
-{{< include src="r.html" >}}
+{{< rexec >}}
+
+library(ggplot2)
+
+ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
+  geom_point(alpha = 0.6) +
+  scale_y_log10() +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Gender"
+  )
+
+{{< /rexec >}}
 
 ## Fields
 
