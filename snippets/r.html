@@ -268,10 +268,22 @@ ggsave("/plot.png", width = 8, height = 4)
 
         let out;
         try {
-          out = await window._shelter.evalR(code, {
-            withHandlers: false,
-            captureStreams: true,
-          });
+          out = await window._shelter.captureR(code);
+          if (out.output && Array.isArray(out.output)) {
+            for (const evt of out.output) {
+              if (evt.type === "stdout" && evt.data) {
+                logConsole(evt.data);
+              } else if (evt.type === "stderr" && evt.data) {
+                logConsole("ERR: " + evt.data);
+              } else if (evt.type === "message" && evt.data) {
+                logConsole(evt.data);
+              } else if (evt.type === "warning" && evt.data) {
+                if (JSON.stringify(evt.data) !== "{}") {
+                  logConsole("WARNING: " + JSON.stringify(evt.data));
+                }
+              }
+            }
+          }
         } catch (err) {
           logConsole("JS Error: " + err.toString());
           setBtn("Execute R Code", false);
