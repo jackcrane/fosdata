@@ -15,9 +15,14 @@
     <style>
       #cm {
         border: 1px solid #ccc;
-        height: 260px;
-        overflow: auto;
         font-size: 12px;
+      }
+      #cm .CodeMirror {
+        height: 260px;
+      }
+
+      #cm .CodeMirror-scroll {
+        overflow: auto !important;
       }
       button {
         padding: 8px 14px;

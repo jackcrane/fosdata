@@ -907,9 +907,14 @@ fields[9]{name,type,values}:
     <style>
       #cm {
         border: 1px solid #ccc;
-        height: 260px;
-        overflow: auto;
         font-size: 12px;
+      }
+      #cm .CodeMirror {
+        height: 260px;
+      }
+
+      #cm .CodeMirror-scroll {
+        overflow: auto !important;
       }
       button {
         padding: 8px 14px;
@@ -1068,7 +1073,6 @@ fields[9]{name,type,values}:
 p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = country)) +
   geom_point(alpha = 0.6) +
   scale_y_log10() +
-  guides(color = "none") +
   labs(
     x = "Number of Posts",
     y = "Number of Followers (log scale)",
