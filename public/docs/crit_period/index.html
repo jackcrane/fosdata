@@ -10,7 +10,7 @@ https://github.com/alex-shpak/hugo-book
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Crit_period# The age of onset of acquisition and ultimate level of attainment of second language learners in North America and Israel.
 From the author: “In second language acquisition research, the critical period hypothesis (cph) holds that the function between learners’ age and their susceptibility to second language input is non-linear. This paper revisits the indistinctness found in the literature with regard to this hypothesis’s scope and predictions.”
-Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Console Plot LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -19,7 +19,7 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
   <meta property="og:title" content="crit_period">
   <meta property="og:description" content="Crit_period# The age of onset of acquisition and ultimate level of attainment of second language learners in North America and Israel.
 From the author: “In second language acquisition research, the critical period hypothesis (cph) holds that the function between learners’ age and their susceptibility to second language input is non-linear. This paper revisits the indistinctness found in the literature with regard to this hypothesis’s scope and predictions.”
-Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
+Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Console Plot LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -28,8 +28,8 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
   <meta itemprop="name" content="crit_period">
   <meta itemprop="description" content="Crit_period# The age of onset of acquisition and ultimate level of attainment of second language learners in North America and Israel.
 From the author: “In second language acquisition research, the critical period hypothesis (cph) holds that the function between learners’ age and their susceptibility to second language input is non-linear. This paper revisits the indistinctness found in the literature with regard to this hypothesis’s scope and predictions.”
-Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
-  <meta itemprop="wordCount" content="207">
+Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields# data &lt;- fosdata::crit_period aoa &lt;- data$aoaR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Console Plot LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
+  <meta itemprop="wordCount" content="206">
 
 <title>crit_period | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -39,7 +39,7 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1d4a25aadb4fb017d2cb84090fd2d816740a11443a2f14c9278cf129cd92dca6.js" integrity="sha256-HUolqttPsBfSy4QJD9LYFnQKEUQ6LxTJJ4zxKc2S3KY=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b967f5b9539a2e584cb3d2a911b1766fe1f31719065f429876ea0effa665f814.js" integrity="sha256-uWf1uVOaLlhMs9KpEbF2b&#43;HzFxkGX0KYduoO/6Zl&#43;BQ=" crossorigin="anonymous"></script>
 
 
 
@@ -889,6 +889,7 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
 
     <style>
+      /* CodeMirror box */
       #cm {
         border: 1px solid #ccc;
         font-size: 12px;
@@ -899,24 +900,95 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
       #cm .CodeMirror-scroll {
         overflow: auto !important;
       }
+
       button {
         padding: 8px 14px;
         margin-top: 6px;
         font-size: 14px;
+        background-color: color-mix(in srgb, #fff 90%, var(--color-link) 10%);
+        transition: background-color 0.2s;
+        color: var(--color-link);
+        border: 1px solid var(--color-link);
+        cursor: pointer;
       }
       button:disabled {
         opacity: 0.6;
         cursor: not-allowed;
       }
+      button:hover {
+        background-color: color-mix(in srgb, #fff 90%, var(--color-link) 20%);
+      }
+
       #plot {
         width: 100%;
         max-height: 800px;
         object-fit: contain;
-      }
-      #plot:invalid {
         display: none;
       }
+
+      /* ------------------- Tabs ------------------- */
+      .tabs {
+        margin-top: 20px;
+        display: flex;
+        border-bottom: 1px solid #dfdfdf;
+      }
+
+      .tab {
+        padding: 8px 14px;
+        cursor: pointer;
+        border: 1px solid #dfdfdf;
+        border-bottom: none;
+        margin-right: 4px;
+        background: hsl(0, 0%, 98%);
+        user-select: none;
+      }
+
+      .tab.active {
+        background: white;
+        border-bottom: 1px solid white;
+        font-weight: bold;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 10px;
+        background: white;
+        border: 1px solid #dfdfdf;
+        border-top: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      /* Console box */
+      #console {
+        background: #f0f0f0;
+        color: #000;
+        padding: 10px;
+        height: 200px;
+        overflow: auto;
+        font-size: 12px;
+        white-space: pre-wrap;
+      }
     </style>
+
+    <script>
+      /* ---------------------------------------------------------
+       * Tab Switching
+       * --------------------------------------------------------- */
+      const activateTab = (name) => {
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((t) => t.classList.remove("active"));
+
+        document.getElementById("tab-" + name).classList.add("active");
+        document.getElementById("content-" + name).classList.add("active");
+      };
+    </script>
 
     <script type="module">
       import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
@@ -977,7 +1049,7 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
       };
 
       /* ---------------------------------------------------------
-       * Fetch override for cached tarballs
+       * Fetch override (cache tarballs)
        * --------------------------------------------------------- */
       const realFetch = fetch;
 
@@ -986,9 +1058,7 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
 
         if (url.endsWith(".tar.gz")) {
           const cached = await getCache(url);
-
           if (cached) {
-            // console.log("Loaded package tarball from cache:", url);
             return new Response(cached, {
               headers: { "Content-Type": "application/gzip" },
             });
@@ -998,7 +1068,6 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
           const buf = new Uint8Array(await res.clone().arrayBuffer());
           await setCache(url, buf);
 
-          // console.log("Cached package tarball:", url);
           return new Response(buf, {
             headers: { "Content-Type": "application/gzip" },
           });
@@ -1015,7 +1084,6 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
       let loadingDone = false;
 
       const execBtn = () => document.getElementById("execBtn");
-
       const setBtn = (label, disabled = false) => {
         const b = execBtn();
         b.textContent = label;
@@ -1023,18 +1091,15 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
       };
 
       /* ---------------------------------------------------------
-       * RDA loader (cached)
+       * Cached RDA Loader
        * --------------------------------------------------------- */
       const loadRdaCached = async (url, dest) => {
         let buf = await getCache(url);
 
         if (!buf) {
-          // console.log("Downloading RDA fresh:", url);
           const res = await fetch(url);
           buf = new Uint8Array(await res.arrayBuffer());
           await setCache(url, buf);
-        } else {
-          // console.log("Loaded RDA from cache:", url);
         }
 
         await webR.FS.writeFile(dest, buf);
@@ -1042,10 +1107,11 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
       };
 
       /* ---------------------------------------------------------
-       * Init webR, install packages, load datasets
+       * Init webR + install packages + load fosdata
        * --------------------------------------------------------- */
       async function init() {
         logConsole("Initializing webR...");
+        activateTab("console");
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
@@ -1054,19 +1120,17 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
         const shelter = await new webR.Shelter();
         window._shelter = shelter;
 
-        // window.prompt = () => console.log("prompt() not implemented");
-
-        let nativeConsoleWarn = window.console.warn;
         window.console.warn = (...args) => {
           if (args.toString().includes("Downloading webR")) {
             logConsole(args.toString().trim());
           } else {
-            nativeConsoleWarn(...args);
+            console.warn(...args);
           }
         };
 
         logConsole("Installing packages...");
         setBtn("Installing packages...", true);
+
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
         setBtn("Loading datasets...", true);
@@ -1135,28 +1199,28 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
         loadingDone = true;
         setBtn("Execute R Code", false);
 
-        // console.log("All RDA loaded");
         await runR(true);
       }
 
       /* ---------------------------------------------------------
-       * Execute R code + capture output + auto-ggsave
+       * Execute R + capture output + auto ggsave
        * --------------------------------------------------------- */
       async function runR(auto = false) {
         if (!dataLoaded) return;
         if (!auto) document.getElementById("console").textContent = "";
 
+        activateTab("console");
         setBtn("Running…", true);
-        let startTime = Date.now();
+
         logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
-      # Automatically added
-      ggsave("/plot.png", width = 8, height = 4)
-      `;
+# Automatically added
+ggsave("/plot.png", width = 8, height = 4)
+`;
         }
 
         let result;
@@ -1186,22 +1250,22 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
         if (result.stdout) logConsole(result.stdout.trim());
         if (result.stderr) logConsole("ERR: " + result.stderr.trim());
 
-        // Load plot
-        let plotUrl = null;
+        /* ----- load plot into tab + auto-switch ----- */
+        const img = document.getElementById("plot");
         try {
           const bytes = await webR.FS.readFile("/plot.png");
           const blob = new Blob([bytes], { type: "image/png" });
-          plotUrl = URL.createObjectURL(blob);
+          img.src = URL.createObjectURL(blob);
+          img.style.display = "block";
+          activateTab("plot");
         } catch {
+          img.style.display = "none";
           logConsole("No plot generated.");
         }
 
-        const img = document.getElementById("plot");
-        img.src = plotUrl || "";
-        img.style.display = plotUrl ? "block" : "none";
-
         setBtn("Execute R Code");
-        logConsole(`---- Done in ${Date.now() - startTime}ms ----\n`);
+
+        logConsole(`---- Done ----\n`);
       }
 
       window.init = init;
@@ -1237,21 +1301,23 @@ Initialization# library(fosdata) data &lt;- fosdata::crit_periodAccessing fields
     <br />
     <button id="execBtn" onclick="runR()">Loading…</button>
 
-    <h3>Output Plot</h3>
-    <img id="plot" alt="scatterplot" />
+    <!-- ------------------- Tabs ------------------- -->
+    <div class="tabs">
+      <div id="tab-console" class="tab active" onclick="activateTab('console')">
+        Console
+      </div>
+      <div id="tab-plot" class="tab" onclick="activateTab('plot')">Plot</div>
+    </div>
 
-    <h3>Console</h3>
-    <pre
-      id="console"
-      style="
-        background: #f0f0f0;
-        color: #000;
-        padding: 10px;
-        height: 200px;
-        overflow: auto;
-        font-size: 12px;
-      "
-    ></pre>
+    <!-- Console -->
+    <div id="content-console" class="tab-content active">
+      <pre id="console"></pre>
+    </div>
+
+    <!-- Plot -->
+    <div id="content-plot" class="tab-content">
+      <img id="plot" alt="scatterplot" />
+    </div>
   </body>
 </html>
 
