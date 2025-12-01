@@ -26,7 +26,7 @@ From the creators of the data: This dataset (ml-latest-small) describes 5-star r
   <meta itemprop="name" content="movies">
   <meta itemprop="description" content="Movies# Randomly selected ratings of movies from MovieLens.
 From the creators of the data: This dataset (ml-latest-small) describes 5-star rating and free-text tagging activity from MovieLens, a movie recommendation service. It contains 100836 ratings and 3683 tag applications across 9742 movies. These data were created by 610 users between March 29, 1996 and September 24, 2018. This dataset was generated on September 26, 2018. Users were selected at random for inclusion. All selected users had rated at least 20 movies. No demographic information is included. Each user is represented by an id, and no other information is provided. The data are contained in the files links.csv, movies.csv, ratings.csv and tags.csv. More details about the contents and use of all these files follows. This is a development dataset. As such, it may change over time and is not an appropriate dataset for shared research results. See available benchmark datasets if that is your intent. This and other GroupLens data sets are publicly available for download at http://grouplens.org/datasets/. Usage License Neither the University of Minnesota nor any of the researchers involved can guarantee the correctness of the data, its suitability for any particular purpose, or the validity of results based on the use of the data set. The data set may be used for any research purposes under the following conditions: The user may not state or imply any endorsement from the University of Minnesota or the GroupLens Research Group. The user must acknowledge the use of the data set in publications resulting from the use of the data set (see below for citation information). The user may redistribute the data set, including transformations, so long as it is distributed under these same license conditions. The user may not use this information for any commercial or revenue-bearing purposes without first obtaining permission from a faculty member of the GroupLens Research Project at the University of Minnesota. The executable software scripts are provided “as is” without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of them is with you. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction. In no event shall the University of Minnesota, its affiliates or employees be liable to you for any damages arising out of the use or inability to use these programs (including but not limited to loss of data or data being rendered inaccurate). If you have any further questions or comments, please email grouplens-info@umn.edu">
-  <meta itemprop="wordCount" content="632">
+  <meta itemprop="wordCount" content="642">
 
 <title>movies | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ From the creators of the data: This dataset (ml-latest-small) describes 5-star r
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1efcf5b705f6ab516dc113d9e0613f1952cd8dd3da9ab8ae34b915c2fcadacff.js" integrity="sha256-Hvz1twX2q1FtwRPZ4GE/GVLNjdPamriuNLkVwvytrP8=" crossorigin="anonymous"></script>
 
 
 
@@ -881,30 +881,153 @@ fields[6]{name,type,values}:
   timestamp,integer,n/a
   title,character,n/a
   genres,character,n/a</code></pre></div></details>
-<script>
-  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
-    const webR = new WebR();
-    await webR.init();
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>webR + fosdata Test</title>
+    <script type="module">
+      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
-    await webR.installPackages([
-      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
-    ]);
+      let webR;
 
-    let result = await webR.evalR(`
-library(fosdata)
-ls("package:fosdata")
-head(cern)
+      async function init() {
+        webR = new WebR({
+          baseUrl: "https://webr.r-wasm.org/latest/",
+        });
+        await webR.init();
+        await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
-rnorm(10,5,1)
-`);
-    let output = await result.toArray();
+        console.log("Initted");
 
-    console.log("Result of running `rnorm` from webR: ", output);
-    document.getElementById("data_r").innerHTML = output;
-  });
-</script>
+        const files = [
+          "accelerometer.rda",
+          "chimps.rda",
+          "fish.rda",
+          "masks.rda",
+          "scrabble.rda",
+          "acorns.rda",
+          "cigs.rda",
+          "flint.rda",
+          "mice_pot.rda",
+          "seoulweather.rda",
+          "adipose.rda",
+          "climate.rda",
+          "frogs.rda",
+          "movies.rda",
+          "sharks.rda",
+          "austen.rda",
+          "conversation.rda",
+          "gender.rda",
+          "normtemp.rda",
+          "skull_geometry.rda",
+          "barnacles.rda",
+          "covid.rda",
+          "hot_dogs.rda",
+          "plastics.rda",
+          "snails.rda",
+          "bechdel.rda",
+          "cows_small.rda",
+          "houses.rda",
+          "powerball.rda",
+          "weight_estimate.rda",
+          "bicycle_signage.rda",
+          "cows.rda",
+          "humanization.rda",
+          "pres_election.rda",
+          "world_cup.rda",
+          "biomass.rda",
+          "crit_period.rda",
+          "leg_strength_full.rda",
+          "rio_instagram.rda",
+          "wrist.rda",
+          "brake.rda",
+          "dogs.rda",
+          "leg_strength.rda",
+          "river_names.rda",
+          "cern.rda",
+          "draft.rda",
+          "letter_frequency.rda",
+          "scotland_births.rda",
+          "child_tasks.rda",
+          "ecars.rda",
+          "malaria.rda",
+          "scrabble_ml.rda",
+        ];
 
-<p id="data_r">R studio data is running in here.</p>
+        const loadRda = async (url, dest = "/tmp.rda") => {
+          const res = await fetch(url);
+          const buf = new Uint8Array(await res.arrayBuffer());
+          await webR.FS.writeFile(dest, buf);
+          await webR.evalR(`load("${dest}")`);
+        };
+
+        for (const f of files) await loadRda(`/data/${f}`);
+
+        console.log("All RDA loaded");
+      }
+
+      async function runR() {
+        const code = document.getElementById("rcode").value;
+
+        // ALWAYS write the output to /plot.png
+        const wrapped = `
+          ${code}
+        `;
+
+        console.log("Running R...");
+        await webR.evalR(wrapped);
+
+        const pngBytes = await webR.FS.readFile("/plot.png");
+        const blob = new Blob([pngBytes], { type: "image/png" });
+        const url = URL.createObjectURL(blob);
+        document.getElementById("plot").src = url;
+      }
+
+      window.init = init;
+      window.runR = runR;
+
+      init();
+    </script>
+
+    <style>
+      textarea {
+        width: 100%;
+        height: 220px;
+        font-family: monospace;
+        font-size: 14px;
+      }
+      button {
+        padding: 8px 14px;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>webR + fosdata test</h1>
+
+    <textarea id="rcode">
+library(ggplot2)
+
+p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower)) +
+  geom_point(alpha = 0.6) +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers",
+    title = "Followers vs Posts"
+  )
+
+ggsave("/plot.png", p, width = 6, height = 4, dpi = 150)
+    </textarea>
+
+    <br />
+    <button onclick="runR()">Execute R Code</button>
+
+    <h2>Output Plot</h2>
+    <img id="plot" alt="scatterplot" />
+  </body>
+</html>
 
 
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>

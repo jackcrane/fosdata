@@ -1,30 +1,27 @@
 #!/usr/bin/env bash
 set -e
 
-PKG_DIR="$(pwd)"     # assume script run in root of fosdata package
-PKG_NAME="fosdata"   # adjust if your DESCRIPTION says different Package name
+# name of the data directory relative to current dir
+DATA_DIR="data"
+# output directory for filesystem images
+OUT_DIR="wasm_fs_out"
+# base name for output image files
+IMG_BASE="fosdata_data"
 
-echo "Building R package source for ${PKG_NAME} ..."
+echo "Ensuring output directory exists..."
+mkdir -p "$OUT_DIR"
 
-# 1. Build source package (.tar.gz)
-R CMD build "${PKG_DIR}"
+echo "Running Docker container to package data for webR / Emscripten filesystem..."
+docker pull ghcr.io/r-wasm/webr:main
 
-# Find the built tarball (should match PKG_NAME_*.tar.gz)
-TARBALL=$(ls ${PKG_NAME}_*.tar.gz | sort | tail -n 1)
-if [ -z "$TARBALL" ]; then
-  echo "Error: built tarball not found."
-  exit 1
-fi
-echo "Built source package: $TARBALL"
+docker run --rm \
+  -v "$PWD":/pkg \
+  -v "$PWD/$OUT_DIR":/output \
+  -w /pkg \
+  ghcr.io/r-wasm/webr:main Rscript -e "\
+    if (!requireNamespace('rwasm', quietly=TRUE)) install.packages('rwasm', repos='https://cloud.r-project.org'); \
+    cat('Packaging directory \"${DATA_DIR}\" into Emscripten filesystem image...\\n'); \
+    rwasm::file_packager('${DATA_DIR}', out_dir = '/output', out_name = '${IMG_BASE}')"
 
-# 2. Install it to a local library (within the package directory) so you can test it
-LOCAL_LIB="${PKG_DIR}/local_lib"
-mkdir -p "$LOCAL_LIB"
-echo "Installing to local library: $LOCAL_LIB"
-R CMD INSTALL --library="$LOCAL_LIB" "$TARBALL"
-
-echo "Installation complete. To use, in R:"
-echo "  .libPaths('${LOCAL_LIB}')"
-echo "  library(${PKG_NAME})"
-
-echo "Done."
+echo "Filesystem image created. Output files:"
+ls -1 "$OUT_DIR"

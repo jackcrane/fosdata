@@ -26,7 +26,7 @@ More information on the activities of the children. The day-night test. Children
   <meta itemprop="name" content="child_tasks">
   <meta itemprop="description" content="Child_tasks# Time that it takes children to complete various activities.
 More information on the activities of the children. The day-night test. Children are told to say “day” when shown a picture of the moon and stars, and to say “night” when shown a picture of the sun. Time to complete test and number correct (0 incorrect, 1 point for self-corrected, 2 points for correct) are measured. Counting-span test. Children were required to count the number of red dots on cards, and recall the number of dots without looking at them. Given in sets of 1 through 5. Max score of 15. Digit Span Backward. Children were read from 2-8 numbers and asked to recite them backwards. Two numbers repeated 4 times, and the rest repeated twice. Max score of 16. Card-sort task. Children sorted cards that were blue/red with either bunnies/boats on them into boxes that had either pictures of boats and bunnies or were blue and red. Time to sort and a correctness score were measured. Shape Trail Test. In trial A the children were to connect the dots in order from 1-15. In trial B the children were to connect the dots (1-8 circles and 1-7 squares) in order, alternating between circles and squares. Time to completion was measured. From the authors: “In this paper we report an initial validation of the Shape Trail Test–Child Version (STT-CV) with a non-clinical sample of children aged 6 to 9 years. The STT-CV has been developed as an age-appropriate and culturally fair direct downward extension of the Trail Making Test (TMT) for the assessment of cognitive flexibility.”">
-  <meta itemprop="wordCount" content="542">
+  <meta itemprop="wordCount" content="552">
 
 <title>child_tasks | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ More information on the activities of the children. The day-night test. Children
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1efcf5b705f6ab516dc113d9e0613f1952cd8dd3da9ab8ae34b915c2fcadacff.js" integrity="sha256-Hvz1twX2q1FtwRPZ4GE/GVLNjdPamriuNLkVwvytrP8=" crossorigin="anonymous"></script>
 
 
 
@@ -888,30 +888,153 @@ fields[13]{name,type,values}:
   card_sort_postswitch_accuracy,numeric,n/a
   stt_cv_trail_a_secs,numeric,n/a
   stt_cv_trail_b_secs,numeric,n/a</code></pre></div></details>
-<script>
-  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
-    const webR = new WebR();
-    await webR.init();
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>webR + fosdata Test</title>
+    <script type="module">
+      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
-    await webR.installPackages([
-      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
-    ]);
+      let webR;
 
-    let result = await webR.evalR(`
-library(fosdata)
-ls("package:fosdata")
-head(cern)
+      async function init() {
+        webR = new WebR({
+          baseUrl: "https://webr.r-wasm.org/latest/",
+        });
+        await webR.init();
+        await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
-rnorm(10,5,1)
-`);
-    let output = await result.toArray();
+        console.log("Initted");
 
-    console.log("Result of running `rnorm` from webR: ", output);
-    document.getElementById("data_r").innerHTML = output;
-  });
-</script>
+        const files = [
+          "accelerometer.rda",
+          "chimps.rda",
+          "fish.rda",
+          "masks.rda",
+          "scrabble.rda",
+          "acorns.rda",
+          "cigs.rda",
+          "flint.rda",
+          "mice_pot.rda",
+          "seoulweather.rda",
+          "adipose.rda",
+          "climate.rda",
+          "frogs.rda",
+          "movies.rda",
+          "sharks.rda",
+          "austen.rda",
+          "conversation.rda",
+          "gender.rda",
+          "normtemp.rda",
+          "skull_geometry.rda",
+          "barnacles.rda",
+          "covid.rda",
+          "hot_dogs.rda",
+          "plastics.rda",
+          "snails.rda",
+          "bechdel.rda",
+          "cows_small.rda",
+          "houses.rda",
+          "powerball.rda",
+          "weight_estimate.rda",
+          "bicycle_signage.rda",
+          "cows.rda",
+          "humanization.rda",
+          "pres_election.rda",
+          "world_cup.rda",
+          "biomass.rda",
+          "crit_period.rda",
+          "leg_strength_full.rda",
+          "rio_instagram.rda",
+          "wrist.rda",
+          "brake.rda",
+          "dogs.rda",
+          "leg_strength.rda",
+          "river_names.rda",
+          "cern.rda",
+          "draft.rda",
+          "letter_frequency.rda",
+          "scotland_births.rda",
+          "child_tasks.rda",
+          "ecars.rda",
+          "malaria.rda",
+          "scrabble_ml.rda",
+        ];
 
-<p id="data_r">R studio data is running in here.</p>
+        const loadRda = async (url, dest = "/tmp.rda") => {
+          const res = await fetch(url);
+          const buf = new Uint8Array(await res.arrayBuffer());
+          await webR.FS.writeFile(dest, buf);
+          await webR.evalR(`load("${dest}")`);
+        };
+
+        for (const f of files) await loadRda(`/data/${f}`);
+
+        console.log("All RDA loaded");
+      }
+
+      async function runR() {
+        const code = document.getElementById("rcode").value;
+
+        // ALWAYS write the output to /plot.png
+        const wrapped = `
+          ${code}
+        `;
+
+        console.log("Running R...");
+        await webR.evalR(wrapped);
+
+        const pngBytes = await webR.FS.readFile("/plot.png");
+        const blob = new Blob([pngBytes], { type: "image/png" });
+        const url = URL.createObjectURL(blob);
+        document.getElementById("plot").src = url;
+      }
+
+      window.init = init;
+      window.runR = runR;
+
+      init();
+    </script>
+
+    <style>
+      textarea {
+        width: 100%;
+        height: 220px;
+        font-family: monospace;
+        font-size: 14px;
+      }
+      button {
+        padding: 8px 14px;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>webR + fosdata test</h1>
+
+    <textarea id="rcode">
+library(ggplot2)
+
+p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower)) +
+  geom_point(alpha = 0.6) +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers",
+    title = "Followers vs Posts"
+  )
+
+ggsave("/plot.png", p, width = 6, height = 4, dpi = 150)
+    </textarea>
+
+    <br />
+    <button onclick="runR()">Execute R Code</button>
+
+    <h2>Output Plot</h2>
+    <img id="plot" alt="scatterplot" />
+  </body>
+</html>
 
 
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
