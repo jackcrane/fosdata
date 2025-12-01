@@ -988,7 +988,7 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
           const cached = await getCache(url);
 
           if (cached) {
-            console.log("Loaded package tarball from cache:", url);
+            // console.log("Loaded package tarball from cache:", url);
             return new Response(cached, {
               headers: { "Content-Type": "application/gzip" },
             });
@@ -998,7 +998,7 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
           const buf = new Uint8Array(await res.clone().arrayBuffer());
           await setCache(url, buf);
 
-          console.log("Cached package tarball:", url);
+          // console.log("Cached package tarball:", url);
           return new Response(buf, {
             headers: { "Content-Type": "application/gzip" },
           });
@@ -1029,12 +1029,12 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
         let buf = await getCache(url);
 
         if (!buf) {
-          console.log("Downloading RDA fresh:", url);
+          // console.log("Downloading RDA fresh:", url);
           const res = await fetch(url);
           buf = new Uint8Array(await res.arrayBuffer());
           await setCache(url, buf);
         } else {
-          console.log("Loaded RDA from cache:", url);
+          // console.log("Loaded RDA from cache:", url);
         }
 
         await webR.FS.writeFile(dest, buf);
@@ -1045,6 +1045,7 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
        * Init webR, install packages, load datasets
        * --------------------------------------------------------- */
       async function init() {
+        logConsole("Initializing webR...");
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
@@ -1053,8 +1054,18 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
         const shelter = await new webR.Shelter();
         window._shelter = shelter;
 
-        window.prompt = () => console.log("prompt() not implemented");
+        // window.prompt = () => console.log("prompt() not implemented");
 
+        let nativeConsoleWarn = window.console.warn;
+        window.console.warn = (...args) => {
+          if (args.toString().includes("Downloading webR")) {
+            logConsole(args.toString().trim());
+          } else {
+            nativeConsoleWarn(...args);
+          }
+        };
+
+        logConsole("Installing packages...");
         setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
@@ -1116,6 +1127,7 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
         ];
 
         for (const f of rdaFiles) {
+          logConsole(`Loading fosdata: ${f.split(".")[0]}`);
           await loadRdaCached(`/data/${f}`, `/tmp.rda`);
         }
 
@@ -1123,26 +1135,28 @@ Initialization# library(fosdata) data &lt;- fosdata::fishAccessing fields# data 
         loadingDone = true;
         setBtn("Execute R Code", false);
 
-        console.log("All RDA loaded");
-        await runR();
+        // console.log("All RDA loaded");
+        await runR(true);
       }
 
       /* ---------------------------------------------------------
        * Execute R code + capture output + auto-ggsave
        * --------------------------------------------------------- */
-      async function runR() {
+      async function runR(auto = false) {
         if (!dataLoaded) return;
+        if (!auto) document.getElementById("console").textContent = "";
 
         setBtn("Running…", true);
+        let startTime = Date.now();
         logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
-# Automatically added
-ggsave("/plot.png", width = 8, height = 4)
-`;
+      # Automatically added
+      ggsave("/plot.png", width = 8, height = 4)
+      `;
         }
 
         let result;
@@ -1187,7 +1201,7 @@ ggsave("/plot.png", width = 8, height = 4)
         img.style.display = plotUrl ? "block" : "none";
 
         setBtn("Execute R Code");
-        logConsole("---- Done ----\n");
+        logConsole(`---- Done in ${Date.now() - startTime}ms ----\n`);
       }
 
       window.init = init;
@@ -1223,15 +1237,15 @@ ggsave("/plot.png", width = 8, height = 4)
     <br />
     <button id="execBtn" onclick="runR()">Loading…</button>
 
-    <h2>Output Plot</h2>
+    <h3>Output Plot</h3>
     <img id="plot" alt="scatterplot" />
 
-    <h2>Console</h2>
+    <h3>Console</h3>
     <pre
       id="console"
       style="
-        background: #111;
-        color: #0f0;
+        background: #f0f0f0;
+        color: #000;
         padding: 10px;
         height: 200px;
         overflow: auto;
