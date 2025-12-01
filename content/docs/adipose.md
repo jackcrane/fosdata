@@ -19,7 +19,7 @@ data <- fosdata::adipose
 
 ```r
 data <- fosdata::adipose
-hdl <- data$hdl
+hips_cm <- data$hips_cm
 ```
 
 ## LLM instructions
@@ -45,6 +45,8 @@ fields[12]{name,type,values}:
   bmi,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

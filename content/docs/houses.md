@@ -19,7 +19,7 @@ data <- fosdata::houses
 
 ```r
 data <- fosdata::houses
-sqft_basement <- data$sqft_basement
+long <- data$long
 ```
 
 ## LLM instructions
@@ -54,6 +54,8 @@ fields[21]{name,type,values}:
   sqft_lot15,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

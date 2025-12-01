@@ -19,7 +19,7 @@ data <- fosdata::rio_instagram
 
 ```r
 data <- fosdata::rio_instagram
-name <- data$name
+gender <- data$gender
 ```
 
 ## LLM instructions
@@ -47,6 +47,8 @@ fields[14]{name,type,values}:
   date,POSIXct,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

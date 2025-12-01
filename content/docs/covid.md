@@ -19,7 +19,7 @@ data <- fosdata::covid
 
 ```r
 data <- fosdata::covid
-deaths <- data$deaths
+cases <- data$cases
 ```
 
 ## LLM instructions
@@ -38,6 +38,8 @@ fields[5]{name,type,values}:
   deaths,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

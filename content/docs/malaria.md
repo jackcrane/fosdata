@@ -19,7 +19,7 @@ data <- fosdata::malaria
 
 ```r
 data <- fosdata::malaria
-sporozoite <- data$sporozoite
+malaria <- data$malaria
 ```
 
 ## LLM instructions
@@ -36,6 +36,8 @@ fields[3]{name,type,values}:
   antibody,factor,[no,yes]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

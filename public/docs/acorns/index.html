@@ -26,7 +26,7 @@ From the authors: “Seed size can be an important factor influencing the extent
   <meta itemprop="name" content="acorns">
   <meta itemprop="description" content="Acorns# Acorn size, tree height and geographic range for 39 species of oak (Quercus L.) native to North America.
 From the authors: “Seed size can be an important factor influencing the extent of the range of a plant species that has recently expanded or shifted the area it occupies as a consequence of climatic changes. A positive correlation exists between acorn size and geographical range of the North American oaks (Quercus L.) of eastern North America. An independent analysis of oaks native to the California region suggests that this is a continental pattern.” Oak 39, Quercus tomentella Engelm , is only found on islands off the western coast.">
-  <meta itemprop="wordCount" content="259">
+  <meta itemprop="wordCount" content="266">
 
 <title>acorns | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ From the authors: “Seed size can be an important factor influencing the extent
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
 
 
 
@@ -880,6 +880,32 @@ fields[5]{name,type,values}:
   Range,integer,n/a
   Acorn_size,numeric,n/a
   Tree_height,numeric,n/a</code></pre></div></details>
+<script>
+  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+    const webR = new WebR();
+    await webR.init();
+
+    await webR.installPackages([
+      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
+    ]);
+
+    let result = await webR.evalR(`
+library(fosdata)
+ls("package:fosdata")
+head(cern)
+
+rnorm(10,5,1)
+`);
+    let output = await result.toArray();
+
+    console.log("Result of running `rnorm` from webR: ", output);
+    document.getElementById("data_r").innerHTML = output;
+  });
+</script>
+
+<p id="data_r">R studio data is running in here.</p>
+
+
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>

@@ -19,7 +19,7 @@ data <- fosdata::cern
 
 ```r
 data <- fosdata::cern
-click_throughs <- data$click_throughs
+avg_visit_duration <- data$avg_visit_duration
 ```
 
 ## LLM instructions
@@ -44,6 +44,8 @@ fields[11]{name,type,values}:
   post,character,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

@@ -19,7 +19,7 @@ data <- fosdata::climate
 
 ```r
 data <- fosdata::climate
-appeal <- data$appeal
+narrative_perspective <- data$narrative_perspective
 ```
 
 ## LLM instructions
@@ -52,6 +52,8 @@ fields[19]{name,type,values}:
   impact,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

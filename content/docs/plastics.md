@@ -19,7 +19,7 @@ data <- fosdata::plastics
 
 ```r
 data <- fosdata::plastics
-colour <- data$colour
+diameter <- data$diameter
 ```
 
 ## LLM instructions
@@ -37,6 +37,8 @@ fields[4]{name,type,values}:
   region,character,[Europe,Arctic]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

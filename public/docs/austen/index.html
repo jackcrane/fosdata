@@ -29,7 +29,7 @@ Initialization# library(fosdata) data &lt;- fosdata::austenAccessing fields# dat
   <meta itemprop="description" content="Austen# Downloaded from Project Gutenberg. Emma and Pride and Prejudice are free from copyright in the US and in most countries, according to Project Gutenberg. Please check laws in your country before use.
 undefined
 Initialization# library(fosdata) data &lt;- fosdata::austenAccessing fields# data &lt;- fosdata::austen sentiment_score &lt;- data$sentiment_scoreLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
-  <meta itemprop="wordCount" content="220">
+  <meta itemprop="wordCount" content="227">
 
 <title>austen | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -39,7 +39,7 @@ Initialization# library(fosdata) data &lt;- fosdata::austenAccessing fields# dat
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
 
 
 
@@ -885,6 +885,32 @@ fields[7]{name,type,values}:
   stop_word,logical,[FALSE,TRUE]
   sentiment_score,integer,n/a
   novel,character,[Emma,Pride and Prejudice]</code></pre></div></details>
+<script>
+  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+    const webR = new WebR();
+    await webR.init();
+
+    await webR.installPackages([
+      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
+    ]);
+
+    let result = await webR.evalR(`
+library(fosdata)
+ls("package:fosdata")
+head(cern)
+
+rnorm(10,5,1)
+`);
+    let output = await result.toArray();
+
+    console.log("Result of running `rnorm` from webR: ", output);
+    document.getElementById("data_r").innerHTML = output;
+  });
+</script>
+
+<p id="data_r">R studio data is running in here.</p>
+
+
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>

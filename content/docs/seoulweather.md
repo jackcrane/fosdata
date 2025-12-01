@@ -19,7 +19,7 @@ data <- fosdata::seoulweather
 
 ```r
 data <- fosdata::seoulweather
-dem <- data$dem
+solar_radiation <- data$solar_radiation
 ```
 
 ## LLM instructions
@@ -58,6 +58,8 @@ fields[25]{name,type,values}:
   next_tmin,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

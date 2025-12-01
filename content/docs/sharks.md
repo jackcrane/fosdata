@@ -49,6 +49,8 @@ fields[15]{name,type,values}:
 ```
 {{% /details %}}
 
+{{< include src="r.html" >}}
+
 ## Fields
 
 | Name | Description | Type | Min | Max | Values |

@@ -19,7 +19,7 @@ data <- fosdata::bechdel
 
 ```r
 data <- fosdata::bechdel
-test <- data$test
+budget <- data$budget
 ```
 
 ## LLM instructions
@@ -48,6 +48,8 @@ fields[15]{name,type,values}:
   decade_code,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

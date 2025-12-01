@@ -19,7 +19,7 @@ data <- fosdata::humanization
 
 ```r
 data <- fosdata::humanization
-age <- data$age
+us_sec <- data$us_sec
 ```
 
 ## LLM instructions
@@ -40,6 +40,8 @@ fields[7]{name,type,values}:
   us_prim,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

@@ -19,7 +19,7 @@ data <- fosdata::ecars
 
 ```r
 data <- fosdata::ecars
-chargeTimeHrs <- data$chargeTimeHrs
+managerVehicle <- data$managerVehicle
 ```
 
 ## LLM instructions
@@ -50,6 +50,8 @@ fields[17]{name,type,values}:
   reportedZip,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

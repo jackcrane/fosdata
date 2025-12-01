@@ -19,7 +19,7 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-total_psychopathy <- data$total_psychopathy
+indiv_2_pd_indiv_1 <- data$indiv_2_pd_indiv_1
 ```
 
 ## LLM instructions
@@ -61,6 +61,8 @@ fields[28]{name,type,values}:
   indiv_2_predicts_indiv_1,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

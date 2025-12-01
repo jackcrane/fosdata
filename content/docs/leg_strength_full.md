@@ -19,7 +19,7 @@ data <- fosdata::leg_strength_full
 
 ```r
 data <- fosdata::leg_strength_full
-day_2_sid_m3 <- data$day_2_sid_m3
+day_2_sid_max3 <- data$day_2_sid_max3
 ```
 
 ## LLM instructions
@@ -50,6 +50,8 @@ fields[17]{name,type,values}:
   day_2_sid_max3,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

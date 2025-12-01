@@ -19,7 +19,7 @@ data <- fosdata::leg_strength
 
 ```r
 data <- fosdata::leg_strength
-ID <- data$ID
+mean_wii <- data$mean_wii
 ```
 
 ## LLM instructions
@@ -36,6 +36,8 @@ fields[3]{name,type,values}:
   mean_sid,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

@@ -19,7 +19,7 @@ data <- fosdata::frogs
 
 ```r
 data <- fosdata::frogs
-hw <- data$hw
+slm <- data$slm
 ```
 
 ## LLM instructions
@@ -49,6 +49,8 @@ fields[16]{name,type,values}:
   species,character,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

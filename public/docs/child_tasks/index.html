@@ -26,7 +26,7 @@ More information on the activities of the children. The day-night test. Children
   <meta itemprop="name" content="child_tasks">
   <meta itemprop="description" content="Child_tasks# Time that it takes children to complete various activities.
 More information on the activities of the children. The day-night test. Children are told to say “day” when shown a picture of the moon and stars, and to say “night” when shown a picture of the sun. Time to complete test and number correct (0 incorrect, 1 point for self-corrected, 2 points for correct) are measured. Counting-span test. Children were required to count the number of red dots on cards, and recall the number of dots without looking at them. Given in sets of 1 through 5. Max score of 15. Digit Span Backward. Children were read from 2-8 numbers and asked to recite them backwards. Two numbers repeated 4 times, and the rest repeated twice. Max score of 16. Card-sort task. Children sorted cards that were blue/red with either bunnies/boats on them into boxes that had either pictures of boats and bunnies or were blue and red. Time to sort and a correctness score were measured. Shape Trail Test. In trial A the children were to connect the dots in order from 1-15. In trial B the children were to connect the dots (1-8 circles and 1-7 squares) in order, alternating between circles and squares. Time to completion was measured. From the authors: “In this paper we report an initial validation of the Shape Trail Test–Child Version (STT-CV) with a non-clinical sample of children aged 6 to 9 years. The STT-CV has been developed as an age-appropriate and culturally fair direct downward extension of the Trail Making Test (TMT) for the assessment of cognitive flexibility.”">
-  <meta itemprop="wordCount" content="535">
+  <meta itemprop="wordCount" content="542">
 
 <title>child_tasks | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ More information on the activities of the children. The day-night test. Children
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
 
 
 
@@ -888,6 +888,32 @@ fields[13]{name,type,values}:
   card_sort_postswitch_accuracy,numeric,n/a
   stt_cv_trail_a_secs,numeric,n/a
   stt_cv_trail_b_secs,numeric,n/a</code></pre></div></details>
+<script>
+  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+    const webR = new WebR();
+    await webR.init();
+
+    await webR.installPackages([
+      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
+    ]);
+
+    let result = await webR.evalR(`
+library(fosdata)
+ls("package:fosdata")
+head(cern)
+
+rnorm(10,5,1)
+`);
+    let output = await result.toArray();
+
+    console.log("Result of running `rnorm` from webR: ", output);
+    document.getElementById("data_r").innerHTML = output;
+  });
+</script>
+
+<p id="data_r">R studio data is running in here.</p>
+
+
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>

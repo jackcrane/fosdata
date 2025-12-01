@@ -19,7 +19,7 @@ data <- fosdata::biomass
 
 ```r
 data <- fosdata::biomass
-n <- data$n
+plot <- data$plot
 ```
 
 ## LLM instructions
@@ -41,6 +41,8 @@ fields[8]{name,type,values}:
   location_type,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

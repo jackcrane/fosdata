@@ -19,7 +19,7 @@ data <- fosdata::weight_estimate
 
 ```r
 data <- fosdata::weight_estimate
-height <- data$height
+id <- data$id
 ```
 
 ## LLM instructions
@@ -40,6 +40,8 @@ fields[7]{name,type,values}:
   age,factor,[6,8,10,adult]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

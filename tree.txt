@@ -1,0 +1,58 @@
+.
+├── data
+│   ├── accelerometer.rda
+│   ├── acorns.rda
+│   ├── adipose.rda
+│   ├── austen.rda
+│   ├── barnacles.rda
+│   ├── bechdel.rda
+│   ├── bicycle_signage.rda
+│   ├── biomass.rda
+│   ├── brake.rda
+│   ├── cern.rda
+│   ├── child_tasks.rda
+│   ├── chimps.rda
+│   ├── cigs.rda
+│   ├── climate.rda
+│   ├── conversation.rda
+│   ├── covid.rda
+│   ├── cows_small.rda
+│   ├── cows.rda
+│   ├── crit_period.rda
+│   ├── dogs.rda
+│   ├── draft.rda
+│   ├── ecars.rda
+│   ├── fish.rda
+│   ├── flint.rda
+│   ├── frogs.rda
+│   ├── gender.rda
+│   ├── hot_dogs.rda
+│   ├── houses.rda
+│   ├── humanization.rda
+│   ├── leg_strength_full.rda
+│   ├── leg_strength.rda
+│   ├── letter_frequency.rda
+│   ├── malaria.rda
+│   ├── masks.rda
+│   ├── mice_pot.rda
+│   ├── movies.rda
+│   ├── normtemp.rda
+│   ├── plastics.rda
+│   ├── powerball.rda
+│   ├── pres_election.rda
+│   ├── rio_instagram.rda
+│   ├── river_names.rda
+│   ├── scotland_births.rda
+│   ├── scrabble_ml.rda
+│   ├── scrabble.rda
+│   ├── seoulweather.rda
+│   ├── sharks.rda
+│   ├── skull_geometry.rda
+│   ├── snails.rda
+│   ├── weight_estimate.rda
+│   ├── world_cup.rda
+│   └── wrist.rda
+├── DESCRIPTION
+└── NAMESPACE
+
+2 directories, 54 files

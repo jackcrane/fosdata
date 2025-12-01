@@ -19,7 +19,7 @@ data <- fosdata::chimps
 
 ```r
 data <- fosdata::chimps
-v150 <- data$v150
+v119 <- data$v119
 ```
 
 ## LLM instructions
@@ -192,6 +192,8 @@ fields[159]{name,type,values}:
   grey_score_avg,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

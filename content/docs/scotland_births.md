@@ -19,7 +19,7 @@ data <- fosdata::scotland_births
 
 ```r
 data <- fosdata::scotland_births
-x2005 <- data$x2005
+x2013 <- data$x2013
 ```
 
 ## LLM instructions
@@ -109,6 +109,8 @@ fields[76]{name,type,values}:
   x2019,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

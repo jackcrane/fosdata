@@ -19,7 +19,7 @@ data <- fosdata::skull_geometry
 
 ```r
 data <- fosdata::skull_geometry
-age_mos <- data$age_mos
+circumference_cm <- data$circumference_cm
 ```
 
 ## LLM instructions
@@ -35,6 +35,8 @@ fields[2]{name,type,values}:
   circumference_cm,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

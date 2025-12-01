@@ -19,7 +19,7 @@ data <- fosdata::cows
 
 ```r
 data <- fosdata::cows
-min_02 <- data$min_02
+min_03 <- data$min_03
 ```
 
 ## LLM instructions
@@ -42,6 +42,8 @@ fields[9]{name,type,values}:
   min_04,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

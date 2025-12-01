@@ -19,7 +19,7 @@ data <- fosdata::cigs
 
 ```r
 data <- fosdata::cigs
-brand_name <- data$brand_name
+filter <- data$filter
 ```
 
 ## LLM instructions
@@ -42,6 +42,8 @@ fields[9]{name,type,values}:
   menthol,factor,[no,yes]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

@@ -19,7 +19,7 @@ data <- fosdata::crit_period
 
 ```r
 data <- fosdata::crit_period
-aoa <- data$aoa
+gjt <- data$gjt
 ```
 
 ## LLM instructions
@@ -36,6 +36,8 @@ fields[3]{name,type,values}:
   locale,factor,[Israel,North America]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

@@ -19,7 +19,7 @@ data <- fosdata::gender
 
 ```r
 data <- fosdata::gender
-gender_not_sure <- data$gender_not_sure
+gender_queer <- data$gender_queer
 ```
 
 ## LLM instructions
@@ -43,6 +43,8 @@ fields[10]{name,type,values}:
   race,character,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

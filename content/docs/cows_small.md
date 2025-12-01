@@ -19,7 +19,7 @@ data <- fosdata::cows_small
 
 ```r
 data <- fosdata::cows_small
-cow <- data$cow
+tk_12 <- data$tk_12
 ```
 
 ## LLM instructions
@@ -37,6 +37,8 @@ fields[4]{name,type,values}:
   tk_12,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

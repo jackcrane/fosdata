@@ -19,7 +19,7 @@ data <- fosdata::draft
 
 ```r
 data <- fosdata::draft
-DayofYear <- data$DayofYear
+MonthNo <- data$MonthNo
 ```
 
 ## LLM instructions
@@ -38,6 +38,8 @@ fields[5]{name,type,values}:
   DraftNo,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

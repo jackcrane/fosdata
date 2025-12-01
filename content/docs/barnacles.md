@@ -19,7 +19,7 @@ data <- fosdata::barnacles
 
 ```r
 data <- fosdata::barnacles
-site <- data$site
+area <- data$area
 ```
 
 ## LLM instructions
@@ -41,6 +41,8 @@ fields[8]{name,type,values}:
   barnacle_density,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

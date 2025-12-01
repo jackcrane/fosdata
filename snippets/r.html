@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>webR + fosdata (prebuilt) demo</title>
+  </head>
+  <body>
+    <h1>webR + fosdata_pkg Demo</h1>
+    <pre id="output">Initializing …</pre>
+    <canvas id="plot-canvas"></canvas>
+
+    <script type="module">
+      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+      (async () => {
+        const webR = new WebR();
+        await webR.init();
+
+        // Mount a prebuilt library path (replace with your actual path)
+        await webR.evalR(`
+  webr::mount("/library", source = "http://localhost:1313/fosdata_0.2.0.tar.gz")
+  .libPaths(c("/library"))
+`);
+
+        // Load packages (assumes fosdata, dplyr, ggplot2 are in the mounted library)
+        await webR.evalR(`
+        library(fosdata)
+        library(dplyr)
+        library(ggplot2)
+      `);
+
+        // Example: list datasets
+        const ds = await webR.evalR('data(package = "fosdata")');
+        const dsJs = await ds.toJs();
+        document.getElementById("output").textContent = JSON.stringify(
+          dsJs,
+          null,
+          2
+        );
+
+        // Example: plot from dataset
+        await webR.evalR(`
+        webr::canvas()
+        df <- fosdata::bechdel
+        p <- ggplot(df, aes(x = year, y = percent_female)) +
+               geom_line() +
+               ggtitle("Bechdel: % Female by Year")
+        print(p)
+        dev.off()
+      `);
+
+        const msgs = await webR.flush();
+        for (const msg of msgs) {
+          if (msg.type === "canvas" && msg.data.event === "canvasImage") {
+            const img = msg.data.image;
+            const canvas = document.getElementById("plot-canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            canvas.getContext("2d").drawImage(img, 0, 0);
+          }
+        }
+      })().catch((e) => {
+        document.getElementById("output").textContent = "Error: " + e;
+        console.error(e);
+      });
+    </script>
+  </body>
+</html>

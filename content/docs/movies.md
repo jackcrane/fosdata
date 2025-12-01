@@ -19,7 +19,7 @@ data <- fosdata::movies
 
 ```r
 data <- fosdata::movies
-title <- data$title
+userId <- data$userId
 ```
 
 ## LLM instructions
@@ -39,6 +39,8 @@ fields[6]{name,type,values}:
   genres,character,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

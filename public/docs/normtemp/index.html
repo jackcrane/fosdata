@@ -26,7 +26,7 @@ From the author: “This article takes data from a paper in the Journal of the A
   <meta itemprop="name" content="normtemp">
   <meta itemprop="description" content="Normtemp# Temperature, gender and hear rate data reconstructed to match summary data from a paper.
 From the author: “This article takes data from a paper in the Journal of the American Medical Association that examined whether the true mean body temperature is 98.6 degrees Fahrenheit. Because the dataset suggests that the true mean is approximately 98.2, it helps students to grasp concepts about true means, confidence intervals, and t-statistics. Students can use a t-test to test for sex differences in body temperature and regression to investigate the relationship between temperature and heart rate.”">
-  <meta itemprop="wordCount" content="241">
+  <meta itemprop="wordCount" content="248">
 
 <title>normtemp | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ From the author: “This article takes data from a paper in the Journal of the A
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
 
 
 
@@ -878,6 +878,32 @@ fields[3]{name,type,values}:
   temp,numeric,n/a
   gender,integer,n/a
   bpm,integer,n/a</code></pre></div></details>
+<script>
+  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+    const webR = new WebR();
+    await webR.init();
+
+    await webR.installPackages([
+      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
+    ]);
+
+    let result = await webR.evalR(`
+library(fosdata)
+ls("package:fosdata")
+head(cern)
+
+rnorm(10,5,1)
+`);
+    let output = await result.toArray();
+
+    console.log("Result of running `rnorm` from webR: ", output);
+    document.getElementById("data_r").innerHTML = output;
+  });
+</script>
+
+<p id="data_r">R studio data is running in here.</p>
+
+
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>

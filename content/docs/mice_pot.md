@@ -19,7 +19,7 @@ data <- fosdata::mice_pot
 
 ```r
 data <- fosdata::mice_pot
-group <- data$group
+percent_of_act <- data$percent_of_act
 ```
 
 ## LLM instructions
@@ -35,6 +35,8 @@ fields[2]{name,type,values}:
   percent_of_act,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

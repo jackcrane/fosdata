@@ -19,7 +19,7 @@ data <- fosdata::letter_frequency
 
 ```r
 data <- fosdata::letter_frequency
-swedish <- data$swedish
+portuguese <- data$portuguese
 ```
 
 ## LLM instructions
@@ -48,6 +48,8 @@ fields[15]{name,type,values}:
   finnish,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

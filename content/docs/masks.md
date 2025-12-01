@@ -19,7 +19,7 @@ data <- fosdata::masks
 
 ```r
 data <- fosdata::masks
-mask_coarse <- data$mask_coarse
+mask_fine <- data$mask_fine
 ```
 
 ## LLM instructions
@@ -40,6 +40,8 @@ fields[7]{name,type,values}:
   pcr_type,factor,[A,B]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

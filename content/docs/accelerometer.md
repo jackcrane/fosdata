@@ -19,7 +19,7 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-participant_weight_kg <- data$participant_weight_kg
+participant_age_years <- data$participant_age_years
 ```
 
 ## LLM instructions
@@ -58,6 +58,8 @@ fields[25]{name,type,values}:
   participant_gender,character,[m,f]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

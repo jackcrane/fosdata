@@ -19,7 +19,7 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-mv_distance <- data$mv_distance
+safe2 <- data$safe2
 ```
 
 ## LLM instructions
@@ -44,6 +44,8 @@ fields[11]{name,type,values}:
   education,factor,[4-Year College,Graduate Degree,Community College,High School,Did not graduate high school]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

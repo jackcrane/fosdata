@@ -10,7 +10,7 @@ https://github.com/alex-shpak/hugo-book
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Plastics# Measurements of lengths and diameters of plastic microfibers found in the snow in the Arctic and Europe.
 From the authors: “Microplastics (MPs) are ubiquitous, and considerable quantities prevail even in the Arctic; however, there are large knowledge gaps regarding pathways to the North. To assess whether atmospheric transport plays a role, we analyzed snow samples from ice floes in Fram Strait.”
-Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics colour &lt;- data$colourLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
+Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics diameter &lt;- data$diameterLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -19,7 +19,7 @@ Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# d
   <meta property="og:title" content="plastics">
   <meta property="og:description" content="Plastics# Measurements of lengths and diameters of plastic microfibers found in the snow in the Arctic and Europe.
 From the authors: “Microplastics (MPs) are ubiquitous, and considerable quantities prevail even in the Arctic; however, there are large knowledge gaps regarding pathways to the North. To assess whether atmospheric transport plays a role, we analyzed snow samples from ice floes in Fram Strait.”
-Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics colour &lt;- data$colourLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
+Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics diameter &lt;- data$diameterLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -28,8 +28,8 @@ Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# d
   <meta itemprop="name" content="plastics">
   <meta itemprop="description" content="Plastics# Measurements of lengths and diameters of plastic microfibers found in the snow in the Arctic and Europe.
 From the authors: “Microplastics (MPs) are ubiquitous, and considerable quantities prevail even in the Arctic; however, there are large knowledge gaps regarding pathways to the North. To assess whether atmospheric transport plays a role, we analyzed snow samples from ice floes in Fram Strait.”
-Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics colour &lt;- data$colourLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
-  <meta itemprop="wordCount" content="202">
+Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# data &lt;- fosdata::plastics diameter &lt;- data$diameterLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
+  <meta itemprop="wordCount" content="209">
 
 <title>plastics | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -39,7 +39,7 @@ Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# d
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.4fc1ae45185a4e66fcfea3ce8e107ae0c32b6e51f949c4d4b8af0481ba9f065b.js" integrity="sha256-T8GuRRhaTmb8/qPOjhB64MMrblH5ScTUuK8EgbqfBls=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.aba3809032d7ad0371d3748d510853f1940d6e66af375eed2e372c40449febf1.js" integrity="sha256-q6OAkDLXrQNx03SNUQhT8ZQNbmavN17tLjcsQESf6/E=" crossorigin="anonymous"></script>
 
 
 
@@ -872,7 +872,7 @@ Initialization# library(fosdata) data &lt;- fosdata::plasticsAccessing fields# d
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
 </span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>plastics</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>plastics
-</span></span><span style="display:flex;"><span>colour <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>colour</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>diameter <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>diameter</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::plastics dataset containing the following fields:
@@ -882,6 +882,32 @@ fields[4]{name,type,values}:
   length,numeric,n/a
   diameter,numeric,n/a
   region,character,[Europe,Arctic]</code></pre></div></details>
+<script>
+  import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+    const webR = new WebR();
+    await webR.init();
+
+    await webR.installPackages([
+      "https://cdn.jackcrane.rocks/fosdata_0.2.0.tar.gz",
+    ]);
+
+    let result = await webR.evalR(`
+library(fosdata)
+ls("package:fosdata")
+head(cern)
+
+rnorm(10,5,1)
+`);
+    let output = await result.toArray();
+
+    console.log("Result of running `rnorm` from webR: ", output);
+    document.getElementById("data_r").innerHTML = output;
+  });
+</script>
+
+<p id="data_r">R studio data is running in here.</p>
+
+
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>

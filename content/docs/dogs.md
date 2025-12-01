@@ -19,7 +19,7 @@ data <- fosdata::dogs
 
 ```r
 data <- fosdata::dogs
-trial <- data$trial
+obs_number <- data$obs_number
 ```
 
 ## LLM instructions
@@ -42,6 +42,8 @@ fields[9]{name,type,values}:
   conform,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

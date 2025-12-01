@@ -19,7 +19,7 @@ data <- fosdata::wrist
 
 ```r
 data <- fosdata::wrist
-guided_physiotherapy_times <- data$guided_physiotherapy_times
+angulation_pre <- data$angulation_pre
 ```
 
 ## LLM instructions
@@ -80,6 +80,8 @@ fields[47]{name,type,values}:
   d_pcs2,numeric,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

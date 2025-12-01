@@ -19,7 +19,7 @@ data <- fosdata::pres_election
 
 ```r
 data <- fosdata::pres_election
-county <- data$county
+year <- data$year
 ```
 
 ## LLM instructions
@@ -42,6 +42,8 @@ fields[9]{name,type,values}:
   totalvotes,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

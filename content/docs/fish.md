@@ -19,7 +19,7 @@ data <- fosdata::fish
 
 ```r
 data <- fosdata::fish
-width_percent <- data$width_percent
+height_percent <- data$height_percent
 ```
 
 ## LLM instructions
@@ -42,6 +42,8 @@ fields[9]{name,type,values}:
   sex,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

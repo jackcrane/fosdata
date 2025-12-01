@@ -19,7 +19,7 @@ data <- fosdata::flint
 
 ```r
 data <- fosdata::flint
-Pb1 <- data$Pb1
+Zip.Code <- data$Zip.Code
 ```
 
 ## LLM instructions
@@ -40,6 +40,8 @@ fields[7]{name,type,values}:
   Notes,character,[,*house sampled twice]
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

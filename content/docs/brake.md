@@ -19,7 +19,7 @@ data <- fosdata::brake
 
 ```r
 data <- fosdata::brake
-p1_p2 <- data$p1_p2
+p1_p2_p3 <- data$p1_p2_p3
 ```
 
 ## LLM instructions
@@ -53,6 +53,8 @@ fields[20]{name,type,values}:
   education,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 

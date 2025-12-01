@@ -19,7 +19,7 @@ data <- fosdata::scrabble_ml
 
 ```r
 data <- fosdata::scrabble_ml
-lang <- data$lang
+points <- data$points
 ```
 
 ## LLM instructions
@@ -36,6 +36,8 @@ fields[3]{name,type,values}:
   points,integer,n/a
 ```
 {{% /details %}}
+
+{{< include src="r.html" >}}
 
 ## Fields
 
