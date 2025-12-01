@@ -19,8 +19,21 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-fighting_ability <- data$fighting_ability
+f1_psychopathy <- data$f1_psychopathy
 ```
+
+## R Sample
+
+{{< rexec >}}
+# No sample provided for conversation
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+{{< /rexec >}}
 
 ## LLM instructions
 
@@ -61,21 +74,6 @@ fields[28]{name,type,values}:
   indiv_2_predicts_indiv_1,integer,n/a
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 

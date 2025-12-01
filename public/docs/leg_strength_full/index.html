@@ -26,7 +26,7 @@ The smaller data set consisting of means only is available as leg_strength. From
   <meta itemprop="name" content="leg_strength_full">
   <meta itemprop="description" content="Leg_strength_full# Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.
 The smaller data set consisting of means only is available as leg_strength. From the authors: “Portable, low-cost, objective and reproducible assessment of muscle strength in the lower limbs is important as it allows clinicians to precisly track progression of patients undergoing rehabilitation. The purpose of the study was to evaluate (1) reproducibility and (2) concurrent validity of the WBB for measuring isometric muscle strength in the lower limb.”">
-  <meta itemprop="wordCount" content="375">
+  <meta itemprop="wordCount" content="378">
 
 <title>leg_strength_full | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ The smaller data set consisting of means only is available as leg_strength. From
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7f277586791a8e53feab72ffb85917f0c8f072caf07a47dbf01c8fa53768c513.js" integrity="sha256-fyd1hnkajlP&#43;q3L/uFkX8Mjwcsrwekfb8ByPpTdoxRM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1d4a25aadb4fb017d2cb84090fd2d816740a11443a2f14c9278cf129cd92dca6.js" integrity="sha256-HUolqttPsBfSy4QJD9LYFnQKEUQ6LxTJJ4zxKc2S3KY=" crossorigin="anonymous"></script>
 
 
 
@@ -847,6 +847,7 @@ The smaller data set consisting of means only is available as leg_strength. From
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>
@@ -869,29 +870,7 @@ The smaller data set consisting of means only is available as leg_strength. From
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
 </span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>leg_strength_full</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>leg_strength_full
-</span></span><span style="display:flex;"><span>wii_m2 <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>wii_m2</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
-<p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
-<details ><summary>LLM Instructions</summary><div class="markdown-inner">
-<pre tabindex="0"><code>The fosdata::leg_strength_full dataset containing the following fields:
-
-fields[17]{name,type,values}:
-  id,numeric,n/a
-  wii_m1,numeric,n/a
-  wii_m2,numeric,n/a
-  wii_m3,numeric,n/a
-  wii_max3,numeric,n/a
-  day2_wii_m1,numeric,n/a
-  day2_wii_m2,numeric,n/a
-  day2_wii_m3,numeric,n/a
-  day2_wii_max3,numeric,n/a
-  sid_m1,numeric,n/a
-  sid_m2,numeric,n/a
-  sid_m3,numeric,n/a
-  sid_max3,numeric,n/a
-  day2_sid_m1,numeric,n/a
-  day_2_sid_m2,numeric,n/a
-  day_2_sid_m3,numeric,n/a
-  day_2_sid_max3,numeric,n/a</code></pre></div></details>
+</span></span><span style="display:flex;"><span>id <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>id</span></span></code></pre></div><h2 id="r-sample">R Sample<a class="anchor" href="#r-sample">#</a></h2>
 <!DOCTYPE html>
 <html>
   <head>
@@ -937,7 +916,13 @@ fields[17]{name,type,values}:
     </style>
 
     <script type="module">
-      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+      import { WebR, Console } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+      function logConsole(msg) {
+        const el = document.getElementById("console");
+        el.textContent += msg + "\n";
+        el.scrollTop = el.scrollHeight;
+      }
 
       /* ---------------------------------------------------------
        * IndexedDB Cache (1-hour TTL)
@@ -1047,11 +1032,30 @@ fields[17]{name,type,values}:
         await webR.evalR(`load("${dest}")`);
       }
 
+      let loadingDone = false;
+
       async function init() {
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
         await webR.init();
+
+        function logConsole(msg) {
+          if (!loadingDone) return;
+          const el = document.getElementById("console");
+          el.textContent += msg + "\n"; // use textContent!
+          el.scrollTop = el.scrollHeight;
+        }
+
+        window.prompt = () => console.log("prompt() not implemented");
+
+        const webConsole = new Console({
+          webR,
+          stdout: logConsole,
+          stderr: (msg) => logConsole("ERR: " + msg.toString()),
+          interactive: false,
+        });
+        webConsole.run();
 
         setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
@@ -1128,9 +1132,12 @@ fields[17]{name,type,values}:
         if (!dataLoaded) return;
 
         setBtn("Running…", true);
+        loadingDone = true;
+        logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
+        // auto-add ggsave if needed
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
 # Automatically added
@@ -1138,14 +1145,38 @@ ggsave("/plot.png", width = 8, height = 4)
 `;
         }
 
-        await webR.evalR(code);
+        let out;
+        try {
+          out = await webR.evalR(code, {
+            stdout: "capture",
+            stderr: "capture",
+          });
+        } catch (err) {
+          logConsole("JS Error: " + err.toString());
+          setBtn("Execute R Code", false);
+          return;
+        }
 
-        const pngBytes = await webR.FS.readFile("/plot.png");
-        const blob = new Blob([pngBytes], { type: "image/png" });
-        const url = URL.createObjectURL(blob);
-        document.getElementById("plot").src = url;
+        // Print captured output
+        if (out.stdout) logConsole(out.stdout.trim());
+        if (out.stderr) logConsole("ERR: " + out.stderr.trim());
+
+        // Try loading plot
+        let plotUrl = null;
+        try {
+          const pngBytes = await webR.FS.readFile("/plot.png");
+          const blob = new Blob([pngBytes], { type: "image/png" });
+          plotUrl = URL.createObjectURL(blob);
+        } catch {
+          logConsole("No plot generated.");
+        }
+
+        const img = document.getElementById("plot");
+        img.src = plotUrl || "";
+        img.style.display = plotUrl ? "block" : "none";
 
         setBtn("Execute R Code", false);
+        logConsole("---- Done ----\n");
       }
 
       window.init = init;
@@ -1168,17 +1199,13 @@ ggsave("/plot.png", width = 8, height = 4)
         tabSize: 2,
         mode: "r",
         value: strip(`
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
+# No sample provided for leg_strength_full
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
 
 `),
       });
@@ -1189,9 +1216,45 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
 
     <h2>Output Plot</h2>
     <img id="plot" alt="scatterplot" />
+
+    <h2>Console</h2>
+    <pre
+      id="console"
+      style="
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        height: 200px;
+        overflow: auto;
+        font-size: 12px;
+      "
+    ></pre>
   </body>
 </html>
 
+<h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+<p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
+<details ><summary>LLM Instructions</summary><div class="markdown-inner">
+<pre tabindex="0"><code>The fosdata::leg_strength_full dataset containing the following fields:
+
+fields[17]{name,type,values}:
+  id,numeric,n/a
+  wii_m1,numeric,n/a
+  wii_m2,numeric,n/a
+  wii_m3,numeric,n/a
+  wii_max3,numeric,n/a
+  day2_wii_m1,numeric,n/a
+  day2_wii_m2,numeric,n/a
+  day2_wii_m3,numeric,n/a
+  day2_wii_max3,numeric,n/a
+  sid_m1,numeric,n/a
+  sid_m2,numeric,n/a
+  sid_m3,numeric,n/a
+  sid_max3,numeric,n/a
+  day2_sid_m1,numeric,n/a
+  day_2_sid_m2,numeric,n/a
+  day_2_sid_m3,numeric,n/a
+  day_2_sid_max3,numeric,n/a</code></pre></div></details>
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>
@@ -1424,6 +1487,7 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>

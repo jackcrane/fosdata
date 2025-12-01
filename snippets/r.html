@@ -43,7 +43,13 @@
     </style>
 
     <script type="module">
-      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+      import { WebR, Console } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+      function logConsole(msg) {
+        const el = document.getElementById("console");
+        el.textContent += msg + "\n";
+        el.scrollTop = el.scrollHeight;
+      }
 
       /* ---------------------------------------------------------
        * IndexedDB Cache (1-hour TTL)
@@ -153,11 +159,30 @@
         await webR.evalR(`load("${dest}")`);
       }
 
+      let loadingDone = false;
+
       async function init() {
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
         await webR.init();
+
+        function logConsole(msg) {
+          if (!loadingDone) return;
+          const el = document.getElementById("console");
+          el.textContent += msg + "\n"; // use textContent!
+          el.scrollTop = el.scrollHeight;
+        }
+
+        window.prompt = () => console.log("prompt() not implemented");
+
+        const webConsole = new Console({
+          webR,
+          stdout: logConsole,
+          stderr: (msg) => logConsole("ERR: " + msg.toString()),
+          interactive: false,
+        });
+        webConsole.run();
 
         setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
@@ -234,9 +259,12 @@
         if (!dataLoaded) return;
 
         setBtn("Running…", true);
+        loadingDone = true;
+        logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
+        // auto-add ggsave if needed
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
 # Automatically added
@@ -244,14 +272,38 @@ ggsave("/plot.png", width = 8, height = 4)
 `;
         }
 
-        await webR.evalR(code);
+        let out;
+        try {
+          out = await webR.evalR(code, {
+            stdout: "capture",
+            stderr: "capture",
+          });
+        } catch (err) {
+          logConsole("JS Error: " + err.toString());
+          setBtn("Execute R Code", false);
+          return;
+        }
 
-        const pngBytes = await webR.FS.readFile("/plot.png");
-        const blob = new Blob([pngBytes], { type: "image/png" });
-        const url = URL.createObjectURL(blob);
-        document.getElementById("plot").src = url;
+        // Print captured output
+        if (out.stdout) logConsole(out.stdout.trim());
+        if (out.stderr) logConsole("ERR: " + out.stderr.trim());
+
+        // Try loading plot
+        let plotUrl = null;
+        try {
+          const pngBytes = await webR.FS.readFile("/plot.png");
+          const blob = new Blob([pngBytes], { type: "image/png" });
+          plotUrl = URL.createObjectURL(blob);
+        } catch {
+          logConsole("No plot generated.");
+        }
+
+        const img = document.getElementById("plot");
+        img.src = plotUrl || "";
+        img.style.display = plotUrl ? "block" : "none";
 
         setBtn("Execute R Code", false);
+        logConsole("---- Done ----\n");
       }
 
       window.init = init;
@@ -282,5 +334,18 @@ ggsave("/plot.png", width = 8, height = 4)
 
     <h2>Output Plot</h2>
     <img id="plot" alt="scatterplot" />
+
+    <h2>Console</h2>
+    <pre
+      id="console"
+      style="
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        height: 200px;
+        overflow: auto;
+        font-size: 12px;
+      "
+    ></pre>
   </body>
 </html>

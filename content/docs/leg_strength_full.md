@@ -19,8 +19,21 @@ data <- fosdata::leg_strength_full
 
 ```r
 data <- fosdata::leg_strength_full
-wii_m2 <- data$wii_m2
+id <- data$id
 ```
+
+## R Sample
+
+{{< rexec >}}
+# No sample provided for leg_strength_full
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+{{< /rexec >}}
 
 ## LLM instructions
 
@@ -50,21 +63,6 @@ fields[17]{name,type,values}:
   day_2_sid_max3,numeric,n/a
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 

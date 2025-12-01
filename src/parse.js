@@ -1,12 +1,23 @@
-import { readFileSync, writeFileSync } from "fs";
-const file = readFileSync("./fosdata.json");
-const data = JSON.parse(file);
+import { readFileSync, writeFileSync, existsSync } from "fs";
 
-const parse = (data) => {
-  const parsedData = {};
+export const parse = (data) => {
   data.datasets.forEach((dataset) => {
     const destfile = `../content/docs/${dataset.name}.md`;
     const r = Math.floor(Math.random() * dataset.fields.length);
+
+    const samplePath = `./samples/${dataset.name}.r`;
+    let sampleContent;
+
+    if (existsSync(samplePath)) {
+      sampleContent = readFileSync(samplePath, "utf8");
+    } else {
+      sampleContent =
+        `# No sample provided for ${dataset.name}\n#\n` +
+        `# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.\n#\n` +
+        `# Uncomment the following lines to get started!\n` +
+        `# library(dplyr)\n` +
+        `# library(ggplot2)\n`;
+    }
 
     const header = `---
 title: "${dataset.name}"
@@ -32,6 +43,12 @@ data <- fosdata::${dataset.name}
 ${dataset.fields[r].name} <- data$${dataset.fields[r].name}
 \`\`\`
 
+## R Sample
+
+{{< rexec >}}
+${sampleContent}
+{{< /rexec >}}
+
 ## LLM instructions
 
 If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
@@ -48,26 +65,12 @@ ${dataset.fields
 \`\`\`
 {{% /details %}}
 
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
-
 ## Fields
 
 | Name | Description | Type | Min | Max | Values |
 | --- | --- | --- | --- | --- | --- |
 `;
+
     const fields = dataset.fields.map(
       (field) =>
         `| \`${
@@ -82,6 +85,7 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
           field.values ? field.values.map((e) => `\`${e}\``).join(", ") : "-"
         } |`
     );
+
     const footer = `
 
 ## Source
@@ -89,11 +93,13 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
 ${dataset.source}
 
 `;
+
     const content = `${header}${fields.join("\n")}${footer}`;
-    // console.log(content);
     writeFileSync(destfile, content);
   });
-  return parsedData;
 };
+
+const file = readFileSync("./fosdata.json");
+const data = JSON.parse(file);
 
 parse(data);

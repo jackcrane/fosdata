@@ -19,8 +19,21 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-mv_wait2 <- data$mv_wait2
+mv_distance <- data$mv_distance
 ```
+
+## R Sample
+
+{{< rexec >}}
+# No sample provided for bicycle_signage
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+{{< /rexec >}}
 
 ## LLM instructions
 
@@ -44,21 +57,6 @@ fields[11]{name,type,values}:
   education,factor,[4-Year College,Graduate Degree,Community College,High School,Did not graduate high school]
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 

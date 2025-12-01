@@ -26,7 +26,7 @@ From the authors: “The greying of human head hair is arguably the most salient
   <meta itemprop="name" content="chimps">
   <meta itemprop="description" content="Chimps# It is known that humans’ hair generally turns gray as they age. Is the same true for chimpanzees? This data set contains demographic information on chimpanzees, together with human ratings of how gray their hair is. The authors’ original intent was to determine whether middle-aged chimpanzees got gray with age.
 From the authors: “The greying of human head hair is arguably the most salient marker of human aging. In wild mammal populations, greying can change with life history or environmental factors (e.g., sexual maturity in silverback gorillas). Yet, whether humans are unique in our pattern of age-related hair depigmentation is unclear.”">
-  <meta itemprop="wordCount" content="1377">
+  <meta itemprop="wordCount" content="1380">
 
 <title>chimps | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ From the authors: “The greying of human head hair is arguably the most salient
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7f277586791a8e53feab72ffb85917f0c8f072caf07a47dbf01c8fa53768c513.js" integrity="sha256-fyd1hnkajlP&#43;q3L/uFkX8Mjwcsrwekfb8ByPpTdoxRM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1d4a25aadb4fb017d2cb84090fd2d816740a11443a2f14c9278cf129cd92dca6.js" integrity="sha256-HUolqttPsBfSy4QJD9LYFnQKEUQ6LxTJJ4zxKc2S3KY=" crossorigin="anonymous"></script>
 
 
 
@@ -847,6 +847,7 @@ From the authors: “The greying of human head hair is arguably the most salient
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>
@@ -869,7 +870,369 @@ From the authors: “The greying of human head hair is arguably the most salient
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
 </span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>chimps</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>chimps
-</span></span><span style="display:flex;"><span>v75 <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>v75</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+</span></span><span style="display:flex;"><span>v23 <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>v23</span></span></code></pre></div><h2 id="r-sample">R Sample<a class="anchor" href="#r-sample">#</a></h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
+
+    <meta charset="utf-8" />
+    <title>webR + fosdata Test</title>
+
+    <style>
+      #cm {
+        border: 1px solid #ccc;
+        font-size: 12px;
+      }
+      #cm .CodeMirror {
+        height: 260px;
+      }
+      #cm .CodeMirror-scroll {
+        overflow: auto !important;
+      }
+      button {
+        padding: 8px 14px;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      #plot {
+        width: 100%;
+        max-height: 800px;
+        object-fit: contain;
+      }
+      #plot:invalid {
+        display: none;
+      }
+    </style>
+
+    <script type="module">
+      import { WebR, Console } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+      function logConsole(msg) {
+        const el = document.getElementById("console");
+        el.textContent += msg + "\n";
+        el.scrollTop = el.scrollHeight;
+      }
+
+      /* ---------------------------------------------------------
+       * IndexedDB Cache (1-hour TTL)
+       * --------------------------------------------------------- */
+      function openDB() {
+        return new Promise((resolve, reject) => {
+          const req = indexedDB.open("webr-cache", 1);
+          req.onupgradeneeded = () => {
+            const db = req.result;
+            if (!db.objectStoreNames.contains("files")) {
+              db.createObjectStore("files", { keyPath: "key" });
+            }
+          };
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => reject(req.error);
+        });
+      }
+
+      async function getCache(key) {
+        const db = await openDB();
+        return new Promise((resolve) => {
+          const tx = db.transaction("files", "readonly");
+          const store = tx.objectStore("files");
+          const req = store.get(key);
+          req.onsuccess = () => {
+            const data = req.result;
+            if (!data) return resolve(null);
+
+            const age = Date.now() - data.timestamp;
+            if (age > 3600_000) {
+              resolve(null);
+            } else {
+              resolve(data.value);
+            }
+          };
+          req.onerror = () => resolve(null);
+        });
+      }
+
+      async function setCache(key, value) {
+        const db = await openDB();
+        return new Promise((resolve) => {
+          const tx = db.transaction("files", "readwrite");
+          const store = tx.objectStore("files");
+          store.put({ key, value, timestamp: Date.now() });
+          tx.oncomplete = () => resolve();
+        });
+      }
+
+      /* ---------------------------------------------------------
+       * Cache-aware fetch override for package tarballs
+       * --------------------------------------------------------- */
+      const realFetch = fetch;
+
+      globalThis.fetch = async (resource, options) => {
+        const url = typeof resource === "string" ? resource : resource.url;
+
+        if (url.endsWith(".tar.gz")) {
+          let cached = await getCache(url);
+          if (cached) {
+            console.log("Loaded package tarball from cache:", url);
+            return new Response(cached, {
+              headers: { "Content-Type": "application/gzip" },
+            });
+          }
+
+          const r = await realFetch(resource, options);
+          const buf = new Uint8Array(await r.clone().arrayBuffer());
+          await setCache(url, buf);
+
+          console.log("Cached package tarball:", url);
+          return new Response(buf, {
+            headers: { "Content-Type": "application/gzip" },
+          });
+        }
+
+        return realFetch(resource, options);
+      };
+
+      /* ---------------------------------------------------------
+       * WebR + RDA loader (cached)
+       * --------------------------------------------------------- */
+      let webR;
+      let dataLoaded = false;
+
+      const execBtn = () => document.getElementById("execBtn");
+
+      const setBtn = (label, disabled = false) => {
+        const b = execBtn();
+        b.textContent = label;
+        b.disabled = disabled;
+      };
+
+      async function loadRdaCached(url, dest) {
+        let buf = await getCache(url);
+
+        if (!buf) {
+          console.log("Downloading RDA fresh:", url);
+          const res = await fetch(url);
+          buf = new Uint8Array(await res.arrayBuffer());
+          await setCache(url, buf);
+        } else {
+          console.log("Loaded RDA from cache:", url);
+        }
+
+        await webR.FS.writeFile(dest, buf);
+        await webR.evalR(`load("${dest}")`);
+      }
+
+      let loadingDone = false;
+
+      async function init() {
+        setBtn("Loading R engine...", true);
+
+        webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
+        await webR.init();
+
+        function logConsole(msg) {
+          if (!loadingDone) return;
+          const el = document.getElementById("console");
+          el.textContent += msg + "\n"; // use textContent!
+          el.scrollTop = el.scrollHeight;
+        }
+
+        window.prompt = () => console.log("prompt() not implemented");
+
+        const webConsole = new Console({
+          webR,
+          stdout: logConsole,
+          stderr: (msg) => logConsole("ERR: " + msg.toString()),
+          interactive: false,
+        });
+        webConsole.run();
+
+        setBtn("Installing packages...", true);
+        await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
+
+        setBtn("Loading datasets...", true);
+
+        const files = [
+          "accelerometer.rda",
+          "chimps.rda",
+          "fish.rda",
+          "masks.rda",
+          "scrabble.rda",
+          "acorns.rda",
+          "cigs.rda",
+          "flint.rda",
+          "mice_pot.rda",
+          "seoulweather.rda",
+          "adipose.rda",
+          "climate.rda",
+          "frogs.rda",
+          "movies.rda",
+          "sharks.rda",
+          "austen.rda",
+          "conversation.rda",
+          "gender.rda",
+          "normtemp.rda",
+          "skull_geometry.rda",
+          "barnacles.rda",
+          "covid.rda",
+          "hot_dogs.rda",
+          "plastics.rda",
+          "snails.rda",
+          "bechdel.rda",
+          "cows_small.rda",
+          "houses.rda",
+          "powerball.rda",
+          "weight_estimate.rda",
+          "bicycle_signage.rda",
+          "cows.rda",
+          "humanization.rda",
+          "pres_election.rda",
+          "world_cup.rda",
+          "biomass.rda",
+          "crit_period.rda",
+          "leg_strength_full.rda",
+          "rio_instagram.rda",
+          "wrist.rda",
+          "brake.rda",
+          "dogs.rda",
+          "leg_strength.rda",
+          "river_names.rda",
+          "cern.rda",
+          "draft.rda",
+          "letter_frequency.rda",
+          "scotland_births.rda",
+          "child_tasks.rda",
+          "ecars.rda",
+          "malaria.rda",
+          "scrabble_ml.rda",
+        ];
+
+        for (const f of files) {
+          await loadRdaCached(`/data/${f}`, `/tmp.rda`);
+        }
+
+        dataLoaded = true;
+        setBtn("Execute R Code", false);
+
+        console.log("All RDA loaded");
+        await runR();
+      }
+
+      async function runR() {
+        if (!dataLoaded) return;
+
+        setBtn("Running…", true);
+        loadingDone = true;
+        logConsole("---- Running R ----");
+
+        let code = window.cm.getValue();
+
+        // auto-add ggsave if needed
+        if (code.includes("ggplot(") && !code.includes("ggsave(")) {
+          code += `
+# Automatically added
+ggsave("/plot.png", width = 8, height = 4)
+`;
+        }
+
+        let out;
+        try {
+          out = await webR.evalR(code, {
+            stdout: "capture",
+            stderr: "capture",
+          });
+        } catch (err) {
+          logConsole("JS Error: " + err.toString());
+          setBtn("Execute R Code", false);
+          return;
+        }
+
+        // Print captured output
+        if (out.stdout) logConsole(out.stdout.trim());
+        if (out.stderr) logConsole("ERR: " + out.stderr.trim());
+
+        // Try loading plot
+        let plotUrl = null;
+        try {
+          const pngBytes = await webR.FS.readFile("/plot.png");
+          const blob = new Blob([pngBytes], { type: "image/png" });
+          plotUrl = URL.createObjectURL(blob);
+        } catch {
+          logConsole("No plot generated.");
+        }
+
+        const img = document.getElementById("plot");
+        img.src = plotUrl || "";
+        img.style.display = plotUrl ? "block" : "none";
+
+        setBtn("Execute R Code", false);
+        logConsole("---- Done ----\n");
+      }
+
+      window.init = init;
+      window.runR = runR;
+
+      init();
+    </script>
+  </head>
+
+  <body>
+    <div id="cm"></div>
+
+    <script>
+      function strip(str) {
+        return str.replace(/^\s+|\s+$/g, "");
+      }
+
+      window.cm = CodeMirror(document.querySelector("#cm"), {
+        lineNumbers: true,
+        tabSize: 2,
+        mode: "r",
+        value: strip(`
+# No sample provided for chimps
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+`),
+      });
+    </script>
+
+    <br />
+    <button id="execBtn" onclick="runR()">Loading…</button>
+
+    <h2>Output Plot</h2>
+    <img id="plot" alt="scatterplot" />
+
+    <h2>Console</h2>
+    <pre
+      id="console"
+      style="
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        height: 200px;
+        overflow: auto;
+        font-size: 12px;
+      "
+    ></pre>
+  </body>
+</html>
+
+<h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
 <p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
 <details ><summary>LLM Instructions</summary><div class="markdown-inner">
 <pre tabindex="0"><code>The fosdata::chimps dataset containing the following fields:
@@ -1034,306 +1397,6 @@ fields[159]{name,type,values}:
   v162,integer,n/a
   v164,integer,n/a
   grey_score_avg,numeric,n/a</code></pre></div></details>
-<!DOCTYPE html>
-<html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
-
-    <meta charset="utf-8" />
-    <title>webR + fosdata Test</title>
-
-    <style>
-      #cm {
-        border: 1px solid #ccc;
-        font-size: 12px;
-      }
-      #cm .CodeMirror {
-        height: 260px;
-      }
-      #cm .CodeMirror-scroll {
-        overflow: auto !important;
-      }
-      button {
-        padding: 8px 14px;
-        margin-top: 6px;
-        font-size: 14px;
-      }
-      button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-      #plot {
-        width: 100%;
-        max-height: 800px;
-        object-fit: contain;
-      }
-      #plot:invalid {
-        display: none;
-      }
-    </style>
-
-    <script type="module">
-      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
-
-      /* ---------------------------------------------------------
-       * IndexedDB Cache (1-hour TTL)
-       * --------------------------------------------------------- */
-      function openDB() {
-        return new Promise((resolve, reject) => {
-          const req = indexedDB.open("webr-cache", 1);
-          req.onupgradeneeded = () => {
-            const db = req.result;
-            if (!db.objectStoreNames.contains("files")) {
-              db.createObjectStore("files", { keyPath: "key" });
-            }
-          };
-          req.onsuccess = () => resolve(req.result);
-          req.onerror = () => reject(req.error);
-        });
-      }
-
-      async function getCache(key) {
-        const db = await openDB();
-        return new Promise((resolve) => {
-          const tx = db.transaction("files", "readonly");
-          const store = tx.objectStore("files");
-          const req = store.get(key);
-          req.onsuccess = () => {
-            const data = req.result;
-            if (!data) return resolve(null);
-
-            const age = Date.now() - data.timestamp;
-            if (age > 3600_000) {
-              resolve(null);
-            } else {
-              resolve(data.value);
-            }
-          };
-          req.onerror = () => resolve(null);
-        });
-      }
-
-      async function setCache(key, value) {
-        const db = await openDB();
-        return new Promise((resolve) => {
-          const tx = db.transaction("files", "readwrite");
-          const store = tx.objectStore("files");
-          store.put({ key, value, timestamp: Date.now() });
-          tx.oncomplete = () => resolve();
-        });
-      }
-
-      /* ---------------------------------------------------------
-       * Cache-aware fetch override for package tarballs
-       * --------------------------------------------------------- */
-      const realFetch = fetch;
-
-      globalThis.fetch = async (resource, options) => {
-        const url = typeof resource === "string" ? resource : resource.url;
-
-        if (url.endsWith(".tar.gz")) {
-          let cached = await getCache(url);
-          if (cached) {
-            console.log("Loaded package tarball from cache:", url);
-            return new Response(cached, {
-              headers: { "Content-Type": "application/gzip" },
-            });
-          }
-
-          const r = await realFetch(resource, options);
-          const buf = new Uint8Array(await r.clone().arrayBuffer());
-          await setCache(url, buf);
-
-          console.log("Cached package tarball:", url);
-          return new Response(buf, {
-            headers: { "Content-Type": "application/gzip" },
-          });
-        }
-
-        return realFetch(resource, options);
-      };
-
-      /* ---------------------------------------------------------
-       * WebR + RDA loader (cached)
-       * --------------------------------------------------------- */
-      let webR;
-      let dataLoaded = false;
-
-      const execBtn = () => document.getElementById("execBtn");
-
-      const setBtn = (label, disabled = false) => {
-        const b = execBtn();
-        b.textContent = label;
-        b.disabled = disabled;
-      };
-
-      async function loadRdaCached(url, dest) {
-        let buf = await getCache(url);
-
-        if (!buf) {
-          console.log("Downloading RDA fresh:", url);
-          const res = await fetch(url);
-          buf = new Uint8Array(await res.arrayBuffer());
-          await setCache(url, buf);
-        } else {
-          console.log("Loaded RDA from cache:", url);
-        }
-
-        await webR.FS.writeFile(dest, buf);
-        await webR.evalR(`load("${dest}")`);
-      }
-
-      async function init() {
-        setBtn("Loading R engine...", true);
-
-        webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
-        await webR.init();
-
-        setBtn("Installing packages...", true);
-        await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
-
-        setBtn("Loading datasets...", true);
-
-        const files = [
-          "accelerometer.rda",
-          "chimps.rda",
-          "fish.rda",
-          "masks.rda",
-          "scrabble.rda",
-          "acorns.rda",
-          "cigs.rda",
-          "flint.rda",
-          "mice_pot.rda",
-          "seoulweather.rda",
-          "adipose.rda",
-          "climate.rda",
-          "frogs.rda",
-          "movies.rda",
-          "sharks.rda",
-          "austen.rda",
-          "conversation.rda",
-          "gender.rda",
-          "normtemp.rda",
-          "skull_geometry.rda",
-          "barnacles.rda",
-          "covid.rda",
-          "hot_dogs.rda",
-          "plastics.rda",
-          "snails.rda",
-          "bechdel.rda",
-          "cows_small.rda",
-          "houses.rda",
-          "powerball.rda",
-          "weight_estimate.rda",
-          "bicycle_signage.rda",
-          "cows.rda",
-          "humanization.rda",
-          "pres_election.rda",
-          "world_cup.rda",
-          "biomass.rda",
-          "crit_period.rda",
-          "leg_strength_full.rda",
-          "rio_instagram.rda",
-          "wrist.rda",
-          "brake.rda",
-          "dogs.rda",
-          "leg_strength.rda",
-          "river_names.rda",
-          "cern.rda",
-          "draft.rda",
-          "letter_frequency.rda",
-          "scotland_births.rda",
-          "child_tasks.rda",
-          "ecars.rda",
-          "malaria.rda",
-          "scrabble_ml.rda",
-        ];
-
-        for (const f of files) {
-          await loadRdaCached(`/data/${f}`, `/tmp.rda`);
-        }
-
-        dataLoaded = true;
-        setBtn("Execute R Code", false);
-
-        console.log("All RDA loaded");
-        await runR();
-      }
-
-      async function runR() {
-        if (!dataLoaded) return;
-
-        setBtn("Running…", true);
-
-        let code = window.cm.getValue();
-
-        if (code.includes("ggplot(") && !code.includes("ggsave(")) {
-          code += `
-# Automatically added
-ggsave("/plot.png", width = 8, height = 4)
-`;
-        }
-
-        await webR.evalR(code);
-
-        const pngBytes = await webR.FS.readFile("/plot.png");
-        const blob = new Blob([pngBytes], { type: "image/png" });
-        const url = URL.createObjectURL(blob);
-        document.getElementById("plot").src = url;
-
-        setBtn("Execute R Code", false);
-      }
-
-      window.init = init;
-      window.runR = runR;
-
-      init();
-    </script>
-  </head>
-
-  <body>
-    <div id="cm"></div>
-
-    <script>
-      function strip(str) {
-        return str.replace(/^\s+|\s+$/g, "");
-      }
-
-      window.cm = CodeMirror(document.querySelector("#cm"), {
-        lineNumbers: true,
-        tabSize: 2,
-        mode: "r",
-        value: strip(`
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-`),
-      });
-    </script>
-
-    <br />
-    <button id="execBtn" onclick="runR()">Loading…</button>
-
-    <h2>Output Plot</h2>
-    <img id="plot" alt="scatterplot" />
-  </body>
-</html>
-
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>
@@ -2702,6 +2765,7 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>

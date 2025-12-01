@@ -19,8 +19,21 @@ data <- fosdata::humanization
 
 ```r
 data <- fosdata::humanization
-pak_sec <- data$pak_sec
+us_sec <- data$us_sec
 ```
+
+## R Sample
+
+{{< rexec >}}
+# No sample provided for humanization
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+{{< /rexec >}}
 
 ## LLM instructions
 
@@ -40,21 +53,6 @@ fields[7]{name,type,values}:
   us_prim,numeric,n/a
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 

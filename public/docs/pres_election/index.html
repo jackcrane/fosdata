@@ -10,8 +10,7 @@ https://github.com/alex-shpak/hugo-book
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Pres_election# County level results for presidential elections in the USA from 2000-2016.
 undefined
-Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election FIPS &lt;- data$FIPSLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::pres_election dataset containing the following fields: fields[9]{name,type,values}: year,integer,n/a state,character,n/a state_po,character,n/a county,character,n/a FIPS,integer,n/a candidate,character,n/a party,character,[democrat,republican,green] candidatevotes,integer,n/a totalvotes,integer,n/a &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Fields# Name Description Type Min Max Values year Year of election. integer 2000 2016 - state State of results. character - - - state_po State postal abbreviation. character - - - county County within state. character - - - FIPS FIPS code for the county. Useful due to non-standard abbreviations of counties. integer 1001 56045 - candidate Name of candidate. character - - - party Political party of the candidate. character - - democrat, republican, green candidatevotes Votes that candidate received in the county. integer - 2464364 - totalvotes Total votes cast in the county. integer - 3434308 - Source# MIT Election Data and Science Lab, 2018, “County Presidential Election Returns 2000-2016”, https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF]
+Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election year &lt;- data$yearR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -20,8 +19,7 @@ LLM Instructions The fosdata::pres_election dataset containing the following fie
   <meta property="og:title" content="pres_election">
   <meta property="og:description" content="Pres_election# County level results for presidential elections in the USA from 2000-2016.
 undefined
-Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election FIPS &lt;- data$FIPSLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::pres_election dataset containing the following fields: fields[9]{name,type,values}: year,integer,n/a state,character,n/a state_po,character,n/a county,character,n/a FIPS,integer,n/a candidate,character,n/a party,character,[democrat,republican,green] candidatevotes,integer,n/a totalvotes,integer,n/a &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Fields# Name Description Type Min Max Values year Year of election. integer 2000 2016 - state State of results. character - - - state_po State postal abbreviation. character - - - county County within state. character - - - FIPS FIPS code for the county. Useful due to non-standard abbreviations of counties. integer 1001 56045 - candidate Name of candidate. character - - - party Political party of the candidate. character - - democrat, republican, green candidatevotes Votes that candidate received in the county. integer - 2464364 - totalvotes Total votes cast in the county. integer - 3434308 - Source# MIT Election Data and Science Lab, 2018, “County Presidential Election Returns 2000-2016”, https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF]">
+Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election year &lt;- data$yearR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -30,9 +28,8 @@ LLM Instructions The fosdata::pres_election dataset containing the following fie
   <meta itemprop="name" content="pres_election">
   <meta itemprop="description" content="Pres_election# County level results for presidential elections in the USA from 2000-2016.
 undefined
-Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election FIPS &lt;- data$FIPSLLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
-LLM Instructions The fosdata::pres_election dataset containing the following fields: fields[9]{name,type,values}: year,integer,n/a state,character,n/a state_po,character,n/a county,character,n/a FIPS,integer,n/a candidate,character,n/a party,character,[democrat,republican,green] candidatevotes,integer,n/a totalvotes,integer,n/a &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Fields# Name Description Type Min Max Values year Year of election. integer 2000 2016 - state State of results. character - - - state_po State postal abbreviation. character - - - county County within state. character - - - FIPS FIPS code for the county. Useful due to non-standard abbreviations of counties. integer 1001 56045 - candidate Name of candidate. character - - - party Political party of the candidate. character - - democrat, republican, green candidatevotes Votes that candidate received in the county. integer - 2464364 - totalvotes Total votes cast in the county. integer - 3434308 - Source# MIT Election Data and Science Lab, 2018, “County Presidential Election Returns 2000-2016”, https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF]">
-  <meta itemprop="wordCount" content="199">
+Initialization# library(fosdata) data &lt;- fosdata::pres_electionAccessing fields# data &lt;- fosdata::pres_election year &lt;- data$yearR Sample# &lt;!DOCTYPE html&gt; webR &#43; fosdata Test Loading… Output Plot Console LLM instructions# If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.">
+  <meta itemprop="wordCount" content="202">
 
 <title>pres_election | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -42,7 +39,7 @@ LLM Instructions The fosdata::pres_election dataset containing the following fie
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.7f277586791a8e53feab72ffb85917f0c8f072caf07a47dbf01c8fa53768c513.js" integrity="sha256-fyd1hnkajlP&#43;q3L/uFkX8Mjwcsrwekfb8ByPpTdoxRM=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.1d4a25aadb4fb017d2cb84090fd2d816740a11443a2f14c9278cf129cd92dca6.js" integrity="sha256-HUolqttPsBfSy4QJD9LYFnQKEUQ6LxTJJ4zxKc2S3KY=" crossorigin="anonymous"></script>
 
 
 
@@ -853,6 +850,7 @@ LLM Instructions The fosdata::pres_election dataset containing the following fie
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>
@@ -875,21 +873,7 @@ LLM Instructions The fosdata::pres_election dataset containing the following fie
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#1e66f5">library</span>(fosdata)
 </span></span><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>pres_election</span></span></code></pre></div><h2 id="accessing-fields">Accessing fields<a class="anchor" href="#accessing-fields">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>data <span style="color:#04a5e5;font-weight:bold">&lt;-</span> fosdata<span style="color:#04a5e5;font-weight:bold">::</span>pres_election
-</span></span><span style="display:flex;"><span>FIPS <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>FIPS</span></span></code></pre></div><h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
-<p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
-<details ><summary>LLM Instructions</summary><div class="markdown-inner">
-<pre tabindex="0"><code>The fosdata::pres_election dataset containing the following fields:
-
-fields[9]{name,type,values}:
-  year,integer,n/a
-  state,character,n/a
-  state_po,character,n/a
-  county,character,n/a
-  FIPS,integer,n/a
-  candidate,character,n/a
-  party,character,[democrat,republican,green]
-  candidatevotes,integer,n/a
-  totalvotes,integer,n/a</code></pre></div></details>
+</span></span><span style="display:flex;"><span>year <span style="color:#04a5e5;font-weight:bold">&lt;-</span> data<span style="color:#04a5e5;font-weight:bold">$</span>year</span></span></code></pre></div><h2 id="r-sample">R Sample<a class="anchor" href="#r-sample">#</a></h2>
 <!DOCTYPE html>
 <html>
   <head>
@@ -935,7 +919,13 @@ fields[9]{name,type,values}:
     </style>
 
     <script type="module">
-      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+      import { WebR, Console } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+      function logConsole(msg) {
+        const el = document.getElementById("console");
+        el.textContent += msg + "\n";
+        el.scrollTop = el.scrollHeight;
+      }
 
       /* ---------------------------------------------------------
        * IndexedDB Cache (1-hour TTL)
@@ -1045,11 +1035,30 @@ fields[9]{name,type,values}:
         await webR.evalR(`load("${dest}")`);
       }
 
+      let loadingDone = false;
+
       async function init() {
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
         await webR.init();
+
+        function logConsole(msg) {
+          if (!loadingDone) return;
+          const el = document.getElementById("console");
+          el.textContent += msg + "\n"; // use textContent!
+          el.scrollTop = el.scrollHeight;
+        }
+
+        window.prompt = () => console.log("prompt() not implemented");
+
+        const webConsole = new Console({
+          webR,
+          stdout: logConsole,
+          stderr: (msg) => logConsole("ERR: " + msg.toString()),
+          interactive: false,
+        });
+        webConsole.run();
 
         setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
@@ -1126,9 +1135,12 @@ fields[9]{name,type,values}:
         if (!dataLoaded) return;
 
         setBtn("Running…", true);
+        loadingDone = true;
+        logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
+        // auto-add ggsave if needed
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
 # Automatically added
@@ -1136,14 +1148,38 @@ ggsave("/plot.png", width = 8, height = 4)
 `;
         }
 
-        await webR.evalR(code);
+        let out;
+        try {
+          out = await webR.evalR(code, {
+            stdout: "capture",
+            stderr: "capture",
+          });
+        } catch (err) {
+          logConsole("JS Error: " + err.toString());
+          setBtn("Execute R Code", false);
+          return;
+        }
 
-        const pngBytes = await webR.FS.readFile("/plot.png");
-        const blob = new Blob([pngBytes], { type: "image/png" });
-        const url = URL.createObjectURL(blob);
-        document.getElementById("plot").src = url;
+        // Print captured output
+        if (out.stdout) logConsole(out.stdout.trim());
+        if (out.stderr) logConsole("ERR: " + out.stderr.trim());
+
+        // Try loading plot
+        let plotUrl = null;
+        try {
+          const pngBytes = await webR.FS.readFile("/plot.png");
+          const blob = new Blob([pngBytes], { type: "image/png" });
+          plotUrl = URL.createObjectURL(blob);
+        } catch {
+          logConsole("No plot generated.");
+        }
+
+        const img = document.getElementById("plot");
+        img.src = plotUrl || "";
+        img.style.display = plotUrl ? "block" : "none";
 
         setBtn("Execute R Code", false);
+        logConsole("---- Done ----\n");
       }
 
       window.init = init;
@@ -1166,17 +1202,13 @@ ggsave("/plot.png", width = 8, height = 4)
         tabSize: 2,
         mode: "r",
         value: strip(`
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
+# No sample provided for pres_election
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
 
 `),
       });
@@ -1187,9 +1219,37 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
 
     <h2>Output Plot</h2>
     <img id="plot" alt="scatterplot" />
+
+    <h2>Console</h2>
+    <pre
+      id="console"
+      style="
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        height: 200px;
+        overflow: auto;
+        font-size: 12px;
+      "
+    ></pre>
   </body>
 </html>
 
+<h2 id="llm-instructions">LLM instructions<a class="anchor" href="#llm-instructions">#</a></h2>
+<p>If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.</p>
+<details ><summary>LLM Instructions</summary><div class="markdown-inner">
+<pre tabindex="0"><code>The fosdata::pres_election dataset containing the following fields:
+
+fields[9]{name,type,values}:
+  year,integer,n/a
+  state,character,n/a
+  state_po,character,n/a
+  county,character,n/a
+  FIPS,integer,n/a
+  candidate,character,n/a
+  party,character,[democrat,republican,green]
+  candidatevotes,integer,n/a
+  totalvotes,integer,n/a</code></pre></div></details>
 <h2 id="fields">Fields<a class="anchor" href="#fields">#</a></h2>
 <table>
   <thead>
@@ -1358,6 +1418,7 @@ ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
   <ul>
     <li><a href="#initialization">Initialization</a></li>
     <li><a href="#accessing-fields">Accessing fields</a></li>
+    <li><a href="#r-sample">R Sample</a></li>
     <li><a href="#llm-instructions">LLM instructions</a></li>
     <li><a href="#fields">Fields</a></li>
     <li><a href="#source">Source</a></li>

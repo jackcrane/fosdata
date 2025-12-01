@@ -19,8 +19,23 @@ data <- fosdata::rio_instagram
 
 ```r
 data <- fosdata::rio_instagram
-n_follower <- data$n_follower
+date <- data$date
 ```
+
+## R Sample
+
+{{< rexec >}}
+library(ggplot2)
+
+ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
+  geom_point(alpha = 0.6) +
+  scale_y_log10() +
+  labs(
+    x = "Number of Posts",
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Gender"
+  )
+{{< /rexec >}}
 
 ## LLM instructions
 
@@ -47,21 +62,6 @@ fields[14]{name,type,values}:
   date,POSIXct,n/a
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 

@@ -22,6 +22,19 @@ data <- fosdata::accelerometer
 time_smartphone_1_ms <- data$time_smartphone_1_ms
 ```
 
+## R Sample
+
+{{< rexec >}}
+# No sample provided for accelerometer
+#
+# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+#
+# Uncomment the following lines to get started!
+# library(dplyr)
+# library(ggplot2)
+
+{{< /rexec >}}
+
 ## LLM instructions
 
 If using an LLM, you can copy-paste the following instructions to accompany your prompt to inform the model of the fields and their types in the dataset.
@@ -58,21 +71,6 @@ fields[25]{name,type,values}:
   participant_gender,character,[m,f]
 ```
 {{% /details %}}
-
-{{< rexec >}}
-
-library(ggplot2)
-
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
-
-{{< /rexec >}}
 
 ## Fields
 
