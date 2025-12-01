@@ -874,16 +874,16 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <title>webR + fosdata Test</title>
+
+    <!-- CodeMirror -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
     />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
-
-    <meta charset="utf-8" />
-    <title>webR + fosdata Test</title>
 
     <style>
       #cm {
@@ -916,64 +916,65 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
     </style>
 
     <script type="module">
-      import { WebR, Console } from "https://webr.r-wasm.org/latest/webr.mjs";
+      import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
-      function logConsole(msg) {
-        const el = document.getElementById("console");
-        el.textContent += msg + "\n";
-        el.scrollTop = el.scrollHeight;
-      }
+      /* ---------------------------------------------------------
+       * Console logging
+       * --------------------------------------------------------- */
+      const logConsole = (msg) => {
+        const out = document.getElementById("console");
+        out.textContent += msg + "\n";
+        out.scrollTop = out.scrollHeight;
+      };
 
       /* ---------------------------------------------------------
        * IndexedDB Cache (1-hour TTL)
        * --------------------------------------------------------- */
-      function openDB() {
-        return new Promise((resolve, reject) => {
+      const openDB = () =>
+        new Promise((resolve, reject) => {
           const req = indexedDB.open("webr-cache", 1);
+
           req.onupgradeneeded = () => {
             const db = req.result;
             if (!db.objectStoreNames.contains("files")) {
               db.createObjectStore("files", { keyPath: "key" });
             }
           };
+
           req.onsuccess = () => resolve(req.result);
           req.onerror = () => reject(req.error);
         });
-      }
 
-      async function getCache(key) {
+      const getCache = async (key) => {
         const db = await openDB();
         return new Promise((resolve) => {
           const tx = db.transaction("files", "readonly");
           const store = tx.objectStore("files");
           const req = store.get(key);
+
           req.onsuccess = () => {
             const data = req.result;
             if (!data) return resolve(null);
 
-            const age = Date.now() - data.timestamp;
-            if (age > 3600_000) {
-              resolve(null);
-            } else {
-              resolve(data.value);
-            }
+            const isExpired = Date.now() - data.timestamp > 3600_000;
+            resolve(isExpired ? null : data.value);
           };
+
           req.onerror = () => resolve(null);
         });
-      }
+      };
 
-      async function setCache(key, value) {
+      const setCache = async (key, value) => {
         const db = await openDB();
         return new Promise((resolve) => {
           const tx = db.transaction("files", "readwrite");
-          const store = tx.objectStore("files");
-          store.put({ key, value, timestamp: Date.now() });
+          tx.objectStore("files").put({ key, value, timestamp: Date.now() });
           tx.oncomplete = () => resolve();
         });
-      }
+      };
 
       /* ---------------------------------------------------------
-       * Cache-aware fetch override for package tarballs
+       * Fetch override for cached tarballs
        * --------------------------------------------------------- */
       const realFetch = fetch;
 
@@ -981,7 +982,8 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
         const url = typeof resource === "string" ? resource : resource.url;
 
         if (url.endsWith(".tar.gz")) {
-          let cached = await getCache(url);
+          const cached = await getCache(url);
+
           if (cached) {
             console.log("Loaded package tarball from cache:", url);
             return new Response(cached, {
@@ -989,8 +991,8 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
             });
           }
 
-          const r = await realFetch(resource, options);
-          const buf = new Uint8Array(await r.clone().arrayBuffer());
+          const res = await realFetch(resource, options);
+          const buf = new Uint8Array(await res.clone().arrayBuffer());
           await setCache(url, buf);
 
           console.log("Cached package tarball:", url);
@@ -1003,10 +1005,11 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
       };
 
       /* ---------------------------------------------------------
-       * WebR + RDA loader (cached)
+       * Global State
        * --------------------------------------------------------- */
       let webR;
       let dataLoaded = false;
+      let loadingDone = false;
 
       const execBtn = () => document.getElementById("execBtn");
 
@@ -1016,7 +1019,10 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
         b.disabled = disabled;
       };
 
-      async function loadRdaCached(url, dest) {
+      /* ---------------------------------------------------------
+       * RDA loader (cached)
+       * --------------------------------------------------------- */
+      const loadRdaCached = async (url, dest) => {
         let buf = await getCache(url);
 
         if (!buf) {
@@ -1030,24 +1036,19 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
 
         await webR.FS.writeFile(dest, buf);
         await webR.evalR(`load("${dest}")`);
-      }
+      };
 
-      let loadingDone = false;
-
+      /* ---------------------------------------------------------
+       * Init webR, install packages, load datasets
+       * --------------------------------------------------------- */
       async function init() {
         setBtn("Loading R engine...", true);
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
         await webR.init();
+
         const shelter = await new webR.Shelter();
         window._shelter = shelter;
-
-        function logConsole(msg) {
-          if (!loadingDone) return;
-          const el = document.getElementById("console");
-          el.textContent += msg + "\n"; // use textContent!
-          el.scrollTop = el.scrollHeight;
-        }
 
         window.prompt = () => console.log("prompt() not implemented");
 
@@ -1056,7 +1057,7 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
 
         setBtn("Loading datasets...", true);
 
-        const files = [
+        const rdaFiles = [
           "accelerometer.rda",
           "chimps.rda",
           "fish.rda",
@@ -1111,27 +1112,29 @@ From the authors: “Over a century since Ronald Ross discovered that malaria is
           "scrabble_ml.rda",
         ];
 
-        for (const f of files) {
+        for (const f of rdaFiles) {
           await loadRdaCached(`/data/${f}`, `/tmp.rda`);
         }
 
         dataLoaded = true;
+        loadingDone = true;
         setBtn("Execute R Code", false);
 
         console.log("All RDA loaded");
         await runR();
       }
 
+      /* ---------------------------------------------------------
+       * Execute R code + capture output + auto-ggsave
+       * --------------------------------------------------------- */
       async function runR() {
         if (!dataLoaded) return;
 
         setBtn("Running…", true);
-        loadingDone = true;
         logConsole("---- Running R ----");
 
         let code = window.cm.getValue();
 
-        // auto-add ggsave if needed
         if (code.includes("ggplot(") && !code.includes("ggsave(")) {
           code += `
 # Automatically added
@@ -1139,39 +1142,38 @@ ggsave("/plot.png", width = 8, height = 4)
 `;
         }
 
-        let out;
+        let result;
         try {
-          out = await window._shelter.captureR(code);
-          if (out.output && Array.isArray(out.output)) {
-            for (const evt of out.output) {
-              if (evt.type === "stdout" && evt.data) {
-                logConsole(evt.data);
-              } else if (evt.type === "stderr" && evt.data) {
+          result = await window._shelter.captureR(code);
+
+          if (Array.isArray(result.output)) {
+            for (const evt of result.output) {
+              if (evt.type === "stdout" && evt.data) logConsole(evt.data);
+              if (evt.type === "stderr" && evt.data)
                 logConsole("ERR: " + evt.data);
-              } else if (evt.type === "message" && evt.data) {
-                logConsole(evt.data);
-              } else if (evt.type === "warning" && evt.data) {
-                if (JSON.stringify(evt.data) !== "{}") {
-                  logConsole("WARNING: " + JSON.stringify(evt.data));
-                }
-              }
+              if (evt.type === "message" && evt.data) logConsole(evt.data);
+              if (
+                evt.type === "warning" &&
+                evt.data &&
+                JSON.stringify(evt.data) !== "{}"
+              )
+                logConsole("WARNING: " + JSON.stringify(evt.data));
             }
           }
         } catch (err) {
-          logConsole("JS Error: " + err.toString());
-          setBtn("Execute R Code", false);
+          logConsole("JS Error: " + err);
+          setBtn("Execute R Code");
           return;
         }
 
-        // Print captured output
-        if (out.stdout) logConsole(out.stdout.trim());
-        if (out.stderr) logConsole("ERR: " + out.stderr.trim());
+        if (result.stdout) logConsole(result.stdout.trim());
+        if (result.stderr) logConsole("ERR: " + result.stderr.trim());
 
-        // Try loading plot
+        // Load plot
         let plotUrl = null;
         try {
-          const pngBytes = await webR.FS.readFile("/plot.png");
-          const blob = new Blob([pngBytes], { type: "image/png" });
+          const bytes = await webR.FS.readFile("/plot.png");
+          const blob = new Blob([bytes], { type: "image/png" });
           plotUrl = URL.createObjectURL(blob);
         } catch {
           logConsole("No plot generated.");
@@ -1181,7 +1183,7 @@ ggsave("/plot.png", width = 8, height = 4)
         img.src = plotUrl || "";
         img.style.display = plotUrl ? "block" : "none";
 
-        setBtn("Execute R Code", false);
+        setBtn("Execute R Code");
         logConsole("---- Done ----\n");
       }
 
@@ -1196,9 +1198,7 @@ ggsave("/plot.png", width = 8, height = 4)
     <div id="cm"></div>
 
     <script>
-      function strip(str) {
-        return str.replace(/^\s+|\s+$/g, "");
-      }
+      const strip = (s) => s.trim();
 
       window.cm = CodeMirror(document.querySelector("#cm"), {
         lineNumbers: true,
