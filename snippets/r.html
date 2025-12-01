@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
+
     <meta charset="utf-8" />
     <title>webR + fosdata Test</title>
+
+    <style>
+      #cm {
+        border: 1px solid #ccc;
+        height: 260px;
+        overflow: auto;
+        font-size: 12px;
+      }
+      button {
+        padding: 8px 14px;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      #plot {
+        width: 100%;
+        max-height: 800px;
+        object-fit: contain;
+      }
+      #plot:invalid {
+        display: none;
+      }
+    </style>
+
     <script type="module">
       import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
       let webR;
+      let dataLoaded = false;
+
+      const execBtn = () => document.getElementById("execBtn");
+
+      const setBtn = (label, disabled = false) => {
+        const b = execBtn();
+        b.textContent = label;
+        b.disabled = disabled;
+      };
 
       async function init() {
+        setBtn("Loading R engine...", true);
+
         webR = new WebR({
           baseUrl: "https://webr.r-wasm.org/latest/",
         });
+
         await webR.init();
+
+        setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
-        console.log("Initted");
+        setBtn("Loading datasets...", true);
 
         const files = [
           "accelerometer.rda",
@@ -79,26 +128,32 @@
           await webR.evalR(`load("${dest}")`);
         };
 
-        for (const f of files) await loadRda(`/data/${f}`);
+        setBtn(`Loading Fosdata datasets...`, true);
+        for (const f of files) {
+          await loadRda(`/data/${f}`);
+        }
+
+        dataLoaded = true;
+        setBtn("Execute R Code", false);
 
         console.log("All RDA loaded");
+        await runR();
       }
 
       async function runR() {
-        const code = document.getElementById("rcode").value;
+        if (!dataLoaded) return;
 
-        // ALWAYS write the output to /plot.png
-        const wrapped = `
-          ${code}
-        `;
+        setBtn("Running…", true);
 
-        console.log("Running R...");
-        await webR.evalR(wrapped);
+        const code = window.cm.getValue();
+        await webR.evalR(code);
 
         const pngBytes = await webR.FS.readFile("/plot.png");
         const blob = new Blob([pngBytes], { type: "image/png" });
         const url = URL.createObjectURL(blob);
         document.getElementById("plot").src = url;
+
+        setBtn("Execute R Code", false);
       }
 
       window.init = init;
@@ -106,40 +161,33 @@
 
       init();
     </script>
-
-    <style>
-      textarea {
-        width: 100%;
-        height: 220px;
-        font-family: monospace;
-        font-size: 14px;
-      }
-      button {
-        padding: 8px 14px;
-        margin-top: 6px;
-      }
-    </style>
   </head>
 
   <body>
-    <h1>webR + fosdata test</h1>
+    <div id="cm"></div>
 
-    <textarea id="rcode">
-library(ggplot2)
+    <script>
+      window.cm = CodeMirror(document.querySelector("#cm"), {
+        lineNumbers: true,
+        tabSize: 2,
+        mode: "r",
+        value: `library(ggplot2)
 
-p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower)) +
+p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = country)) +
   geom_point(alpha = 0.6) +
+  scale_y_log10() +
   labs(
     x = "Number of Posts",
-    y = "Number of Followers",
-    title = "Followers vs Posts"
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Sport"
   )
 
-ggsave("/plot.png", p, width = 6, height = 4, dpi = 150)
-    </textarea>
+ggsave("/plot.png", width = 8, height = 4)`,
+      });
+    </script>
 
     <br />
-    <button onclick="runR()">Execute R Code</button>
+    <button id="execBtn" onclick="runR()">Loading…</button>
 
     <h2>Output Plot</h2>
     <img id="plot" alt="scatterplot" />

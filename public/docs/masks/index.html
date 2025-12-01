@@ -26,7 +26,7 @@ Participants wore masks for 30 minutes while a machine gathered their exhalation
   <meta itemprop="name" content="masks">
   <meta itemprop="description" content="Masks# Fine and coarse influenza droplets that escape a surgical mask in laboratory setting.
 Participants wore masks for 30 minutes while a machine gathered their exhalations. Participants were told to cough thirty times during the 30 minutes. One patient coughed naturally more than 30 times. From the authors: “The CDC recommends that healthcare settings provide influenza patients with facemasks as a means of reducing transmission to staff and other patients, and a recent report suggested that surgical masks can capture influenza virus in large droplet spray. However, there is minimal data on influenza virus aerosol shedding, the infectiousness of exhaled aerosols, and none on the impact of facemasks on viral aerosol shedding from patients with seasonal influenza.”">
-  <meta itemprop="wordCount" content="342">
+  <meta itemprop="wordCount" content="334">
 
 <title>masks | Fosdata</title>
 <link rel="icon" href="/favicon.png" >
@@ -36,7 +36,7 @@ Participants wore masks for 30 minutes while a machine gathered their exhalation
 
 
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.1efcf5b705f6ab516dc113d9e0613f1952cd8dd3da9ab8ae34b915c2fcadacff.js" integrity="sha256-Hvz1twX2q1FtwRPZ4GE/GVLNjdPamriuNLkVwvytrP8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b0f2c6013c72309ac10b7a2b9eb3fc87373aaeab0dfd2975d757488227563883.js" integrity="sha256-sPLGATxyMJrBC3ornrP8hzc6rqsN/Sl111dIgidWOIM=" crossorigin="anonymous"></script>
 
 
 
@@ -885,21 +885,70 @@ fields[7]{name,type,values}:
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/r/r.min.js"></script>
+
     <meta charset="utf-8" />
     <title>webR + fosdata Test</title>
+
+    <style>
+      #cm {
+        border: 1px solid #ccc;
+        height: 260px;
+        overflow: auto;
+        font-size: 12px;
+      }
+      button {
+        padding: 8px 14px;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      #plot {
+        width: 100%;
+        max-height: 800px;
+        object-fit: contain;
+      }
+      #plot:invalid {
+        display: none;
+      }
+    </style>
+
     <script type="module">
       import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
       let webR;
+      let dataLoaded = false;
+
+      const execBtn = () => document.getElementById("execBtn");
+
+      const setBtn = (label, disabled = false) => {
+        const b = execBtn();
+        b.textContent = label;
+        b.disabled = disabled;
+      };
 
       async function init() {
+        setBtn("Loading R engine...", true);
+
         webR = new WebR({
           baseUrl: "https://webr.r-wasm.org/latest/",
         });
+
         await webR.init();
+
+        setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
 
-        console.log("Initted");
+        setBtn("Loading datasets...", true);
 
         const files = [
           "accelerometer.rda",
@@ -963,26 +1012,32 @@ fields[7]{name,type,values}:
           await webR.evalR(`load("${dest}")`);
         };
 
-        for (const f of files) await loadRda(`/data/${f}`);
+        setBtn(`Loading Fosdata datasets...`, true);
+        for (const f of files) {
+          await loadRda(`/data/${f}`);
+        }
+
+        dataLoaded = true;
+        setBtn("Execute R Code", false);
 
         console.log("All RDA loaded");
+        await runR();
       }
 
       async function runR() {
-        const code = document.getElementById("rcode").value;
+        if (!dataLoaded) return;
 
-        // ALWAYS write the output to /plot.png
-        const wrapped = `
-          ${code}
-        `;
+        setBtn("Running…", true);
 
-        console.log("Running R...");
-        await webR.evalR(wrapped);
+        const code = window.cm.getValue();
+        await webR.evalR(code);
 
         const pngBytes = await webR.FS.readFile("/plot.png");
         const blob = new Blob([pngBytes], { type: "image/png" });
         const url = URL.createObjectURL(blob);
         document.getElementById("plot").src = url;
+
+        setBtn("Execute R Code", false);
       }
 
       window.init = init;
@@ -990,40 +1045,34 @@ fields[7]{name,type,values}:
 
       init();
     </script>
-
-    <style>
-      textarea {
-        width: 100%;
-        height: 220px;
-        font-family: monospace;
-        font-size: 14px;
-      }
-      button {
-        padding: 8px 14px;
-        margin-top: 6px;
-      }
-    </style>
   </head>
 
   <body>
-    <h1>webR + fosdata test</h1>
+    <div id="cm"></div>
 
-    <textarea id="rcode">
-library(ggplot2)
+    <script>
+      window.cm = CodeMirror(document.querySelector("#cm"), {
+        lineNumbers: true,
+        tabSize: 2,
+        mode: "r",
+        value: `library(ggplot2)
 
-p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower)) +
+p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = country)) +
   geom_point(alpha = 0.6) +
+  scale_y_log10() +
+  guides(color = "none") +
   labs(
     x = "Number of Posts",
-    y = "Number of Followers",
-    title = "Followers vs Posts"
+    y = "Number of Followers (log scale)",
+    title = "Followers vs Posts by Sport"
   )
 
-ggsave("/plot.png", p, width = 6, height = 4, dpi = 150)
-    </textarea>
+ggsave("/plot.png", width = 8, height = 4)`,
+      });
+    </script>
 
     <br />
-    <button onclick="runR()">Execute R Code</button>
+    <button id="execBtn" onclick="runR()">Loading…</button>
 
     <h2>Output Plot</h2>
     <img id="plot" alt="scatterplot" />
