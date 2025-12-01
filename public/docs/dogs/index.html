@@ -1039,6 +1039,8 @@ The control group condition == 0 did not see any dogs doing anything. When condi
 
         webR = new WebR({ baseUrl: "https://webr.r-wasm.org/latest/" });
         await webR.init();
+        const shelter = await new webR.Shelter();
+        window._shelter = shelter;
 
         function logConsole(msg) {
           if (!loadingDone) return;
@@ -1048,14 +1050,6 @@ The control group condition == 0 did not see any dogs doing anything. When condi
         }
 
         window.prompt = () => console.log("prompt() not implemented");
-
-        const webConsole = new Console({
-          webR,
-          stdout: logConsole,
-          stderr: (msg) => logConsole("ERR: " + msg.toString()),
-          interactive: false,
-        });
-        webConsole.run();
 
         setBtn("Installing packages...", true);
         await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
@@ -1147,9 +1141,9 @@ ggsave("/plot.png", width = 8, height = 4)
 
         let out;
         try {
-          out = await webR.evalR(code, {
-            stdout: "capture",
-            stderr: "capture",
+          out = await window._shelter.evalR(code, {
+            withHandlers: false,
+            captureStreams: true,
           });
         } catch (err) {
           logConsole("JS Error: " + err.toString());
