@@ -1030,7 +1030,16 @@ fields[3]{name,type,values}:
 
         setBtn("Running…", true);
 
-        const code = window.cm.getValue();
+        let code = window.cm.getValue();
+
+        // auto-inject ggsave if ggplot is used but ggsave is not
+        if (code.includes("ggplot(") && !code.includes("ggsave(")) {
+          code += `
+
+# Automatically added
+ggsave("/plot.png", width = 8, height = 4)
+`;
+        }
         await webR.evalR(code);
 
         const pngBytes = await webR.FS.readFile("/plot.png");
@@ -1058,16 +1067,14 @@ fields[3]{name,type,values}:
         mode: "r",
         value: `library(ggplot2)
 
-p <- ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = country)) +
+ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = country)) +
   geom_point(alpha = 0.6) +
   scale_y_log10() +
   labs(
     x = "Number of Posts",
     y = "Number of Followers (log scale)",
     title = "Followers vs Posts by Sport"
-  )
-
-ggsave("/plot.png", width = 8, height = 4)`,
+  )`,
       });
     </script>
 
