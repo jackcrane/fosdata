@@ -2,6 +2,30 @@
 title: "houses"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Houses
 
 House prices and characteristics for houses sold in King County (home of Seattle) from May, 2014 through May, 2015.
@@ -19,7 +43,7 @@ data <- fosdata::houses
 
 ```r
 data <- fosdata::houses
-bathrooms <- data$bathrooms # Just a random field in the dataset
+sqft_living15 <- data$sqft_living15 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "houses$bathrooms")
+#   you can access them directly by name (e.g. "houses$sqft_living15")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

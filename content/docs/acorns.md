@@ -2,6 +2,30 @@
 title: "acorns"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Acorns
 
 Acorn size, tree height and geographic range for 39 species of oak (Quercus L.) native to North America.
@@ -19,7 +43,7 @@ data <- fosdata::acorns
 
 ```r
 data <- fosdata::acorns
-Tree_height <- data$Tree_height # Just a random field in the dataset
+Acorn_size <- data$Acorn_size # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "acorns$Tree_height")
+#   you can access them directly by name (e.g. "acorns$Acorn_size")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

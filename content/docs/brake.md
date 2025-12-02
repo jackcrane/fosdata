@@ -2,6 +2,30 @@
 title: "brake"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Brake
 
 From the authors: "Although unintended acceleration caused by pedal misapplication is a cause of traffic accidents, fatal accidents may be avoided if drivers realize their error immediately and quickly correct how they are stepping on the pedal. This correction behavior may decline with age because the rate of fatal accidents is fairly higher for older adults than for younger adults."
@@ -19,7 +43,7 @@ data <- fosdata::brake
 
 ```r
 data <- fosdata::brake
-age <- data$age # Just a random field in the dataset
+p1_p2_p3 <- data$p1_p2_p3 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "brake$age")
+#   you can access them directly by name (e.g. "brake$p1_p2_p3")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

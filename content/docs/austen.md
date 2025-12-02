@@ -2,6 +2,30 @@
 title: "austen"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Austen
 
 Downloaded from Project Gutenberg. Emma and Pride and Prejudice are free from copyright in the US and in most countries, according to Project Gutenberg. Please check laws in your country before use.
@@ -19,7 +43,7 @@ data <- fosdata::austen
 
 ```r
 data <- fosdata::austen
-stop_word <- data$stop_word # Just a random field in the dataset
+word_length <- data$word_length # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "austen$stop_word")
+#   you can access them directly by name (e.g. "austen$word_length")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

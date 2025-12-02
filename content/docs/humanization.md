@@ -2,6 +2,30 @@
 title: "humanization"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Humanization
 
 Particpants were read a news item about either Hurricane Katrina (New Orleans, USA) or or the 2010 Pakistan flooding. The control group got no further information. The rest of the participants were given further information. Those who read about Katrina were told about how Pakistan sent aid in either a low or high amount. Those who read about the 2010 Pakistan flooding were told about how the US sent aid in either a low or a high amount. Participants were asked how strongly they believed Pakistanis would have felt both secondary and primary emotions following the disaster.
@@ -19,7 +43,7 @@ data <- fosdata::humanization
 
 ```r
 data <- fosdata::humanization
-pak_prim <- data$pak_prim # Just a random field in the dataset
+us_prim <- data$us_prim # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "humanization$pak_prim")
+#   you can access them directly by name (e.g. "humanization$us_prim")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

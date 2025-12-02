@@ -2,6 +2,30 @@
 title: "bicycle_signage"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Bicycle_signage
 
 Survey data where respondents describe the safety and propriety of a situation where a bicyclist is taking the full lane on a narrow, two lane road.
@@ -19,7 +43,7 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-cycle_distance <- data$cycle_distance # Just a random field in the dataset
+mv_wait2 <- data$mv_wait2 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "bicycle_signage$cycle_distance")
+#   you can access them directly by name (e.g. "bicycle_signage$mv_wait2")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

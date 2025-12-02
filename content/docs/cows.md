@@ -2,6 +2,30 @@
 title: "cows"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Cows
 
 Cows in California were sprayed down with water using various nozzles. The temperature of the cows was measured at various body parts and time intervals. Descriptions of the variables are due to the authors of the study.
@@ -19,7 +43,7 @@ data <- fosdata::cows
 
 ```r
 data <- fosdata::cows
-min_03 <- data$min_03 # Just a random field in the dataset
+body_part <- data$body_part # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cows$min_03")
+#   you can access them directly by name (e.g. "cows$body_part")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

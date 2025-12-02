@@ -2,6 +2,30 @@
 title: "climate"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Climate
 
 Does the style of writing impact the number of citations that a climate change paper receives?
@@ -19,7 +43,7 @@ data <- fosdata::climate
 
 ```r
 data <- fosdata::climate
-abstract_number <- data$abstract_number # Just a random field in the dataset
+binary_setting <- data$binary_setting # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "climate$abstract_number")
+#   you can access them directly by name (e.g. "climate$binary_setting")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

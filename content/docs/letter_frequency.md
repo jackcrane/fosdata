@@ -2,6 +2,30 @@
 title: "letter_frequency"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Letter_frequency
 
 The frequency of occurrences of letters in texts in various languages. This data taken from Wikipedia is considered inaccurate and should not be used for scientific purposes.
@@ -19,7 +43,7 @@ data <- fosdata::letter_frequency
 
 ```r
 data <- fosdata::letter_frequency
-esperanto <- data$esperanto # Just a random field in the dataset
+danish <- data$danish # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "letter_frequency$esperanto")
+#   you can access them directly by name (e.g. "letter_frequency$danish")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

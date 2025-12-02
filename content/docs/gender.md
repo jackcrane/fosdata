@@ -2,6 +2,30 @@
 title: "gender"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Gender
 
 From Sell, Goldberg, Conron: Gaps in data collection systems, as well as challenges associated with gathering data from rare and dispersed populations, render current health surveillance systems inadequate to identify and monitor efforts to reduce health disparities. Using sexual and gender minorities we investigated the utility of using a large nonprobability online panel to conduct rapid population assessments of such populations using brief surveys.
@@ -19,7 +43,7 @@ data <- fosdata::gender
 
 ```r
 data <- fosdata::gender
-sex_at_birth <- data$sex_at_birth # Just a random field in the dataset
+gender_male <- data$gender_male # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "gender$sex_at_birth")
+#   you can access them directly by name (e.g. "gender$gender_male")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

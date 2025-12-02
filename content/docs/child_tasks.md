@@ -2,6 +2,30 @@
 title: "child_tasks"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Child_tasks
 
 Time that it takes children to complete various activities.
@@ -19,7 +43,7 @@ data <- fosdata::child_tasks
 
 ```r
 data <- fosdata::child_tasks
-backward_digit_span_score <- data$backward_digit_span_score # Just a random field in the dataset
+counting_span_score <- data$counting_span_score # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "child_tasks$backward_digit_span_score")
+#   you can access them directly by name (e.g. "child_tasks$counting_span_score")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

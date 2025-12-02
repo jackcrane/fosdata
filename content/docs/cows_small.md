@@ -2,6 +2,30 @@
 title: "cows_small"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Cows_small
 
 Cows in California were sprayed down with water using nozzle type TK-0.75. The temperature of the cows' shoulders were measured after 3 minutes.
@@ -19,7 +43,7 @@ data <- fosdata::cows_small
 
 ```r
 data <- fosdata::cows_small
-control <- data$control # Just a random field in the dataset
+cow <- data$cow # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cows_small$control")
+#   you can access them directly by name (e.g. "cows_small$cow")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

@@ -2,6 +2,30 @@
 title: "chimps"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Chimps
 
 It is known that humans' hair generally turns gray as they age. Is the same true for chimpanzees? This data set contains demographic information on chimpanzees, together with human ratings of how gray their hair is. The authors' original intent was to determine whether middle-aged chimpanzees got gray with age.
@@ -19,7 +43,7 @@ data <- fosdata::chimps
 
 ```r
 data <- fosdata::chimps
-v160 <- data$v160 # Just a random field in the dataset
+v70 <- data$v70 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "chimps$v160")
+#   you can access them directly by name (e.g. "chimps$v70")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

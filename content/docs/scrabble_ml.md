@@ -2,6 +2,30 @@
 title: "scrabble_ml"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Scrabble_ml
 
 This dataset contains 613 observations corresponding to the tiles in editions of the board game Scrabble for 6 languages.
@@ -19,7 +43,7 @@ data <- fosdata::scrabble_ml
 
 ```r
 data <- fosdata::scrabble_ml
-points <- data$points # Just a random field in the dataset
+piece <- data$piece # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "scrabble_ml$points")
+#   you can access them directly by name (e.g. "scrabble_ml$piece")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

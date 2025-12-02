@@ -2,6 +2,30 @@
 title: "scotland_births"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Scotland_births
 
 The number of babies born in Scotland from 1945-2019, by age of the mother.
@@ -19,7 +43,7 @@ data <- fosdata::scotland_births
 
 ```r
 data <- fosdata::scotland_births
-age <- data$age # Just a random field in the dataset
+x2016 <- data$x2016 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "scotland_births$age")
+#   you can access them directly by name (e.g. "scotland_births$x2016")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

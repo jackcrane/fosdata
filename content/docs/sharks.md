@@ -2,6 +2,30 @@
 title: "sharks"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Sharks
 
 Studies the effect of different kinds of background music on people watching shark documentaries.
@@ -19,7 +43,7 @@ data <- fosdata::sharks
 
 ```r
 data <- fosdata::sharks
-graceful <- data$graceful # Just a random field in the dataset
+political_views <- data$political_views # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "sharks$graceful")
+#   you can access them directly by name (e.g. "sharks$political_views")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

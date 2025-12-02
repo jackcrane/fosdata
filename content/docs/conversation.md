@@ -2,6 +2,30 @@
 title: "conversation"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Conversation
 
 Data from an experiment performed on American college students. Students were observed conversing for 10 minutes and summary data was recorded of the conversational dynamics. Pictures of the students were then rated by observers for personality characteristics. The Levenson Self-Report Psychopathy Scale is used to assess subclinical psychopathy of the students, and the students were also subjected to a prisoners' dilemma.
@@ -19,7 +43,7 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-highest_class_rank <- data$highest_class_rank # Just a random field in the dataset
+dyad_status_difference <- data$dyad_status_difference # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "conversation$highest_class_rank")
+#   you can access them directly by name (e.g. "conversation$dyad_status_difference")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

@@ -2,6 +2,30 @@
 title: "fish"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Fish
 
 Data set for modeling weight on the other variables. Data was first presented in a publication from 1917.
@@ -19,7 +43,7 @@ data <- fosdata::fish
 
 ```r
 data <- fosdata::fish
-sex <- data$sex # Just a random field in the dataset
+width_percent <- data$width_percent # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "fish$sex")
+#   you can access them directly by name (e.g. "fish$width_percent")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

@@ -2,6 +2,30 @@
 title: "pres_election"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Pres_election
 
 County level results for presidential elections in the USA from 2000-2016.
@@ -19,7 +43,7 @@ data <- fosdata::pres_election
 
 ```r
 data <- fosdata::pres_election
-party <- data$party # Just a random field in the dataset
+county <- data$county # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "pres_election$party")
+#   you can access them directly by name (e.g. "pres_election$county")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

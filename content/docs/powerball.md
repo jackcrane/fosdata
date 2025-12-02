@@ -2,6 +2,30 @@
 title: "powerball"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Powerball
 
 The results of all Powerball lottery draws from February 3, 2010 to July 29, 2020.
@@ -19,7 +43,7 @@ data <- fosdata::powerball
 
 ```r
 data <- fosdata::powerball
-Draw.Date <- data$Draw.Date # Just a random field in the dataset
+Ball2 <- data$Ball2 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "powerball$Draw.Date")
+#   you can access them directly by name (e.g. "powerball$Ball2")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

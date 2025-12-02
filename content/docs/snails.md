@@ -2,6 +2,30 @@
 title: "snails"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Snails
 
 Features of the grove snail cepaea nemoralis collected by Cain and Sheppard near Oxford, England in 1949.
@@ -19,7 +43,7 @@ data <- fosdata::snails
 
 ```r
 data <- fosdata::snails
-Habitat <- data$Habitat # Just a random field in the dataset
+Banding <- data$Banding # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "snails$Habitat")
+#   you can access them directly by name (e.g. "snails$Banding")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

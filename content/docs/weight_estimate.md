@@ -2,6 +2,30 @@
 title: "weight_estimate"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Weight_estimate
 
 Humans are able to estimate the weight of an object by watching how another person interacts with the object. Eighty subjects of various ages were asked to estimate the weight of objects of various weights after watching a video of an actor interacting with the weights.
@@ -19,7 +43,7 @@ data <- fosdata::weight_estimate
 
 ```r
 data <- fosdata::weight_estimate
-age <- data$age # Just a random field in the dataset
+mean400 <- data$mean400 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "weight_estimate$age")
+#   you can access them directly by name (e.g. "weight_estimate$mean400")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

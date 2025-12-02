@@ -2,6 +2,30 @@
 title: "draft"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Draft
 
 Results of the draft lottery held December 1, 1969 to determine the order in which young men would be drafted in 1970 for service in the Vietnam war.
@@ -19,7 +43,7 @@ data <- fosdata::draft
 
 ```r
 data <- fosdata::draft
-Day <- data$Day # Just a random field in the dataset
+DayofYear <- data$DayofYear # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "draft$Day")
+#   you can access them directly by name (e.g. "draft$DayofYear")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

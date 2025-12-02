@@ -2,6 +2,30 @@
 title: "dogs"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Dogs
 
 If all of your friends jumped off of a cliff, would you do it too? This study tries to determine whether dogs follow their training over the example of other dogs. Dogs were trained to walk around a wall a certain direction, and then they observed other walking around the wall in the opposite direction. Which way does the dog choose?

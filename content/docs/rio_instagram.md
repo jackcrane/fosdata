@@ -2,6 +2,30 @@
 title: "rio_instagram"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Rio_instagram
 
 From the data creator: "This dataset includes Instagram user characteristics of those Olympic athletes who won gold medals in the individual events of Rio2016. The name of all these gold medalists of individual events are in the dataset (226 athletes), however only 149 athletes (85 men and 64 women) had their Instagram publicly available at the time of data crawling (the whole dataset was crawled from 9-Aug-2019 to 12-Aug-2019). Thus, for some athletes we could not present data in the dataset."
@@ -19,7 +43,7 @@ data <- fosdata::rio_instagram
 
 ```r
 data <- fosdata::rio_instagram
-max_comment_for_max_like <- data$max_comment_for_max_like # Just a random field in the dataset
+country <- data$country # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "rio_instagram$max_comment_for_max_like")
+#   you can access them directly by name (e.g. "rio_instagram$country")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

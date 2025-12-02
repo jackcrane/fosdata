@@ -2,6 +2,30 @@
 title: "biomass"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Biomass
 
 Biomass of insects caught in malaise traps over 96 unique location-year pairs, together with date and general description of type of nature area.
@@ -19,7 +43,7 @@ data <- fosdata::biomass
 
 ```r
 data <- fosdata::biomass
-biomass <- data$biomass # Just a random field in the dataset
+location_type <- data$location_type # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "biomass$biomass")
+#   you can access them directly by name (e.g. "biomass$location_type")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

@@ -2,6 +2,30 @@
 title: "covid"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Covid
 
 Cases and deaths due to COVID-19 by US state and date, due to The New York Times. Downloaded on May 28, 2021
@@ -19,7 +43,7 @@ data <- fosdata::covid
 
 ```r
 data <- fosdata::covid
-date <- data$date # Just a random field in the dataset
+cases <- data$cases # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "covid$date")
+#   you can access them directly by name (e.g. "covid$cases")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

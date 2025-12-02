@@ -2,6 +2,30 @@
 title: "leg_strength_full"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Leg_strength_full
 
 Wii balance board and stationary isometric dynamometer measurements of leg force of adults in Denmark.
@@ -19,7 +43,7 @@ data <- fosdata::leg_strength_full
 
 ```r
 data <- fosdata::leg_strength_full
-id <- data$id # Just a random field in the dataset
+wii_max3 <- data$wii_max3 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "leg_strength_full$id")
+#   you can access them directly by name (e.g. "leg_strength_full$wii_max3")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

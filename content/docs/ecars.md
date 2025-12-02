@@ -2,6 +2,30 @@
 title: "ecars"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Ecars
 
 This dataset contains information from 3,395 high resolution electric vehicle charging sessions The data contains sessions from 85 EV drivers with repeat usage at 105 stations across 25 sites at a workplace charging program. The workplace locations include facilities such as research and innovation centers, manufacturing, testing facilities and office headquarters for a firm participating in the U.S. Department of Energy (DOE) workplace charging challenge.
@@ -19,7 +43,7 @@ data <- fosdata::ecars
 
 ```r
 data <- fosdata::ecars
-ended <- data$ended # Just a random field in the dataset
+reportedZip <- data$reportedZip # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "ecars$ended")
+#   you can access them directly by name (e.g. "ecars$reportedZip")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

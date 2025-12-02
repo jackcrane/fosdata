@@ -2,6 +2,30 @@
 title: "cigs"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Cigs
 
 In 2000, the Federal Trade Commission tested cigarettes to determine the amount of nicotine, tar and carbom monoxide in them. This data set also contains the other information that the FTC collected at that time.
@@ -19,7 +43,7 @@ data <- fosdata::cigs
 
 ```r
 data <- fosdata::cigs
-co <- data$co # Just a random field in the dataset
+flavor <- data$flavor # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cigs$co")
+#   you can access them directly by name (e.g. "cigs$flavor")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

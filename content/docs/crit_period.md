@@ -2,6 +2,30 @@
 title: "crit_period"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Crit_period
 
 The age of onset of acquisition and ultimate level of attainment of second language learners in North America and Israel.
@@ -19,7 +43,7 @@ data <- fosdata::crit_period
 
 ```r
 data <- fosdata::crit_period
-locale <- data$locale # Just a random field in the dataset
+aoa <- data$aoa # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "crit_period$locale")
+#   you can access them directly by name (e.g. "crit_period$aoa")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

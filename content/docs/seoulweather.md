@@ -2,6 +2,30 @@
 title: "seoulweather"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Seoulweather
 
 The forecast for the next day and current day weather conditions in and near Seoul from 2013-06-30 to 2017-08-30.
@@ -19,7 +43,7 @@ data <- fosdata::seoulweather
 
 ```r
 data <- fosdata::seoulweather
-slope <- data$slope # Just a random field in the dataset
+ldaps_ppt4 <- data$ldaps_ppt4 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "seoulweather$slope")
+#   you can access them directly by name (e.g. "seoulweather$ldaps_ppt4")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

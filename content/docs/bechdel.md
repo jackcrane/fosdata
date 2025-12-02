@@ -2,6 +2,30 @@
 title: "bechdel"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Bechdel
 
 A simple tool for detecting gender bias in Hollywood movies is the Bechdel test, which originated in Alison Bechdel's comic strip "Dykes To Watch Out For". A movie passes the test if it has: at least two women in it who talk to each other about something besides a man This data set contains information about movies, whether they pass or fail the Bechdel test, and financial information for those movies.
@@ -19,7 +43,7 @@ data <- fosdata::bechdel
 
 ```r
 data <- fosdata::bechdel
-imdb <- data$imdb # Just a random field in the dataset
+domgross <- data$domgross # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "bechdel$imdb")
+#   you can access them directly by name (e.g. "bechdel$domgross")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

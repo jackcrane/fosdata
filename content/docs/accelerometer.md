@@ -2,6 +2,30 @@
 title: "accelerometer"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Accelerometer
 
 One measure that is of interest when working out with weights is the length of time that muscles are engaged in the exercise. The gold standard for measuring this is via a video of the exercise that is evaluated by a human looking at it frame by frame. This data contains such information for participants doing several different common weight training exercises. The same lengths are computed via a novel way using a smartphone accelerometer, which was attached to the weights.
@@ -19,7 +43,7 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-smartphone_difference_outlier <- data$smartphone_difference_outlier # Just a random field in the dataset
+difference_video_raters_ms <- data$difference_video_raters_ms # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "accelerometer$smartphone_difference_outlier")
+#   you can access them directly by name (e.g. "accelerometer$difference_video_raters_ms")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

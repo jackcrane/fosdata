@@ -2,6 +2,30 @@
 title: "barnacles"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Barnacles
 
 Counts and density of barnacles on coral reefs in the Flower Garden Banks (Gulf of Mexico) and in the U.S. Virgin Islands.
@@ -19,7 +43,7 @@ data <- fosdata::barnacles
 
 ```r
 data <- fosdata::barnacles
-location <- data$location # Just a random field in the dataset
+deep <- data$deep # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "barnacles$location")
+#   you can access them directly by name (e.g. "barnacles$deep")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

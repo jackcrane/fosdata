@@ -2,6 +2,30 @@
 title: "frogs"
 ---
 
+
+<style>
+
+
+/* Optional: explicitly auto (most browsers) */
+::-webkit-scrollbar {
+  width: auto !important;
+  height: auto !important;
+}
+
+html {
+  scrollbar-width: auto !important;    /* Firefox reset */
+  scrollbar-color: auto !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  background: initial !important;
+  color: initial !important;
+  border-radius: initial !important;
+  border: initial !important;
+}
+</style>
+
 # Frogs
 
 Measurements of frogs from several different species with the Zakerana genus.
@@ -19,7 +43,7 @@ data <- fosdata::frogs
 
 ```r
 data <- fosdata::frogs
-el <- data$el # Just a random field in the dataset
+fol <- data$fol # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +52,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "frogs$el")
+#   you can access them directly by name (e.g. "frogs$fol")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)
