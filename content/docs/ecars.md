@@ -19,7 +19,7 @@ data <- fosdata::ecars
 
 ```r
 data <- fosdata::ecars
-created <- data$created
+chargeTimeHrs <- data$chargeTimeHrs # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,29 @@ created <- data$created
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for ecars
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "ecars$chargeTimeHrs")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+ecars$weekday <- factor(
+  ecars$weekday,
+  levels = c("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
+)
+
+ecars %>%
+  group_by(weekday) %>%
+  summarize(mean_cost = mean(dollars, na.rm = TRUE)) %>%
+  ggplot(aes(x = weekday, y = mean_cost, fill = weekday)) +
+  geom_col() +
+  labs(
+    title = "Average Charging Cost by Weekday",
+    x = "Weekday",
+    y = "Mean Cost ($)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

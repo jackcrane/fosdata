@@ -19,7 +19,7 @@ data <- fosdata::covid
 
 ```r
 data <- fosdata::covid
-fips <- data$fips
+deaths <- data$deaths # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,27 @@ fips <- data$fips
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for covid
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "covid$deaths")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+covid %>%
+  group_by(state) %>%
+  summarize(total_cases = max(cases)) %>%
+  slice_max(total_cases, n = 10) %>%
+  ggplot(aes(x = reorder(state, total_cases), y = total_cases, fill = total_cases)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Top 10 States by Total COVID Cases",
+    x = "State",
+    y = "Total Cases"
+  ) +
+  theme_minimal() +
+	scale_fill_gradient(low = "gray70", high = "red")
 {{< /rexec >}}
 
 ## LLM instructions

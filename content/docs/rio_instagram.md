@@ -19,7 +19,7 @@ data <- fosdata::rio_instagram
 
 ```r
 data <- fosdata::rio_instagram
-n_follower <- data$n_follower
+gender <- data$gender # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,16 +27,18 @@ n_follower <- data$n_follower
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "rio_instagram$gender")
+# You can also use the dplyr, ggplot2, and usmap packages
+
 library(ggplot2)
 
-ggplot(rio_instagram, aes(x = n_post, y = n_follower, color = gender)) +
-  geom_point(alpha = 0.6) +
-  scale_y_log10() +
-  labs(
-    x = "Number of Posts",
-    y = "Number of Followers (log scale)",
-    title = "Followers vs Posts by Gender"
-  )
+ggplot(acorns, aes(x = Region, y = Tree_height, fill = Region)) +
+  geom_violin() +
+  labs(title = "Tree Height Distribution by Region",
+       x = "Region",
+       y = "Tree Height (m)") +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

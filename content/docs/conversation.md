@@ -19,7 +19,7 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-proportion_words <- data$proportion_words
+height <- data$height # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,26 @@ proportion_words <- data$proportion_words
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for conversation
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "conversation$height")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(conversation, aes(
+  x = attractiveness,
+  y = interruptions_per_min,
+  color = ifelse(gender == 0, "Male", "Female"),
+)) +
+  geom_smooth(se = FALSE) +
+	ylim(0, 1.5) +
+  labs(
+    title = "Interruptions vs attractiveness (Separated by Gender)",
+    x = "Attractiveness",
+    y = "Interruptions per Minute",
+    color = "Gender"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

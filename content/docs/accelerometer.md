@@ -19,7 +19,7 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-relative_difference <- data$relative_difference
+set <- data$set # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,23 @@ relative_difference <- data$relative_difference
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for accelerometer
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "accelerometer$set")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(accelerometer, aes(x = machine, y = relative_difference, fill = machine, color = machine)) +
+  geom_boxplot(alpha = 0.5) +
+  scale_y_log10() +
+  coord_flip() +
+  labs(
+    x = "Machine",
+    y = "Relative Error (log scale)",
+    title = "Smartphone Relative Error by Machine"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
 {{< /rexec >}}
 
 ## LLM instructions

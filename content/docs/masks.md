@@ -19,7 +19,7 @@ data <- fosdata::masks
 
 ```r
 data <- fosdata::masks
-pcr_type <- data$pcr_type
+no_mask_fine <- data$no_mask_fine # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,13 +27,17 @@ pcr_type <- data$pcr_type
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "masks$no_mask_fine")
+# You can also use the dplyr, ggplot2, and usmap packages
+
 # No sample provided for masks
 #
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+# That doesn't mean you can't still use the dataset!
 #
 # Uncomment the following lines to get started!
 # library(dplyr)
-# library(ggplot2)
+# library(ggplot2) # you can also use plot_usmap with library(usmap)
 
 {{< /rexec >}}
 

@@ -19,7 +19,7 @@ data <- fosdata::child_tasks
 
 ```r
 data <- fosdata::child_tasks
-day_night_completion_time_secs <- data$day_night_completion_time_secs
+counting_span_score <- data$counting_span_score # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,24 @@ day_night_completion_time_secs <- data$day_night_completion_time_secs
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for child_tasks
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "child_tasks$counting_span_score")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+child_tasks %>%
+  group_by(age_group) %>%
+  summarize(mean_span = mean(counting_span_score, na.rm = TRUE)) %>%
+  ggplot(aes(x = age_group, y = mean_span, fill = age_group)) +
+  geom_col() +
+  labs(
+    title = "Mean Counting Span Score by Age Group",
+    x = "Age Group",
+    y = "Mean Score"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

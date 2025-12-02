@@ -19,7 +19,7 @@ data <- fosdata::cows_small
 
 ```r
 data <- fosdata::cows_small
-cow <- data$cow
+tk_0_75 <- data$tk_0_75 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,23 @@ cow <- data$cow
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for cows_small
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "cows_small$tk_0_75")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot() +
+  geom_density(data = cows_small, aes(x = control, fill = "control"), alpha = 0.5) +
+  geom_density(data = cows_small, aes(x = tk_0_75, fill = "tk_0_75"), alpha = 0.5) +
+  geom_density(data = cows_small, aes(x = tk_12, fill = "tk_12"), alpha = 0.5) +
+  labs(
+    title = "Distribution of Temperature Change by Treatment",
+    x = "Temperature Change (°C)",
+    y = "Density",
+    fill = "Treatment"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

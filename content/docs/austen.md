@@ -19,7 +19,7 @@ data <- fosdata::austen
 
 ```r
 data <- fosdata::austen
-word_length <- data$word_length
+novel <- data$novel # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,21 @@ word_length <- data$word_length
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for austen
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "austen$novel")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(austen, aes(x = novel, y = word_length, fill = novel)) +
+  geom_boxplot() +
+	ylim(1, 10) +
+  labs(
+    title = "Word Length Distribution by Novel",
+    x = "Novel",
+    y = "Word Length"
+  ) +
+	theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

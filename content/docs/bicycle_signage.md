@@ -19,7 +19,7 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-safe2 <- data$safe2
+mv_distance <- data$mv_distance # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,22 @@ safe2 <- data$safe2
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for bicycle_signage
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "bicycle_signage$mv_distance")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+library(usmap)
+
+bicycle_signage %>%
+  group_by(state) %>%
+  summarize(prop_agree = mean(permitted2 == "1_Agree", na.rm = TRUE)) %>%
+  plot_usmap(data = ., values = "prop_agree", regions = "states") +
+  scale_fill_viridis_c() +
+  labs(title = "Proportion Agreeing Bicyclist Is Permitted in Center",
+       fill = "Agreement Rate") +
+  theme(legend.position = "right")
 {{< /rexec >}}
 
 ## LLM instructions

@@ -19,7 +19,7 @@ data <- fosdata::fish
 
 ```r
 data <- fosdata::fish
-length2 <- data$length2
+length3 <- data$length3 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,22 @@ length2 <- data$length2
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for fish
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "fish$length3")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(fish, aes(x = length3, y = height_percent, color = factor(sex))) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(se = FALSE) +
+  labs(
+    title = "Fish Body Height vs Total Length",
+    x = "Length (cm)",
+    y = "Height (% of length)",
+    color = "Sex"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

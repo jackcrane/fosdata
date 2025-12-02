@@ -19,7 +19,7 @@ data <- fosdata::climate
 
 ```r
 data <- fosdata::climate
-citations <- data$citations
+setting <- data$setting # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,29 @@ citations <- data$citations
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for climate
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "climate$setting")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+climate %>%
+  mutate(
+    sensory_q = ntile(normalized_sensory, 4),
+    connectivity_q = ntile(normalized_connectivity, 4)
+  ) %>%
+  group_by(sensory_q, connectivity_q) %>%
+  summarize(mean_cites = mean(normalized_citations, na.rm = TRUE)) %>%
+  ggplot(aes(x = sensory_q, y = connectivity_q, fill = mean_cites)) +
+  geom_tile() +
+  labs(
+    title = "Citations by Narrative Style Interaction",
+    x = "Sensory Quartile",
+    y = "Connectivity Quartile",
+    fill = "Mean Citations"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

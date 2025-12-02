@@ -19,7 +19,7 @@ data <- fosdata::barnacles
 
 ```r
 data <- fosdata::barnacles
-count <- data$count
+count <- data$count # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,20 @@ count <- data$count
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for barnacles
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "barnacles$count")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(barnacles, aes(x = coral_cover, y = barnacle_density, color = deep)) +
+  geom_point(alpha = 0.6) +
+  ylim(1, 750) +
+  labs(
+    title = "Barnacle Density vs Coral Cover",
+    x = "Coral Cover (%)",
+    y = "Barnacle Density"
+  )
 {{< /rexec >}}
 
 ## LLM instructions

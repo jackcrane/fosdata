@@ -19,7 +19,7 @@ data <- fosdata::acorns
 
 ```r
 data <- fosdata::acorns
-Acorn_size <- data$Acorn_size
+Species <- data$Species # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,19 @@ Acorn_size <- data$Acorn_size
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for acorns
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "acorns$Species")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(acorns, aes(x = Region, y = Tree_height, fill = Region)) +
+  geom_violin(alpha = 0.8, color = "black") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Tree Height Distribution by Region",
+       x = "Region",
+       y = "Tree Height (m)") +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

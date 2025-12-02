@@ -19,7 +19,7 @@ data <- fosdata::crit_period
 
 ```r
 data <- fosdata::crit_period
-gjt <- data$gjt
+locale <- data$locale # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,21 @@ gjt <- data$gjt
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for crit_period
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "crit_period$locale")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(crit_period, aes(x = aoa, y = gjt, color = locale)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(se = FALSE) +
+  labs(
+    title = "Grammaticality Score vs Age of Onset by Locale",
+    x = "Age of Onset (years)",
+    y = "GJT Score"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

@@ -122,9 +122,17 @@
        * Console logging
        * --------------------------------------------------------- */
       const logConsole = (msg) => {
-        const out = document.getElementById("console");
-        out.textContent += msg + "\n";
-        out.scrollTop = out.scrollHeight;
+        try {
+          if (JSON.stringify(msg) === "{}") return;
+          const out = document.getElementById("console");
+          out.textContent += msg.toString() + "\n";
+          out.scrollTop = out.scrollHeight;
+        } catch (err) {
+          console.error(err);
+          logConsole(
+            "[err] Console logging failed. Your code executed fine. There is more info in the browser console."
+          );
+        }
       };
 
       /* ---------------------------------------------------------
@@ -256,7 +264,7 @@
         logConsole("Installing packages...");
         setBtn("Installing packages...", true);
 
-        await webR.installPackages(["ggplot2", "dplyr", "ggthemes"]);
+        await webR.installPackages(["ggplot2", "dplyr", "ggthemes", "usmap"]);
 
         setBtn("Loading datasets...", true);
 
@@ -341,7 +349,10 @@
 
         let code = window.cm.getValue();
 
-        if (code.includes("ggplot(") && !code.includes("ggsave(")) {
+        if (
+          (code.includes("ggplot(") || code.includes("plot_usmap(")) &&
+          !code.includes("ggsave(")
+        ) {
           code += `
 # Automatically added
 ggsave("/plot.png", width = 8, height = 4)
@@ -368,6 +379,7 @@ ggsave("/plot.png", width = 8, height = 4)
           }
         } catch (err) {
           logConsole("JS Error: " + err);
+          console.error(err);
           setBtn("Execute R Code");
           return;
         }

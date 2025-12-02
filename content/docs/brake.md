@@ -19,7 +19,7 @@ data <- fosdata::brake
 
 ```r
 data <- fosdata::brake
-age <- data$age
+difficulty <- data$difficulty # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,17 @@ age <- data$age
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for brake
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "brake$difficulty")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(brake, aes(x = latency_p1, fill = age_group)) +
+  geom_density(alpha = 0.6) +
+  labs(title = "Latency P1 by age group",
+       x = "Latency to press brake (ms)",
+       y = "Density")
 {{< /rexec >}}
 
 ## LLM instructions

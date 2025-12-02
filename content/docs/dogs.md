@@ -19,7 +19,7 @@ data <- fosdata::dogs
 
 ```r
 data <- fosdata::dogs
-dropout <- data$dropout
+start_direction <- data$start_direction # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,24 @@ dropout <- data$dropout
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for dogs
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "dogs$start_direction")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+dogs %>%
+  group_by(condition) %>%
+  summarize(rate = mean(conform, na.rm = TRUE)) %>%
+  ggplot(aes(x = factor(condition), y = rate, fill = factor(condition))) +
+  geom_col() +
+  labs(
+    title = "Conformity Rate by Experimental Condition",
+    x = "Condition (0,1,3)",
+    y = "Mean Conformity"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

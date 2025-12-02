@@ -19,7 +19,7 @@ data <- fosdata::cern
 
 ```r
 data <- fosdata::cern
-subject <- data$subject
+postdate <- data$postdate # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,24 @@ subject <- data$subject
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for cern
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "cern$postdate")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+cern %>%
+  group_by(platform) %>%
+  summarize(mean_likes = mean(likes, na.rm = TRUE)) %>%
+  ggplot(aes(x = platform, y = mean_likes, fill = platform)) +
+  geom_col() +
+  labs(
+    title = "Average Likes by Platform",
+    x = "Platform",
+    y = "Mean Likes"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

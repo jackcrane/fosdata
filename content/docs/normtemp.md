@@ -19,7 +19,7 @@ data <- fosdata::normtemp
 
 ```r
 data <- fosdata::normtemp
-temp <- data$temp
+temp <- data$temp # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,13 +27,17 @@ temp <- data$temp
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "normtemp$temp")
+# You can also use the dplyr, ggplot2, and usmap packages
+
 # No sample provided for normtemp
 #
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
+# That doesn't mean you can't still use the dataset!
 #
 # Uncomment the following lines to get started!
 # library(dplyr)
-# library(ggplot2)
+# library(ggplot2) # you can also use plot_usmap with library(usmap)
 
 {{< /rexec >}}
 

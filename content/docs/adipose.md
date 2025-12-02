@@ -19,7 +19,7 @@ data <- fosdata::adipose
 
 ```r
 data <- fosdata::adipose
-sex <- data$sex
+hips_cm <- data$hips_cm # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,20 @@ sex <- data$sex
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for adipose
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "adipose$hips_cm")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(ggplot2)
+
+ggplot(adipose, aes(x = bmi, y = vat, color = bmi)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(se = TRUE) +
+  labs(
+    title = "Relationship Between BMI and Visceral Fat",
+    x = "BMI",
+    y = "Visceral Adipose Tissue (g)"
+  )
 {{< /rexec >}}
 
 ## LLM instructions

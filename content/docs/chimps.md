@@ -19,7 +19,7 @@ data <- fosdata::chimps
 
 ```r
 data <- fosdata::chimps
-v72 <- data$v72
+v137 <- data$v137 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -27,14 +27,24 @@ v72 <- data$v72
 You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
-# No sample provided for chimps
-#
-# That doesn't mean you can't still use the dataset! You have access to the dplyr and ggplot2 packages.
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2)
+# All fosdata datasets are loaded into the global environment
+#   you can access them directly by name (e.g. "chimps$v137")
+# You can also use the dplyr, ggplot2, and usmap packages
 
+library(dplyr)
+library(ggplot2)
+
+chimps %>%
+  group_by(year, sex) %>%
+  summarize(mean_grey = mean(grey_score_avg, na.rm = TRUE)) %>%
+  ggplot(aes(x = year, y = mean_grey, color = sex)) +
+  geom_line(size = 1.2) +
+  labs(
+    title = "Average Grey Hair Score Over Time by Sex",
+    x = "Year",
+    y = "Mean Grey Score"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions
