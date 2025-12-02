@@ -19,10 +19,12 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-f1_psychopathy <- data$f1_psychopathy
+proportion_words <- data$proportion_words
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for conversation

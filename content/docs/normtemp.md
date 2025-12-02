@@ -19,10 +19,12 @@ data <- fosdata::normtemp
 
 ```r
 data <- fosdata::normtemp
-gender <- data$gender
+temp <- data$temp
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for normtemp

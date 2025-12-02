@@ -19,10 +19,12 @@ data <- fosdata::gender
 
 ```r
 data <- fosdata::gender
-gender_unclear <- data$gender_unclear
+gender_male <- data$gender_male
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for gender

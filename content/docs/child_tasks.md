@@ -19,10 +19,12 @@ data <- fosdata::child_tasks
 
 ```r
 data <- fosdata::child_tasks
-age_group <- data$age_group
+day_night_completion_time_secs <- data$day_night_completion_time_secs
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for child_tasks

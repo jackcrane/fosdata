@@ -19,10 +19,12 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-time_smartphone_1_ms <- data$time_smartphone_1_ms
+relative_difference <- data$relative_difference
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for accelerometer

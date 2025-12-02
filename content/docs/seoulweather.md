@@ -19,10 +19,12 @@ data <- fosdata::seoulweather
 
 ```r
 data <- fosdata::seoulweather
-present_tmin <- data$present_tmin
+date <- data$date
 ```
 
-## R Sample
+## Interactive R Sample
+
+You can use the R editor below to interactively explore the dataset and generate plots. This contains a fully self-contained R environment with fosdata, ggplot2, and dplyr loaded.
 
 {{< rexec >}}
 # No sample provided for seoulweather

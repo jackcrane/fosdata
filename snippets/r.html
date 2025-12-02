@@ -377,14 +377,26 @@ ggsave("/plot.png", width = 8, height = 4)
 
         /* ----- load plot into tab + auto-switch ----- */
         const img = document.getElementById("plot");
+        const empty = document.getElementById("plot-empty");
+
+        let plotShown = false;
+
         try {
           const bytes = await webR.FS.readFile("/plot.png");
           const blob = new Blob([bytes], { type: "image/png" });
           img.src = URL.createObjectURL(blob);
+
           img.style.display = "block";
+          empty.style.display = "none";
+
           activateTab("plot");
+          plotShown = true;
         } catch {
+          // No new plot → clear previous plot
+          img.src = "";
           img.style.display = "none";
+          empty.style.display = "block";
+
           logConsole("No plot generated.");
         }
 
@@ -411,6 +423,14 @@ ggsave("/plot.png", width = 8, height = 4)
         tabSize: 2,
         mode: "r",
         value: strip(`__R_DEFAULT_CODE__`),
+        extraKeys: {
+          "Cmd-Enter": () => {
+            if (!execBtn().disabled) runR();
+          },
+          "Ctrl-Enter": () => {
+            if (!execBtn().disabled) runR();
+          },
+        },
       });
     </script>
 
@@ -432,6 +452,12 @@ ggsave("/plot.png", width = 8, height = 4)
 
     <!-- Plot -->
     <div id="content-plot" class="tab-content">
+      <div
+        id="plot-empty"
+        style="padding: 20px; text-align: center; color: #777; font-size: 13px"
+      >
+        No plot generated yet.
+      </div>
       <img id="plot" alt="scatterplot" />
     </div>
   </body>
