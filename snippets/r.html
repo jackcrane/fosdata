@@ -42,6 +42,14 @@
       button:not(:disabled):hover {
         background-color: color-mix(in srgb, #fff 90%, var(--color-link) 20%);
       }
+      @media print {
+        button {
+          display: none;
+        }
+        .tabs {
+          display: none;
+        }
+      }
 
       #plot {
         width: 100%;
