@@ -19,7 +19,7 @@ data <- fosdata::conversation
 
 ```r
 data <- fosdata::conversation
-height <- data$height # Just a random field in the dataset
+highest_class_rank <- data$highest_class_rank # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "conversation$height")
+#   you can access them directly by name (e.g. "conversation$highest_class_rank")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

@@ -31,14 +31,19 @@ You can use the R editor below to interactively explore the dataset and generate
 #   you can access them directly by name (e.g. "powerball$Draw.Date")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for powerball
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
 
+powerball %>%
+  count(Ball1) %>%
+  ggplot(aes(x = Ball1, y = n, fill = Ball1)) +
+  geom_col() +
+  labs(
+    title = "Powerball: Frequency of Ball1",
+    x = "Ball1 Number",
+    y = "Count"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

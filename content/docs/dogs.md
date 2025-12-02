@@ -19,7 +19,7 @@ data <- fosdata::dogs
 
 ```r
 data <- fosdata::dogs
-start_direction <- data$start_direction # Just a random field in the dataset
+demo_pref <- data$demo_pref # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "dogs$start_direction")
+#   you can access them directly by name (e.g. "dogs$demo_pref")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

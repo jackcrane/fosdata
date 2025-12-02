@@ -19,7 +19,7 @@ data <- fosdata::hot_dogs
 
 ```r
 data <- fosdata::hot_dogs
-calories <- data$calories # Just a random field in the dataset
+sodium <- data$sodium # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "hot_dogs$calories")
+#   you can access them directly by name (e.g. "hot_dogs$sodium")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for hot_dogs
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(hot_dogs, aes(x = type, y = calories, fill = type)) +
+  geom_boxplot() +
+  labs(
+    title = "Calories by Hot Dog Type",
+    x = "Type",
+    y = "Calories"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

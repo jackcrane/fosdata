@@ -19,7 +19,7 @@ data <- fosdata::cows_small
 
 ```r
 data <- fosdata::cows_small
-tk_0_75 <- data$tk_0_75 # Just a random field in the dataset
+control <- data$control # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cows_small$tk_0_75")
+#   you can access them directly by name (e.g. "cows_small$control")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

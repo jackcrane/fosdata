@@ -19,7 +19,7 @@ data <- fosdata::bicycle_signage
 
 ```r
 data <- fosdata::bicycle_signage
-mv_distance <- data$mv_distance # Just a random field in the dataset
+cycle_distance <- data$cycle_distance # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "bicycle_signage$mv_distance")
+#   you can access them directly by name (e.g. "bicycle_signage$cycle_distance")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

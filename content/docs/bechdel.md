@@ -19,7 +19,7 @@ data <- fosdata::bechdel
 
 ```r
 data <- fosdata::bechdel
-decade_code <- data$decade_code # Just a random field in the dataset
+imdb <- data$imdb # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "bechdel$decade_code")
+#   you can access them directly by name (e.g. "bechdel$imdb")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

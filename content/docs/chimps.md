@@ -19,7 +19,7 @@ data <- fosdata::chimps
 
 ```r
 data <- fosdata::chimps
-v137 <- data$v137 # Just a random field in the dataset
+v160 <- data$v160 # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "chimps$v137")
+#   you can access them directly by name (e.g. "chimps$v160")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

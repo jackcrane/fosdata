@@ -19,7 +19,7 @@ data <- fosdata::weight_estimate
 
 ```r
 data <- fosdata::weight_estimate
-mean400 <- data$mean400 # Just a random field in the dataset
+age <- data$age # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "weight_estimate$mean400")
+#   you can access them directly by name (e.g. "weight_estimate$age")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for weight_estimate
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(weight_estimate, aes(x = age, y = mean400, fill = age)) +
+  geom_boxplot() +
+  labs(
+    title = "Estimated Weight (400g Object) by Age Group",
+    x = "Age Group",
+    y = "Estimated Weight (g)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

@@ -19,7 +19,7 @@ data <- fosdata::sharks
 
 ```r
 data <- fosdata::sharks
-gender <- data$gender # Just a random field in the dataset
+graceful <- data$graceful # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "sharks$gender")
+#   you can access them directly by name (e.g. "sharks$graceful")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for sharks
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(sharks, aes(x = music, y = dangerous, fill = music)) +
+  geom_boxplot() +
+  labs(
+    title = "Danger Perception by Soundtrack Type",
+    x = "Music Type",
+    y = "Danger Rating (1–7)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

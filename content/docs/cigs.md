@@ -19,7 +19,7 @@ data <- fosdata::cigs
 
 ```r
 data <- fosdata::cigs
-nic <- data$nic # Just a random field in the dataset
+co <- data$co # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cigs$nic")
+#   you can access them directly by name (e.g. "cigs$co")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

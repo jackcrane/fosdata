@@ -19,7 +19,7 @@ data <- fosdata::wrist
 
 ```r
 data <- fosdata::wrist
-times_outside_from_home <- data$times_outside_from_home # Just a random field in the dataset
+cast_change_category <- data$cast_change_category # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "wrist$times_outside_from_home")
+#   you can access them directly by name (e.g. "wrist$cast_change_category")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for wrist
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(wrist, aes(x = factor(cast_position), y = grip_strength_proportion, fill = factor(cast_position))) +
+  geom_boxplot() +
+  labs(
+    title = "Grip Strength Recovery by Cast Position",
+    x = "Cast Position",
+    y = "Grip Strength Proportion"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

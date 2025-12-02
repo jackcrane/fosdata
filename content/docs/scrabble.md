@@ -19,7 +19,7 @@ data <- fosdata::scrabble
 
 ```r
 data <- fosdata::scrabble
-points <- data$points # Just a random field in the dataset
+piece <- data$piece # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,16 +28,22 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "scrabble$points")
+#   you can access them directly by name (e.g. "scrabble$piece")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for scrabble
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
+
+scrabble %>%
+  ggplot(aes(x = reorder(piece, points), y = points, fill = points)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Scrabble Tile Points by Letter",
+    x = "Letter",
+    y = "Points"
+  ) +
+  theme_minimal()
 
 {{< /rexec >}}
 

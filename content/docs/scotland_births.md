@@ -19,7 +19,7 @@ data <- fosdata::scotland_births
 
 ```r
 data <- fosdata::scotland_births
-x1960 <- data$x1960 # Just a random field in the dataset
+age <- data$age # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,30 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "scotland_births$x1960")
+#   you can access them directly by name (e.g. "scotland_births$age")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for scotland_births
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 
+scotland_births %>%
+  pivot_longer(
+    cols = starts_with("x"),
+    names_to = "year",
+    values_to = "births"
+  ) %>%
+  mutate(year = as.numeric(gsub("x", "", year))) %>%
+  ggplot(aes(x = age, y = year, fill = births)) +
+  geom_tile() +
+  scale_fill_distiller(palette = "Spectral") +
+  labs(
+    title = "Heatmap of Scotland Birth Counts by Age and Year",
+    x = "Age of Mother",
+    y = "Year",
+    fill = "Births"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

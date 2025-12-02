@@ -19,7 +19,7 @@ data <- fosdata::houses
 
 ```r
 data <- fosdata::houses
-id <- data$id # Just a random field in the dataset
+bathrooms <- data$bathrooms # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "houses$id")
+#   you can access them directly by name (e.g. "houses$bathrooms")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for houses
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
+library(dplyr)
 
+houses %>%
+  ggplot(aes(x = factor(bedrooms), y = price, fill = factor(bedrooms))) +
+  geom_boxplot() +
+  scale_y_log10() +
+  labs(x = "Bedrooms", y = "Sale Price", title = "Price Distribution by Bedrooms") +
+  theme_minimal() +
+  theme(legend.position = "none")
 {{< /rexec >}}
 
 ## LLM instructions

@@ -19,7 +19,7 @@ data <- fosdata::adipose
 
 ```r
 data <- fosdata::adipose
-hips_cm <- data$hips_cm # Just a random field in the dataset
+health <- data$health # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "adipose$hips_cm")
+#   you can access them directly by name (e.g. "adipose$health")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

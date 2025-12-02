@@ -264,7 +264,13 @@
         logConsole("Installing packages...");
         setBtn("Installing packages...", true);
 
-        await webR.installPackages(["ggplot2", "dplyr", "ggthemes", "usmap"]);
+        await webR.installPackages([
+          "ggplot2",
+          "dplyr",
+          "ggthemes",
+          "usmap",
+          "tidyr",
+        ]);
 
         setBtn("Loading datasets...", true);
 

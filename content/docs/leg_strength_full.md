@@ -19,7 +19,7 @@ data <- fosdata::leg_strength_full
 
 ```r
 data <- fosdata::leg_strength_full
-sid_m2 <- data$sid_m2 # Just a random field in the dataset
+id <- data$id # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "leg_strength_full$sid_m2")
+#   you can access them directly by name (e.g. "leg_strength_full$id")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for leg_strength_full
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
 
+leg_strength_full %>%
+  ggplot(aes(x = sid_max3, y = day_2_sid_max3)) +
+  geom_point() +
+  geom_smooth() +
+  labs(x = "Day 1 SID Max", y = "Day 2 SID Max",
+       title = "SID Maximum Force Day 1 vs Day 2") +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

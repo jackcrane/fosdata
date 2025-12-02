@@ -19,7 +19,7 @@ data <- fosdata::covid
 
 ```r
 data <- fosdata::covid
-deaths <- data$deaths # Just a random field in the dataset
+date <- data$date # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "covid$deaths")
+#   you can access them directly by name (e.g. "covid$date")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

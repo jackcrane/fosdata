@@ -19,7 +19,7 @@ data <- fosdata::pres_election
 
 ```r
 data <- fosdata::pres_election
-state <- data$state # Just a random field in the dataset
+party <- data$party # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,31 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "pres_election$state")
+#   you can access them directly by name (e.g. "pres_election$party")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for pres_election
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
+library(usmap)
 
+pres_election %>%
+  filter(year == 2016) %>%
+  group_by(state, party) %>%
+  summarize(votes = sum(candidatevotes), .groups = "drop") %>%
+  slice_max(votes, by = state, with_ties = FALSE) %>%
+  plot_usmap(data = ., values = "party") +
+  scale_fill_manual(
+    values = c(
+      "democrat" = "blue",
+      "republican" = "red",
+      "green" = "green"
+    )
+  ) +
+  labs(
+    title = "Winning Party by State (2016)",
+    fill = "Party"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

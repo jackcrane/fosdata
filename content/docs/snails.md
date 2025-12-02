@@ -19,7 +19,7 @@ data <- fosdata::snails
 
 ```r
 data <- fosdata::snails
-Banding <- data$Banding # Just a random field in the dataset
+Habitat <- data$Habitat # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,24 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "snails$Banding")
+#   you can access them directly by name (e.g. "snails$Habitat")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for snails
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
 
+snails %>%
+  group_by(Location) %>%
+  summarize(total = sum(Count)) %>%
+  ggplot(aes(x = reorder(Location, total), y = total, color = total)) +
+  geom_point(size = 4) +
+  coord_flip() +
+  labs(
+    title = "Total Snails Collected per Location",
+    x = "Location",
+    y = "Total Count"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

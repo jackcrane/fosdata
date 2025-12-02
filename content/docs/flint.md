@@ -19,7 +19,7 @@ data <- fosdata::flint
 
 ```r
 data <- fosdata::flint
-SampleID <- data$SampleID # Just a random field in the dataset
+Notes <- data$Notes # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,22 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "flint$SampleID")
+#   you can access them directly by name (e.g. "flint$Notes")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for flint
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(flint, aes(x = Pb1, y = Pb2, color = Ward)) +
+  geom_point(alpha = 0.6) +
+  ylim(0, 50)+
+  scale_y_log10() +
+  scale_x_log10() +
+  labs(
+    title = "Lead Level Comparison: First Draw vs 45-Second Sample",
+    x = "Pb1 (ppb) (log)",
+    y = "Pb2 (ppb) (log)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

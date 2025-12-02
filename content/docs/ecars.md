@@ -19,7 +19,7 @@ data <- fosdata::ecars
 
 ```r
 data <- fosdata::ecars
-chargeTimeHrs <- data$chargeTimeHrs # Just a random field in the dataset
+ended <- data$ended # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "ecars$chargeTimeHrs")
+#   you can access them directly by name (e.g. "ecars$ended")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

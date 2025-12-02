@@ -19,7 +19,7 @@ data <- fosdata::masks
 
 ```r
 data <- fosdata::masks
-no_mask_fine <- data$no_mask_fine # Just a random field in the dataset
+nasal_swab <- data$nasal_swab # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,24 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "masks$no_mask_fine")
+#   you can access them directly by name (e.g. "masks$nasal_swab")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for masks
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
 
+masks %>%
+  summarize(
+    mask = mean(mask_coarse, na.rm = TRUE),
+    no_mask = mean(no_mask_coarse, na.rm = TRUE)
+  ) %>%
+  tidyr::pivot_longer(everything(), names_to = "condition", values_to = "coarse") %>%
+  ggplot(aes(x = condition, y = coarse, fill = condition)) +
+  geom_col() +
+  labs(
+    title = "Average Coarse Particle Count\nMask vs No Mask"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

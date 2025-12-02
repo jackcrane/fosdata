@@ -31,14 +31,17 @@ You can use the R editor below to interactively explore the dataset and generate
 #   you can access them directly by name (e.g. "plastics$colour")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for plastics
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(plastics, aes(x = length, y = diameter, color = region, shape = region)) +
+  geom_point() +
+  scale_x_log10() +
+  labs(
+    title = "Length vs Diameter of Microfibers",
+    x = "Length (µm)",
+    y = "Diameter (µm)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

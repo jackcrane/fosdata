@@ -19,7 +19,7 @@ data <- fosdata::accelerometer
 
 ```r
 data <- fosdata::accelerometer
-set <- data$set # Just a random field in the dataset
+smartphone_difference_outlier <- data$smartphone_difference_outlier # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "accelerometer$set")
+#   you can access them directly by name (e.g. "accelerometer$smartphone_difference_outlier")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

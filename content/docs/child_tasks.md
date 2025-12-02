@@ -19,7 +19,7 @@ data <- fosdata::child_tasks
 
 ```r
 data <- fosdata::child_tasks
-counting_span_score <- data$counting_span_score # Just a random field in the dataset
+backward_digit_span_score <- data$backward_digit_span_score # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "child_tasks$counting_span_score")
+#   you can access them directly by name (e.g. "child_tasks$backward_digit_span_score")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

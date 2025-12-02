@@ -19,7 +19,7 @@ data <- fosdata::letter_frequency
 
 ```r
 data <- fosdata::letter_frequency
-french <- data$french # Just a random field in the dataset
+esperanto <- data$esperanto # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,26 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "letter_frequency$french")
+#   you can access them directly by name (e.g. "letter_frequency$esperanto")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for letter_frequency
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 
+letter_frequency %>%
+  pivot_longer(-letter, names_to = "language", values_to = "freq") %>%
+  ggplot(aes(x = language, y = letter, fill = freq)) +
+  geom_tile() +
+  scale_fill_viridis_c() +
+  scale_y_discrete(breaks = c("A", "Z")) +
+  labs(
+    title = "Letter Frequency Across Languages",
+    x  = "Language",
+    y  = "Letter a (low) - z (high)",
+    fill = "Frequency"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

@@ -19,7 +19,7 @@ data <- fosdata::barnacles
 
 ```r
 data <- fosdata::barnacles
-count <- data$count # Just a random field in the dataset
+location <- data$location # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "barnacles$count")
+#   you can access them directly by name (e.g. "barnacles$location")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

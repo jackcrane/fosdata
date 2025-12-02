@@ -19,7 +19,7 @@ data <- fosdata::world_cup
 
 ```r
 data <- fosdata::world_cup
-date <- data$date # Just a random field in the dataset
+game <- data$game # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,19 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "world_cup$date")
+#   you can access them directly by name (e.g. "world_cup$game")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for world_cup
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(world_cup, aes(x = score_1, fill = competition)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  labs(
+    title = "Distribution of Goals Scored by Winning Teams",
+    x = "Goals",
+    y = "Frequency"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

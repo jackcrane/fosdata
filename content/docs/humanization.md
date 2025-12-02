@@ -19,7 +19,7 @@ data <- fosdata::humanization
 
 ```r
 data <- fosdata::humanization
-group <- data$group # Just a random field in the dataset
+pak_prim <- data$pak_prim # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,20 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "humanization$group")
+#   you can access them directly by name (e.g. "humanization$pak_prim")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for humanization
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(subset(humanization, gender %in% c("Male", "Female")),
+       aes(x = gender, y = pak_prim, fill = gender)) +
+  geom_boxplot() +
+  labs(
+    x = "Gender",
+    y = "Primary Emotion Rating",
+    title = "Primary Emotion Toward Pakistanis by Gender"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

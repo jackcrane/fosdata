@@ -19,7 +19,7 @@ data <- fosdata::skull_geometry
 
 ```r
 data <- fosdata::skull_geometry
-age_mos <- data$age_mos # Just a random field in the dataset
+circumference_cm <- data$circumference_cm # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,17 +28,20 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "skull_geometry$age_mos")
+#   you can access them directly by name (e.g. "skull_geometry$circumference_cm")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for skull_geometry
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(ggplot2)
 
+ggplot(skull_geometry, aes(x = age_mos, y = circumference_cm, color = age_mos)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  labs(
+    title = "Skull Circumference vs Age",
+    x = "Age (months)",
+    y = "Circumference (cm)"
+  ) +
+  theme_minimal()
 {{< /rexec >}}
 
 ## LLM instructions

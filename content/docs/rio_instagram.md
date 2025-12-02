@@ -19,7 +19,7 @@ data <- fosdata::rio_instagram
 
 ```r
 data <- fosdata::rio_instagram
-gender <- data$gender # Just a random field in the dataset
+max_comment_for_max_like <- data$max_comment_for_max_like # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "rio_instagram$gender")
+#   you can access them directly by name (e.g. "rio_instagram$max_comment_for_max_like")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

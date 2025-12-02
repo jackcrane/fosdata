@@ -19,7 +19,7 @@ data <- fosdata::cern
 
 ```r
 data <- fosdata::cern
-postdate <- data$postdate # Just a random field in the dataset
+post <- data$post # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "cern$postdate")
+#   you can access them directly by name (e.g. "cern$post")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(dplyr)

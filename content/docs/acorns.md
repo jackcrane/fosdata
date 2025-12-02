@@ -19,7 +19,7 @@ data <- fosdata::acorns
 
 ```r
 data <- fosdata::acorns
-Species <- data$Species # Just a random field in the dataset
+Tree_height <- data$Tree_height # Just a random field in the dataset
 ```
 
 ## Interactive R Sample
@@ -28,7 +28,7 @@ You can use the R editor below to interactively explore the dataset and generate
 
 {{< rexec >}}
 # All fosdata datasets are loaded into the global environment
-#   you can access them directly by name (e.g. "acorns$Species")
+#   you can access them directly by name (e.g. "acorns$Tree_height")
 # You can also use the dplyr, ggplot2, and usmap packages
 
 library(ggplot2)

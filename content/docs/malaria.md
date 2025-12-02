@@ -31,13 +31,22 @@ You can use the R editor below to interactively explore the dataset and generate
 #   you can access them directly by name (e.g. "malaria$antibody")
 # You can also use the dplyr, ggplot2, and usmap packages
 
-# No sample provided for malaria
-#
-# That doesn't mean you can't still use the dataset!
-#
-# Uncomment the following lines to get started!
-# library(dplyr)
-# library(ggplot2) # you can also use plot_usmap with library(usmap)
+library(dplyr)
+library(ggplot2)
+
+malaria %>%
+  count(antibody, malaria) %>%
+  ggplot(aes(
+    x = antibody,
+    y = n,
+    fill = ifelse(malaria == 1, "yes malaria", "no malaria")
+  )) +
+  geom_col(position = "fill") +
+  labs(
+    title = "Transmission Rate With vs Without Antibody",
+    fill = "Malaria"
+  ) +
+  theme_minimal()
 
 {{< /rexec >}}
 
